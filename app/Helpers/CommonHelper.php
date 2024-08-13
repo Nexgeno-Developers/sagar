@@ -133,3 +133,9 @@ use Illuminate\Support\Facades\Mail;
         }
     }
 
+    if(!function_exists('customSlug')){
+        function customSlug($value)
+        {
+            return preg_replace('/[^a-z0-9\/]/i', '-', Str::lower($value));
+        }
+    }

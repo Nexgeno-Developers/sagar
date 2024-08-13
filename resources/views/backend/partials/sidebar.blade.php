@@ -112,7 +112,12 @@
                                 </ul>
                             </div>
                         </li> --}}
-
+                        <li class="side-nav-item">
+                            <a href="{{ route('website.pages') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-discuss-line"></i>                                
+                                <span> Pages Listing </span>
+                            </a>
+                        </li>
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
                                 <i class="ri-article-line"></i>
