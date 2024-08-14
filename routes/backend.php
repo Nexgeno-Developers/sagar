@@ -64,7 +64,7 @@ Route::group(['prefix' => 'testimonial'], function () {
 Route::controller(PageController::class)->group(function () {
     Route::get('/custom-pages/{slug}', 'show_custom_page')->name('custom-pages.show_custom_page');
     Route::get('/index', 'index')->name('website.pages');
-    Route::get('/custom-pages/update/{id}', 'update')->name('custom-pages.update');
+    Route::post('/custom-pages/update/{id}', 'update')->name('custom-pages.update');
     Route::get('/custom-pages/edit/{id}', 'edit')->name('custom-pages.edit');
     Route::get('/custom-pages/destroy/{id}', 'destroy')->name('custom-pages.destroy');
 });

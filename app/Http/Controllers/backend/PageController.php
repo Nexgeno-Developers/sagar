@@ -73,7 +73,7 @@ class PageController extends Controller
      */
     public function edit(Request $request, $id)
     {
-         $lang = $request->lang;
+        //  $lang = $request->lang;
          $page_name = $request->page;
          $page = Page::where('slug', $id)->first();
          $products = Product::where('is_active', 1)->get();
@@ -81,7 +81,7 @@ class PageController extends Controller
          $post_categories = PostCategory::get();
          if ($page != null) {
              if ($page_name == 'home') {
-             return view('backend.website_settings.pages.home_page_edit', compact('page', 'lang','products','post_categories','product_categories'));
+             return view('backend.website_settings.pages.home_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '8') {
              return view('backend.website_settings.pages.about_page_edit', compact('page','lang'));
@@ -121,20 +121,18 @@ class PageController extends Controller
         if($page->type == 'custom_page'){
           $page->slug           = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
         }
-        if ($request->lang == env("DEFAULT_LANGUAGE")) {
-            $page->title = $request->title;
-            $page->content = $request->content;
-        }
         
         if($page->type == 'home_page'){
             $validator = Validator::make($request->all(), [
                 'title' => 'required|string|max:255',
-                'slug' => 'required|unique:gallery,slug',
+                'slug' => 'required',
                 'is_active' => 'required|boolean',
                 'product_ids' => 'required|array',
                 'about_content' => 'required|string',
                 'wwd_content.*' => 'required|string',
-                'scp_text' => 'required|string|max:255',
+                'scp_text1' => 'required|string|max:255',
+                'scp_text2' => 'required|string|max:255',
+                'scp_text3' => 'required|string|max:255',
                 'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'banner.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'wwd_image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
@@ -156,17 +154,12 @@ class PageController extends Controller
             }
 
             // Initialize content array
-            $content = [
-                'title' => $request->input('title'),
-                'slug' => $slug,
-                'is_active' => $request->input('is_active'),
+            $content = [                
                 'product_ids' => implode(',', $request->input('product_ids')),
                 'about_content' => $request->input('about_content'),
                 'wwd_content' => $request->input('wwd_content'),
                 'scp_text' => $request->input('scp_text'),
                 'scp_url' => $request->input('scp_url'),
-                'meta_title' => $request->input('meta_title'),
-                'meta_description' => $request->input('meta_description'),
             ];
 
             // Handle About Image Upload
@@ -174,61 +167,117 @@ class PageController extends Controller
                 if ($page->content['about_image'] ?? false) {
                     Storage::delete($page->content['about_image']);
                 }
-                $content['about_image'] = $request->file('about_image')->store('images/about');
-            } else {
-                $content['about_image'] = $page->content['about_image'] ?? null;
+                $content['about_image'] = $request->file('about_image')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['about_image'] = $request->input('existing_about_image') ?? $content['about_image'];
             }
-
+            
             // Handle Banner Images
             $banners = [];
-            if ($request->hasFile('banner')) {
-                foreach ($request->file('banner') as $key => $file) {
-                    $path = $file->store('images/banners');
-                    $banners[] = [
-                        'image' => $path,
-                        'text' => $request->banner_text[$key] ?? '',
-                        'button' => $request->banner_button[$key] ?? '',
-                        'url' => $request->banner_url[$key] ?? '',
-                    ];
+            foreach ($request->input('banner_text', []) as $key => $text) {
+                // Check if a new file was uploaded for this banner
+                if ($request->hasFile("banner.$key")) {
+                    $path = $request->file("banner.$key")->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $path = $request->input('existing_banner_image')[$key] ?? null;
                 }
-            } else {
-                $banners = $page->content['banner'] ?? [];
-            }
-            $content['banner'] = $banners;
+            
+                $banners[] = [
+                    'image' => $path,
+                    'text' => $text,
+                    'button' => $request->input('banner_button')[$key] ?? '',
+                    'url' => $request->input('banner_url')[$key] ?? '',
+                ];
+            }            
+            // Save banners array to the database or use it as needed
+            $content['banner'] = $banners;            
 
             // Handle What We Do Section Images
             $wwd_images = [];
-            if ($request->hasFile('wwd_image')) {
-                foreach ($request->file('wwd_image') as $key => $file) {
-                    $path = $file->store('images/wwd');
-                    $wwd_images[] = [
-                        'image' => $path,
-                        'text' => $request->wwd_text[$key] ?? '',
-                        'content' => $request->wwd_content[$key] ?? '',
-                    ];
+            foreach ($request->input('wwd_text', []) as $key => $text) {
+                // Check if a new file was uploaded for this image
+                if ($request->hasFile("wwd_image.$key")) {
+                    $path = $request->file("wwd_image.$key")->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $path = $request->input('existing_wwd_image')[$key] ?? null;
                 }
-            } else {
-                $wwd_images = $page->content['wwd_image'] ?? [];
+
+                $wwd_images[] = [
+                    'image' => $path,
+                    'text' => $text,
+                    'content' => $request->input('wwd_content')[$key] ?? '',
+                ];
             }
             $content['wwd_image'] = $wwd_images;
 
             // Handle Supply Chain Partner Section
-            if ($request->hasFile('scp_image')) {
-                if ($page->content['scp_image'] ?? false) {
-                    Storage::delete($page->content['scp_image']);
+            $content['scp_content'] = $request->input('scp_content');
+
+            // Handle Image 1
+            if ($request->hasFile('scp_image1')) {
+                if (!empty($content['scp_image1'])) {
+                    Storage::delete($content['scp_image1']);
                 }
-                $content['scp_image'] = $request->file('scp_image')->store('images/scp');
+                $content['scp_image1'] = $request->file('scp_image1')->store('assets/images', 'public');
             } else {
-                $content['scp_image'] = $page->content['scp_image'] ?? null;
+                $content['scp_image1'] = $request->input('existing_scp_image1') ?? $content['scp_image1'];
             }
-            if ($request->hasFile('scp_pdf')) {
-                if ($page->content['scp_pdf'] ?? false) {
-                    Storage::delete($page->content['scp_pdf']);
+
+            // Handle Image 2
+            if ($request->hasFile('scp_image2')) {
+                if (!empty($content['scp_image2'])) {
+                    Storage::delete($content['scp_image2']);
                 }
-                $content['scp_pdf'] = $request->file('scp_pdf')->store('files/scp');
+                $content['scp_image2'] = $request->file('scp_image2')->store('assets/images', 'public');
             } else {
-                $content['scp_pdf'] = $page->content['scp_pdf'] ?? null;
+                $content['scp_image2'] = $request->input('existing_scp_image2') ?? $content['scp_image2'];
             }
+
+            // Handle Image 3
+            if ($request->hasFile('scp_image3')) {
+                if (!empty($content['scp_image3'])) {
+                    Storage::delete($content['scp_image3']);
+                }
+                $content['scp_image3'] = $request->file('scp_image3')->store('assets/images', 'public');
+            } else {
+                $content['scp_image3'] = $request->input('existing_scp_image3') ?? $content['scp_image3'];
+            }
+
+            // Handle PDF 1
+            if ($request->hasFile('scp_pdf1')) {
+                if (!empty($content['scp_pdf1'])) {
+                    Storage::delete($content['scp_pdf1']);
+                }
+                $content['scp_pdf1'] = $request->file('scp_pdf1')->store('assets/files', 'public');
+            } else {
+                $content['scp_pdf1'] = $request->input('existing_scp_pdf1') ?? $content['scp_pdf1'];
+            }
+
+            // Handle PDF 2
+            if ($request->hasFile('scp_pdf2')) {
+                if (!empty($content['scp_pdf2'])) {
+                    Storage::delete($content['scp_pdf2']);
+                }
+                $content['scp_pdf2'] = $request->file('scp_pdf2')->store('assets/files', 'public');
+            } else {
+                $content['scp_pdf2'] = $request->input('existing_scp_pdf2') ?? $content['scp_pdf2'];
+            }
+
+            // Handle Text 1
+            $content['scp_text1'] = $request->input('scp_text1');
+            // Handle Text 2
+            $content['scp_text2'] = $request->input('scp_text2');
+            // Handle URL
+            $content['scp_url'] = $request->input('scp_url');
+            // Handle Text 3
+            $content['scp_text3'] = $request->input('scp_text3');
+            
+            // Handle Code Of Conduct Section
+            $cocs_description = $request->input('cocs_description') ?? $page->content['cocs_description'] ?? '';
+            $content['cocs_description'] = $cocs_description;
         }
         if($page->id == '8'){
             $sections = [];
@@ -332,13 +381,23 @@ class PageController extends Controller
             $content = $request->content;
         }
 
+            $page->title            = $request->title;
+            $page->slug             = $slug;
+            $page->is_active        = $request->is_active;
             $page->meta_title       = $request->meta_title;
             $page->meta_description = $request->meta_description;
             $page->content          = $content;
             $page->save();
 
+            $response = [
+                'status' => true,
+                'notification' => 'Page updated successfully!',
+            ];
+    
+            return response()->json($response);
+
             // Redirect back with success message
-            return redirect()->route('custom-pages.index')->with('success', 'Page updated successfully!');
+            // return redirect()->route('website.pages')->with('success', '');
         }
 
       flash(translate('Slug has been used already'))->warning();
