@@ -45,13 +45,13 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Title <span class="red">*</span></label>
-                <input type="text" class="form-control" name="title" value="{{ $page->title }}" required>
+                <input type="text" class="form-control" name="title"  maxlength="155" value="{{ $page->title }}" required>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Slug (URL) <span class="red">*</span></label>
-                <input type="text" class="form-control" value="{{ $page->slug }}" name="slug" required>
+                <input type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
             </div>
         </div>
 
@@ -83,15 +83,15 @@
                                 @endif
                                 <div class="col-6 form-group mb-3">
                                     <label>Banner Text</label>
-                                    <input type="text" class="form-control" name="banner_text[]" value="{{$banner->text}}" @if (empty($banner->text)) required @endif>
+                                    <input type="text" class="form-control" name="banner_text[]"   maxlength="155" value="{{$banner->text}}" @if (empty($banner->text)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
                                     <label>Banner Button Text </label>
-                                    <input class="form-control" type="text" value="{{$banner->button}}" id="banner_button[]" name="banner_button[]" @if (empty($banner->button)) required @endif>
+                                    <input class="form-control" type="text"   maxlength="155" value="{{$banner->button}}" id="banner_button[]" name="banner_button[]" @if (empty($banner->button)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
                                     <label>Banner Url </label>
-                                    <input class="form-control" type="text" value="{{$banner->url}}" id="banner_url[]" name="banner_url[]" @if (empty($banner->url)) required @endif>
+                                    <input class="form-control" type="text"   maxlength="155" value="{{$banner->url}}" id="banner_url[]" name="banner_url[]" @if (empty($banner->url)) required @endif>
                                 </div>
 
                             </div>
@@ -111,19 +111,19 @@
                         <div class="col-6 form-group mb-3">
                             <label>Banner Image</label>
                             <input class="form-control" type="file" id="banner" name="banner[]"
-                                accept=".jpg,.jpeg,.png,.webp">
+                                accept=".jpg,.jpeg,.png,.webp" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Banner Text</label>
-                            <input type="text" class="form-control" name="banner_text[]">
+                            <input type="text" class="form-control" name="banner_text[]"   maxlength="155" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Banner Button Text </label>
-                            <input class="form-control" type="text" id="banner_button[]" name="banner_button[]">
+                            <input class="form-control" type="text" id="banner_button[]"   maxlength="155" name="banner_button[]" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Banner Url </label>
-                            <input class="form-control" type="text" id="banner_url[]" name="banner_url[]">
+                            <input class="form-control" type="text" id="banner_url[]"   maxlength="155" name="banner_url[]" required>
                         </div>
 
                     </div>
@@ -136,10 +136,12 @@
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Product section <span class="red">*</span></label>
-                <select class="form-select" name="product_ids[]" required>
+                <select class="form-select select2" name="product_ids[]" multiple required>                    
                     @foreach ($products as $product )
-                    <option value="{{$product->id}}" {{ $page->product_ids == $product->id ? 'selected' : '' }}>
-                        {{$product->title}}</option>
+                        <option value="{{ $product->id }}" 
+                            {{ in_array($product->id, explode(',', $decoded_data->product_ids ?? '')) ? 'selected' : '' }}>
+                            {{ $product->title }}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -163,23 +165,24 @@
 
             <div class="col-sm-6">
                 <div class="form-group mb-3">
-                    <label>About Content<span class="red">*</span></label>
-                    <textarea class="form-control" name="about_content" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+                    <label>Industry section <span class="red">*</span></label>
+                    <select class="form-select select2" name="product_category_id[]" multiple required>                        
+                        @foreach ($product_categories as $product_category )
+                        <option value="{{ $product_category->id }}" 
+                            {{ in_array($product_category->id, explode(',', $decoded_data->product_category_id ?? '')) ? 'selected' : '' }}>
+                            {{ $product_category->title }}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-12">
             <div class="form-group mb-3">
-                <label>Industry section <span class="red">*</span></label>
-                <select class="form-select" name="product_category_id" required>
-                    @foreach ($product_categories as $product_category )
-                    <option value="{{$product_category->id}}"
-                        {{-- $page->product_ids == $product->id ? 'selected' : '' --}}>{{$product_category->title}}
-                    </option>
-                    @endforeach
-                </select>
-            </div>
+                <label>About Content<span class="red">*</span></label>
+                <textarea class="form-control trumbowyg" name="about_content"  maxlength="155" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+            </div>            
         </div>
         
         <hr>
@@ -201,11 +204,11 @@
                             @endif
                             <div class="col-6 form-group mb-3">
                                 <label>Text</label>
-                                <input type="text" class="form-control" name="wwd_text[]" value="{{$wwd_data->text}}" @if (empty($wwd_data->text)) required @endif>
+                                <input type="text" class="form-control" name="wwd_text[]"  maxlength="155" value="{{$wwd_data->text}}" @if (empty($wwd_data->text)) required @endif>
                             </div>
                             <div class="col-6 form-group mb-3">
                                 <label>Content<span class="red">*</span></label>
-                                <textarea class="form-control" name="wwd_content[]" rows="3"  @if (empty($wwd_data->content)) required @endif>{{$wwd_data->content}}</textarea>
+                                <textarea class="form-control" maxlength="500" name="wwd_content[]" rows="3"  @if (empty($wwd_data->content)) required @endif>{{$wwd_data->content}}</textarea>
                             </div>
 
                         </div>
@@ -224,15 +227,15 @@
                     <div class="form-group row mb-3 ">
                         <div class="col-6 form-group mb-3">
                             <label>Image</label>
-                            <input class="form-control" type="file" id="banner" name="wwd_image[]" accept=".jpg,.jpeg,.png,.webp">
+                            <input class="form-control" type="file" id="banner" name="wwd_image[]" accept=".jpg,.jpeg,.png,.webp" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Text</label>
-                            <input type="text" class="form-control" name="wwd_text[]">
+                            <input type="text" class="form-control"  maxlength="155" name="wwd_text[]" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Content<span class="red">*</span></label>
-                            <textarea class="form-control" name="wwd_content[]" rows="3" required></textarea>
+                            <textarea class="form-control"   maxlength="500" name="wwd_content[]" rows="3" required></textarea>
                         </div>
                     </div>
                 </div>
@@ -246,10 +249,12 @@
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Activities Section <span class="red">*</span></label>
-                <select class="form-select" name="product_category_id" required>
-                    @foreach ($post_categories as $post_category )
-                    <option value="{{$post_category->id}}"
-                        {{-- $page->product_ids == $product->id ? 'selected' : '' --}}>{{$post_category->name}}</option>
+                <select class="form-select select2" name="post_category_id[]" multiple required>
+                    @foreach ($post_categories as $post_category)
+                        <option value="{{ $post_category->id }}" 
+                            {{ in_array($post_category->id, explode(',', $decoded_data->post_category_id ?? '')) ? 'selected' : '' }}>
+                            {{ $post_category->name }}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -260,7 +265,7 @@
         <div class="col-md-12">
             <div class="col-12 form-group mb-3">
                 <label>Content<span class="red">*</span></label>
-                <textarea class="form-control" name="scp_content" rows="3"  @if (empty($scp_content)) required @endif>{{$scp_content}}</textarea>
+                <textarea class="form-control trumbowyg" name="scp_content"   maxlength="500" rows="3"  @if (empty($scp_content)) required @endif>{{$scp_content}}</textarea>
             </div>
             <div class="form-group row mb-3 ">  
                 <div class="form-group mb-3 col-sm-{{ !empty($scp_image1) ? 3 : 6 }}">
@@ -275,7 +280,7 @@
                 @endif
                 <div class="col-6 form-group mb-3">
                     <label>Text</label>
-                    <input type="text" class="form-control" name="scp_text1" value="{{$scp_text1}}" @if (empty($scp_text1)) required @endif>
+                    <input type="text" class="form-control"  maxlength="155" name="scp_text1" value="{{$scp_text1}}" @if (empty($scp_text1)) required @endif>
                 </div>
                 <div class="col-6 form-group mb-3">
                     <label>PDF</label>
@@ -301,11 +306,11 @@
                
                 <div class="col-6 form-group mb-3">
                     <label>Text</label>
-                    <input type="text" class="form-control" name="scp_text2" value="{{$scp_text2}}" @if (empty($scp_text2)) required @endif>
+                    <input type="text" class="form-control"  maxlength="155" name="scp_text2" value="{{$scp_text2}}" @if (empty($scp_text2)) required @endif>
                 </div>
                 <div class="col-6 form-group mb-3">
                     <label>URL</label>
-                    <input type="text" class="form-control" name="scp_url"  value="{{$scp_url}}" @if (empty($scp_url)) required @endif>
+                    <input type="text" class="form-control"  maxlength="155" name="scp_url"  value="{{$scp_url}}" @if (empty($scp_url)) required @endif>
                 </div>
             </div>
             <div class="form-group row mb-3 ">
@@ -321,7 +326,7 @@
                 @endif
                 <div class="col-6 form-group mb-3">
                     <label>Text</label>
-                    <input type="text" class="form-control" name="scp_text3" value="{{$scp_text3}}" @if (empty($scp_text3)) required @endif>
+                    <input type="text" class="form-control"  maxlength="155" name="scp_text3" value="{{$scp_text3}}" @if (empty($scp_text3)) required @endif>
                 </div>
                 <div class="col-6 form-group mb-3">
                     <label>PDF</label>
@@ -339,7 +344,7 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
+                <textarea class="form-control trumbowyg"   maxlength="500" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
             </div>
         </div>
 
@@ -348,11 +353,11 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Meta Title<span class="red">*</span></label>
-                <input type="text" class="form-control" name="meta_title" value="{{ $page->meta_title }}" required>
+                <input type="text" class="form-control"  maxlength="155" name="meta_title" value="{{ $page->meta_title }}" required>
             </div>
             <div class="form-group mb-3">
                 <label>Meta Description<span class="red">*</span></label>
-                <textarea class="form-control" name="meta_description" rows="3" required>{{ $page->meta_description }}</textarea>
+                <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required>{{ $page->meta_description }}</textarea>
             </div>
         </div>
 
@@ -366,7 +371,8 @@
 
 <script>
 $(document).ready(function() {
-
+    initTrumbowyg('.trumbowyg');
+    initSelect2('.select2');
     initValidate('#edit_home_form');
 
     $("#edit_home_form").submit(function(e) {
@@ -380,7 +386,7 @@ $(document).ready(function() {
     // Add row functionality for Banner Section
     $(document).on('click', '.add-row', function() {
         var newRow = $('.gallery-image-row').first().clone();
-        newRow.find('input').val('');
+        newRow.find('input, textarea').val('');
         newRow.find('.add-row-col-3-div').remove();
         newRow.find('.div-preview-image ').remove();
         newRow.append(
@@ -401,7 +407,8 @@ $(document).ready(function() {
     // Repeat for What We Do Section and other sections
     $(document).on('click', '.add-row2', function() {
         var newRow = $('.gallery-image-row2').first().clone();
-        newRow.find('input, textarea').val('');
+        newRow.find('input,textarea').val('');
+        newRow.find('textarea').trumbowyg('empty');
         newRow.find('.add-row-col-3-div').remove();
         newRow.find('.div-preview-image').remove();
         newRow.append(

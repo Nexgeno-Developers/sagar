@@ -1,411 +1,389 @@
-@extends('backend.layouts.app')
-
-@section('content')
+<form id="edit_aboutus_form" action="{{url(route('custom-pages.update', $page->id))}}" method="post"
+    enctype="multipart/form-data">
+    @csrf
     @php
-        $content = json_decode($page->getTranslation('content'), true);
-    @endphp
-<div class="aiz-titlebar text-left mt-2 mb-3">
-    <div class="row align-items-center">
-        <div class="col">
-            <h1 class="h3">{{ $page->getTranslation('title', $lang) }} Page Information</h1>
+    if (!empty($page->content)) {
+        $data = $page->content;
+        $decoded_data = json_decode($data);
+
+        //echo '<pre>';
+        //print_r($decoded_data);
+        //echo '</pre>';
+
+
+        //exit();
+        $about_content = $decoded_data->about_content ?? '';
+        $core_content = $decoded_data->core_content ?? '';
+        $policy_content = $decoded_data->policy_content ?? '';
+        $about2_content1 = $decoded_data->about2_content1 ?? '';
+        $about2_content2 = $decoded_data->about2_content2 ?? '';
+        $mnv_description1 = $decoded_data->mnv_description1 ?? '';
+        $mnv_description2 = $decoded_data->mnv_description2 ?? '';
+        $about_image = $decoded_data->about_image ?? '';
+        $core_image = $decoded_data->core_image ?? '';
+        $policy_image = $decoded_data->policy_image ?? '';
+        $mnv_image1 = $decoded_data->mnv_image1 ?? '';
+        $mnv_image2 = $decoded_data->mnv_image2 ?? '';
+        $mnv_bg_image1 = $decoded_data->mnv_bg_image1 ?? '';
+        $mnv_bg_image2 = $decoded_data->mnv_bg_image2 ?? '';
+        $about2_image1 = $decoded_data->about2_image1 ?? '';
+        $about2_image2 = $decoded_data->about2_image2 ?? '';
+        $teams = $decoded_data->team ?? '';
+
+
+    } else {
+        // If content is empty, set default empty values
+        $about_content =  '';
+        $core_content =  '';
+        $policy_content =  '';
+        $about2_content1 =  '';
+        $about2_content2 =  '';
+        $mnv_description1 =  '';
+        $mnv_description2 =  '';
+        $about_image =  '';
+        $core_image =  '';
+        $policy_image =  '';
+        $mnv_image1 =  '';
+        $mnv_image2 =  '';
+        $mnv_bg_image1 =  '';
+        $mnv_bg_image2 =  '';
+        $about2_image1 =  '';
+        $about2_image2 =  '';
+        $teams =  '';
+    }
+@endphp
+
+    <div class="row">
+        <input type="hidden" name="id" value="{{ $page->id }}">
+        <div class="col-sm-12">
+            <div class="form-group mb-3">
+                <label>Title <span class="red">*</span></label>
+                <input type="text" class="form-control" name="title"  maxlength="155" value="{{ $page->title }}" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Slug (URL) <span class="red">*</span></label>
+                <input type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Status <span class="red">*</span></label>
+                <select class="form-select" name="is_active" required>
+                    <option value="0" {{ $page->is_active == 0 ? 'selected' : '' }}>Inactive</option>
+                    <option value="1" {{ $page->is_active == 1 ? 'selected' : '' }}>Active</option>
+                </select>
+            </div>
+        </div>
+    <hr>
+    <h3>About section</h3>
+    <div class="row">
+        <div class="col-sm-{{ !empty($about_image) ? 3 : 6 }}">
+            <div class="form-group mb-3">
+                <label>Image</label>
+                <input class="form-control" type="file" id="about_image" name="about_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($about_image)) required @endif >
+            </div>
+        </div>
+        @if (!empty($about_image))
+            <div class="div-preview-image col-3 form-group mb-3">
+                <input type="hidden" name="existing_about_image" value="{{ $about_image }}">
+                <img width="180" src="{{ asset('storage/' . $about_image) }}">                                       
+            </div>
+        @endif
+
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Description<span class="red">*</span></label>
+                <textarea class="form-control trumbowyg" name="about_content"  maxlength="155" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+            </div>
         </div>
     </div>
-</div>
+    <hr>
+    <h3>Core Values section</h3>
+    <div class="row">
+        <div class="col-sm-{{ !empty($core_image) ? 3 : 6 }}">
+            <div class="form-group mb-3">
+                <label>Image</label>
+                <input class="form-control" type="file" id="core_image" name="core_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($core_image)) required @endif >
+            </div>
+        </div>
+        @if (!empty($core_image))
+            <div class="div-preview-image col-3 form-group mb-3">
+                <input type="hidden" name="existing_core_image" value="{{ $core_image }}">
+                <img width="180" src="{{ asset('storage/' . $core_image) }}">                                       
+            </div>
+        @endif
 
-{{-- About Page Content --}}
-<div class="card">
-    <ul class="nav nav-tabs nav-fill border-light">
-        @foreach (\App\Models\Language::all() as $key => $language)
-            <li class="nav-item">
-                <a class="nav-link text-reset @if ($language->code == $lang) active @else bg-soft-dark border-light border-left-0 @endif py-3"
-                    href="{{ route('custom-pages.edit', ['id'=>$page->slug, 'lang'=> $language->code] ) }}">
-                    <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
-                    <span>{{ $language->name }}</span>
-                </a>
-            </li>
-        @endforeach
-    </ul>
-
-    <div class="card-header">
-        <h6 class="mb-0">{{ $page->getTranslation('title', $lang) }} Page Content</h6>
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Description<span class="red">*</span></label>
+                <textarea class="form-control trumbowyg" name="core_content"  maxlength="155" rows="3"  @if (empty($core_content)) required @endif>{{ $core_content }}</textarea>
+            </div>
+        </div>
     </div>
 
-    <div class="card-body">
-        <form action="{{ route('custom-pages.update', $page->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" name="_method" value="PATCH">
-            <input type="hidden" name="lang" value="{{ $lang }}">
+    <hr>
+    <h3>Policy section</h3>
+    <div class="row">
+        <div class="col-sm-{{ !empty($policy_image) ? 3 : 6 }}">
+            <div class="form-group mb-3">
+                <label>Image</label>
+                <input class="form-control" type="file" id="policy_image" name="policy_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($policy_image)) required @endif >
+            </div>
+        </div>
+        @if (!empty($policy_image))
+            <div class="div-preview-image col-3 form-group mb-3">
+                <input type="hidden" name="existing_policy_image" value="{{ $policy_image }}">
+                <img width="180" src="{{ asset('storage/' . $policy_image) }}">                                       
+            </div>
+        @endif
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="name">{{ translate('Title') }} <span class="text-danger">*</span>
-                    <i class="las la-language text-danger" title="{{ translate('Translatable') }}"></i>
-                </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="{{ translate('Title') }}" name="title"
-                        value="{{ $page->getTranslation('title', $lang) }}" required>
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Description<span class="red">*</span></label>
+                <textarea class="form-control trumbowyg" name="policy_content"  maxlength="155" rows="3"  @if (empty($policy_content)) required @endif>{{ $policy_content }}</textarea>
+            </div>
+        </div>
+    </div>
+
+<hr>
+<h3>Team section</h3>
+        @if (!empty($teams))        
+            @foreach ($teams as $index => $team)
+                    <div class="row gallery-image-row">
+                        <div class="col-md-9">
+                            <div class="form-group row mb-3 ">
+                                <div class="form-group mb-3 col-sm-{{ !empty($team->image) ? 9 : 12 }}">                                
+                                    <label>Image</label>
+                                    <input class="form-control" type="file" name="team_image[]"
+                                        accept=".jpg,.jpeg,.png,.webp" @if (empty($team->image)) required @endif>
+                                </div>
+                                @if (!empty($team->image))
+                                    <div class="div-preview-image col-3 form-group mb-3">
+                                        <input type="hidden" name="existing_team_image[]" value="{{ $team->image }}">
+                                        <img width="180" src="{{ asset('storage/' . $team->image) }}">                                       
+                                    </div>
+                                @endif
+                                <div class="col-6 form-group mb-3">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="team_name[]"   maxlength="155" value="{{$team->name}}" @if (empty($team->name)) required @endif>
+                                </div>
+                                <div class="col-6 form-group mb-3">
+                                    <label>Description </label>
+                                    <textarea class="form-control" name="team_description[]"  maxlength="155" rows="3" required>{{$team->description}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-row-col-3-div col-md-3">
+                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                            @if ($index > 0)
+                            <button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button>
+                            @endif
+                        </div>
+                    </div>
+            @endforeach
+        @else
+            <div class="row gallery-image-row">
+                <div class="col-md-9">
+                    <div class="form-group row mb-3 ">
+                        <div class="col-12 form-group mb-3">
+                            <label>Image</label>
+                            <input class="form-control" type="file" name="team_image[]" accept=".jpg,.jpeg,.png,.webp" required>
+                        </div>
+                        <div class="col-6 form-group mb-3">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="team_name[]" maxlength="155" required>
+                        </div>
+                        <div class="col-6 form-group mb-3">
+                            <label>Description </label>
+                            <textarea class="form-control" name="team_description[]"  maxlength="255" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-row-col-3-div col-md-3">
+                    <button type="button" class="btn btn-outline-success add-row my-2">Add More +</button>
                 </div>
             </div>
+        @endif
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="name">{{ translate('Link') }} <span
-                        class="text-danger">*</span></label>
-                <div class="col-sm-10">
-                    <div class="input-group d-block d-md-flex">
-                        @if($page->type == 'custom_page')
-                            <div class="input-group-prepend"><span
-                                    class="input-group-text flex-grow-1">{{ route('home') }}/</span></div>
-                            <input type="text" class="form-control w-100 w-md-auto" placeholder="{{ translate('Slug') }}"
-                                name="slug" value="{{ $page->slug }}">
-                        @else
-                            <input class="form-control w-100 w-md-auto" value="{{ route('home') }}/{{ $page->slug }}"
-                                disabled>
+        <hr>
+        <h3>About Section 2</h3>        
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group mb-3">
+                    <label>About Content<span class="red">*</span></label>
+                    <textarea class="form-control trumbowyg" name="about2_content1"  maxlength="155" rows="3"  @if (empty($about2_content1)) required @endif>{{ $about2_content1 }}</textarea>
+                </div> 
+            </div>
+            <div class="col-sm-{{ !empty($about2_image1) ? 3 : 6 }}">
+                <div class="form-group mb-3">
+                    <label>About image</label>
+                    <input class="form-control" type="file" id="about2_image1" name="about2_image1" accept=".jpg,.jpeg,.png,.webp" @if (empty($about2_image1)) required @endif >
+                </div>
+            </div>
+            @if (!empty($about2_image1))
+                <div class="div-preview-image col-3 form-group mb-3">
+                    <input type="hidden" name="existing_about2_image1" value="{{ $about2_image1 }}">
+                    <img width="180" src="{{ asset('storage/' . $about2_image1) }}">                                       
+                </div>
+            @endif
+        </div>
+
+        <div class="row">
+            <div class="col-sm-{{ !empty($about2_image2) ? 3 : 6 }}">
+                <div class="form-group mb-3">
+                    <label>About image</label>
+                    <input class="form-control" type="file" name="about2_image2" accept=".jpg,.jpeg,.png,.webp" @if (empty($about2_image2)) required @endif >
+                </div>
+            </div>
+            @if (!empty($about2_image2))
+                <div class="div-preview-image col-3 form-group mb-3">
+                    <input type="hidden" name="existing_about2_image2" value="{{ $about2_image2 }}">
+                    <img width="180" src="{{ asset('storage/' . $about2_image2) }}">                                       
+                </div>
+            @endif
+
+            <div class="col-sm-6">
+                <div class="form-group mb-3">
+                    <label>About Content<span class="red">*</span></label>
+                    <textarea class="form-control trumbowyg" name="about2_content2"  maxlength="155" rows="3"  @if (empty($about2_content2)) required @endif>{{ $about2_content2 }}</textarea>
+                </div> 
+            </div>
+        </div>
+
+        
+        <hr>
+        <h3> Mission and Vision Section</h3>        
+            <div class="row gallery-image-row2">
+                <div class="col-md-12">
+                    <div class="form-group row mb-3">
+                        <div class="col-sm-{{ !empty($mnv_image1) ? 3 : 6 }}">
+                            <div class="form-group mb-3">
+                                <label>Image</label>
+                                <input class="form-control" type="file" name="mnv_image1" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_image1)) required @endif >
+                            </div>
+                        </div>
+                        @if (!empty($mnv_image1))
+                            <div class="div-preview-image col-3 form-group mb-3">
+                                <input type="hidden" name="existing_mnv_image1" value="{{ $mnv_image1 }}">
+                                <img width="180" src="{{ asset('storage/' . $mnv_image1) }}">                                       
+                            </div>
+                        @endif
+                        <div class="col-6 form-group mb-3">
+                            <label>Description</label>
+                            <textarea class="form-control" name="mnv_description1" maxlength="155" rows="3" required>{{$mnv_description1}}</textarea>
+                        </div>
+                        <div class="col-sm-{{ !empty($mnv_bg_image1) ? 3 : 6 }}">
+                            <div class="form-group mb-3">
+                                <label>Background Image</label>
+                                <input class="form-control" type="file" name="mnv_bg_image1" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_bg_image1)) required @endif >
+                            </div>
+                        </div>
+                        @if (!empty($mnv_bg_image1))
+                            <div class="div-preview-image col-3 form-group mb-3">
+                                <input type="hidden" name="existing_mnv_bg_image1" value="{{ $mnv_bg_image1 }}">
+                                <img width="180" src="{{ asset('storage/' . $mnv_bg_image1) }}">                                       
+                            </div>
                         @endif
                     </div>
-                    <small class="form-text text-muted">{{ translate('Use character, number, hypen only') }}</small>
                 </div>
             </div>
-
-            <div class="form-group">
-                    <div class="card-header p-0">
-                        <h6 class="p-0 m-0">{{ $page->getTranslation('title', $lang) }} Page Sections</h6>
-                    </div>
-                <div class="about-page-content-target pt-4">
-
-                    @if (!empty($content))
-                        @foreach ($content as $index => $section)
-                            @php $count = $index + 1; @endphp
-                            <div class="row gutters-5 checksr-no" sr-no="{{$count}}">
-                                <div class="col-1 fs-16">No. {{$count}}</div>
-                                
-                                <div class="col-10">
-                                    <div class="row">
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Heading')}} <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Heading') }}" name="section_headings[]" value="{{ $section['heading'] }}" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Sub Heading')}} <span class="text-danger">*</span></label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Subheading') }}" name="section_subheadings[]" value="{{ $section['subheading'] }}" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{ translate('Image') }}</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group " data-toggle="aizuploader" data-type="image">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
-                                                    </div>
-                                                    <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                                    <input type="hidden" class="selected-files" name="section_images[]" value="{{ $section['images'] }}">
-                                                </div>
-                                                <div class="file-preview"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Description')}}</label>
-                                            
-                                            <div class="col-sm-9">
-                                                <textarea
-                                						class="aiz-text-editor form-control"
-                                						placeholder="{{ translate('Description') }}"
-                                						data-buttons='[["font", ["bold", "underline", "italic", "clear"]],["para", ["ul", "ol", "paragraph"]],["style", ["style"]],["color", ["color"]],["table", ["table"]],["insert", ["link", "picture", "video"]],["view", ["fullscreen", "codeview", "undo", "redo"]]]'
-                                						data-min-height="300"
-                                						name="section_description[]">{{ $section['description'] }}</textarea>
-                                            </div>
-                                		</div>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                        @if($index >0)
-                                        <button type="button"
-                                            class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger remove-section"
-                                            data-toggle="remove-parent" data-parent=".row">
-                                            <i class="las la-times"></i>
-                                        </button>
-                                        @endif
-                                </div>
-                                <div class="col-md-12">
-                                     <hr>
-                                </div>
+            <hr>
+            <div class="row gallery-image-row2">
+                <div class="col-md-12">
+                    <div class="form-group row mb-3">
+                        <div class="col-sm-{{ !empty($mnv_image2) ? 3 : 6 }}">
+                            <div class="form-group mb-3">
+                                <label>Image</label>
+                                <input class="form-control" type="file" name="mnv_image2" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_image2)) required @endif >
                             </div>
-                        @endforeach
-                     @else (empty($content))
-                     <div class="row gutters-5 checksr-no" sr-no="1">
-                         <div class="col-1 fs-16">No. 1</div>
-                                
-                                <div class="col-10">
-                                    <div class="row">
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Heading')}} <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Heading') }}" name="section_headings[]" value="" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Sub Heading')}} <span class="text-danger">*</span></label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Subheading') }}" name="section_subheadings[]" value="" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{ translate('Image') }}</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group " data-toggle="aizuploader" data-type="image">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
-                                                    </div>
-                                                    <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                                    <input type="hidden" class="selected-files" name="section_images[]" value="">
-                                                </div>
-                                                <div class="file-preview"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Description')}}</label>
-                                					<div class="col-sm-9">
-                                                <textarea
-                                						class="aiz-text-editor form-control"
-                                						placeholder="{{ translate('Description') }}"
-                                						data-buttons='[["font", ["bold", "underline", "italic", "clear"]],["para", ["ul", "ol", "paragraph"]],["style", ["style"]],["color", ["color"]],["table", ["table"]],["insert", ["link", "picture", "video"]],["view", ["fullscreen", "codeview", "undo", "redo"]]]'
-                                						data-min-height="300"
-                                						name="section_description[]"></textarea>
-                                            </div>
-                                		</div>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                        <button type="button"
-                                            class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger remove-section"
-                                            data-toggle="remove-parent" data-parent=".row">
-                                            <i class="las la-times"></i>
-                                        </button>
-                                </div>
-                                <div class="col-md-12">
-                                     <hr>
-                                </div>
                         </div>
-                    @endif
-                </div>
-
-                <button type="button" class="btn btn-secondary btn-sm" id="addSectionButton">
-    {{ translate('Add New Section') }}
-</button>
-
-<script>
-
-document.getElementById('addSectionButton').addEventListener('click', function() {
-    
-     // Find all elements with the class 'checksr-no'
-    var allSections = document.querySelectorAll('.checksr-no');
-    
-    // Calculate the next serial number
-    var nextSrNo = allSections.length + 1;
-   
-    // Create a new div element
-    var newSection = document.createElement('div');
-    newSection.className = 'row gutters-5 added-section checksr-no';
-    newSection.setAttribute('sr-no', nextSrNo);
-
-    // Set the inner HTML content
-    newSection.innerHTML = `
-                                <div class="col-1 fs-16">No. </div>
-                                
-                                <div class="col-10">
-                                    <div class="row">
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Heading')}} <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Heading') }}" name="section_headings[]" value="" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">  
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Sub Heading')}} <span class="text-danger">*</span></label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="{{ translate('Subheading') }}" name="section_subheadings[]" value="" required="">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{ translate('Image') }}</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group " data-toggle="aizuploader" data-type="image">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
-                                                    </div>
-                                                    <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                                    <input type="hidden" class="selected-files" name="section_images[]" value="">
-                                                </div>
-                                                <div class="file-preview"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label" for="name">{{translate('Description')}}</label>
-                                					<div class="col-sm-9">
-                                                <textarea
-                                						class="aiz-text-editor form-control"
-                                						placeholder="{{ translate('Description') }}"
-                                						data-buttons='[["font", ["bold", "underline", "italic", "clear"]],["para", ["ul", "ol", "paragraph"]],["style", ["style"]],["color", ["color"]],["table", ["table"]],["insert", ["link", "picture", "video"]],["view", ["fullscreen", "codeview", "undo", "redo"]]]'
-                                						data-min-height="300"
-                                						name="section_description[]"></textarea>
-                                            </div>
-                                		</div>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                        <button type="button"
-                                            class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger remove-section"
-                                            data-toggle="remove-parent" data-parent=".row">
-                                            <i class="las la-times"></i>
-                                        </button>
-                                </div>
-                                <div class="col-md-12">
-                                     <hr>
-                                </div>
-    `;
-
-    // Append the new section to the target element
-    document.querySelector('.about-page-content-target').appendChild(newSection);
-
-    // Update serial numbers for all sections
-    updateSrNoValues();
-    
-    AIZ.plugins.textEditor();
-    
-});
-document.addEventListener('click', function(e) {
-    if (e.target && e.target.classList.contains('remove-section')) {
-        // Remove parent section and the <hr> tag above it
-        var section = e.target.closest('.checksr-no');
-        // Remove parent section
-        section.remove();
-        // Update serial numbers for all sections
-        updateSrNoValues();
-    }
-});
-
-
-function updateSrNoValues() {
-    // Update section numbers for all sections
-    var sections = document.querySelectorAll('.checksr-no');
-    sections.forEach(function(section, index) {
-        var newCount = index + 1;
-        section.querySelector('.fs-16').textContent = 'No. ' + newCount;
-        section.setAttribute('sr-no', newCount);
-    });
-}
-
-</script>
-
-            </div>
-
-            <div class="card-header px-0">
-                <h6 class="fw-600 mb-0">{{ translate('SEO Fields') }}</h6>
-            </div>
-
-            <div class="card-body px-0">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="name">{{ translate('Meta Title') }}</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="{{ translate('Title') }}" name="meta_title"
-                            value="{{ $page->meta_title }}">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="name">{{ translate('Meta Description') }}</label>
-                    <div class="col-sm-10">
-                        <textarea class="resize-off form-control" placeholder="{{ translate('Description') }}"
-                            name="meta_description">{!! $page->meta_description !!}</textarea>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="name">{{ translate('Keywords') }}</label>
-                    <div class="col-sm-10">
-                        <textarea class="resize-off form-control" placeholder="{{ translate('Keyword, Keyword') }}"
-                            name="keywords">{!! $page->keywords !!}</textarea>
-                        <small class="text-muted">{{ translate('Separate with comma') }}</small>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="name">{{ translate('Meta Image') }}</label>
-                    <div class="col-sm-10">
-                        <div class="input-group " data-toggle="aizuploader" data-type="image">
-                            <div class="input-group-prepend">
-                                <div
-                                    class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
+                        @if (!empty($mnv_image2))
+                            <div class="div-preview-image col-3 form-group mb-3">
+                                <input type="hidden" name="existing_mnv_image2" value="{{ $mnv_image2 }}">
+                                <img width="180" src="{{ asset('storage/' . $mnv_image2) }}">                                       
                             </div>
-                            <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                            <input type="hidden" name="meta_image" class="selected-files"
-                                value="{{ $page->meta_image }}">
+                        @endif
+                        <div class="col-6 form-group mb-3">
+                            <label>Description</label>
+                            <textarea class="form-control" name="mnv_description2" maxlength="155" rows="3" required>{{$mnv_description2}}</textarea>
                         </div>
-                        <div class="file-preview"></div>
+                        <div class="col-sm-{{ !empty($mnv_bg_image2) ? 3 : 6 }}">
+                            <div class="form-group mb-3">
+                                <label>Image</label>
+                                <input class="form-control" type="file" name="mnv_bg_image2" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_bg_image2)) required @endif >
+                            </div>
+                        </div>
+                        @if (!empty($mnv_bg_image2))
+                            <div class="div-preview-image col-3 form-group mb-3">
+                                <input type="hidden" name="existing_mnv_bg_image2" value="{{ $mnv_bg_image2 }}">
+                                <img width="180" src="{{ asset('storage/' . $mnv_bg_image2) }}">                                       
+                            </div>
+                        @endif
                     </div>
                 </div>
-
-                <div class="text-right">
-                    <button type="submit" class="btn btn-primary">{{ translate('Update') }}</button>
-                </div>
             </div>
-        </form>
+            
+      
+
+
+        <hr>
+        <h3>Seo Section</h3>
+        <div class="col-sm-12">
+            <div class="form-group mb-3">
+                <label>Meta Title<span class="red">*</span></label>
+                <input type="text" class="form-control"  maxlength="255" name="meta_title" value="{{ $page->meta_title }}" required>
+            </div>
+            <div class="form-group mb-3">
+                <label>Meta Description<span class="red">*</span></label>
+                <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required>{{ $page->meta_description }}</textarea>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group mb-3 text-end">
+                <button type="submit" class="btn btn-block btn-primary">Update</button>
+            </div>
+        </div>
     </div>
-</div>
-@endsection
+</form>
 
-@section('scripts')
 <script>
-    $(document).ready(function () {
-        // Add more section button
-        $('[data-toggle="add-more"]').on('click', function () {
-            var content = $(this).data('content');
-            var target = $(this).data('target');
-            $(target).append(content);
-        });
+$(document).ready(function() {
+    initTrumbowyg('.trumbowyg');
+    initSelect2('.select2');
+    initValidate('#edit_aboutus_form');
 
-        // Remove parent section button
-        $('[data-toggle="remove-parent"]').on('click', function () {
-            $(this).parents($(this).data('parent')).remove();
-        });
+    $("#edit_aboutus_form").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
     });
 
+    var responseHandler = function(response) {
+        location.reload();
+    }
+    // Add row functionality for Banner Section
+    $(document).on('click', '.add-row', function() {
+        var newRow = $('.gallery-image-row').first().clone();
+        newRow.find('input, textarea').val('');
+        newRow.find('.add-row-col-3-div').remove();
+        newRow.find('.div-preview-image ').remove();
+        newRow.append(
+            '<div class="col-md-3"><button type="button" class="btn btn-outline-success add-row m-2">Add More +</button><button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button></div>'
+            );
+        $('.gallery-image-row').last().after(newRow);
+    });
+
+    // Remove row functionality for Banner Section
+    $(document).on('click', '.remove-row', function() {
+        if ($('.gallery-image-row').length > 1) {
+            $(this).closest('.gallery-image-row').remove();
+        } else {
+            alert('At least one row is required.');
+        }
+    });
+
+});
 </script>
-@endsection

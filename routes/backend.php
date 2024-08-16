@@ -5,6 +5,8 @@ use App\Http\Controllers\backend\AuthenticateController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\TestimonialController;
+use App\Http\Controllers\backend\ProductCategoryController;
+use App\Http\Controllers\backend\ProductController;
 
 use App\Http\Controllers\backend\TrumbowygController;
 
@@ -59,11 +61,29 @@ Route::group(['prefix' => 'testimonial'], function () {
 });
 
 
+Route::controller(ProductCategoryController::class)->group(function () {
+    Route::get('/product-categories', 'index')->name('product-categories.index');
+    Route::get('/product-categories/create', 'create')->name('product-categories.create');
+    Route::post('/product-categories/store', 'store')->name('product-categories.store');
+    Route::get('/product-categories/edit/{id}', 'edit')->name('product-categories.edit');
+    Route::post('/product-categories/update/{id}', 'update')->name('product-categories.update');
+    Route::get('/product-categories/destroy/{id}', 'destroy')->name('product-categories.destroy');
+});
 
-// Custom routes for the same controller
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/products', 'index')->name('products.index');
+    Route::get('/products/create', 'create')->name('products.create');
+    Route::post('/products/store', 'store')->name('products.store');
+    Route::get('/products/edit/{id}', 'edit')->name('products.edit');
+    Route::post('/products/update/{id}', 'update')->name('products.update');
+    Route::get('/products/destroy/{id}', 'destroy')->name('products.destroy');
+});
+
 Route::controller(PageController::class)->group(function () {
     Route::get('/custom-pages/{slug}', 'show_custom_page')->name('custom-pages.show_custom_page');
     Route::get('/index', 'index')->name('website.pages');
+    Route::get('/create', 'create')->name('custom-pages.create');
+    Route::post('/store', 'store')->name('custom-pages.store');
     Route::post('/custom-pages/update/{id}', 'update')->name('custom-pages.update');
     Route::get('/custom-pages/edit/{id}', 'edit')->name('custom-pages.edit');
     Route::get('/custom-pages/destroy/{id}', 'destroy')->name('custom-pages.destroy');
@@ -74,9 +94,6 @@ Route::controller(PageController::class)->group(function () {
 Route::group(['prefix' => 'trumbowyg'], function () {
     Route::post('/upload', [TrumbowygController::class, 'upload'])->name('trumbowyg.upload');
 });
-
-
-
 
 
 //Contact

@@ -27,7 +27,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.website_settings.pages.add');
     }
 
     /**
@@ -43,21 +43,25 @@ class PageController extends Controller
             $page->content          = $request->content;
             $page->meta_title       = $request->meta_title;
             $page->meta_description = $request->meta_description;
-            $page->keywords         = $request->keywords;
-            $page->meta_image       = $request->meta_image;
             $page->save();
 
-            $page_translation           = PageTranslation::firstOrNew(['lang' => env('DEFAULT_LANGUAGE'), 'page_id' => $page->id]);
-            $page_translation->title    = $request->title;
-            $page_translation->content = $request->content;
-            $page_translation->save();
-
-            flash(__('New page has been created successfully'))->success();
-            return redirect()->route('website.pages');
+            $response = [
+                'status' => true,
+                'notification' => 'Page Created successfully!',
+            ];
+    
+            return response()->json($response);
         }
+        $response = [
+            'status' => false,
+            'notification' => 'Slug has been used already',
+        ];
 
-        flash(__('Slug has been used already'))->warning();
-        return back();
+        return response()->json($response);
+
+        // Flash warning message using session
+        // session()->flash('warning', __('Slug has been used already'));
+        // return back();
     }
 
     /**
@@ -83,29 +87,29 @@ class PageController extends Controller
              if ($page_name == 'home') {
              return view('backend.website_settings.pages.home_page_edit', compact('page','products','post_categories','product_categories'));
              }
-             elseif ($page->id == '8') {
-             return view('backend.website_settings.pages.about_page_edit', compact('page','lang'));
+             elseif ($page->type == 'about_us') {
+             return view('backend.website_settings.pages.about_page_edit', compact('page','products','post_categories','product_categories'));
              }
-             elseif ($page->id == '9') {
-             return view('backend.website_settings.pages.beginning_page_edit', compact('page','lang'));
+             elseif ($page->type == 'partner_with_us') {
+             return view('backend.website_settings.pages.partner_with_us_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '10') {
-             return view('backend.website_settings.pages.diversification_page_edit', compact('page','lang'));
+             return view('backend.website_settings.pages.diversification_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '11') {
-             return view('backend.website_settings.pages.management_page_edit', compact('page','lang'));
+             return view('backend.website_settings.pages.management_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '12') {
-             return view('backend.website_settings.pages.corevalue_page_edit', compact('page','lang'));
+             return view('backend.website_settings.pages.corevalue_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '13') {
-             return view('backend.website_settings.pages.milestone_page_edit', compact('page','lang'));
+             return view('backend.website_settings.pages.milestone_page_edit', compact('page','products','post_categories','product_categories'));
              }
              elseif ($page->id == '15') {
-             return view('backend.website_settings.pages.ourquality_policies_page_edit', compact('page','lang'));
+             return view('backend.website_settings.pages.ourquality_policies_page_edit', compact('page','products','post_categories','product_categories'));
              }
              else{
-             return view('backend.website_settings.pages.edit', compact('page','lang'));
+             return view('backend.website_settings.pages.edit', compact('page'));
              }
          }
          abort(404);
@@ -124,21 +128,34 @@ class PageController extends Controller
         
         if($page->type == 'home_page'){
             $validator = Validator::make($request->all(), [
-                'title' => 'required|string|max:255',
+                'title' => 'required|max:155',
                 'slug' => 'required',
                 'is_active' => 'required|boolean',
-                'product_ids' => 'required|array',
-                'about_content' => 'required|string',
-                'wwd_content.*' => 'required|string',
-                'scp_text1' => 'required|string|max:255',
-                'scp_text2' => 'required|string|max:255',
-                'scp_text3' => 'required|string|max:255',
-                'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'banner.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                'wwd_image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                'scp_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                'scp_pdf' => 'nullable|file|mimes:pdf|max:2048',
-                // Add more validation rules as needed
+                'banner_text' => 'required|max:155',
+                'banner_button' => 'required|max:155',
+                'banner_url' => 'required|max:155',
+                'product_ids' => 'required|array',
+                'product_ids.*' => 'exists:products,id',
+                'product_ids' => 'required|array',
+                'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'about_content' => 'required',
+                'product_category_id' => 'required|array',
+                'product_category_id.*' => 'exists:product_categories,id',
+                'wwd_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'wwd_content.*' => 'required|max:255',
+                'scp_url' => 'required',
+                'scp_text1' => 'required|max:155',
+                'scp_text2' => 'required|max:155',
+                'scp_text3' => 'required|max:155',
+                'scp_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'scp_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'scp_image3' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'scp_pdf1' => 'nullable|file|mimes:pdf|max:2048',
+                'scp_pdf2' => 'nullable|file|mimes:pdf|max:2048',                
+                'cocs_description' => 'required|max:255',
+                'meta_title' => 'required|max:255',
+                'meta_description' => 'required|max:255',
                
             ]);
     
@@ -156,6 +173,8 @@ class PageController extends Controller
             // Initialize content array
             $content = [                
                 'product_ids' => implode(',', $request->input('product_ids')),
+                'product_category_id' => implode(',', $request->input('product_category_id')),
+                'post_category_id' => implode(',', $request->input('post_category_id')),
                 'about_content' => $request->input('about_content'),
                 'wwd_content' => $request->input('wwd_content'),
                 'scp_text' => $request->input('scp_text'),
@@ -279,31 +298,208 @@ class PageController extends Controller
             $cocs_description = $request->input('cocs_description') ?? $page->content['cocs_description'] ?? '';
             $content['cocs_description'] = $cocs_description;
         }
-        if($page->id == '8'){
-            $sections = [];
-            if(isset($request->section_headings)){
-            foreach ($request->section_headings as $key => $heading) {
-                $sections[] = [
-                    'heading' => $heading,
-                    'description' => $request->section_description[$key] ?? null,
-                    'subheading' => $request->section_subheadings[$key] ?? null,
-                    'images' => $request->section_images[$key] ?? null,
+        if($page->type == 'about_us'){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|max:155',
+                'slug' => 'required',
+                'is_active' => 'required|boolean',
+                'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'core_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'policy_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'about_content' => 'required',
+                'core_content' => 'required',
+                'policy_content' => 'required',
+                'about2_content1' => 'required',
+                'about2_content2' => 'required',
+                'mnv_description1' => 'required',
+                'mnv_description2' => 'required',
+                'team_image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'mnv_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'mnv_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'about2_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'about2_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'meta_title' => 'required|max:255',
+                'meta_description' => 'required|max:255',
+               
+            ]);
+    
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'notification' => $validator->errors()->all()
+                ], 200);
+            }   
+
+            if(!empty($request->input('slug'))){            
+                $slug = customSlug($request->input('slug'));
+            }
+
+            // Initialize content array
+            $content = [
+                'about_content' => $request->input('about_content'),
+                'core_content' => $request->input('core_content'),
+                'policy_content' => $request->input('policy_content'),
+                'about2_content1' => $request->input('about2_content1'),
+                'about2_content2' => $request->input('about2_content2'),
+                'mnv_description1' => $request->input('mnv_description1'),
+                'mnv_description2' => $request->input('mnv_description2'),
+            ];
+
+            // Handle About Image Upload
+            if ($request->hasFile('about_image')) {
+                if ($page->content['about_image'] ?? false) {
+                    Storage::delete($page->content['about_image']);
+                }
+                $content['about_image'] = $request->file('about_image')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['about_image'] = $request->input('existing_about_image') ?? $content['about_image'];
+            }
+
+            // Handle Core Image Upload
+            if ($request->hasFile('core_image')) {
+                if ($page->content['core_image'] ?? false) {
+                    Storage::delete($page->content['core_image']);
+                }
+                $content['core_image'] = $request->file('core_image')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['core_image'] = $request->input('existing_core_image') ?? $content['core_image'];
+            }
+
+            // Handle Policy Image Upload
+            if ($request->hasFile('policy_image')) {
+                if ($page->content['policy_image'] ?? false) {
+                    Storage::delete($page->content['policy_image']);
+                }
+                $content['policy_image'] = $request->file('policy_image')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['policy_image'] = $request->input('existing_policy_image') ?? $content['policy_image'];
+            }
+
+            // Handle Mission and vision Upload
+            if ($request->hasFile('mnv_image1')) {
+                if ($page->content['mnv_image1'] ?? false) {
+                    Storage::delete($page->content['mnv_image1']);
+                }
+                $content['mnv_image1'] = $request->file('mnv_image1')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['mnv_image1'] = $request->input('existing_mnv_image1') ?? $content['mnv_image1'];
+            }
+            if ($request->hasFile('mnv_image2')) {
+                if ($page->content['mnv_image2'] ?? false) {
+                    Storage::delete($page->content['mnv_image2']);
+                }
+                $content['mnv_image2'] = $request->file('mnv_image2')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['mnv_image2'] = $request->input('existing_mnv_image2') ?? $content['mnv_image2'];
+            }
+            if ($request->hasFile('mnv_bg_image1')) {
+                if ($page->content['mnv_bg_image1'] ?? false) {
+                    Storage::delete($page->content['mnv_bg_image1']);
+                }
+                $content['mnv_bg_image1'] = $request->file('mnv_bg_image1')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['mnv_bg_image1'] = $request->input('existing_mnv_bg_image1') ?? $content['mnv_bg_image1'];
+            }
+            if ($request->hasFile('mnv_bg_image2')) {
+                if ($page->content['mnv_bg_image2'] ?? false) {
+                    Storage::delete($page->content['mnv_bg_image2']);
+                }
+                $content['mnv_bg_image2'] = $request->file('mnv_bg_image2')->store('assets/images', 'public');
+            }else {
+                // Retain the existing image
+                $content['mnv_bg_image2'] = $request->input('existing_mnv_bg_image2') ?? $content['mnv_bg_image2'];
+            }
+            
+            
+            // Handle Team Section
+            $teams = [];
+            foreach ($request->input('team_name', []) as $key => $text) {
+                // Check if a new file was uploaded for this team
+                if ($request->hasFile("team_image.$key")) {
+                    $path = $request->file("team_image.$key")->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $path = $request->input('existing_team_image')[$key] ?? null;
+                }
+            
+                $teams[] = [
+                    'image' => $path,
+                    'name' => $text,
+                    'description' => $request->input('team_description')[$key] ?? '',
                 ];
+            }            
+            // Save teams array to the database or use it as needed
+            $content['team'] = $teams;            
+
+
+
+            // Handle About2 section Image 1
+            if ($request->hasFile('about2_image1')) {
+                if (!empty($content['about2_image1'])) {
+                    Storage::delete($content['about2_image1']);
+                }
+                $content['about2_image1'] = $request->file('about2_image1')->store('assets/images', 'public');
+            } else {
+                $content['about2_image1'] = $request->input('existing_about2_image1') ?? $content['about2_image1'];
             }
+
+            // Handle About2 section Image 2
+            if ($request->hasFile('about2_image2')) {
+                if (!empty($content['about2_image2'])) {
+                    Storage::delete($content['about2_image2']);
+                }
+                $content['about2_image2'] = $request->file('about2_image2')->store('assets/images', 'public');
+            } else {
+                $content['about2_image2'] = $request->input('existing_about2_image2') ?? $content['about2_image2'];
             }
-            $content = json_encode($sections);
+
+
         }
-        elseif($page->id == '9'){
-            $sections = [];
-            if(isset($request->section_description)){
-            foreach ($request->section_description as $key => $heading) {
-                $sections[] = [
-                    'description' => $request->section_description[$key] ?? null,
-                    'images' => $request->section_images[$key] ?? null,
+        elseif($page->type == 'partner_with_us'){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|max:155',
+                'slug' => 'required',
+                'is_active' => 'required|boolean',                
+                'about_content' => 'required',
+                'question' => 'required|max:255',
+                'answer' => 'required',
+                'meta_title' => 'required|max:255',
+                'meta_description' => 'required|max:255',
+            ]);
+    
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'notification' => $validator->errors()->all()
+                ], 200);
+            }   
+
+            if(!empty($request->input('slug'))){            
+                $slug = customSlug($request->input('slug'));
+            }
+
+            // Initialize content array
+            $content = [
+                'about_content' => $request->input('about_content'),
+            ];
+            
+            // Handle FAQ's Section
+            $faqs = [];
+            foreach ($request->input('question', []) as $key => $question) {
+                $faqs[] = [
+                    'question' => $question,
+                    'answer' => $request->input('answer', [])[$key] ?? '', // Use 'answer' instead of 'team_description'
                 ];
             }
-            }
-            $content = json_encode($sections);
+            // Save faqs array to the database or use it as needed
+            $content['faqs'] = $faqs;
+
         }
         elseif($page->id == '10'){
             $sections = [];
@@ -378,6 +574,26 @@ class PageController extends Controller
             $content = json_encode($sections);
         }
         elseif($page->type == 'custom_page'){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|max:155',
+                'slug' => 'required',
+                'is_active' => 'required|boolean',                
+                'content' => 'required',
+                'meta_title' => 'required|max:255',
+                'meta_description' => 'required|max:255',
+            ]);
+    
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'notification' => $validator->errors()->all()
+                ], 200);
+            }   
+
+            if(!empty($request->input('slug'))){            
+                $slug = customSlug($request->input('slug'));
+            }
+
             $content = $request->content;
         }
 
@@ -399,9 +615,15 @@ class PageController extends Controller
             // Redirect back with success message
             // return redirect()->route('website.pages')->with('success', '');
         }
+        $response = [
+            'status' => false,
+            'notification' => 'Slug has been used already',
+        ];
 
-      flash(translate('Slug has been used already'))->warning();
-      return back();
+        return response()->json($response);
+
+    //   flash(__('Slug has been used already'))->warning();
+    //   return back();
 
     }
 
