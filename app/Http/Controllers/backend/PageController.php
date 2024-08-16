@@ -137,7 +137,6 @@ class PageController extends Controller
                 'banner_url' => 'required|max:155',
                 'product_ids' => 'required|array',
                 'product_ids.*' => 'exists:products,id',
-                'product_ids' => 'required|array',
                 'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'about_content' => 'required',
                 'product_category_id' => 'required|array',
@@ -636,8 +635,14 @@ class PageController extends Controller
         $page->page_translations()->delete();
 
         if(Page::destroy($id)){
-            flash(translate('Page has been deleted successfully'))->success();
-            return redirect()->back();
+            $response = [
+                'status' => true,
+                'notification' => 'Page has been deleted successfully',
+            ];
+    
+            return response()->json($response);
+            // flash(__('Page has been deleted successfully'))->success();
+            // return redirect()->back();
         }
         return back();
     }
