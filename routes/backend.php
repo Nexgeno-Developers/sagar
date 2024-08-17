@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\ProductCategoryController;
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\FrontendSettingsController;
 
 use App\Http\Controllers\backend\TrumbowygController;
 
@@ -67,7 +68,17 @@ Route::controller(ProductCategoryController::class)->group(function () {
     Route::post('/product-categories/store', 'store')->name('product-categories.store');
     Route::get('/product-categories/edit/{id}', 'edit')->name('product-categories.edit');
     Route::post('/product-categories/update/{id}', 'update')->name('product-categories.update');
-    Route::get('/product-categories/destroy/{id}', 'destroy')->name('product-categories.destroy');
+    Route::post('/product-categories//delete/{id}',  'delete')->name('product-categories.destroy');
+});
+
+Route::controller(FrontendSettingsController::class)->group(function () {
+    Route::get('/frontend-settings', 'index')->name('frontend_settings.index');
+    // Route::get('/frontend-settings/create', 'create')->name('frontend_settings.create');
+    // Route::post('/frontend-settings/store', 'store')->name('frontend_settings.store');
+    // Route::get('/frontend-settings/edit/{id}', 'edit')->name('frontend_settings.edit');
+    // Route::post('/frontend-settings/update/{id}', 'update')->name('frontend_settings.update');
+    Route::post('/frontend-settings/update/', 'update')->name('frontend_settings.update');
+    Route::post('/frontend-settings//delete/{id}',  'delete')->name('frontend_settings.destroy');
 });
 
 Route::controller(ProductController::class)->group(function () {
@@ -76,7 +87,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('/products/store', 'store')->name('products.store');
     Route::get('/products/edit/{id}', 'edit')->name('products.edit');
     Route::post('/products/update/{id}', 'update')->name('products.update');
-    Route::get('/products/destroy/{id}', 'destroy')->name('products.destroy');
+    Route::post('/products/delete/{id}',  'delete')->name('products.destroy');
 });
 
 Route::controller(PageController::class)->group(function () {

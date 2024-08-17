@@ -87,6 +87,13 @@
                             </a>
                         </li>
 
+                        <li class="side-nav-item">
+                            <a href="{{ route('frontend_settings.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-discuss-line"></i>                                
+                                <span> Front End Setting </span>
+                            </a>
+                        </li>
+
 
 
                         {{-- <li class="side-nav-item">
@@ -121,10 +128,27 @@
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
                                 <i class="ri-article-line"></i>
-                                <span> Page </span>
+                                <span> Products </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarEmail">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="{{ route('products.index') }}">Product</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('product-categories.index') }}">Product Categories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail2') }}" aria-expanded="false" aria-controls="sidebarEmail2" class="side-nav-link">
+                                <i class="ri-article-line"></i>
+                                <span> Page </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarEmail2">
                                 <ul class="side-nav-second-level">
                                     <li>
                                         <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>

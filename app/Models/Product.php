@@ -7,10 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    
     use HasFactory;
 
-    public function categories()
+    // Define the custom table name
+    protected $table = 'products';
+
+    // Define the attributes that should be cast to native types
+    protected $casts = [
+        'product_category_ids' => 'array',  // Cast to array or JSON
+    ];
+
+    // Method to get related categories
+    public function getCategoriesAttribute()
     {
-        return $this->belongsToMany(ProductCategory::class);
+        return ProductCategory::whereIn('id', $this->product_category_ids)->get();
     }
 }
