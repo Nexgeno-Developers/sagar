@@ -82,7 +82,7 @@
     <div class="row">
         <div class="col-sm-{{ !empty($about_image) ? 3 : 6 }}">
             <div class="form-group mb-3">
-                <label>Image</label>
+                <label>Image <span class="red">*</span></label>
                 <input class="form-control" type="file" id="about_image" name="about_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($about_image)) required @endif >
             </div>
         </div>
@@ -105,7 +105,7 @@
     <div class="row">
         <div class="col-sm-{{ !empty($core_image) ? 3 : 6 }}">
             <div class="form-group mb-3">
-                <label>Image</label>
+                <label>Image <span class="red">*</span></label>
                 <input class="form-control" type="file" id="core_image" name="core_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($core_image)) required @endif >
             </div>
         </div>
@@ -129,7 +129,7 @@
     <div class="row">
         <div class="col-sm-{{ !empty($policy_image) ? 3 : 6 }}">
             <div class="form-group mb-3">
-                <label>Image</label>
+                <label>Image <span class="red">*</span></label>
                 <input class="form-control" type="file" id="policy_image" name="policy_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($policy_image)) required @endif >
             </div>
         </div>
@@ -156,7 +156,7 @@
                         <div class="col-md-9">
                             <div class="form-group row mb-3 ">
                                 <div class="form-group mb-3 col-sm-{{ !empty($team->image) ? 9 : 12 }}">                                
-                                    <label>Image</label>
+                                    <label>Image <span class="red">*</span> </label>
                                     <input class="form-control" type="file" name="team_image[]"
                                         accept=".jpg,.jpeg,.png,.webp" @if (empty($team->image)) required @endif>
                                 </div>
@@ -167,12 +167,12 @@
                                     </div>
                                 @endif
                                 <div class="col-6 form-group mb-3">
-                                    <label>Name</label>
+                                    <label>Name<span class="red">*</span></label>
                                     <input type="text" class="form-control" name="team_name[]"   maxlength="155" value="{{$team->name}}" @if (empty($team->name)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
-                                    <label>Description </label>
-                                    <textarea class="form-control" name="team_description[]"  maxlength="155" rows="3" required>{{$team->description}}</textarea>
+                                    <label>Description <span class="red">*</span> </label>
+                                    <textarea class="form-control" name="team_description[]"  maxlength="155" rows="3" @if (empty($team->description)) required @endif>{{$team->description}}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -189,15 +189,15 @@
                 <div class="col-md-9">
                     <div class="form-group row mb-3 ">
                         <div class="col-12 form-group mb-3">
-                            <label>Image</label>
+                            <label>Image <span class="red">*</span></label>
                             <input class="form-control" type="file" name="team_image[]" accept=".jpg,.jpeg,.png,.webp" required>
                         </div>
                         <div class="col-6 form-group mb-3">
-                            <label>Name</label>
+                            <label>Name <span class="red">*</span></label>
                             <input type="text" class="form-control" name="team_name[]" maxlength="155" required>
                         </div>
                         <div class="col-6 form-group mb-3">
-                            <label>Description </label>
+                            <label>Description <span class="red">*</span> </label>
                             <textarea class="form-control" name="team_description[]"  maxlength="255" rows="3" required></textarea>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
             </div>
             <div class="col-sm-{{ !empty($about2_image1) ? 3 : 6 }}">
                 <div class="form-group mb-3">
-                    <label>About image</label>
+                    <label>About image <span class="red">*</span> </label>
                     <input class="form-control" type="file" id="about2_image1" name="about2_image1" accept=".jpg,.jpeg,.png,.webp" @if (empty($about2_image1)) required @endif >
                 </div>
             </div>
@@ -234,7 +234,7 @@
         <div class="row">
             <div class="col-sm-{{ !empty($about2_image2) ? 3 : 6 }}">
                 <div class="form-group mb-3">
-                    <label>About image</label>
+                    <label>About image  <span class="red">*</span></label>
                     <input class="form-control" type="file" name="about2_image2" accept=".jpg,.jpeg,.png,.webp" @if (empty($about2_image2)) required @endif >
                 </div>
             </div>
@@ -247,7 +247,7 @@
 
             <div class="col-sm-6">
                 <div class="form-group mb-3">
-                    <label>About Content<span class="red">*</span></label>
+                    <label>About Content <span class="red">*</span></label>
                     <textarea class="form-control trumbowyg" name="about2_content2"  maxlength="155" rows="3"  @if (empty($about2_content2)) required @endif>{{ $about2_content2 }}</textarea>
                 </div> 
             </div>
@@ -261,7 +261,7 @@
                     <div class="form-group row mb-3">
                         <div class="col-sm-{{ !empty($mnv_image1) ? 3 : 6 }}">
                             <div class="form-group mb-3">
-                                <label>Image</label>
+                                <label>Image<span class="red">*</span></label>
                                 <input class="form-control" type="file" name="mnv_image1" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_image1)) required @endif >
                             </div>
                         </div>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="col-sm-{{ !empty($mnv_bg_image2) ? 3 : 6 }}">
                             <div class="form-group mb-3">
-                                <label>Image</label>
+                                <label>Background Image</label>
                                 <input class="form-control" type="file" name="mnv_bg_image2" accept=".jpg,.jpeg,.png,.webp" @if (empty($mnv_bg_image2)) required @endif >
                             </div>
                         </div>

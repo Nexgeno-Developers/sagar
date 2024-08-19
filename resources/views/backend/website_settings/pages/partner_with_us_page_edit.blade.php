@@ -69,11 +69,11 @@
                     <div class="col-md-9">
                         <div class="form-group row mb-3 ">
                             <div class="col-6 form-group mb-3">
-                                <label>Question</label>
-                                <input type="text" class="form-control" name="question[]" maxlength="255" value="{{$faq->question}}" @if (empty($faq->question)) required @endif>
+                                <label>Question<span class="red">*</span></label>
+                                <input type="text" class="form-control" name="question[]" maxlength="255" value="{{$faq->question}}" required>
                             </div>
                             <div class="col-6 form-group mb-3">
-                                <label>Answer </label>
+                                <label>Answer <span class="red">*</span></label>
                                 <textarea class="form-control" name="answer[]" rows="3" required>{{$faq->answer}}</textarea>
                             </div>
                         </div>
@@ -91,11 +91,11 @@
             <div class="col-md-9">
                 <div class="form-group row mb-3 ">
                     <div class="col-6 form-group mb-3">
-                        <label>Question</label>
+                        <label>Question <span class="red">*</span> </label>
                         <input type="text" class="form-control" name="question[]" maxlength="255" required>
                     </div>
                     <div class="col-6 form-group mb-3">
-                        <label>Answer </label>
+                        <label>Answer <span class="red">*</span> </label>
                         <textarea class="form-control" name="answer[]" rows="3" required></textarea>
                     </div>
                 </div>
@@ -143,19 +143,20 @@ $(document).ready(function() {
         location.reload();
     }
     // Add row functionality for Banner Section
-    $(document).on('click', '.add-row', function() {
+    $(document).off('click', '.add-row').on('click', '.add-row', function() {
         var newRow = $('.gallery-image-row').first().clone();
-        newRow.find('input, textarea').val('');
-        newRow.find('.add-row-col-3-div').remove();
-        newRow.find('.div-preview-image ').remove();
+        newRow.find('input, textarea').val('');  // Clear input and textarea values
+        newRow.find('.add-row-col-3-div').remove();  // Remove specific div
+        newRow.find('.div-preview-image').remove();  // Remove preview image div
+        
         newRow.append(
             '<div class="col-md-3"><button type="button" class="btn btn-outline-success add-row m-2">Add More +</button><button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button></div>'
-            );
+        );
         $('.gallery-image-row').last().after(newRow);
     });
 
     // Remove row functionality for Banner Section
-    $(document).on('click', '.remove-row', function() {
+    $(document).off('click', '.remove-row').on('click', '.remove-row', function() {
         if ($('.gallery-image-row').length > 1) {
             $(this).closest('.gallery-image-row').remove();
         } else {

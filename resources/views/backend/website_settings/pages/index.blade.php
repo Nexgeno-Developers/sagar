@@ -58,7 +58,7 @@
 					@else
 					<a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>env('DEFAULT_LANGUAGE'), 'page'=>$page->id] )) }}', 'Edit')"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
 					@endif
-					@if($page->type != 'home_page')
+					@if($page->type == 'custom_page')
 					<a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('custom-pages.destroy', $page->id)) }}', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>
           			@endif
         		</td>

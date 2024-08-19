@@ -76,8 +76,8 @@ Route::controller(FrontendSettingsController::class)->group(function () {
     // Route::get('/frontend-settings/create', 'create')->name('frontend_settings.create');
     // Route::post('/frontend-settings/store', 'store')->name('frontend_settings.store');
     // Route::get('/frontend-settings/edit/{id}', 'edit')->name('frontend_settings.edit');
-    // Route::post('/frontend-settings/update/{id}', 'update')->name('frontend_settings.update');
-    Route::post('/frontend-settings/update/', 'update')->name('frontend_settings.update');
+    Route::post('/frontend-settings/update/{id}', 'update')->name('frontend_settings.update');
+    // Route::post('/frontend-settings/update/', 'update')->name('frontend_settings.update');
     Route::post('/frontend-settings//delete/{id}',  'delete')->name('frontend_settings.destroy');
 });
 
@@ -97,7 +97,7 @@ Route::controller(PageController::class)->group(function () {
     Route::post('/store', 'store')->name('custom-pages.store');
     Route::post('/custom-pages/update/{id}', 'update')->name('custom-pages.update');
     Route::get('/custom-pages/edit/{id}', 'edit')->name('custom-pages.edit');
-    Route::get('/custom-pages/destroy/{id}', 'destroy')->name('custom-pages.destroy');
+    Route::post('/custom-pages/destroy/{id}', 'destroy')->name('custom-pages.destroy');
 });
 
 

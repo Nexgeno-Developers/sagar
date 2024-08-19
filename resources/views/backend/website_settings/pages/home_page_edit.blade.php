@@ -9,6 +9,7 @@
         $about_content = $decoded_data->about_content ?? '';
         $about_image = $decoded_data->about_image ?? '';
         $wwd = $decoded_data->wwd_image ?? '';
+        $activities = $decoded_data->activities ?? '';
         $scp_content = $decoded_data->scp_content ?? '';
         $scp_image1 = $decoded_data->scp_image1 ?? '';
         $scp_pdf1 = $decoded_data->scp_pdf1 ?? '';
@@ -20,12 +21,14 @@
         $scp_pdf2 = $decoded_data->scp_pdf2 ?? '';
         $scp_text3 = $decoded_data->scp_text3 ?? '';
         $cocs_description = $decoded_data->cocs_description ?? '';
+        $cocs_pdf = $decoded_data->cocs_pdf ?? '';
     } else {
         // If content is empty, set default empty values
         $banners = '';
         $about_content = '';
         $about_image = '';
         $wwd = '';
+        $activities = '';
         $scp_content = '';
         $scp_image1 = '';
         $scp_pdf1 = '';
@@ -37,6 +40,7 @@
         $scp_pdf2 = '';
         $scp_text3 = '';
         $cocs_description = '';
+        $cocs_pdf = '';
     }
 @endphp
 
@@ -194,7 +198,7 @@
                         <div class="form-group row mb-3 ">
                             <div class="col-6 form-group mb-3">
                                 <label>Image</label>
-                                <input class="form-control" type="file" id="banner" name="wwd_image[]" accept=".jpg,.jpeg,.png,.webp" @if (empty($wwd_data->image)) required @endif>
+                                <input class="form-control" type="file" name="wwd_image[]" accept=".jpg,.jpeg,.png,.webp" @if (empty($wwd_data->image)) required @endif>
                             </div>
                             @if (!empty($wwd_data->image))
                                 <div class="div-preview-image col-6 form-group mb-3">
@@ -203,7 +207,7 @@
                                 </div>                                
                             @endif
                             <div class="col-6 form-group mb-3">
-                                <label>Text</label>
+                                <label>Text<span class="red">*</span></label>
                                 <input type="text" class="form-control" name="wwd_text[]"  maxlength="155" value="{{$wwd_data->text}}" @if (empty($wwd_data->text)) required @endif>
                             </div>
                             <div class="col-6 form-group mb-3">
@@ -245,7 +249,61 @@
             </div>
         @endif
         
+<hr>
+<h3>Activities Section </h3>
+        @if (!empty($activities))
+            @foreach ($activities as $index => $row )
+                <div class="row gallery-image-row3">
+                    <div class="col-md-9">
+                    <div class="form-group row mb-3 ">
+                        <div class="col-6 form-group mb-3">
+                            <label>Text</label>
+                            <input type="text" class="form-control"  maxlength="155" value="{{$row->text}}" name="activities_text[]" @if (empty($row->text)) required @endif>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3 ">
+                                <label>Youtube url</label>
+                                <input class="form-control" type="text" value="{{$row->url}}" name="activities_url[]" @if (empty($row->url)) required @endif>
+                            </div>
+                        </div>
+                        @if (!empty($row->url))
+                            <div class="div-preview-iframe mt-2">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$row->url}}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        @endif
+                    </div>
+                    </div>
+                    <div class="add-row-col-3-div col-md-3 ">
+                        <button type="button" class="btn btn-outline-success add-row3 m-2">Add More +</button>
+                        @if ($index > 0)
+                        <button type="button" class="btn btn-outline-danger remove-row3 my-2">Remove</button>
+                        @endif
+                    </div>
+                </div>
+            @endforeach
+        @else
+            <div class="row gallery-image-row3">
+                <div class="col-md-9">
+                    <div class="form-group row mb-3 ">
+                        <div class="col-6 form-group mb-3">
+                            <label>Text</label>
+                            <input type="text" class="form-control"  maxlength="155" name="activities_text[]" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3 ">
+                                <label>Videos</label>
+                                <input class="form-control" type="text" name="activities_url[]" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-row-col-3-div col-md-3 ">
+                    <button type="button" class="btn btn-outline-success add-row3 my-2">Add More +</button>
+                </div>
+            </div>
+        @endif
 
+        {{--
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Activities Section <span class="red">*</span></label>
@@ -259,13 +317,14 @@
                 </select>
             </div>
         </div>
+        --}}
 
         <hr>
         <h3>Supply Chain Partner</h3>
         <div class="col-md-12">
             <div class="col-12 form-group mb-3">
                 <label>Content<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="scp_content"   maxlength="500" rows="3"  @if (empty($scp_content)) required @endif>{{$scp_content}}</textarea>
+                <textarea class="form-control" name="scp_content" rows="3"  @if (empty($scp_content)) required @endif>{{$scp_content}}</textarea>
             </div>
             <div class="form-group row mb-3 ">  
                 <div class="form-group mb-3 col-sm-{{ !empty($scp_image1) ? 3 : 6 }}">
@@ -341,10 +400,18 @@
 
         <hr>
         <h3>Code Of Conduct Section</h3>
-        <div class="col-sm-12">
-            <div class="form-group mb-3">
+        <div class="row">
+            <div class="col-6 form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg"   maxlength="500" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
+                <textarea class="form-control trumbowyg" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
+            </div>
+            <div class="col-6 form-group mb-3">
+                <label>PDF<span class="red">*</span></label>
+                <input class="form-control" type="file" name="cocs_pdf" @if (empty($cocs_pdf)) required @endif>
+                @if (!empty($cocs_pdf))
+                    <input type="hidden" name="existing_cocs_pdf" value="{{ $cocs_pdf }}">
+                    <a target="_blank" class="mt-2 btn btn-primary" href="{{ asset('storage/' . $cocs_pdf) }}"> View PDF</a>
+                @endif
             </div>
         </div>
 
@@ -421,6 +488,28 @@ $(document).ready(function() {
     $(document).on('click', '.remove-row2', function() {
         if ($('.gallery-image-row2').length > 1) {
             $(this).closest('.gallery-image-row2').remove();
+        } else {
+            alert('At least one row is required.');
+        }
+    });
+
+    // Repeat for What We Do Section and other sections
+    $(document).on('click', '.add-row3', function() {
+        var newRow = $('.gallery-image-row3').first().clone();
+        newRow.find('input,textarea').val('');
+        newRow.find('textarea').trumbowyg('empty');
+        newRow.find('.add-row-col-3-div').remove();
+        newRow.find('.div-preview-iframe').remove();
+        newRow.append(
+            '<div class="col-md-3"><button type="button" class="btn btn-outline-success add-row3 m-2">Add More +</button><button type="button" class="btn btn-outline-danger remove-row3 my-2">Remove</button></div>'
+            );
+        $('.gallery-image-row3').last().after(newRow);
+    });
+
+    // Remove row functionality for What We Do Section
+    $(document).on('click', '.remove-row3', function() {
+        if ($('.gallery-image-row3').length > 1) {
+            $(this).closest('.gallery-image-row3').remove();
         } else {
             alert('At least one row is required.');
         }

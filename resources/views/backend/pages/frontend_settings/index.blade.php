@@ -13,7 +13,7 @@
       </div> 
 
       <section>
-      <form id="add_frontend_setting_form" action="{{url(route('frontend_settings.update'))}}" method="post"
+      <form id="add_frontend_setting_form" action="{{url(route('frontend_settings.update', $settings->id))}}" method="post"
             enctype="multipart/form-data">
             @csrf
             @php
@@ -30,15 +30,17 @@
 
                 <div class="col-6 form-group mb-3">
                     <label>Image</label>
-                    <input class="form-control" type="file" name="image"
-                        accept=".jpg,.jpeg,.png,.webp" @if (empty($settings->image)) required @endif>
+                    <input class="form-control" type="file" name="logo" accept=".jpg,.jpeg,.png,.webp" 
+                        @if (empty($settings->logo)) required @endif>
                 </div>
-                @if (!empty($settings->image))
+
+                @if (!empty($settings->logo))
                     <div class="div-preview-image col-6 form-group mb-3">
-                        <input type="hidden" name="existing_image" value="{{ $settings->image }}">
-                        <img width="180" src="{{ asset('storage/' . $settings->image) }}">                                       
+                        <input type="hidden" name="existing_logo" value="{{ $settings->logo }}">
+                        <img width="180" src="{{ asset('storage/' . $settings->logo) }}">
                     </div>
                 @endif
+
                 
                 <div class="col-12">
                     <div class="form-group mb-3">
@@ -60,39 +62,39 @@
                                 <div class="form-group row mb-3 ">
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_name">Name</label>
-                                        <input type="text" name="contacts_name[]" class="form-control" value="{{ $contact['name'] }}" required>
+                                        <input type="text" name="contacts_name[]" class="form-control" value="{{ $contact->name }}" required>
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_address">Address</label>
-                                        <textarea class="form-control"  maxlength="255" name="contacts_address[]" rows="3" required>{{ isset($contact['address']) ? $contact['address'] : '' }}</textarea>
+                                        <textarea class="form-control"  maxlength="255" name="contacts_address[]" rows="3" required>{{ isset($contact->address) ? $contact->address : '' }}</textarea>
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_google_map">Google Map</label>
-                                        <input type="text" name="contacts_google_map[]" class="form-control" value="{{ $contact['google_map'] }}">
+                                        <input type="text" name="contacts_google_map[]" class="form-control" value="{{ $contact->google_map }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_email1">Email 1</label>
-                                        <input type="email" name="contacts_email1[]" class="form-control" value="{{ $contact['email1'] }}">
+                                        <input type="email" name="contacts_email1[]" class="form-control" value="{{ $contact->email1 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_email2">Email 2</label>
-                                        <input type="email" name="contacts_email2[]" class="form-control" value="{{ $contact['email2'] }}">
+                                        <input type="email" name="contacts_email2[]" class="form-control" value="{{ $contact->email2 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_email3">Email 3</label>
-                                        <input type="email" name="contacts_email3[]" class="form-control" value="{{ $contact['email3'] }}">
+                                        <input type="email" name="contacts_email3[]" class="form-control" value="{{ $contact->email3 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_phone1">Phone 1</label>
-                                        <input type="text" name="contacts_phone1[]" class="form-control" value="{{ $contact['phone1'] }}">
+                                        <input type="text" name="contacts_phone1[]" class="form-control" value="{{ $contact->phone1 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_phone2">Phone 2</label>
-                                        <input type="text" name="contacts_phone2[]" class="form-control" value="{{ $contact['phone2'] }}">
+                                        <input type="text" name="contacts_phone2[]" class="form-control" value="{{ $contact->phone2 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_phone3">Phone 3</label>
-                                        <input type="text" name="contacts_phone3[]" class="form-control" value="{{ $contact['phone3'] }}">
+                                        <input type="text" name="contacts_phone3[]" class="form-control" value="{{ $contact->phone3 }}">
                                     </div>
 
                                 </div>
@@ -135,15 +137,15 @@
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_phone1">Phone 1</label>
-                                    <input type="text" name="contacts_phone1[]" class="form-control">
+                                    <input type="number" name="contacts_phone1[]" class="form-control">
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_phone2">Phone 2</label>
-                                    <input type="text" name="contacts_phone2[]" class="form-control">
+                                    <input type="number" name="contacts_phone2[]" class="form-control">
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_phone3">Phone 3</label>
-                                    <input type="text" name="contacts_phone3[]" class="form-control">
+                                    <input type="number" name="contacts_phone3[]" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -160,14 +162,21 @@
                     @foreach ($social_media_data as $index => $row)
                             <div class="row gallery-image-row">
                                 <div class="col-md-9">
-                                    <div class="form-group row mb-3">                            
-                                        <div class="form-group col-6">
-                                            <label for="social_media_icon">Icon</label>
-                                            <input type="text" name="social_media_icon[]" class="form-control" value="{{ $row['icon'] }}" required>
-                                        </div>        
-                                        <div class="form-group col-6">
+                                    <div class="form-group row mb-3">  
+                                        <div class="col-6 form-group mb-3">
+                                            <label>Icon</label>
+                                            <input class="form-control" type="file" name="social_media_icon[]"
+                                                accept=".jpg,.jpeg,.png,.webp" @if (empty($row->icon)) required @endif>
+                                        </div>
+                                        @if (!empty($row->icon))
+                                            <div class="div-preview-image col-6 form-group mb-3">
+                                                <input type="hidden" name="existing_social_media_icon[]" value="{{ $row->icon }}">
+                                                <img width="180" src="{{ asset('storage/' . $row->icon) }}">                                       
+                                            </div>
+                                        @endif    
+                                        <div class="form-group col-12">
                                             <label for="social_media_url">URL</label>
-                                            <input type="url" name="social_media_url[]" class="form-control" value="{{ $row['url'] }}" required>
+                                            <input type="url" name="social_media_url[]" class="form-control" value="{{ $row->url }}" required>
                                         </div>
                                     </div>
                                 </div>

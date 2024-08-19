@@ -5,12 +5,14 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\FrontendSetting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class FrontendSettingsController extends Controller
 {
     public function index()
     {
-        $settings = FrontendSetting::all();
+        $settings = FrontendSetting::first();
         return view('backend.pages.frontend_settings.index', compact('settings'));
     }
 
@@ -51,46 +53,141 @@ class FrontendSettingsController extends Controller
         return view('backend.pages.frontend_settings.edit', compact('frontendSetting'));
     }
 
-    public function update(Request $request, FrontendSetting $frontendSetting)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'logo' => 'nullable|image',
+        $frontendSetting = FrontendSetting::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'meta_title' => 'required|string',
             'meta_description' => 'required|string',
-            'newsletter_pdf' => 'nullable|file|mimes:pdf',
-            'contacts' => 'required|array',
-            'social_media' => 'required|array',
+            'pdf' => 'nullable|file|mimes:pdf',
+            'contacts_name' => 'required',
+            'contacts_address' => 'required',
+            'contacts_google_map' => 'required',
+            'contacts_email1' => 'required',
+            'contacts_email2' => 'required',
+            'contacts_email3' => 'required',  
+            'social_media_icon' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'social_media_url' => 'required',
         ]);
 
-        // Handle Image Upload
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'notification' => $validator->errors()->all()
+            ], 200);
+        }
+
+
+        // Handle About Image Upload
         if ($request->hasFile('logo')) {
-            $frontendSetting->logo = $request->file('logo')->store('assets/images', 'public');
+            if ($frontendSetting->logo ?? false) {
+                Storage::delete($frontendSetting->logo);
+            }
+            $logo = $request->file('logo')->store('assets/images', 'public');
         } else {
             // Retain the existing image
-            $frontendSetting->logo = $request->input('existing_logo') ?? $frontendSetting->logo;
+            $logo = $request->input('existing_logo') ?? $frontendSetting->logo;
+        }
+        
+
+        // Prepare contacts array
+        $contacts = [];
+        $names = $request->input('contacts_name', []);
+        $addresses = $request->input('contacts_address', []);
+        $google_maps = $request->input('contacts_google_map', []);
+        $emails1 = $request->input('contacts_email1', []);
+        $emails2 = $request->input('contacts_email2', []);
+        $emails3 = $request->input('contacts_email3', []);
+        $phones1 = $request->input('contacts_phone1', []);
+        $phones2 = $request->input('contacts_phone2', []);
+        $phones3 = $request->input('contacts_phone3', []);
+
+        foreach ($names as $index => $name) {
+            $contacts[] = [
+                'name' => $name,
+                'address' => $addresses[$index] ?? '',
+                'google_map' => $google_maps[$index] ?? '',
+                'email1' => $emails1[$index] ?? '',
+                'email2' => $emails2[$index] ?? '',
+                'email3' => $emails3[$index] ?? '',
+                'phone1' => $phones1[$index] ?? '',
+                'phone2' => $phones2[$index] ?? '',
+                'phone3' => $phones3[$index] ?? ''
+            ];
         }
 
-        $frontendSetting->meta_title = $request->meta_title;
-        $frontendSetting->meta_description = $request->meta_description;
+        // Remove empty contact entries
+        $contacts = array_filter($contacts, function ($contact) {
+            return !empty(array_filter($contact));
+        });
 
+        // Handle Banner Images
+        $socialMedia = [];
+        foreach ($request->input('social_media_url', []) as $key => $text) {
+            // Check if a new file was uploaded for this banner
+            if ($request->hasFile("social_media_icon.$key")) {
+                $path = $request->file("social_media_icon.$key")->store('assets/images', 'public');
+            } else {
+                // Retain the existing image
+                $path = $request->input('existing_social_media_icon')[$key] ?? null;
+            }
+
+            $socialMedia[] = [
+                'icon' => $path,
+                'url' => $text,
+            ];
+        }
+
+        // Remove empty social media entries
+        $socialMedia = array_filter($socialMedia, function ($media) {
+            return !empty(array_filter($media));
+        });
 
         // Handle PDF 
-        if ($request->hasFile('newsletter_pdf')) {
-            $frontendSetting->newsletter_pdf = $request->file('newsletter_pdf')->store('assets/files', 'public');
+        if ($request->hasFile('pdf')) {
+            $frontendSetting->pdf = $request->file('pdf')->store('assets/files', 'public');
         } else {
-            $frontendSetting->newsletter_pdf = $request->input('existing_newsletter_pdf') ?? $frontendSetting->newsletter_pdf;
+            $frontendSetting->pdf = $request->input('existing_pdf') ?? $frontendSetting->pdf;
         }
 
-        $frontendSetting->contacts = json_encode($request->contacts);
-        $frontendSetting->social_media = json_encode($request->social_media);
+        $frontendSetting->logo = $logo;
+        $frontendSetting->meta_title = $request->meta_title;
+        $frontendSetting->meta_description = $request->meta_description;
+        $frontendSetting->contacts = json_encode($contacts);
+        $frontendSetting->social_media = json_encode($socialMedia);
         $frontendSetting->save();
 
-        return redirect()->route('frontend-settings.index')->with('success', 'Frontend Settings updated successfully.');
+        $response = [
+            'status' => true,
+            'notification' => 'Frontend Settings updated successfully!',
+        ];
+
+        return response()->json($response);
+
+        // return redirect()->route('frontend-settings.index')->with('success', 'updated successfully.');
     }
 
-    public function destroy(FrontendSetting $frontendSetting)
+    public function destroy($id)
     {
-        $frontendSetting->delete();
-        return redirect()->route('frontend-settings.index')->with('success', 'Frontend Settings deleted successfully.');
+        $FrontendSetting = FrontendSetting::find($id);
+        if (!$FrontendSetting) {
+            $response = [
+                'status' => false,
+                'notification' => 'Record not found.!',
+            ];
+            return response()->json($response);
+        }
+        $FrontendSetting->delete();
+
+        $response = [
+            'status' => true,
+            'notification' => 'FrontendSetting Deleted successfully!',
+        ];
+
+        return response()->json($response);
+
+        // $frontendSetting->delete();
+        // return redirect()->route('frontend-settings.index')->with('success', 'Frontend Settings deleted successfully.');
     }
 }
