@@ -1,0 +1,241 @@
+@media screen and (max-width:767px) {
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .top_bar {
+    display: flex;
+    justify-content: center;
+}
+.navbar-brand {
+    position: static !important;
+}
+.navbar-brand img {
+    height: auto;
+    width: 70%;
+}
+img.banner_img {
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+    .banner_contents_div {
+        width: 80%;
+        left: 12vw;
+        top: 52vh;
+    }
+    .banner_content {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.banner_view_button {
+    font-size: 16px;
+} 
+#home_page_banner_slider .owl-nav button .fa-arrow-right {
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+}
+
+#home_page_banner_slider .owl-nav button .fa-arrow-left {
+    position: absolute;
+    left: 10px;
+    bottom: 50%;
+}
+
+marquee.banner_marque {
+    bottom: 5%;
+    font-size: 40px;
+}
+
+.our_product_cards_div .card img {
+    width: 100%;
+    height: auto;
+}
+
+.our_product_cards_div .card-body {
+    padding: 6px;
+}
+
+.our_product_cards_div .card-text, .product_filter_gallery_div .card-text { 
+    font-size: 14px;
+}
+
+.our_product_cards_div .fa, .product_filter_gallery_div .fa, .btn_next_prev_div .fa {
+    width: 20px;
+    height: 20px;
+    padding: 3px; 
+}
+
+.our_product_cards_div .fa-arrow-right:before { 
+    bottom: 3px;
+    font-size: 13px;
+}
+
+.our_product_cards_div:nth-child(even) {
+    padding-left: 5px;
+}
+.our_product_cards_div:nth-child(odd) {
+    padding-right: 5px;
+}
+
+.our_product_cards_div {
+    margin: 5px 0px;
+}
+
+.our_product_cards_div a {
+    justify-content: center !important;
+}
+
+.company_heading {
+    font-size: 26px;
+    line-height: 27px;
+    margin-bottom: 16px;
+}
+.since_content {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.a_btn {
+    padding: 5px 30px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.white_btn {
+    border: 1px solid #fff;
+}
+.saagar_speciality_chemical_machine {
+    position: relative;
+    bottom: -2em;
+}
+
+.saagar_speciality_chemical_machine img {
+    position: relative;
+    right: 0em;
+}
+
+.info_box, .about_info_box {
+    float: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 45px 50px 10px 40px;
+    width: 45%;
+}
+
+.info_box::before, .about_info_box::before {
+    border-radius: 45px 50px 10px 45px;
+}
+
+.up_and_down {
+    animation: none;
+    transform: translateY(0px);
+}
+.info_box h4, .about_info_box h4 {
+    font-size: 24px;
+}
+
+.info_box p, .about_info_box p { 
+    font-size: 13px;
+}
+
+hr {
+    margin: 0.5rem 0;
+}
+
+.product_heading {
+    font-size: 26px;
+    float: inherit !important;
+}
+
+.industry_contents_main_div>div:nth-child(even) {
+    padding-left: 5px;
+}
+
+.industry_contents_main_div>div:nth-child(odd) {
+    padding-right: 5px;
+}
+
+.industry_content_div {
+    margin: 5px 0px;
+}
+
+.industry_content {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.industry_text_link {
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+}
+.industry_arrow_link { 
+    width: 30%;
+}
+
+img.rotate45 {
+    width: 100%;
+    float: inline-end;
+}
+
+#what_we_do_slider .owl-nav, #future_activity_slider .owl-nav {
+    display: none !important;
+}
+
+
+.what_we_do_main_div .card-text, .future_activites_main_div .card-text {
+    font-size: 13px;
+}
+
+.what_we_do_main_div .card-title, .future_activites_main_div .card-title {
+    font-size: 18px;
+}
+
+.what_we_do_link, .future_activites_link {
+    font-size: 18px;
+}
+
+section.why_sscpl {
+    height: auto;
+}
+
+.why_sscpl_bg_img {
+    position: relative;
+    top: 10px; 
+}
+
+.sply_chn_content {
+    font-size: 18px; 
+    line-height: 22px;
+}
+
+.three_boxes_div {
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.three_boxes_div > div{
+    margin: 10px 0;
+}
+
+.content_img_div {
+    height: auto;
+}
+
+.code_of_content_div {
+    font-size: 18px; 
+    line-height: 22px;
+}
+
+/* home page end */
+
+
+}

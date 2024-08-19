@@ -37,13 +37,21 @@ class IndexController extends Controller
 
 //--------------=============================== Pages ================================------------------------------
 
+    public function about_us(){
+        return view('frontend.pages.company_profile.index');
+    }
     public function contact_us(){
-        return view('frontend.pages.contact.index');
+        return view('frontend.pages.contact_us.index');
+    }
+    public function career(){
+        return view('frontend.pages.career.index');
     }
 
-
-    public function privacy_policy(){
-        return view('frontend.pages.privacypolice.index');
+    public function partner_with_us(){
+        return view('frontend.pages.partner_with_us.index');
+    }
+    public function products(){
+        return view('frontend.pages.products.index');
     }
 
 //--------------=============================== Pages ================================------------------------------

@@ -20,13 +20,17 @@ use Illuminate\Support\Facades\Mail;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 
+Route::get('/about-us', [IndexController::class, 'about_us'])->name('contact');
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact');
+Route::get('/career', [IndexController::class, 'career'])->name('contact');
+Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('contact');
+Route::get('/contact-us', [IndexController::class, 'products'])->name('contact');
 
-Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
-Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
+// Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
+// Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
 
-Route::get('/terms', [IndexController::class, 'terms_page'])->name('terms');
-Route::get('/refund-policy', [IndexController::class, 'refund_policy'])->name('refund-policy');
+// Route::get('/terms', [IndexController::class, 'terms_page'])->name('terms');
+// Route::get('/refund-policy', [IndexController::class, 'refund_policy'])->name('refund-policy');
 
 Route::get('/404', [IndexController::class, 'not_found'])->name('error_page');
 Route::get('/thank-you', [IndexController::class, 'thank_you'])->name('thank_you');

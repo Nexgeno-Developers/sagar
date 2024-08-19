@@ -1,224 +1,121 @@
 
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 col-md-6">
-        <div class="footer-widget" data-aos-once="true" data-aos="fade-up">
-          <h3 class="widget-title">USEFUL LINKS</h3>
-          <ul class="widget-menu">
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Sign In </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> New Account </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Instant Pay </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Auto Debit </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Information </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> FAQ </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6">
-        <div class="footer-widget" data-aos-once="true" data-aos="fade-up">
-          <h3 class="widget-title">My Account</h3>
-          <ul class="widget-menu">
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> My Profile </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> My Orders </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> My Whishlist </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6">
-        <div class="footer-widget" data-aos-once="true" data-aos="fade-up">
-          <h3 class="widget-title">Categories</h3>
-          <ul class="widget-menu">
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Rings </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Earrings </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Pendants </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Gold </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="las la-angle-right"></i> Bracelets & Bangels </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-widget" data-aos-once="true" data-aos="fade-up">
-          <h4 class="heading_font line-height35">Download <br>Our App </h4>
-          <p>Shining new app, made just for you! It's Free, Easy & Smart</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-app-image" data-aos-once="true" data-aos="fade-up">
-          <img src="/assets/frontend/images/app_images.png" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-widget mt-5" data-aos-once="true" data-aos="fade-up">
-          <p class="pb-0 mb-0">Contact Us: 1800-255-10234</p>
-          <p>Email: care@motiwalasons.in</p>
-        </div>
-      </div>
-      <div class="col-lg-5 col-md-6">
-        <h6 class="font-alt mt-4 mb-3 heading_font font-size20" data-aos-once="true" data-aos="fade-up">Subscribe to our Newsletter</h6>
-        <form class="form-subscribe" action="#">
-          <div class="input-group" data-aos-once="true" data-aos="fade-up">
-            <input type="text" class="form-control input-lg" placeholder="Write Your Email Address">
-            <span class="input-group-btn">
-              <button class="btn btn-success btn-lg" type="submit">Subscribe</button>
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="copyright_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <ul>
-            <li>
-              <a href="/terms"> Term of Use</a>
-            </li>
-            <li>|</li>
-            <li>
-              <a href=""> Privacy Policy</a>
-            </li>
-            <li>|</li>
-            <li>
-              <a href=""> Give Us Feedback</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <p class="text-center">Copyright © 2024 Under Motiwala & Sons</p>
-        </div>
-        <div class="col-md-4">
-          <ul class="float_right">
-            <li>
-              <a href="">
-                <i class="lab la-whatsapp"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="lab la-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="lab la-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="lab la-twitter"></i>
-              </a>
-            </li>
-            <li>Let's Get Together</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
+<footer class="footer bg-dark text-light pt-md-5 pb-md-3">
+        <div class="container">
+            <div class="row">
+                <!-- Locations Section -->
+                <div class="col-md-4 footer_location_div">
+                    <h5 class="pb-md-4 footer_location_heading">Locations</h5>
+                    <a href="#" class="d-flex align-items-start gap-2 footer_location_1">
+                        <img class="location_flags" src="/assets/frontend/images/flag_india.png">
+                        <span class="text-light location_text"> 
+                            1304, Meraki Arena, V N Purav Marg, Opp.
+                            R K Studio, Chembur East, Mumbai
+                            400071, Maharashtra, India 
+                        </span> 
+                    </a>
+                    <a href="#" class="d-flex align-items-start gap-2 footer_location_2">
+                        <img class="location_flags" src="/assets/frontend/images/flag_brazil.png">
+                        <span class="text-light location_text"> 
+                            1304, Meraki Arena, V N Purav Marg, Opp.
+                            R K Studio, Chembur East, Mumbai
+                            400071, Maharashtra, India 
+                        </span> 
+                    </a>
+                    <div class="d-flex gap-2">
+                        <i class="fa fa-phone"></i>
+                        <span>
+                            <h6 class="d-block mb-0">Overseas Business Enquiries: <br>
+                            </h6> 
+                                <a href="tel:+5519989563731" class="footer_contact_links">
+                                    +55 19 989563731
+                                </a>
+                        </span>
+                    </div>
+                </div>
+    
+                <!-- Contact Info Section -->
+                <div class="col-md-3 footer_contact_div ps-md-0">
+                    <h5 class="pb-md-4 footer_contact_heading">Contact Info</h5>
+                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                        <i class="fa fa-phone"></i>
+                        <span>Mobile Number: <br>
+                            <a href="tel:+919619603699" class="footer_contact_links">
+                                +91 9619603699
+                            </a>
+                        </span> 
+                    </div>
+                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                        <i class="fa fa-phone"></i>
+                        <span>Landline Number: <br>
+                            <a href="tel:+912235137822" class="footer_contact_links">
+                                +91-22-35137822 / +91-22-35137821
+                            </a>
+                        </span> 
+                    </div>
+                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                        <i class="fa fa-envelope"></i>
+                            <a href="mailto:sales@sagarspecialitychemicals.com" class="footer_contact_links">
+                                sales@sagarspecialitychemicals.com
+                            </a>
+                    </div>
+                </div>
+    
+                <!-- Useful Links Section -->
+                <div class="col-md-2 footer_useful_link_1_div ps-md-3">
+                    <h5 class="pb-md-4 footer_useful_link_1_heading">Useful Links</h5>
+                    <ul class="list-group-item list-unstyled">
+                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Home</a> </li>
+                        <li class="list-item"> <a href="about-us.php" class="footer_useful_link_1_links">Company Profile</a> </li>
+                        <li class="list-item"> <a href="product-categories.php" class="footer_useful_link_1_links">Industry Areas</a> </li>
+                        <li class="list-item"> <a href="enquire.php" class="footer_useful_link_1_links">Client</a> </li>
+                        <li class="list-item"> <a href="contact-us.php" class="footer_useful_link_1_links">Contact Us</a> </li>
+                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Terms & Condition</a> </li>
+                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Privacy Policy</a> </li>
+                    </ul>
+                </div>
 
+                <div class="col-md-3 footer_useful_link_2_div">
+                <h5 class="pb-md-4 footer_useful_link_2_heading">Useful Links</h5>
+                    <ul class="list-group-item list-unstyled">
+                        <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
+                        <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Solutions</a> </li>
+                        <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Partner</a> </li>
+                        <li class="list-item">
+                            <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-md-3">
+                                <li class="list-item"> 
+                                    <a href="" class="footer_useful_link_2_links">
+                                        <i class="fa fa-linkedin-in"></i>
+                                    </a> 
+                                </li>
 
-<!-- login modal popup open-->
-<div class="modal fade modal_popup_cls" id="loginmodal" aria-hidden="true" aria-labelledby="loginmodal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title title_heading black_color heading_font" id="loginmodal">Sign In</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <div class="form-group mt-4">
-            <input type="text" class="form-control" name="user_id" placeholder="User ID*" />
-          </div>
-          <div class="form-group mt-5">
-            <input type="text" class="form-control" name="user_password" placeholder="Password*" />
-            <button class="forget_buttons">Forgot Password</button>
-          </div>
-          <div class="form-group">
-            <div class="buttonclass1 mt60">
-              <button type="button">Sign In <i class="las la-arrow-right"></i>
-              </button>
+                                <li class="list-item"> 
+                                    <a href="" class="footer_useful_link_2_links">
+                                        <i class="fa fa-instagram"></i>
+                                    </a> 
+                                </li>
+
+                                <li class="list-item"> 
+                                    <a href="" class="footer_useful_link_2_links">
+                                        <i class="fa fa-x-twitter"></i>
+                                    </a> 
+                                </li>
+
+                                <li class="list-item"> 
+                                    <a href="" class="footer_useful_link_2_links">
+                                        <i class="fa fa-facebook"></i>
+                                    </a> 
+                                </li>
+                            </ul>                        
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </form>
-        <p class="pt-5 pb-0 mb-0 fs-14">* If you already have a Golden Harvest A/c, you can sign in here.</p>
-        <p class="fs-14"> * User ID is your registered mobile number</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-<!-- Auto Debit modal popup open-->
-<div class="modal fade modal_popup_cls" id="autodebit_modal" aria-hidden="true" aria-labelledby="autodebit_modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title title_heading black_color heading_font" id="autodebit_modal">Auto Debit</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <div class="form-group mt-4">
-            <input type="text" class="form-control" name="account_number" placeholder="Account Number*" />
-          </div>
-          <div class="form-group mt-5">
-            <input type="text" class="form-control" name="mobile_number" placeholder="Mobile Number*" />
-          </div>
-          <div class="form-group">
-            <div class="buttonclass1 mt60">
-              <button type="button">Proceed <i class="las la-arrow-right"></i>
-              </button>
+            <br class="d-md-block d-none">
+            <hr>
+            <div class="pt-md-2 footer_copyright text-center">
+                <span class="copyright_content"> © Copyright - Sagar Speciality Chemicals Pvt. Ltd. | Designed by Nexgeno</span>
             </div>
-          </div>
-        </form>
         </div>
-    </div>
-  </div>
-</div>
+    </footer>
