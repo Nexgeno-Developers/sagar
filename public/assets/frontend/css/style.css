@@ -2,7 +2,16 @@
     border-width: border-box;
     font-family: poppins;
 }
+.cursor-pointer {
+    cursor: pointer;
+}
+.list-group-item {
+    transition: background-color 0.3s;
+}
 
+.list-group-item:hover {
+    background-color: #f8f9fa; /* Change the color to your preference */
+}
 body {
     overflow-x: hidden;
 }

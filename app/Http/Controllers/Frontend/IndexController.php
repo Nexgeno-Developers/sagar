@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Faq;
 use App\Models\Contact;
+use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 
 class IndexController extends Controller
@@ -48,11 +51,113 @@ class IndexController extends Controller
     }
 
     public function partner_with_us(){
-        return view('frontend.pages.partner_with_us.index');
+        return view('frontend.pages.partner.index');
     }
-    public function products(){
-        return view('frontend.pages.products.index');
+
+// ProductController.php
+// public function products_category(Request $request)
+// {
+//     // Fetch all product categories
+//     $productCategories = ProductCategory::where('is_active', 1)->get();
+
+//     // Initialize query for products
+//     $query = Product::where('is_active', 1)->query();
+
+//     // Filter products by category if category_id is present in the request
+//     if ($request->has('category_id')) {
+//         $categoryId = $request->input('category_id');
+//         $query->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode([$categoryId])]);
+//     }else{
+//         $categoryId = 10;
+//         $query->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode([$categoryId])]);
+//     }
+
+//     // Fetch all products (filtered by category if applicable)
+//     $products = $query->get();
+
+//     return view('frontend.pages.product.product_category', compact('productCategories', 'products'));
+// }
+
+public function products_category(Request $request)
+{
+    // Fetch all product categories where is_active is 1
+    $productCategories = ProductCategory::where('is_active', 1)->get();
+
+    // Initialize query for products
+    $query = Product::where('is_active', 1);
+
+    // Get the category_id from the request, default to 10 if not present
+    $categoryId = $request->input('category_id') ?? 10;
+
+    // Filter products by category using LIKE
+    $query->where('product_category_ids', 'LIKE', '%' . $categoryId . '%');
+
+    // Print the SQL query and bindings for debugging
+    // $sql = $query->toSql();
+    // $bindings = $query->getBindings();
+    // $fullSql = vsprintf(str_replace('?', '%s', $sql), $bindings);
+
+    // Uncomment the following lines to debug in your application
+    // dd($fullSql);
+
+    // Fetch all products (filtered by category if applicable)
+    // $products = $query->get();
+
+    // Paginate products, 9 per page
+    $products = $query->paginate(9);
+
+    return view('frontend.pages.product.product_category', compact('productCategories', 'products', 'categoryId'));
+}
+
+
+public function product_detail($slug) {
+    // Fetch the product details
+    $product_detail = DB::table('products')
+        ->where('slug', $slug)
+        ->where('is_active', 1)
+        ->first();
+
+    if (!$product_detail) {
+        abort(404, 'Product not found');
     }
+
+    // Extract product details
+    $page_name = $product_detail->title;
+    $image = $product_detail->image;
+    $product_category_ids = json_decode($product_detail->product_category_ids, true);
+    $function_description = $product_detail->function_description;
+    $product_description = $product_detail->product_description;
+    $product_information = $product_detail->product_information;
+    $delivery_description = $product_detail->delivery_description;
+    $meta_title = $product_detail->meta_title;
+    $meta_description = $product_detail->meta_description;
+    $is_active = $product_detail->is_active;
+
+    // Fetch related products
+    $related_products = DB::table('products')
+        ->where('id', '!=', $product_detail->id) // Exclude the current product
+        ->where('is_active', 1)
+        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
+        ->limit(4)
+        ->get();
+
+    return view('frontend.pages.product.product_detail', compact(
+        'product_detail',
+        'is_active',
+        'delivery_description',
+        'product_information',
+        'product_description',
+        'function_description',
+        'product_category_ids',
+        'slug',
+        'page_name',
+        'image',
+        'meta_title',
+        'meta_description',
+        'related_products' // Pass related products to the view
+    ));
+}
+
 
 //--------------=============================== Pages ================================------------------------------
 

@@ -31,22 +31,22 @@
                       <div class="collapse navbar-collapse justify-content-end pb-md-3" id="navbarNav">
                           <ul class="navbar-nav gap-md-3 mb-2 mb-lg-0">
                               <li class="nav-item">
-                                  <a class="nav-link" href="product-categories.php">Products</a>
+                                  <a class="nav-link" href="{{route('products_category')}}">Products</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="about-us.php">Company Profile</a>
+                                  <a class="nav-link" href="{{route('about_us')}}">Company Profile</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="enquire.php">Partner with us</a>
+                                  <a class="nav-link" href="{{route('partner_with_us')}}">Partner with us</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="career.php">Career</a>
+                                  <a class="nav-link" href="{{route('career')}}">Career</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="">Client</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="contact-us.php">Contact Us</a>
+                                  <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                               </li>
                               <li class="list-group-item">
                                   <a class="nav-link" href="#"><i class="fa fa-search text-light"></i></a>

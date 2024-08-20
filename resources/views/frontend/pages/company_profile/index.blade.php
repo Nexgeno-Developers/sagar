@@ -16,7 +16,7 @@
             <h2 class="text-light banner_heading_text">About Us</h2>
             <ul class="list-group list-unstyled list-group-horizontal banner_heading_breadcrumb">
                 <li class="list-group-item"><a href=""><i class="fa fa-house text-light"></i></a></li>
-                <li class="list-group-item"><a href="index.php">Home</a></li> > 
+                <li class="list-group-item"><a href="{{route('index')}}">Home</a></li> > 
                 <li class="list-group-item"><p class="mb-0">About Us</p></li>
             </ul>
         </div>                
@@ -52,7 +52,7 @@
                 </div>
             </div>                    
             <div class="col-md-5 saagar_speciality_chemical_machines float-end">
-                <img src="images/home/saagar_speciality_chemical.png" alt="Chemical Process" class="img-fluid rounded">
+                <img src="/assets/frontend/images/home/saagar_speciality_chemical.png" alt="Chemical Process" class="img-fluid rounded">
                 <div class="about_info_box info-box text-start text-light p-md-4 up_and_down">
                     <h4>100k+</h4>
                     <p>Lorem Ipsum</p>
@@ -121,7 +121,7 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img class="img-fluid right_img ps-md-3" src="images/about-us/cor_values_right_img.png">
+                    <img class="img-fluid right_img ps-md-3" src="/assets/frontend/images/about-us/cor_values_right_img.png">
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img class="right_img what_we_do_img pe-md-3" src="images/about-us/company_policy.png">
+                <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/about-us/company_policy.png">
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
         <h2 class="vission_heading product_heading py-md-3 text-light">MANAGEMENT<span class="purple_color"> TEAM</span></h2>
         <div class="col-md-12 row align-items-center">
             <div class="col-md-3">
-                <img src="images/about-us/ravindra_laxmidas.png" alt="" class="img-fluid profile_img">
+                <img src="/assets/frontend/images/about-us/ravindra_laxmidas.png" alt="" class="img-fluid profile_img">
             </div>
             <div class="col-md-9">
                 <h5 class="name_and_position text-light pb-md-3">Ravindra Laxmidas Sampat - Founder &amp; Director.</h5>
@@ -166,7 +166,7 @@
         
         <div class="col-md-12 row align-items-center">
             <div class="col-md-3">
-                <img src="images/about-us/hardik_ravindra.png" alt="" class="img-fluid profile_img">
+                <img src="/assets/frontend/images/about-us/hardik_ravindra.png" alt="" class="img-fluid profile_img">
             </div>
             <div class="col-md-9">
                 <h5 class="name_and_position text-light pb-md-3">Hardik Ravindra Sampat – Managing Director.</h5>
@@ -183,7 +183,7 @@
         
         <div class="col-md-12 row align-items-center">
             <div class="col-md-3">
-                <img src="images/about-us/jaydeep_kantilal.png" alt="" class="img-fluid profile_img">
+                <img src="/assets/frontend/images/about-us/jaydeep_kantilal.png" alt="" class="img-fluid profile_img">
             </div>
             <div class="col-md-9">
                 <h5 class="name_and_position text-light pb-md-3">Jaydeep Kantilal Panchal - Business Development Manager</h5>
@@ -199,7 +199,7 @@
         
         <div class="col-md-12 row align-items-center">
             <div class="col-md-3">
-                <img src="images/about-us/mehul_chandulal.png" alt="" class="img-fluid profile_img">
+                <img src="/assets/frontend/images/about-us/mehul_chandulal.png" alt="" class="img-fluid profile_img">
             </div>
             <div class="col-md-9">
                 <h5 class="name_and_position text-light pb-md-3">Mehul Chandulal Dattani - Head of Operations</h5>
@@ -214,7 +214,7 @@
         
         <div class="col-md-12 row align-items-center">
             <div class="col-md-3">
-                <img src="images/about-us/brijesh_shah.png" alt="" class="img-fluid profile_img">
+                <img src="/assets/frontend/images/about-us/brijesh_shah.png" alt="" class="img-fluid profile_img">
             </div>
             <div class="col-md-9">
                 <h5 class="name_and_position text-light pb-md-3">Brijesh Shah</h5>
@@ -244,7 +244,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img class="right_img what_we_do_img ps-md-3 mt-md-0" src="images/about-us/about_lorem_ipsum.png">
+                <img class="right_img what_we_do_img ps-md-3 mt-md-0" src="/assets/frontend/images/about-us/about_lorem_ipsum.png">
             </div>
         </div>
     </div>
@@ -263,7 +263,7 @@
 
             </div>
             <div class="col-md-5">
-                <img class="right_img what_we_do_img pe-md-3" src="images/about-us/about_why_sscpl.png">
+                <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/about-us/about_why_sscpl.png">
             </div>
         </div>
     </div>
@@ -273,41 +273,41 @@
     <div class="container mb-md-5">
         <div class="row justify-content-between position-relative">
             <div class="animated_moving_machine py-md-2">
-                <img class="moving_machine" src="images/home/animated_top-tank.png" alt="">
+                <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
             </div>
             <div class="col-md-12 why_sscpl_bg_img position-absolute">
                 <h2 class="product_heading text-light text-center pt-md-5 mt-md-4">WHY SSCPL?</h2>
                 <div class="row pt-md-5">
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/funnel.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Product</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/competitve_pricing.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/competitve_pricing.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Competitve Pricing</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/packaging.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/packaging.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Packaging</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/commitment.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/commitment.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Commitment</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/delivery.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/delivery.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Delivery</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/customised_solutions.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customised_solutions.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Customised Solutions</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/compliances.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/compliances.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Compliances</p>
                     </div>
                     <div class="col-md-3 sscl_contents_main_div text-center pb-md-5">
-                        <div class="sscl_img_div"> <img src="images/home/customer_support.png" alt="" class="sscl_img"></div>
+                        <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customer_support.png" alt="" class="sscl_img"></div>
                         <p class="sscl_content mt-md-3">Customer Support</p>
                     </div>
                 </div>
@@ -322,7 +322,7 @@
             <div class="col">
                 <div class="our_vission_main_div p-md-5 ">
                     <div class="vission_img_div">
-                        <img src="images/about-us/our_vission.png" alt="" class="vission_img">                        
+                        <img src="/assets/frontend/images/about-us/our_vission.png" alt="" class="vission_img">                        
                     </div>
                     <h2 class="vission_heading product_heading py-md-3 text-light"><span class="purple_color">OUR</span> VISSION</h2>
                     <p class="vission_para text-light fs-14 fw-light">
@@ -333,7 +333,7 @@
             <div class="col">
                 <div class="our_mission_main_div p-md-5">
                     <div class="mission_img_div">
-                        <img src="images/about-us/our_mission.png" alt="" class="mission_img">
+                        <img src="/assets/frontend/images/about-us/our_mission.png" alt="" class="mission_img">
                     </div>
                     <h2 class="mission_heading product_heading py-md-3 text-light"><span class="purple_color">OUR</span> MISSION</h2>
                     <p class="mission_para text-light fs-14 fw-light">

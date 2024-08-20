@@ -16,7 +16,7 @@
             <h2 class="text-light banner_heading_text">Career</h2>
             <ul class="list-group list-unstyled list-group-horizontal banner_heading_breadcrumb">
                 <li class="list-group-item"><a href=""><i class="fa fa-house text-light"></i></a></li>
-                <li class="list-group-item"><a href="index.php">Home</a></li> > 
+                <li class="list-group-item"><a href="{{route('index')}}">Home</a></li> > 
                 <li class="list-group-item"><p class="mb-0">Career</p></li>
             </ul>
         </div>                
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="col-md-6 ps-md-5">
-                <img class="right_img what_we_do_img pe-md-3" src="images/career/career_form_right_img.png">
+                <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/career/career_form_right_img.png">
             </div>
         </div>
     </div>

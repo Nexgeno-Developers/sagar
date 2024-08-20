@@ -96,7 +96,7 @@
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="about_content"  maxlength="155" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+                <textarea class="form-control trumbowyg" name="about_content" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
             </div>
         </div>
     </div>
@@ -119,7 +119,7 @@
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="core_content"  maxlength="155" rows="3"  @if (empty($core_content)) required @endif>{{ $core_content }}</textarea>
+                <textarea class="form-control trumbowyg" name="core_content" rows="3"  @if (empty($core_content)) required @endif>{{ $core_content }}</textarea>
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
         <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="policy_content"  maxlength="155" rows="3"  @if (empty($policy_content)) required @endif>{{ $policy_content }}</textarea>
+                <textarea class="form-control trumbowyg" name="policy_content" rows="3"  @if (empty($policy_content)) required @endif>{{ $policy_content }}</textarea>
             </div>
         </div>
     </div>
@@ -214,7 +214,7 @@
             <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label>About Content<span class="red">*</span></label>
-                    <textarea class="form-control trumbowyg" name="about2_content1"  maxlength="155" rows="3"  @if (empty($about2_content1)) required @endif>{{ $about2_content1 }}</textarea>
+                    <textarea class="form-control trumbowyg" name="about2_content1" rows="3"  @if (empty($about2_content1)) required @endif>{{ $about2_content1 }}</textarea>
                 </div> 
             </div>
             <div class="col-sm-{{ !empty($about2_image1) ? 3 : 6 }}">
@@ -248,7 +248,7 @@
             <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label>About Content <span class="red">*</span></label>
-                    <textarea class="form-control trumbowyg" name="about2_content2"  maxlength="155" rows="3"  @if (empty($about2_content2)) required @endif>{{ $about2_content2 }}</textarea>
+                    <textarea class="form-control trumbowyg" name="about2_content2" rows="3"  @if (empty($about2_content2)) required @endif>{{ $about2_content2 }}</textarea>
                 </div> 
             </div>
         </div>

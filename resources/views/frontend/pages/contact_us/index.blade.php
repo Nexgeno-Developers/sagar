@@ -16,7 +16,7 @@
                     <h2 class="text-light banner_heading_text">Contact Us</h2>
                     <ul class="list-group list-unstyled list-group-horizontal banner_heading_breadcrumb">
                         <li class="list-group-item"><a href=""><i class="fa fa-house text-light"></i></a></li>
-                        <li class="list-group-item"><a href="index.php">Home</a></li> > 
+                        <li class="list-group-item"><a href="{{route('index')}}">Home</a></li> > 
                         <li class="list-group-item"><p class="mb-0">Contact Us</p></li>
                     </ul>
                 </div>                
@@ -34,7 +34,7 @@
                             </span>
                         </h2>
                         <div class="col-12 d-flex align-items-start gap-2 footer_location_1">
-                            <img class="location_flags mt-1" src="images/flag_india.png">
+                            <img class="location_flags mt-1" src="/assets/frontend/images/flag_india.png">
                             <p class="pb-1 location_text"> 
                                 1304, Meraki Arena, V N Purav Marg, Opp.
                                 R K Studio, Chembur East, Mumbai
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="d-flex align-items-start gap-2 pt-md-4">
-                            <img class="location_flags mt-1" src="images/flag_brazil.png">
+                            <img class="location_flags mt-1" src="/assets/frontend/images/flag_brazil.png">
                             <p class="text-dark mb-3 pb-2 location_text"> 
                                 1304, Meraki Arena, V N Purav Marg, Opp.
                                 R K Studio, Chembur East, Mumbai

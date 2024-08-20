@@ -95,65 +95,76 @@ class ProductController extends Controller
     
 
     public function update(Request $request, $id)
-    {
-        
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|',
-            'image' => 'nullable|image|max:2048',
-            'is_active' => 'required|boolean',
-            'product_category' => 'nullable|array',
-            'function_description' => 'nullable|string',
-            'product_description' => 'nullable|string',
-            'product_information' => 'nullable|string',
-            'delivery_description' => 'nullable|string',
-            'meta_title' => 'nullable|string|max:255',
-            'meta_description' => 'nullable|string|max:255',
-        ]);
-    
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => false,
-                'notification' => $validator->errors()->all()
-            ], 200);
-        }
+{
+    // Validate the input data
+    $validator = Validator::make($request->all(), [
+        'title' => 'required|string|max:255',
+        'slug' => 'required|string|max:255',
+        'image' => 'nullable|image|max:2048',
+        'is_active' => 'required|boolean',
+        'product_category' => 'nullable|array',
+        'function_description' => 'nullable|string',
+        'product_description' => 'nullable|string',
+        'product_information' => 'nullable|string',
+        'delivery_description' => 'nullable|string',
+        'meta_title' => 'nullable|string|max:255',
+        'meta_description' => 'nullable|string|max:255',
+    ]);
 
-        $product = Product::findOrFail($id);
-        $slug = customSlug($request->input('slug'));
-        if (Product::where('slug', $slug)->first() == null) {
-        
-            if ($request->hasFile('image')) {
-                $image = $request->file('image')->store('assets/images', 'public');
-            } else {
-                $image = $request->input('existing_image');
-            }
-        
-            $product->title = $request->title;
-            $product->slug = $slug;
-            $product->is_active = $request->is_active;
-            $product->image = $image;
-            $product->function_description = $request->function_description;
-            $product->product_description = $request->product_description;
-            $product->product_information = $request->product_information;
-            $product->delivery_description = $request->delivery_description;
-            $product->product_category_ids = $request->product_category;
-            $product->meta_title = $request->meta_title;
-            $product->meta_description = $request->meta_description;
-        
-            $product->save();
-        
-            return response()->json([
-                'status' => true,
-                'notification' => 'Product updated successfully!',
-            ]);
-        }
-        $response = [
+    // Handle validation errors
+    if ($validator->fails()) {
+        return response()->json([
             'status' => false,
-            'notification' => 'Slug has been used already',
-        ];
-
-        return response()->json($response);
+            'notification' => $validator->errors()->all()
+        ], 200);
     }
+
+    // Find the product by ID
+    $product = Product::findOrFail($id);
+
+    // Generate the slug using your customSlug function
+    $slug = customSlug($request->input('slug'));
+
+    // Check if the slug already exists for a different product
+    $existingProduct = Product::where('slug', $slug)->where('id', '!=', $id)->first();
+
+    if ($existingProduct) {
+        return response()->json([
+            'status' => false,
+            'notification' => 'Slug has been used already by another product.',
+        ], 200);
+    }
+
+    // Handle the image upload
+    if ($request->hasFile('image')) {
+        $image = $request->file('image')->store('assets/images', 'public');
+    } else {
+        $image = $request->input('existing_image');
+    }
+
+    // Update the product details
+    $product->title = $request->title;
+    $product->slug = $slug;
+    $product->is_active = $request->is_active;
+    $product->image = $image;
+    $product->function_description = $request->function_description;
+    $product->product_description = $request->product_description;
+    $product->product_information = $request->product_information;
+    $product->delivery_description = $request->delivery_description;
+    $product->product_category_ids = $request->product_category;
+    $product->meta_title = $request->meta_title;
+    $product->meta_description = $request->meta_description;
+
+    // Save the updated product
+    $product->save();
+
+    // Return success response
+    return response()->json([
+        'status' => true,
+        'notification' => 'Product updated successfully!',
+    ]);
+}
+
     
     public function delete($id) {
         

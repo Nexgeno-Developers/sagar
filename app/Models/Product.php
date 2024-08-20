@@ -18,9 +18,13 @@ class Product extends Model
         'product_category_ids' => 'array',  // Cast to array or JSON
     ];
 
-    // Method to get related categories
+    // Method to get related categories    // Define the attribute accessor
     public function getCategoriesAttribute()
     {
-        return ProductCategory::whereIn('id', $this->product_category_ids)->get();
+        // Ensure product_category_ids is always an array
+        $categoryIds = $this->product_category_ids ?? [];
+        
+        // Return the related categories
+        return ProductCategory::whereIn('id', $categoryIds)->get();
     }
 }

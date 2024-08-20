@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\backend\ProductController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -19,12 +20,21 @@ use Illuminate\Support\Facades\Mail;
 // Home START
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
+Route::get('/filter-products/{categoryId}', [ProductController::class, 'filterProductsByCategory']);
 
-Route::get('/about-us', [IndexController::class, 'about_us'])->name('contact');
-Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact');
-Route::get('/career', [IndexController::class, 'career'])->name('contact');
-Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('contact');
-Route::get('/contact-us', [IndexController::class, 'products'])->name('contact');
+Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact_us');
+Route::get('/about-us', [IndexController::class, 'about_us'])->name('about_us');
+
+Route::get('/career', [IndexController::class, 'career'])->name('career');
+Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('partner_with_us');
+Route::get('/product-categories', [IndexController::class, 'products_category'])->name('products_category');
+
+$slug = DB::table('products')->pluck('slug')->toArray();
+if (!empty($slug)) {
+Route::get('/product/{slug}', [IndexController::class, 'product_detail'])
+    ->where('slug', implode('|', $slug ))
+    ->name('product.detail');
+}
 
 // Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
 // Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');

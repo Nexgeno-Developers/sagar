@@ -16,7 +16,7 @@
             <h2 class="text-light banner_heading_text">Product Categories</h2>
             <ul class="list-group list-unstyled list-group-horizontal banner_heading_breadcrumb">
                 <li class="list-group-item"><a href=""><i class="fa fa-house text-light"></i></a></li>
-                <li class="list-group-item"><a href="index.php">Home</a></li> > 
+                <li class="list-group-item"><a href="{{route('index')}}">Home</a></li> > 
                 <li class="list-group-item"><p class="mb-0">Product Categories</p></li>
             </ul>
         </div>                
@@ -29,7 +29,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_1.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_1.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Phosphate Esters & Flame Retardant</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -41,7 +41,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_2.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_2.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Surfactant & Antistatic Agent</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -53,7 +53,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_3.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_3.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Hydrobromic Acid</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -65,7 +65,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_4.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_4.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Plasticizer</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -77,7 +77,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_5.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_5.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Anti-hydrolysis Agent</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -89,7 +89,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_6.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_6.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Polyurethane & Cast Nylon Additives</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -101,7 +101,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_7.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_7.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Green Chemistry</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -113,7 +113,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_8.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_8.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">C5 Products</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -127,7 +127,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_1.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_1.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Phosphate Esters & Flame Retardant</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -139,7 +139,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_2.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_2.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Surfactant & Antistatic Agent</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -151,7 +151,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_3.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_3.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Hydrobromic Acid</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -163,7 +163,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_4.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_4.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Plasticizer</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -175,7 +175,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_5.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_5.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Anti-hydrolysis Agent</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -187,7 +187,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_6.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_6.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Polyurethane & Cast Nylon Additives</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -199,7 +199,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_7.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_7.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">Green Chemistry</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -211,7 +211,7 @@
             <div class="col-md-3 our_product_cards_div">
                 <a href="dibutyl-phosphate.php" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                     <div class="card">
-                        <img src="images/home/our_product_8.png" alt="" class="product_card_image card-img-top">
+                        <img src="/assets/frontend/images/home/our_product_8.png" alt="" class="product_card_image card-img-top">
                         <div class="card-body d-flex">
                             <p class="card-text">C5 Products</p>
                             <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -233,6 +233,60 @@
     </div>
 </section>
 
+<section class="white_section gallery_filter">
+    <div class="container py-md-5">
+        <div class="row">
+            <div class="col-md-3 sidebar ps-0">
+                <div class="search-bar">
+                    <button class="btn search_btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="text" class="form-control" placeholder="Search for Product">
+                </div>
+                <form action="{{ route('products_category') }}" method="GET" id="categoryForm">
+                    <ul class="list-group filter_list">
+                        @foreach($productCategories as $category)
+                            <li onclick="submitCategoryForm({{ $category->id }})"
+                                class="cursor-pointer list-group-item @if($category->id == $categoryId) active @endif">
+                                {{ $category->title }}
+                            </li>
+                        @endforeach
+                    </ul>
+                    <input type="hidden" name="category_id" id="category_id" value="{{ $categoryId }}">
+                </form>
+
+            </div>
+            <div class="col-md-9 product_filter_gallery">
+                @if($products->isEmpty())
+                    <p class="text-center">No products available.</p>
+                @else
+                    <div class="row">
+                        @foreach($products as $product)
+                            <div class="col-md-4 product_filter_gallery_div">
+                                <a href="{{ route('product.detail', $product->slug) }}" class="d-block text-decoration-none">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $product->image)}}" alt="{{ $product->title }}" class="product_card_image card-img-top">
+                                        <div class="card-body d-flex align-items-center justify-content-between">
+                                            <p class="card-text">{{ $product->title }}</p>
+                                            <i class="btn btn-primary fa fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="col-12 text-center pt-md-4">
+                        {{ $products->appends(['category_id' => $categoryId])->links('pagination::bootstrap-5') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{{--
 <section class="white_section gallery_filter">
     <div class="container py-md-5">
         <div class="row">
@@ -275,7 +329,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/dibutyl_phsophate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/dibutyl_phsophate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Dibutyl Phsophate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -287,7 +341,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/tri_butyl_phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/tri_butyl_phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Tri Butyl Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -299,7 +353,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/di_2_ethylhexyl_phosphoric_acid.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/di_2_ethylhexyl_phosphoric_acid.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Di-2-ethylhexyl Phosphoric Acid</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -311,7 +365,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/tri_isobutyl_phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/tri_isobutyl_phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Tri Isobutyl Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -323,7 +377,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/triethyl_phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/triethyl_phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Triethyl Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -335,7 +389,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/tris(2_Chloroisopropyl)phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/tris(2_Chloroisopropyl)phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Tris(2-Chloroisopropyl)Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -347,7 +401,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/tris_2_ethylhexyl_phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/tris_2_ethylhexyl_phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Tris (2-ethylhexyl) Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -359,7 +413,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/tricresyl_phosphate.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/tricresyl_phosphate.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Tricresyl Phosphate</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -371,7 +425,7 @@
                     <div class="col-md-4 product_filter_gallery_div">
                         <a href="product-categories.php" class="d-block text-decoration-none">
                             <div class="card">
-                                <img src="images/product-categories/triaryl_phosphates_isopropylated.png" alt="" class="product_card_image card-img-top">
+                                <img src="/assets/frontend/images/product-categories/triaryl_phosphates_isopropylated.png" alt="" class="product_card_image card-img-top">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p class="card-text">Triaryl Phosphates Isopropylated</p>
                                     <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -393,7 +447,41 @@
         </div>
     </div>
 </section>
-
+--}}
 </main>
+@endsection
+
+@section("page.scripts")
+
+<script> 
+function submitCategoryForm(categoryId) {
+    // Set the hidden input value to the selected category ID
+    document.getElementById('category_id').value = categoryId;
+    
+    // Submit the form
+    document.getElementById('categoryForm').submit();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-bar input');
+    const categoryItems = document.querySelectorAll('.filter_list .list-group-item');
+
+    searchInput.addEventListener('keyup', function() {
+        const query = searchInput.value.toLowerCase();
+
+        categoryItems.forEach(function(item) {
+            const title = item.textContent.toLowerCase();
+
+            if (title.includes(query)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+</script>
 
 @endsection

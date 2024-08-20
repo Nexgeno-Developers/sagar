@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_email1">Email 1</label>
-                                        <input type="email" name="contacts_email1[]" class="form-control" value="{{ $contact->email1 }}">
+                                        <input type="email" name="contacts_email1[]" required class="form-control" value="{{ $contact->email1 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_email2">Email 2</label>
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_phone1">Phone 1</label>
-                                        <input type="text" name="contacts_phone1[]" class="form-control" value="{{ $contact->phone1 }}">
+                                        <input type="text" name="contacts_phone1[]" required class="form-control" value="{{ $contact->phone1 }}">
                                     </div>
                                     <div class="form-group col-6 mb-3">
                                         <label for="contacts_phone2">Phone 2</label>
@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_email1">Email 1</label>
-                                    <input type="email" name="contacts_email1[]" class="form-control">
+                                    <input type="email" name="contacts_email1[]" required class="form-control">
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_email2">Email 2</label>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_phone1">Phone 1</label>
-                                    <input type="number" name="contacts_phone1[]" class="form-control">
+                                    <input type="number" name="contacts_phone1[]" required class="form-control">
                                 </div>
                                 <div class="form-group col-6 mb-3">
                                     <label for="contacts_phone2">Phone 2</label>
@@ -163,6 +163,7 @@
                             <div class="row gallery-image-row">
                                 <div class="col-md-9">
                                     <div class="form-group row mb-3">  
+                                        {{--
                                         <div class="col-6 form-group mb-3">
                                             <label>Icon</label>
                                             <input class="form-control" type="file" name="social_media_icon[]"
@@ -174,9 +175,14 @@
                                                 <img width="180" src="{{ asset('storage/' . $row->icon) }}">                                       
                                             </div>
                                         @endif    
+                                        --}}
+                                        <div class="form-group col-12">
+                                            <label for="social_media_icon">Icon</label>
+                                            <input type="text" name="social_media_icon[]" class="form-control" value="{{ $row->icon }}" required>
+                                        </div>
                                         <div class="form-group col-12">
                                             <label for="social_media_url">URL</label>
-                                            <input type="url" name="social_media_url[]" class="form-control" value="{{ $row->url }}" required>
+                                            <input type="text" name="social_media_url[]" class="form-control" value="{{ $row->url }}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -194,11 +200,11 @@
                             <div class="form-group row mb-3">                            
                                 <div class="form-group col-6">
                                     <label for="social_media_icon">Icon</label>
-                                    <input class="form-control" type="file" name="social_media_icon[]" accept=".jpg,.jpeg,.png,.webp" required>
+                                    <input class="form-control" type="text" name="social_media_icon[]" accept=".jpg,.jpeg,.png,.webp" required>
                                 </div>        
                                 <div class="form-group col-6">
                                     <label for="social_media_url">URL</label>
-                                    <input type="url" name="social_media_url[]" class="form-control" required>
+                                    <input type="text" name="social_media_url[]" class="form-control" required>
                                 </div>
                             </div>
                         </div>
