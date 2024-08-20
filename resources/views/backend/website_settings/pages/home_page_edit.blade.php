@@ -75,7 +75,7 @@
                         <div class="col-md-9">
                             <div class="form-group row mb-3 ">
                                 <div class="col-3 form-group mb-3">
-                                    <label>Banner Image</label>
+                                    <label>Banner Image <span class="red">*</span></label>
                                     <input class="form-control" type="file" id="banner" name="banner[]"
                                         accept=".jpg,.jpeg,.png,.webp" @if (empty($banner->image)) required @endif>
                                 </div>
@@ -86,15 +86,15 @@
                                     </div>
                                 @endif
                                 <div class="col-6 form-group mb-3">
-                                    <label>Banner Text</label>
+                                    <label>Banner Text <span class="red">*</span></label>
                                     <input type="text" class="form-control" name="banner_text[]"   maxlength="155" value="{{$banner->text}}" @if (empty($banner->text)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
-                                    <label>Banner Button Text </label>
+                                    <label>Banner Button Text  <span class="red">*</span></label>
                                     <input class="form-control" type="text"   maxlength="155" value="{{$banner->button}}" id="banner_button[]" name="banner_button[]" @if (empty($banner->button)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
-                                    <label>Banner Url </label>
+                                    <label>Banner Url  <span class="red">*</span></label>
                                     <input class="form-control" type="text"   maxlength="155" value="{{$banner->url}}" id="banner_url[]" name="banner_url[]" @if (empty($banner->url)) required @endif>
                                 </div>
 
@@ -113,20 +113,20 @@
                 <div class="col-md-9">
                     <div class="form-group row mb-3 ">
                         <div class="col-6 form-group mb-3">
-                            <label>Banner Image</label>
+                            <label>Banner Image <span class="red">*</span></label>
                             <input class="form-control" type="file" id="banner" name="banner[]"
                                 accept=".jpg,.jpeg,.png,.webp" required>
                         </div>
                         <div class="col-6 form-group mb-3">
-                            <label>Banner Text</label>
+                            <label>Banner Text <span class="red">*</span></label>
                             <input type="text" class="form-control" name="banner_text[]"   maxlength="155" required>
                         </div>
                         <div class="col-6 form-group mb-3">
-                            <label>Banner Button Text </label>
+                            <label>Banner Button Text  <span class="red">*</span></label>
                             <input class="form-control" type="text" id="banner_button[]"   maxlength="155" name="banner_button[]" required>
                         </div>
                         <div class="col-6 form-group mb-3">
-                            <label>Banner Url </label>
+                            <label>Banner Url  <span class="red">*</span></label>
                             <input class="form-control" type="text" id="banner_url[]"   maxlength="155" name="banner_url[]" required>
                         </div>
 
@@ -185,7 +185,7 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>About Content<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="about_content"  maxlength="155" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+                <textarea class="form-control trumbowyg" name="about_content" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
             </div>            
         </div>
         
@@ -451,7 +451,7 @@ $(document).ready(function() {
         location.reload();
     }
     // Add row functionality for Banner Section
-    $(document).on('click', '.add-row', function() {
+    $(document).off('click', '.add-row').on('click', '.add-row', function() {
         var newRow = $('.gallery-image-row').first().clone();
         newRow.find('input, textarea').val('');
         newRow.find('.add-row-col-3-div').remove();
@@ -463,7 +463,7 @@ $(document).ready(function() {
     });
 
     // Remove row functionality for Banner Section
-    $(document).on('click', '.remove-row', function() {
+    $(document).off('click', '.remove-row').on('click', '.remove-row', function() {
         if ($('.gallery-image-row').length > 1) {
             $(this).closest('.gallery-image-row').remove();
         } else {
@@ -472,7 +472,7 @@ $(document).ready(function() {
     });
 
     // Repeat for What We Do Section and other sections
-    $(document).on('click', '.add-row2', function() {
+    $(document).off('click', '.add-row2').on('click', '.add-row2', function() {
         var newRow = $('.gallery-image-row2').first().clone();
         newRow.find('input,textarea').val('');
         newRow.find('textarea').trumbowyg('empty');
@@ -485,7 +485,7 @@ $(document).ready(function() {
     });
 
     // Remove row functionality for What We Do Section
-    $(document).on('click', '.remove-row2', function() {
+    $(document).off('click', '.remove-row2').on('click', '.remove-row2', function() {
         if ($('.gallery-image-row2').length > 1) {
             $(this).closest('.gallery-image-row2').remove();
         } else {
@@ -494,7 +494,7 @@ $(document).ready(function() {
     });
 
     // Repeat for What We Do Section and other sections
-    $(document).on('click', '.add-row3', function() {
+    $(document).off('click', '.add-row3').on('click', '.add-row3', function() {
         var newRow = $('.gallery-image-row3').first().clone();
         newRow.find('input,textarea').val('');
         newRow.find('textarea').trumbowyg('empty');
@@ -507,7 +507,7 @@ $(document).ready(function() {
     });
 
     // Remove row functionality for What We Do Section
-    $(document).on('click', '.remove-row3', function() {
+    $(document).off('click', '.remove-row3').on('click', '.remove-row3', function() {
         if ($('.gallery-image-row3').length > 1) {
             $(this).closest('.gallery-image-row3').remove();
         } else {

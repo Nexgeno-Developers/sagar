@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index(){
-        return view('frontend.pages.home.index');
+
+        $page = DB::table('pages')->where('type','home_page')->first();
+
+        return view('frontend.pages.home.index',compact('page'));
     }
 
 
@@ -52,6 +55,9 @@ class IndexController extends Controller
 
     public function partner_with_us(){
         return view('frontend.pages.partner.index');
+    }
+    public function what_we_do(){
+        return view('frontend.pages.what_we_do.index');
     }
 
 // ProductController.php

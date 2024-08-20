@@ -24,6 +24,7 @@ Route::get('/filter-products/{categoryId}', [ProductController::class, 'filterPr
 
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact_us');
 Route::get('/about-us', [IndexController::class, 'about_us'])->name('about_us');
+Route::get('/what-we-do', [IndexController::class, 'what_we_do'])->name('what_we_do');
 
 Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('partner_with_us');

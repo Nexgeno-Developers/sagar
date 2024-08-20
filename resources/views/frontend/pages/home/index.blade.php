@@ -8,63 +8,79 @@
 
 @section('page.content')
   
+@php
+if (!empty($page)) {
+    $title = $page->title;
+    $slug = $page->slug;
+    $meta_title = $page->meta_title;
+    $meta_description = $page->meta_description;
+}else{
+    $title = '';
+    $slug = '';
+    $meta_title = '';
+    $meta_description = '';
+}
+if (!empty($page->content)) {
+        $data = $page->content;
+        $decoded_data = json_decode($data);
+        $banners = $decoded_data->banner ?? '';
+        $about_content = $decoded_data->about_content ?? '';
+        $about_image = $decoded_data->about_image ?? '';
+        $wwd = $decoded_data->wwd_image ?? '';
+        $activities = $decoded_data->activities ?? '';
+        $scp_content = $decoded_data->scp_content ?? '';
+        $scp_image1 = $decoded_data->scp_image1 ?? '';
+        $scp_pdf1 = $decoded_data->scp_pdf1 ?? '';
+        $scp_text1 = $decoded_data->scp_text1 ?? '';
+        $scp_image2 = $decoded_data->scp_image2 ?? '';
+        $scp_text2 = $decoded_data->scp_text2 ?? '';
+        $scp_url = $decoded_data->scp_url ?? '';
+        $scp_image3 = $decoded_data->scp_image3 ?? '';
+        $scp_pdf2 = $decoded_data->scp_pdf2 ?? '';
+        $scp_text3 = $decoded_data->scp_text3 ?? '';
+        $cocs_description = $decoded_data->cocs_description ?? '';
+        $cocs_pdf = $decoded_data->cocs_pdf ?? '';
+    } else {
+        // If content is empty, set default empty values
+        $banners = '';
+        $about_content = '';
+        $about_image = '';
+        $wwd = '';
+        $activities = '';
+        $scp_content = '';
+        $scp_image1 = '';
+        $scp_pdf1 = '';
+        $scp_text1 = '';
+        $scp_image2 = '';
+        $scp_text2 = '';
+        $scp_url = '';
+        $scp_image3 = '';
+        $scp_pdf2 = '';
+        $scp_text3 = '';
+        $cocs_description = '';
+        $cocs_pdf = '';
+    }
+@endphp
   <main class="home-page">
 
       <section id="slider_banner_section">
           <div class="container-fluid px-0">
+              @if (!empty($banners))
               <div class="owl-theme owl-carousel home_page_banner_slides" id="home_page_banner_slider">
-                  <div class="banner_slides">
-                      <img src="/assets/frontend/images/home/liquid_bottles.png" alt="" class="banner_img">
+                
+               @foreach ($banners as $banner)
+                    <div class="banner_slides">
+                      <img src="{{ asset('storage/' . $banner->image) }}" alt="" class="banner_img">
                       <div class="banner_contents_div">
-                          <h4 class="banner_content text-light">
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua.
-                          </h4>
-                          <a href="dibutyl-phosphate.php" class="banner_view_button">View Products</a>
+                          <h4 class="banner_content text-light">{{$banner->text}}</h4>
+                          <a href="{{$banner->url}}" class="banner_view_button">{{$banner->button}}</a>
                       </div>
-                  </div>
+                    </div>
+               @endforeach
+                  
 
-                  <div class="banner_slides">
-                      <img src="/assets/frontend/images/home/liquid_jar_with_tripod_stand.png" alt="" class="banner_img">
-                      <div class="banner_contents_div">
-                          <h4 class="banner_content text-light">
-                              consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua.
-                              Lorem ipsum dolor sit amet,
-                          </h4>
-                          <a href="dibutyl-phosphate.php" class="banner_view_button">View Products</a>
-                      </div>
-                  </div>
-
-                  <div class="banner_slides">
-                      <img src="/assets/frontend/images/home/medicine_materials.png" alt="" class="banner_img">
-                      <div class="banner_contents_div">
-                          <h4 class="banner_content text-light">
-                              eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua.
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do
-                          </h4>
-                          <a href="dibutyl-phosphate.php" class="banner_view_button">View Products</a>
-                      </div>
-                  </div>
-
-                  <div class="banner_slides">
-                      <img src="/assets/frontend/images/home/liquid_jars.png" alt="" class="banner_img">
-                      <div class="banner_contents_div">
-                          <h4 class="banner_content text-light">
-                              et dolore magna aliqua.
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore
-                          </h4>
-                          <a href="dibutyl-phosphate.php" class="banner_view_button">View Products</a>
-                      </div>
-                  </div>
               </div>
+              @endif
               <marquee behavior="scroll" direction="left" class="banner_marque">
                   Your Dedicated Partners for Supply of Specialty Chemicals
               </marquee>
@@ -192,16 +208,17 @@
               <div class="row">
                   <div class="col-12">
                       <div class="col-md-11 background_blue_img p-md-5 px-2">
-                          <div class="col-md-8 p-md-5 p-3 py-4">
-                              <h2 class="text-light company_heading">SAGAR SPECIALITY <br class="d-md-block d-none"> CHEMICALS (PVT) LTD.</h2>
-                              <p class="since_content text-white">INCORPORATED IN 1974 AS A PARTNERSHIP COMPANY M/S. SAGAR INTERNATIONAL AND CONVERTED TO PVT LTD IN 1999</p>
-                              <p class="text-light after_success_content">After successfully recognizing itself as a reliable partner in supply chain management, Sagar Speciality Chemicals Private Limited then started with contract manufacturing.</p>
-                              <a href="about-us.php" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i class="fa fa-arrow-right"></i></a>                    
+                          <div class="text-light col-md-8 p-md-5 p-3 py-4">
+                                {!! $about_content !!}
+                                <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i class="fa fa-arrow-right"></i></a>                    
                           </div>
                       </div>
                       <div class="col-12 position-relative">
                           <div class="col-md-5 saagar_speciality_chemical_machine float-end">
-                              <img src="/assets/frontend/images/home/saagar_speciality_chemical.png" alt="Chemical Process" class="img-fluid rounded">
+                                @if (!empty($about_image))
+                                <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid rounded">
+                                @endif
+                              
                               <div class="info_box text-md-start text-center text-light p-md-4 up_and_down">
                                   <h4>100k+</h4>
                                   <p>Lorem Ipsum</p>
@@ -354,50 +371,32 @@
                       <h2 class="product_heading what_we_do_heading text-center pb-1 float-start"><span class="text-light">WHAT</span> WE DO?</h2>
                   </div>
                   <div class="col-md-6 d-md-block d-none">
-                      <a href="what-we-do.php" class="btn a_btn purple_btn float-end border border-2 border-light text-light">
+                      <a href="{{route('what_we_do')}}" class="btn a_btn purple_btn float-end border border-2 border-light text-light">
                           View All
                       </a>
                   </div>
               </div>
-              <div class="row">
+                @if (!empty($wwd))
+                <div class="row">
+                
                   <div class="owl-theme owl-carousel" id="what_we_do_slider">
+                    @foreach ($wwd as $index => $row )
                       <div class="col-12 what_we_do_main_div">
                           <div class="card">
-                              <img src="/assets/frontend/images/home/what_we_do_img_1.png" class="card-img-top" alt="card-img-top">
+                              <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top" alt="card-img-top">
                               <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  <a href="what-we-do.php" class="what_we_do_link">Read More<i class="fa fa-arrow-right"></i></a>
+                                  <h5 class="card-title">{{$row->text}}</h5>
+                                  <p class="card-text">{{$row->content}}</p>
+                                  <a href="{{route('what_we_do')}}" class="what_we_do_link">Read More<i class="fa fa-arrow-right"></i></a>
                               </div>
                           </div>
-                      </div>
-
-                      <div class="col-12 what_we_do_main_div">
-                          <div class="card">
-                              <img src="/assets/frontend/images/home/what_we_do_img_2.png" class="card-img-top" alt="card-img-top">
-                              <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  <a href="what-we-do.php" class="what_we_do_link">Read More<i class="fa fa-arrow-right"></i></a>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-12 what_we_do_main_div">
-                          <div class="card">
-                              <img src="/assets/frontend/images/home/what_we_do_img_3.png" class="card-img-top" alt="card-img-top">
-                              <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  <a href="what-we-do.php" class="what_we_do_link">Read More<i class="fa fa-arrow-right"></i></a>
-                              </div>
-                          </div>
-                      </div>
+                      </div> 
+                    @endforeach                     
                   </div>
-              </div>
-
+                </div>
+                @endif
               <div class="col-md-6 d-md-none d-block py-3 text-center">
-                  <a href="what-we-do.php" class="btn a_btn purple_btn float-md-end border border-2 border-light text-light">
+                  <a href="{{route('what_we_do')}}" class="btn a_btn purple_btn float-md-end border border-2 border-light text-light">
                       View All
                   </a>
               </div>
@@ -506,32 +505,31 @@
                           <br class="d-md-block d-none">
                           <div class="d-flex justify-content-center spply-chn-content_div">
                               <p class="col-md-9 sply_chn_content text-md-center pb-md-5 pb-3">
-                                  We are Preferred Best Exporters for Korea, Brazil, Thailand, USA, 
-                                  Australia, Japan, Saudi Arabia, UAE, Bangladesh and Sri Lanka.
+                                  {{$scp_content}}
                               </p>
                           </div>
                           <div class="three_boxes_div col-md-11 row row-cols-1 row-cols-md-3">
                               <div class="col ">
                                   <div class="spply_chn_box">
-                                      <img src="/assets/frontend/images/home/chemical_list.png" alt="" class="spply_chn_box_img">
-                                      <h5 class="spply_chn_title my-md-5">Chemical List</h5>
-                                      <a href="" class="spply_chn_btn">Download</a>
+                                      <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img">
+                                      <h5 class="spply_chn_title my-md-5">{{$scp_text1}}</h5>
+                                      <a target="_blank" href="{{ asset('storage/' . $scp_pdf1) }}" class="spply_chn_btn">Download</a>
                                   </div>
                               </div>
 
                               <div class="col ">
                                   <div class="spply_chn_box">
-                                      <img src="/assets/frontend/images/home/partner_with_us.png" alt="" class="spply_chn_box_img">
-                                      <h5 class="spply_chn_title my-md-5">Partner With Us</h5>
-                                      <a href="enquire.php" class="spply_chn_btn">Connect Now</a>
+                                      <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
+                                      <h5 class="spply_chn_title my-md-5">{{$scp_text2}}</h5>
+                                      <a target="_blank" href="{{$scp_url}}" class="spply_chn_btn">Connect Now</a>
                                   </div>
                               </div>
 
                               <div class="col ">
                                   <div class="spply_chn_box">
-                                      <img src="/assets/frontend/images/home/certificate.png" alt="" class="spply_chn_box_img">
-                                      <h5 class="spply_chn_title my-md-5">Certificate</h5>
-                                      <a href="" class="spply_chn_btn">View</a>
+                                      <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img">
+                                      <h5 class="spply_chn_title my-md-5">{{$scp_text3}}</h5>
+                                      <a target="_blank" href="{{ asset('storage/' . $scp_pdf2) }}" class="spply_chn_btn">View</a>
                                   </div>
                               </div>
                           </div>
@@ -544,12 +542,8 @@
       <section class="white_section code_of_conduct bg-light">
           <div class="container text-center pb-md-5 py-3 pt-md-4">
               <h2 class="col-12 product_heading text-center pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
-              <p class="col-12 code_of_content_div pb-md-3">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                  dicta sunt explicabo Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-              </p>
-              <a href="" class="col-12 spply_chn_btn">Read More</a>
+              <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
+              <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="col-12 spply_chn_btn">Read More</a>
           </div>
       </section>
 
