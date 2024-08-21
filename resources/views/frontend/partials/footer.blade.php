@@ -1,3 +1,8 @@
+@php
+    $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    $contacts = json_decode($footer->contacts);
+    $social_media = json_decode($footer->social_media);
+@endphp
 
 
 <footer class="footer bg-dark text-light pt-md-5 pb-md-3">
@@ -9,17 +14,13 @@
                     <a href="#" class="d-flex align-items-start gap-2 footer_location_1">
                         <img class="location_flags" src="/assets/frontend/images/flag_india.png">
                         <span class="text-light location_text"> 
-                            1304, Meraki Arena, V N Purav Marg, Opp.
-                            R K Studio, Chembur East, Mumbai
-                            400071, Maharashtra, India 
+                            {{$contacts[0]->address}}
                         </span> 
                     </a>
                     <a href="#" class="d-flex align-items-start gap-2 footer_location_2">
                         <img class="location_flags" src="/assets/frontend/images/flag_brazil.png">
                         <span class="text-light location_text"> 
-                            1304, Meraki Arena, V N Purav Marg, Opp.
-                            R K Studio, Chembur East, Mumbai
-                            400071, Maharashtra, India 
+                            {{$contacts[1]->address}} 
                         </span> 
                     </a>
                     <div class="d-flex gap-2">
@@ -27,8 +28,8 @@
                         <span>
                             <h6 class="d-block mb-0">Overseas Business Enquiries: <br>
                             </h6> 
-                                <a href="tel:+5519989563731" class="footer_contact_links">
-                                    +55 19 989563731
+                                <a href="tel:{{$contacts[1]->phone1}}" class="footer_contact_links">
+                                    {{$contacts[1]->phone1}} 
                                 </a>
                         </span>
                     </div>
@@ -40,23 +41,27 @@
                     <div class="d-flex align-items-start gap-2 pb-md-3">
                         <i class="fa fa-phone"></i>
                         <span>Mobile Number: <br>
-                            <a href="tel:+919619603699" class="footer_contact_links">
-                                +91 9619603699
+                            <a href="tel:{{$contacts[0]->phone1}}" class="footer_contact_links">
+                            {{$contacts[0]->phone1}}
                             </a>
                         </span> 
                     </div>
                     <div class="d-flex align-items-start gap-2 pb-md-3">
                         <i class="fa fa-phone"></i>
                         <span>Landline Number: <br>
-                            <a href="tel:+912235137822" class="footer_contact_links">
-                                +91-22-35137822 / +91-22-35137821
+                            <a href="tel:{{$contacts[0]->phone2}}" class="footer_contact_links">
+                                {{$contacts[0]->phone2}} 
+                            </a>/
+                            <a href="tel:{{$contacts[0]->phone3}}" class="footer_contact_links">
+                                {{$contacts[0]->phone3}} 
                             </a>
+                         
                         </span> 
                     </div>
                     <div class="d-flex align-items-start gap-2 pb-md-3">
                         <i class="fa fa-envelope"></i>
-                            <a href="mailto:sales@sagarspecialitychemicals.com" class="footer_contact_links">
-                                sales@sagarspecialitychemicals.com
+                            <a href="mailto:{{$contacts[0]->email1}}" class="footer_contact_links">
+                            {{$contacts[0]->email1}}
                             </a>
                     </div>
                 </div>
@@ -82,31 +87,17 @@
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Solutions</a> </li>
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Partner</a> </li>
                         <li class="list-item">
+                            @if (isset($social_media) && !empty($social_media))
                             <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-md-3">
+                                @foreach ($social_media as $index => $row )
                                 <li class="list-item"> 
-                                    <a href="" class="footer_useful_link_2_links">
-                                        <i class="fa fa-linkedin-in"></i>
+                                    <a href="{{ $row->url}}" class="footer_useful_link_2_links">
+                                        {!! $row->icon !!}
                                     </a> 
                                 </li>
-
-                                <li class="list-item"> 
-                                    <a href="" class="footer_useful_link_2_links">
-                                        <i class="fa fa-instagram"></i>
-                                    </a> 
-                                </li>
-
-                                <li class="list-item"> 
-                                    <a href="" class="footer_useful_link_2_links">
-                                        <i class="fa fa-x-twitter"></i>
-                                    </a> 
-                                </li>
-
-                                <li class="list-item"> 
-                                    <a href="" class="footer_useful_link_2_links">
-                                        <i class="fa fa-facebook"></i>
-                                    </a> 
-                                </li>
-                            </ul>                        
+                                @endforeach                                
+                            </ul> 
+                            @endif                       
                         </li>
                     </ul>
                 </div>

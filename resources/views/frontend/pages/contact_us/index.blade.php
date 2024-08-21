@@ -36,9 +36,7 @@
                         <div class="col-12 d-flex align-items-start gap-2 footer_location_1">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_india.png">
                             <p class="pb-1 location_text"> 
-                                1304, Meraki Arena, V N Purav Marg, Opp.
-                                R K Studio, Chembur East, Mumbai
-                                400071, Maharashtra, India 
+                                {{$contacts[0]->address}} 
                             </p> 
                         </div>
 
@@ -47,32 +45,30 @@
                                 <i class="fa fa-phone mt-2"></i>
                                 <div class="d-block">
                                     <span>Mobile Number: </span><br>
-                                    <a href="tel:+919619603699" class="fw-500">+91 9619603699</a>
+                                    <a href="tel:{{$contacts[0]->phone1}}" class="fw-500">{{$contacts[0]->phone1}}</a>
                                 </div> 
                             </div>
                             <div class="col-md-8 d-flex align-items-start justify-content-center gap-2 pb-md-3">
                                 <i class="fa fa-phone mt-2"></i>
                                 <div class="d-block">
                                     <span>Landline Number: </span>  <br>
-                                    <a href="tel:+912235137822" class="fw-500">+91-22-35137822 </a> /
-                                    <a href="tel:+912235137821" class="fw-500">+91-22-35137821</a>
+                                    <a href="tel:{{$contacts[0]->phone2}}" class="fw-500">{{$contacts[0]->phone2}} </a> /
+                                    <a href="tel:{{$contacts[0]->phone3}}" class="fw-500">{{$contacts[0]->phone3}}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-12 d-flex align-items-cemter gap-2 pb-md-3">
                             <i class="fa fa-envelope mt-1"></i>
-                            <a href="mailto:sales@sagarspecialitychemicals.com" class="fw-500">
-                                sales@sagarspecialitychemicals.com
+                            <a href="mailto:{{$contacts[0]->email1}}" class="fw-500">
+                                {{$contacts[0]->email1}}
                             </a>
                         </div>
 
                         <div class="d-flex align-items-start gap-2 pt-md-4">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_brazil.png">
                             <p class="text-dark mb-3 pb-2 location_text"> 
-                                1304, Meraki Arena, V N Purav Marg, Opp.
-                                R K Studio, Chembur East, Mumbai
-                                400071, Maharashtra, India 
+                                {{$contacts[1]->address}}  
                             </p> 
                         </div>
                         <div class="d-flex gap-2">
@@ -80,8 +76,8 @@
                             <div class="block">
                                 <span class="d-block mb-0">Overseas Business Enquiries: <br>
                                 </span> 
-                                    <a href="tel:+5519989563731" class="mt-2">
-                                        +55 19 989563731
+                                    <a href="tel:{{$contacts[1]->phone1}}" class="mt-2">
+                                        {{$contacts[1]->phone1}}
                                     </a>
                                 </div>
                         </div>

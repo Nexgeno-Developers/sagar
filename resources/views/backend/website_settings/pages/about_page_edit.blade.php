@@ -168,11 +168,11 @@
                                 @endif
                                 <div class="col-6 form-group mb-3">
                                     <label>Name<span class="red">*</span></label>
-                                    <input type="text" class="form-control" name="team_name[]"   maxlength="155" value="{{$team->name}}" @if (empty($team->name)) required @endif>
+                                    <input type="text" class="form-control" name="team_name[]" value="{{$team->name}}" @if (empty($team->name)) required @endif>
                                 </div>
                                 <div class="col-6 form-group mb-3">
                                     <label>Description <span class="red">*</span> </label>
-                                    <textarea class="form-control" name="team_description[]"  maxlength="155" rows="3" @if (empty($team->description)) required @endif>{{$team->description}}</textarea>
+                                    <textarea class="form-control" name="team_description[]" rows="3" @if (empty($team->description)) required @endif>{{$team->description}}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -194,11 +194,11 @@
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Name <span class="red">*</span></label>
-                            <input type="text" class="form-control" name="team_name[]" maxlength="155" required>
+                            <input type="text" class="form-control" name="team_name[]" required>
                         </div>
                         <div class="col-6 form-group mb-3">
                             <label>Description <span class="red">*</span> </label>
-                            <textarea class="form-control" name="team_description[]"  maxlength="255" rows="3" required></textarea>
+                            <textarea class="form-control" name="team_description[]" rows="3" required></textarea>
                         </div>
                     </div>
                 </div>

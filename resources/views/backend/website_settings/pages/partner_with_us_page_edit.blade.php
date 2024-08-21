@@ -52,7 +52,7 @@
     <hr>
     <h3>About section</h3>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
                 <textarea class="form-control trumbowyg" name="about_content" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>

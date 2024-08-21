@@ -1,3 +1,7 @@
+@php
+    $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    $logo = $footer->logo ?? '';
+@endphp
 <header id="mainHeader" class="header transparent pt-md-0 pt-3">
       <div class="container">
           <div class="d-flex flex-column">
@@ -22,8 +26,8 @@
               </div>
               <div class="menu">
                   <nav class="navbar navbar-expand-lg navbar-dark pt-0">
-                      <a class="navbar-brand" href="index.php">
-                          <img class="header_logo" src="/assets/frontend/images/header_logo_2.png" alt="Sagar Logo"> 
+                      <a class="navbar-brand" href="{{route('index')}}">
+                          <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> 
                       </a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>

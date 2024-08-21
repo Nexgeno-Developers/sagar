@@ -44,17 +44,24 @@ class IndexController extends Controller
 //--------------=============================== Pages ================================------------------------------
 
     public function about_us(){
-        return view('frontend.pages.company_profile.index');
+        
+        $page = DB::table('pages')->where('type','about_us')->first();
+        
+        return view('frontend.pages.company_profile.index',compact('page'));
     }
     public function contact_us(){
-        return view('frontend.pages.contact_us.index');
+        $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+        $contacts = json_decode($footer->contacts);
+
+        return view('frontend.pages.contact_us.index',compact('contacts'));
     }
     public function career(){
         return view('frontend.pages.career.index');
     }
-
+    
     public function partner_with_us(){
-        return view('frontend.pages.partner.index');
+        $page = DB::table('pages')->where('type','partner_with_us')->first();
+        return view('frontend.pages.partner.index',compact('page'));
     }
     public function what_we_do(){
         return view('frontend.pages.what_we_do.index');
