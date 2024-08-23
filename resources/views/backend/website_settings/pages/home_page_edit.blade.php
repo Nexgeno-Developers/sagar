@@ -403,7 +403,7 @@
         <div class="row">
             <div class="col-6 form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
+                <textarea class="form-control" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>
             </div>
             <div class="col-6 form-group mb-3">
                 <label>PDF<span class="red">*</span></label>
