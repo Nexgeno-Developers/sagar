@@ -87,6 +87,7 @@ class ProductCategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        // Validate incoming data
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:product_categories,slug,' . $id,
@@ -96,7 +97,7 @@ class ProductCategoryController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
@@ -104,38 +105,45 @@ class ProductCategoryController extends Controller
             ], 200);
         }
 
-        $ProductCategory = ProductCategory::findOrFail($id);
-        $slug = customSlug($request->input('slug'));
-        if (ProductCategory::where('slug', $slug)->first() == null) {
+        $productCategory = ProductCategory::findOrFail($id);
+        $slug = customSlug($request->input('slug')); // Generate slug
 
-            if ($request->hasFile('image')) {
-                $image = $request->file('image')->store('assets/images', 'public');
-            } else {
-                $image = $request->input('existing_image');
-            }
-        
-            $ProductCategory->title = $request->title;
-            $ProductCategory->slug = $slug;
-            $ProductCategory->is_active = $request->is_active;
-            $ProductCategory->image = $image;
-            $ProductCategory->description = $request->description;
-            $ProductCategory->meta_title = $request->meta_title;
-            $ProductCategory->meta_description = $request->meta_description;
-        
-            $ProductCategory->update();
-        
+        // Check if the slug exists in any other record
+        $slugExists = ProductCategory::where('slug', $slug)
+                                    ->where('id', '!=', $id)
+                                    ->exists();
+
+        if ($slugExists) {
             return response()->json([
-                'status' => true,
-                'notification' => 'Product Category updated successfully!',
-            ]);
+                'status' => false,
+                'notification' => 'Slug has been used already',
+            ], 200);
         }
-        $response = [
-            'status' => false,
-            'notification' => 'Slug has been used already',
-        ];
 
-        return response()->json($response);
+        // Handle image upload or retain existing image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('assets/images', 'public');
+        } else {
+            $image = $request->input('existing_image', $productCategory->image);
+        }
+
+        // Update product category
+        $productCategory->title = $request->title;
+        $productCategory->slug = $slug;
+        $productCategory->is_active = $request->is_active;
+        $productCategory->image = $image;
+        $productCategory->description = $request->description;
+        $productCategory->meta_title = $request->meta_title;
+        $productCategory->meta_description = $request->meta_description;
+
+        $productCategory->save();
+
+        return response()->json([
+            'status' => true,
+            'notification' => 'Product Category updated successfully!',
+        ]);
     }
+
 
     public function delete($id) {
         

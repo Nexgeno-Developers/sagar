@@ -29,6 +29,8 @@ Route::get('/what-we-do', [IndexController::class, 'what_we_do'])->name('what_we
 Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('partner_with_us');
 Route::get('/product-categories', [IndexController::class, 'products_category'])->name('products_category');
+Route::get('/products', [IndexController::class, 'products_s'])->name('products_s');
+
 
 $slug = DB::table('products')->pluck('slug')->toArray();
 if (!empty($slug)) {
@@ -36,6 +38,15 @@ Route::get('/product/{slug}', [IndexController::class, 'product_detail'])
     ->where('slug', implode('|', $slug ))
     ->name('product.detail');
 }
+
+$page_slug = DB::table('pages')->pluck('slug')->toArray();
+if (!empty($page_slug)) {
+Route::get('/{page_slug}', [IndexController::class, 'page_detail'])
+    ->where('slug', implode('|', $page_slug ))
+    ->name('page.detail');
+}
+
+Route::post('/form-save', [IndexController::class, 'Form_Save'])->name('form.save'); 
 
 // Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
 // Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
@@ -57,7 +68,7 @@ Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:clear');
     $exitCode = Artisan::call('view:clear');
-    //$exitCode = Artisan::call('route:cache');
+    $exitCode = Artisan::call('route:cache');
     //$exitCode = Artisan::call('key:generate');
 });
 

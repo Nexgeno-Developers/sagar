@@ -1,6 +1,5 @@
 <form id="edit_product_category_form" action="{{ route('product-categories.update', $productCategory->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
     <div class="row">
         <div class="form-group col-6 mb-3">
             <label>Title<span class="red">*</span></label>
@@ -15,7 +14,7 @@
         
         <div class="form-group mb-3 col-sm-{{ !empty($productCategory->image) ? 3 : 6 }}">
             <label>Image<span class="red">*</span></label>
-            <input class="form-control" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" @if (empty($productCategory->image)) required @endif>
+            <input class="form-control" type="file" name="image" accept=".jpg,.jpeg,.png,.webp">
         </div>
         @if (!empty($productCategory->image))
             <div class="div-preview-image col-3 form-group mb-3">

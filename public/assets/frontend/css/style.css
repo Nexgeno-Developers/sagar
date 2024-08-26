@@ -1,3 +1,21 @@
+.container.make-relative {
+    position: relative;
+}
+.content-right .nav-link {
+    height: 40px;
+}
+.gtranslate_wrapper.gt_container--hich1m {
+    position: relative;
+    margin-left: 10px;
+}
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none !important;
+}
+.inline-box{
+    display: inline-flex;
+    display: -webkit-inline-box;
+}
+
 * {
     border-width: border-box;
     font-family: poppins;

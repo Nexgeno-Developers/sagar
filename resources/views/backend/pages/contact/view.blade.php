@@ -1,32 +1,29 @@
 <div id="contact-details">
-    @if($contact->name)
-    <p><strong>Name:</strong> {{$contact->name}}</p>
+    @if($contact->page)
+    <p><strong>Page Name:</strong> {{$contact->page}}</p>
+    @endif
+    @if($contact->company_name)
+    <p><strong>Company Name:</strong> {{$contact->company_name}}</p>
+    @endif   
+    @if($contact->full_name)
+    <p><strong>Full Name:</strong> {{$contact->full_name}}</p>
     @endif   
     @if($contact->email)
     <p><strong>Email:</strong> {{$contact->email}}</p>
     @endif
-    @if($contact->phone)
-    <p><strong>Phone:</strong> {{$contact->phone}}</p>
+    @if($contact->mobile)
+    <p><strong>Mobile:</strong> {{$contact->mobile}}</p>
     @endif
-    @if($contact->services)
-    <p><strong>Services:</strong> {{$contact->services}}</p>
+    @if($contact->product)
+    <p><strong>Product Name:</strong> {{$contact->product}}</p>
+    @endif   
+    @if($contact->apply_for)
+    <p><strong>Apply For:</strong> {{$contact->apply_for}}</p>
     @endif
-    @if($contact->description)
-    <p><strong>Description:</strong> {{$contact->description}}</p>
+    @if($contact->type_code)
+    <p><strong>Type Code:</strong> {{$contact->type_code}}</p>
     @endif
-    @if($contact->other_info)
-    <p><strong>Other Info:</strong> {{$contact->other_info}}</p>
-    @endif
-    @if($contact->cv)
-    <p><strong>CV:</strong> <a target="_blank" href="{{ asset('storage/' . $contact->cv) }}">View</a></p>
-    @endif
-    @if($contact->qualification)
-    <p><strong>Qualification:</strong> {{$contact->qualification}}</p>
+    @if($contact->message)
+    <p><strong>Message:</strong> {{$contact->message}}</p>
     @endif    
-    @if($contact->url)
-    <p><strong>Page:</strong> <a target="_blank" href="{{$contact->url}}">{{$contact->url}}</a></p>
-    @endif
-    @if($contact->section)
-    <p><strong>Section:</strong> {{$contact->section}}</p>
-    @endif
 </div>

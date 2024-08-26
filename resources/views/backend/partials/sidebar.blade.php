@@ -69,9 +69,28 @@
                                 <i class="ri-clapperboard-line"></i> 
                                 <span> Media Coverage </span>
                             </a>
-                        </li> --}}
+                        </li> 
 
-                        
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail2') }}" aria-expanded="false" aria-controls="sidebarEmail2" class="side-nav-link">
+                                <i class="ri-article-line"></i>
+                                <span> Page </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarEmail2">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('setting.terms') }}">Terms & Conditions Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('setting.refund_policy') }}">Refund Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         
                         <li class="side-nav-item">
                             <a href="{{ route('faq.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -85,7 +104,7 @@
                                 <i class="ri-discuss-line"></i>                                
                                 <span> Testimonials </span>
                             </a>
-                        </li>
+                        </li>--}}
 
                         <li class="side-nav-item">
                             <a href="{{ route('frontend_settings.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -142,26 +161,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail2') }}" aria-expanded="false" aria-controls="sidebarEmail2" class="side-nav-link">
-                                <i class="ri-article-line"></i>
-                                <span> Page </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarEmail2">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('setting.terms') }}">Terms & Conditions Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('setting.refund_policy') }}">Refund Policy</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        
 
                         {{-- <li class="side-nav-item">
                             <a href="{{ route('setting.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">

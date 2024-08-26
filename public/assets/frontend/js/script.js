@@ -60,9 +60,9 @@ $(document).ready(function () {
             // Adding transform3d property
             $('.owl-stage').css('transform-style', 'preserve-3d');
         },
-        loop: true,
+        loop: false,
         margin: 30,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed:3000,
         nav: true,
         dots: false,

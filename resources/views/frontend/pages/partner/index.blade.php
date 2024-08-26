@@ -39,14 +39,18 @@
             </div>
             <div class="col-md-5 right_section">
                 <h3 class="fs-24" >Enquire Now</h3>
-                <form>
-                    <input type="text" class="form-control" placeholder="Company Name">
-                    <input type="text" class="form-control" placeholder="Full Name">
-                    <input type="tel" class="form-control" placeholder="Mobile">
-                    <input type="email" class="form-control" placeholder="Email Address">
+                <form id="add_partner_us_form" action="{{ route('form.save') }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="form_type" value="partner_us">
+
+                    <input required type="text" name="company_name" class="form-control" placeholder="Company Name*">
+                    <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
+                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
+                    <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                     <div class="custom-dropdown">
-                        <select class="form-control custom-select">
-                            <option>Select Product</option>
+                        <select required name="product" class="form-control custom-select">
+                            <option value="">Select Product*</option>
                             <option value="vinyl">Vinyl</option>
                             <option value="ethelene">Ethelene</option>
                             <option value="methyl">Methyl</option>
@@ -60,7 +64,7 @@
                     <div>
                         <img src="captcha_image.jpg" alt="CAPTCHA" class="img-fluid">
                     </div> -->
-                    <textarea class="col-md-12 mb-3" name="" id="" placeholder="Message" rows="2"></textarea>
+                    <textarea class="col-md-12 mb-3" name="message" id="message" placeholder="Message" rows="2"></textarea>
                     <button type="submit" class="btn btn-primary mt-3">SEND</button>
                 </form>
             </div>
@@ -101,6 +105,47 @@
 @endif
 
 </main>
+
+@endsection
+@section('page.scripts')
+
+<script>
+    $(document).ready(function () {
+        initValidate('#add_partner_us_form');
+        
+        $('#add_partner_us_form').submit(function (e) {
+            e.preventDefault();
+
+            var form = $(this);
+            var formData = new FormData(form[0]);
+
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (response) {
+                    if (response.status) {
+                        toastr.success(response.notification, 'Success');
+
+                        // Clear form fields
+                        form[0].reset();
+                    } else {
+                            // Number the error messages
+                            let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
+                            toastr.error(errorMessages, 'Validation Error');
+                       
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error('An unexpected error occurred. Please try again later.', 'Error');
+                }
+            });
+        });
+    });
+</script>
 
 
 @endsection

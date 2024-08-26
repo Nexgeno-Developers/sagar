@@ -101,19 +101,22 @@
                             <span class="our">Enquiry</span>
                         </h2><br>
                         <h5 class="form_mark">All fields marked as * are mandatory</h5>
-                        <form>
-                            <div class="col-md-12 mb-4">                                
-                                <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                        <form id="add_contact_us_form" action="{{ route('form.save') }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="form_type" value="contact_us">
+                            <div class="col-md-12 mb-4">      
+                                <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
                             </div>
                             <div class="row col-md-12 mb-2">
                                 <div class="col-md-6 mb-3">                                    
-                                    <input type="tel" class="form-control" id="exampleInputPhone" placeholder="Email">
+                                    <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                                 </div>
                                 <div class="col-md-6 mb-3">                                    
-                                    <input type="text" class="form-control" id="exampleInputAddress" placeholder="Phone">
+                                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
                                 </div>
                             </div>
-                                <textarea class="col-md-12 mb-3" name="" id="" placeholder="Message"></textarea>
+                                <textarea class="col-md-12 mb-3" name="message" id="" placeholder="Message"></textarea>
                             <button type="submit" class="">SEND</button>
                         </form>
                     </div>
@@ -121,6 +124,48 @@
             </div>
         </section>
     </main> 
+
+
+@endsection
+@section('page.scripts')
+
+<script>
+    $(document).ready(function () {
+        initValidate('#add_contact_us_form');
+        
+        $('#add_contact_us_form').submit(function (e) {
+            e.preventDefault();
+
+            var form = $(this);
+            var formData = new FormData(form[0]);
+
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (response) {
+                    if (response.status) {
+                        toastr.success(response.notification, 'Success');
+
+                        // Clear form fields
+                        form[0].reset();
+                    } else {
+                        // toastr.error(response.notification.join('<br>'), 'Validation Error');
+                        // Number the error messages
+                        let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
+                        toastr.error(errorMessages, 'Validation Error');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error('An unexpected error occurred. Please try again later.', 'Error');
+                }
+            });
+        });
+    });
+</script>
 
 
 @endsection

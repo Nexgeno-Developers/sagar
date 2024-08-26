@@ -90,16 +90,6 @@ class PageController extends Controller
                 return view('backend.website_settings.pages.about_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
             } elseif ($page->type == 'partner_with_us') {
                 return view('backend.website_settings.pages.partner_with_us_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
-            } elseif ($page->id == '10') {
-                return view('backend.website_settings.pages.diversification_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
-            } elseif ($page->id == '11') {
-                return view('backend.website_settings.pages.management_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
-            } elseif ($page->id == '12') {
-                return view('backend.website_settings.pages.corevalue_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
-            } elseif ($page->id == '13') {
-                return view('backend.website_settings.pages.milestone_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
-            } elseif ($page->id == '15') {
-                return view('backend.website_settings.pages.ourquality_policies_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
             } else {
                 return view('backend.website_settings.pages.edit', compact('page'));
             }
@@ -555,73 +545,6 @@ class PageController extends Controller
                 // Save faqs array to the database or use it as needed
                 $content['faqs'] = $faqs;
 
-            } elseif ($page->id == '10') {
-                $sections = [];
-                $sections2 = [];
-                $sections['main_heading'] = $request->input('main_heading');
-                $sections['main_subheading'] = $request->input('main_subheading');
-                if (isset($request->section_headings)) {
-                    foreach ($request->section_headings as $key => $heading) {
-                        $sections2[] = [
-                            'heading' => $heading,
-                            'description' => $request->section_description[$key] ?? null,
-                            'images' => $request->section_images[$key] ?? null,
-                        ];
-                    }
-                }
-                $sections['section2'] = $sections2;
-                $content = json_encode($sections);
-            } elseif ($page->id == '11') {
-                $sections = [];
-                $sections2 = [];
-                $sections['main_images'] = $request->input('main_image');
-                if (isset($request->section_headings)) {
-                    foreach ($request->section_headings as $key => $heading) {
-                        $sections2[] = [
-                            'heading' => $heading,
-                            'description' => $request->section_description[$key] ?? null,
-                            'images' => $request->section_images[$key] ?? null,
-                        ];
-                    }
-                }
-                $sections['section2'] = $sections2;
-                $content = json_encode($sections);
-            } elseif ($page->id == '12') {
-                $sections = [];
-                if (isset($request->section_description)) {
-                    foreach ($request->section_description as $key => $heading) {
-                        $sections[] = [
-                            'description' => $request->section_description[$key] ?? null,
-                            'images' => $request->section_images[$key] ?? null,
-                        ];
-                    }
-                }
-                $content = json_encode($sections);
-            } elseif ($page->id == '13') {
-                $sections = [];
-                $sections2 = [];
-                $sections['main_heading'] = $request->input('main_heading');
-                if (isset($request->section_description)) {
-                    foreach ($request->section_description as $key => $heading) {
-                        $sections2[] = [
-                            'description' => $request->section_description[$key] ?? null,
-                            'images' => $request->section_images[$key] ?? null,
-                        ];
-                    }
-                }
-                $sections['section2'] = $sections2;
-                $content = json_encode($sections);
-            } elseif ($page->id == '15') {
-                $sections = [];
-                if (isset($request->section_headings)) {
-                    foreach ($request->section_headings as $key => $heading) {
-                        $sections[] = [
-                            'heading' => $heading,
-                            'images' => $request->section_images[$key] ?? null,
-                        ];
-                    }
-                }
-                $content = json_encode($sections);
             } elseif ($page->type == 'custom_page') {
                 $validator = Validator::make($request->all(), [
                     'title' => 'required|max:155',

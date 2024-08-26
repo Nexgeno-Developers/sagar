@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <h5 class="function_title text-dark">Function</h5>
-                        <p class="mb-md-4">It is an active antihydrolysis agent for polyester polyurethanes produced by hot casting as well as for adhesives based on polyester polyurethane.</p>
+                            {!! $function_description ?? '' !!}
                         <div class="product_description">
                             <div class="accordion" id="product_accordion">
                                 <div class="accordion-item mb-2">
@@ -55,14 +55,7 @@
                                     </h5>
                                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#product_accordion">
                                         <div class="accordion-body">
-                                            <p><strong>Chemical composition</strong>: Monomeric carbodiimide</p>
-                                            <p><strong>Physical form</strong>: slightly yellowish, crystallized melt</p>
-                                            <p><strong>Density</strong>: approx. 0.97 g/cm3 (20 °C / 68 °F) approx. 0.95 g/cm3 (50 °C / 122 °F)</p>
-                                            <p><strong>Melting Range</strong>: 45 – 52 °C / 113 – 126 °F (DSC main peak)</p>
-                                            <p><strong>Viscosity</strong>: 16.0 – 24.0 mPa s (50 °C / 122 °F)</p>
-                                            <p><strong>Solubility</strong>: soluble in organic solvents, e.g. aceton, dichloromethane; insoluble in water</p>
-                                            <p><strong>Carbodiimide content</strong>: min. 10.0 %</p>
-                                            <p>The analytical data are general guide values.</p>
+                                            {!! $product_description ?? '' !!}                                            
                                         </div>
                                     </div>
                                 </div>
@@ -80,15 +73,8 @@
                                         </button>
                                     </h5>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#product_accordion">
-                                        <div class="accordion-body">
-                                            <p><strong>Chemical composition</strong>: Monomeric carbodiimide</p>
-                                            <p><strong>Physical form</strong>: slightly yellowish, crystallized melt</p>
-                                            <p><strong>Density</strong>: approx. 0.97 g/cm3 (20 °C / 68 °F) approx. 0.95 g/cm3 (50 °C / 122 °F)</p>
-                                            <p><strong>Melting Range</strong>: 45 – 52 °C / 113 – 126 °F (DSC main peak)</p>
-                                            <p><strong>Viscosity</strong>: 16.0 – 24.0 mPa s (50 °C / 122 °F)</p>
-                                            <p><strong>Solubility</strong>: soluble in organic solvents, e.g. aceton, dichloromethane; insoluble in water</p>
-                                            <p><strong>Carbodiimide content</strong>: min. 10.0 %</p>
-                                            <p>The analytical data are general guide values.</p>
+                                        <div class="accordion-body">                                        
+                                            {!! $product_information ?? '' !!}
                                         </div>
                                     </div>
                                 </div>

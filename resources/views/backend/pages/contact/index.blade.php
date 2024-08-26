@@ -1,6 +1,6 @@
 @extends('backend.layouts.app') 
 
-@section('page.name', 'contact')
+@section('page.name', 'Leads')
 
 @section('page.content')
 <div class="card">
@@ -30,7 +30,7 @@
                 <th>Qualification</th>
                 <th>CV</th>--}}
                 <th>Page</th>
-                <th>Section</th>
+                <th>Message</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>
@@ -40,9 +40,9 @@
             @foreach($contact as $row)
             <tr>
                 <td>{{$i++}}</td>
-                <td>{{$row->name}}</td>
+                <td>{{$row->full_name}}</td>
                 <td>{{$row->email}}</td>
-                <td>{{$row->phone}}</td>
+                <td>{{$row->mobile}}</td>
                 {{--<td>{{$row->services}}</td>
                 <td>{{$row->description}}</td>
                 <td>{{$row->other_info}}</td>
@@ -54,12 +54,8 @@
                     </a>
                     @endif
                 </td>--}}
-                <td>
-                    <a target="_blank" href="{{$row->url}}">
-                    {{$row->url}}
-                    </a>
-                </td>
-                <td>{{$row->section}}</td>
+                <td>{{$row->page}}</td>
+                <td>{{$row->message}}</td>
                 {{--
                 <td>
                     @if($row->status)

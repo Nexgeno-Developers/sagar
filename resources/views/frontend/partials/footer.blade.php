@@ -1,4 +1,9 @@
 @php
+    $allpages = DB::table('pages')->where('type', 'custom_page')
+        ->select('title', 'slug')
+        ->limit(10)
+        ->get();
+        
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $contacts = json_decode($footer->contacts);
     $social_media = json_decode($footer->social_media);
@@ -70,13 +75,18 @@
                 <div class="col-md-2 footer_useful_link_1_div ps-md-3">
                     <h5 class="pb-md-4 footer_useful_link_1_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
-                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Home</a> </li>
-                        <li class="list-item"> <a href="about-us.php" class="footer_useful_link_1_links">Company Profile</a> </li>
-                        <li class="list-item"> <a href="product-categories.php" class="footer_useful_link_1_links">Industry Areas</a> </li>
-                        <li class="list-item"> <a href="enquire.php" class="footer_useful_link_1_links">Client</a> </li>
-                        <li class="list-item"> <a href="contact-us.php" class="footer_useful_link_1_links">Contact Us</a> </li>
-                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Terms & Condition</a> </li>
-                        <li class="list-item"> <a href="#" class="footer_useful_link_1_links">Privacy Policy</a> </li>
+                        <li class="list-item"> <a href="{{route('index')}}" class="footer_useful_link_1_links">Home</a> </li>
+                        <li class="list-item"> <a href="{{route('about_us')}}" class="footer_useful_link_1_links">Company Profile</a> </li>
+                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_1_links">Industry Areas</a> </li>
+                        <li class="list-item"> <a href="{{route('partner_with_us')}}" class="footer_useful_link_1_links">Client</a> </li>
+                        <li class="list-item"> <a href="{{route('contact_us')}}" class="footer_useful_link_1_links">Contact Us</a> </li>
+                        @foreach ($allpages as $page)
+                            <li class="list-item">
+                                <a href="{{ url(route('page.detail',$page->slug)) }}">
+                                    {{ $page->title }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 

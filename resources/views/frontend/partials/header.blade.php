@@ -7,6 +7,14 @@
           <div class="d-flex flex-column">
               <div class="top_bar col-12 py-md-3 pt-2 d-md-block d-none">                
                   <ul class="mb-2 list-group list-unstyled list-group-horizontal mb-md-0 float-end">
+                        <li class="nav-item dropdown office">
+                            <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i
+                                class="text-light fa-solid fa-language"></i>
+                            <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
+                            <div class="gtranslate_wrapper"></div>
+
+                            </a>
+                        </li>
                       <!-- <li class="list-group-item">
                           <a class="nav-link" href="#">ENG</a>
                       </li> -->
@@ -24,6 +32,7 @@
                       </li>
                   </ul>
               </div>
+
               <div class="menu">
                   <nav class="navbar navbar-expand-lg navbar-dark pt-0">
                       <a class="navbar-brand" href="{{route('index')}}">

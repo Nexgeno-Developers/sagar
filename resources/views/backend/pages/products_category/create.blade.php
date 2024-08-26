@@ -14,7 +14,7 @@
 
         <div class="form-group col-6 mb-3">
             <label>Image<span class="red">*</span></label>
-            <input required type="file" name="image" class="form-control">
+            <input type="file" name="image" class="form-control">
         </div>
 
         <div class="form-group col-6 mb-3">
