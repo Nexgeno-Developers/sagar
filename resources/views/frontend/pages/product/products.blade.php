@@ -22,18 +22,15 @@
 <section class="white_section gallery_filter">
     <div class="container py-md-5">
         <div class="row">
-            <div class="col-md-3 sidebar ps-0">
-                
+            <div class="col-md-3 sidebar ps-0">                
                 <form action="{{ route('products_s') }}" method="GET" id="searchForm">
-                <div class="search-bar">
-                    <button type="submit" class="btn search_btn me-2">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <input type="text" name="search" class="form-control" placeholder="Search for Product" value="{{ request('search') }}">
-                
-
-                </div>    
-                <div class="d-flex justify-content-between">
+                    <div class="search-bar">
+                        <button type="submit" class="btn search_btn me-2">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
+                    </div>    
+                    <div class="d-flex justify-content-between">
                         <ul class="list-group filter_list">
                             <li onclick="viewAllCategories()" class="cursor-pointer list-group-item @if($categoryId == '') active @endif">
                                 View All Categories
@@ -48,9 +45,6 @@
                         <input type="hidden" name="category_id" id="category_id" value="{{ $categoryId }}">
                     </div>
                 </form>
-
-
-
             </div>
             <div class="col-md-9 product_filter_gallery">
                 @if($products->isEmpty())
@@ -86,13 +80,37 @@
 @section('page.scripts')
 <script>
 function submitCategoryForm(categoryId) {
+    // Set the category_id hidden field value
     document.getElementById('category_id').value = categoryId;
-    document.getElementById('searchForm').submit();
+
+    // Clear the search input field using getElementsByClassName
+    var searchInputs = document.getElementsByClassName('product-search');
+    if (searchInputs.length > 0) {
+        searchInputs[0].value = '';
+    }
+
+    // Submit the form using getElementsByClassName
+    var searchForm = document.getElementsByClassName('searchForm');
+    if (searchForm.length > 0) {
+        searchForm[0].submit();
+    }
 }
 
 function viewAllCategories() {
-    document.getElementById('category_id').value = ''; // Clear the category_id
-    document.getElementById('searchForm').submit();
+    // Clear the search input field using getElementsByClassName
+    var searchInputs = document.getElementsByClassName('product-search');
+    if (searchInputs.length > 0) {
+        searchInputs[0].value = '';
+    }
+
+    // Clear the category_id hidden field
+    document.getElementById('category_id').value = '';
+
+    // Submit the form using getElementsByClassName
+    var searchForm = document.getElementsByClassName('searchForm');
+    if (searchForm.length > 0) {
+        searchForm[0].submit();
+    }
 }
 
 

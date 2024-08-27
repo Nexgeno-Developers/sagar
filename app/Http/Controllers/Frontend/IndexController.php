@@ -230,7 +230,7 @@ public function products_category(Request $request)
 public function products_s(Request $request)
 {
     // Fetch all product categories with pagination
-    $productCategories = ProductCategory::where('is_active', 1)->paginate(12);
+    $productCategories = ProductCategory::where('is_active', 1)->get();
 
     // Initialize query for products
     $query = Product::where('is_active', 1);

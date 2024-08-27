@@ -166,7 +166,7 @@
                         CATER</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
-                    <a href="#" class="btn a_btn blue_btn float-md-end float-start">
+                    <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end float-start">
                         View All
                     </a>
                 </div>
