@@ -2,7 +2,11 @@
 <!-- saved from url=(0047)https://coderthemes.com/hyper/modern/index.html -->
 <html lang="en" data-layout-mode="detached" data-topbar-color="dark" data-menu-color="light" data-sidenav-user="true" style="transition: background-color 0.15s ease 0s;" data-bs-theme="light" data-layout-position="fixed" data-sidenav-size="default" class="menuitem-active">
 
-
+@php
+    $header = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    
+    $logo = $header->logo ?? '';
+@endphp
 <head>
     
     <!-----Meta Information-------->

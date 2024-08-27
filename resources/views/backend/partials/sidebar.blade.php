@@ -1,8 +1,4 @@
-@php
-    $header = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
-    
-    $logo = $header->logo ?? '';
-@endphp
+
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu menuitem-active">
 
