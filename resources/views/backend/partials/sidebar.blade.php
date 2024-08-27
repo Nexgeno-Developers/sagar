@@ -1,24 +1,28 @@
-
+@php
+    $header = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    
+    $logo = $header->logo ?? '';
+@endphp
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu menuitem-active">
 
                 <!-- Brand Logo Light -->
                 <a href="#" class="logo logo-light">
                     <span class="logo-lg">
-                        <img src="/assets/images/logo.png" alt="logo">
+                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> 
                     </span>
                     <span class="logo-sm">
-                        <img src="/assets/images/logo-sm.png" alt="small logo">
+                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> 
                     </span>
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a href="#" class="logo logo-dark">
                     <span class="logo-lg">
-                        <img src="/assets/images/logo-dark.png" alt="dark logo">
+                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="/assets/images/logo-dark-sm.png" alt="small logo">
+                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                     </span>
                 </a>
 
