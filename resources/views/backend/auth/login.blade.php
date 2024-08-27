@@ -29,10 +29,10 @@
                 <!-- Logo -->
                 <div class="auth-brand text-center text-lg-start">
                     <a href="/" class="logo-dark"> 
-                        <span><img src="{{ asset('/assets/frontend/images/logo.png') }}" alt="dark logo"></span>
+                        <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"></span>
                     </a>
                     <a href="/" class="logo-light">
-                        <span><img src="{{ asset('/assets/frontend/images/logo.png') }}" alt="logo" style="width:200px; height:50px;" ></span>
+                        <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:200px; height:50px;" ></span>
                     </a>
                 </div>
 
