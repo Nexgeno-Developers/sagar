@@ -16,6 +16,28 @@ use Illuminate\Support\Facades\Mail;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/create-storage-link', function () {
+    try {
+        $exitCode = Artisan::call('storage:link');
+
+        if ($exitCode === 0) {
+            return 'Storage link created successfully.';
+        } else {
+            return 'Error creating storage link. Exit code: ' . $exitCode;
+        }
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
+});
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    //Artisan::call('route:cache');
+    //Artisan::call('key:generate');
+
+    return 'Cache cleared successfully!';
+});
 
 // Home START
 Route::get('/', [IndexController::class, 'index'])->name('index');
@@ -64,28 +86,15 @@ Route::get('/search', [IndexController::class, 'search'])->name('search');
 // Home END
 
 
-Route::get('/clear-cache', function () {
-    $exitCode = Artisan::call('cache:clear');
-    $exitCode = Artisan::call('config:clear');
-    $exitCode = Artisan::call('view:clear');
-    $exitCode = Artisan::call('route:cache');
-    //$exitCode = Artisan::call('key:generate');
-});
+
 
 Route::get('/key-generate', function () {
     Artisan::call('key:generate', ['--show' => true]);
     return 'Application key generated successfully!';
 });
 
-Route::get('/create-storage-link', function () {
-    $exitCode = Artisan::call('storage:link');
-    
-    if ($exitCode === 0) {
-        return 'Storage link created successfully.';
-    } else {
-        return 'Error creating storage link.';
-    }
-});
+
+
 
 Route::get('/send-test-email', function () {
     Mail::raw('Test email content', function ($message) {
