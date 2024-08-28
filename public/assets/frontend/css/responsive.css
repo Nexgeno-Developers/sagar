@@ -1,3 +1,490 @@
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .fs-24 {
+        font-size: 22px !important;
+    }
+
+    .top_bar {
+        position: absolute;
+        left: 0px;
+    }
+
+.banner_img {
+    object-fit: cover;
+    height: 100vh;
+}
+
+.menu {
+    padding-top: 10px;
+}
+
+.transparent .navbar-brand img {
+    height: auto;
+    width: 100%;
+}
+
+.navbar-brand img {
+    height: auto;
+    width: 70%;
+}
+
+.transparent .fa-bars:before, .transparent .fa-navicon:before {
+    content: "\f0c9";
+    color: #fff;
+} 
+
+.transparent button.navbar-toggler {
+    border: 1px solid #fff;
+}
+
+.fa-bars:before, .fa-navicon:before {
+    content: "\f0c9";
+    color: #000;
+    width: 24px;
+    height: 24px;
+    display: block;
+    font-size: 26px;
+}
+
+button.navbar-toggler {
+    border: 1px solid #000;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-brand {
+    position: relative;
+    padding: 0;
+    bottom: 0;
+}
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.offcanvas.offcanvas-end {
+    background-color: #c1c6ca; /* Navbar background color */
+    height: 100vh;
+    width: 40%;
+    z-index: 1050;
+    transition: all 0.4s ease-in-out;
+}
+
+.header.transparent .navbar-nav .nav-item .nav-link {
+    color: #5F5F5F;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.sidebar_social_media { 
+    width: 35px;  
+    padding: 15px 5px 0px 10px; 
+    height: 140px;
+}
+
+.sidebar_social_media_link { 
+    font-size: 18px;
+}
+
+.sidebar_instant_links .newsletter { 
+    width: 35px; 
+    padding: 20px 12px 0px 22px; 
+    height: 133px; 
+}
+
+.file-upload-label { 
+    font-size: 14px;
+}
+
+.fa-file-arrow-down { 
+    font-size: 18px;
+}
+
+.banner_content {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 30px;
+}
+
+#home_page_banner_slider .owl-nav button .fa-arrow-left { 
+    left: 20px;
+}
+/* 
+#home_page_banner_slider .owl-nav button .fa-arrow-right { 
+    right: 20px;
+} */
+
+.banner_view_button {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px 26px;
+}
+
+marquee.banner_marque { 
+    bottom: 20px; 
+    font-size: 50px;
+}
+
+.product_heading {
+    font-size: 30px;
+}
+
+.our_product_cards_div .card img { 
+    height: 160px;
+}
+
+.our_product_cards_div .card img {
+    width: 100%;
+    height: 160px;
+}
+
+.our_product_cards_div .card-text, .product_filter_gallery_div .card-text{
+    font-size: 14px;
+}
+
+.our_product_cards_div .card, .product_filter_gallery_div .card {
+    width: 100%;
+}
+
+.company_heading {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.since_content {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+#company_section .a_btn { 
+    padding: 4px 20px; 
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#company_section .fa-arrow-right {
+    left: 10px;
+    font-size: 14px;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    top: 1px;
+}
+
+.saagar_speciality_chemical_machine {
+    right: -34px;
+}
+
+
+.saagar_speciality_chemical_machine img {
+    position: relative;
+    right: 1em;
+}
+
+.info_box, .about_info_box {
+    float: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 35px 35px 10px 38px;
+    width: 45%;
+}
+
+.info_box::before, .about_info_box::before {
+    border-radius: 35px 40px 10px 35px;
+}
+
+.up_and_down {
+    animation: none;
+    transform: translate(-1em, 0px);
+}
+
+.info_box h4, .about_info_box h4 {
+    font-size: 24px;
+}
+
+.info_box p, .about_info_box p { 
+    font-size: 13px;
+}
+
+hr {
+    margin: 0.5rem 0;
+}
+
+.industry_text_link {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 16px !important;
+}
+
+img.rotate45 {
+    width: 80%;
+    float: inline-end;
+}
+
+.a_btn { 
+    padding: 2px 22px;   
+}
+ 
+.owl-nav { 
+    display: none;
+}
+
+
+section.why_sscpl {
+    height: 580px;
+}
+
+img.moving_machine { 
+    width: 16%;
+}
+
+@keyframes leftRight {
+    
+    100% {
+        transform: translateX(-38em);
+    }
+}
+
+.sscl_img_div { 
+    width: 50px;
+}
+
+.sscl_img {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.why_sscpl_bg_img { 
+    padding: 10px;
+}
+
+.supply_chain_partner .product_heading { 
+    padding-top: 30px !important;
+}
+
+.sscl_content {
+    font-size: 18px; 
+    line-height: 20px;
+}
+
+.sply_chn_content {
+    font-size: 18px;
+    line-height: 23px;
+    padding-top: 16px;
+}
+
+.spply_chn_box { 
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 1px 6px #777;
+}
+
+.content_img_div {
+    height: 300px;
+}
+
+.spply_chn_box_img {
+    width: 80%;
+}
+
+.spply_chn_title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.spply_chn_btn { 
+    padding: 3px 10px;
+    font-weight: 500; 
+    width: 140px; 
+    font-size: 14px;
+}
+
+.code_of_content_div {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+footer .row {
+    justify-content: space-between;
+}
+
+.footer_useful_link_1_div, .footer_useful_link_2_div {
+    padding-top: 20px;
+}
+
+.social_media_icon .fa {
+    font-size: 22px;
+}
+
+/* inner pages */
+
+
+
+/* our products page */
+
+.banner_heading_div {
+    padding: 50px 0px;
+}
+
+.banner_heading_text { 
+    font-size: 32px; 
+    line-height: 40px;
+}
+
+.our_product_cards_div {
+    margin: 10px 0px;
+}
+
+.product_filter_gallery_div {
+    margin: 0px 0px 30px;
+}
+
+.product_filter_gallery .card-body {
+    height: 65px;
+}
+
+
+
+
+
+/* product details page */
+
+.btn_next_prev_div { 
+    justify-content: end; 
+    gap: 7px;
+}
+
+.function_title button.show {
+    padding-bottom: 0px;
+}
+
+.product_di_butyl_phosphate .product_filter_gallery_div .card-text {
+    font-size: 12px;
+}
+
+
+/* enquire page */
+
+.enquiry_section .left_section .since_content { 
+    line-height: 20px; 
+    font-size: 16px;
+} 
+
+.enquiry_section form {
+    text-align: center;
+} 
+
+.enquiry_section .right_section { 
+    padding: 20px;
+    border-radius: 20px; 
+    top: 35px;
+}
+
+.enquiry_section .right_section .form-control, .enquiry_section .right_section textarea { 
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.enquiry_section .right_section form .btn {
+    width: 60%;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px; 
+    border-radius: 10px;
+}
+
+.enquiry_section .left_section li.since_content {
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.faq .container {
+    padding-top: 60px !important;
+}
+
+#faq_accordion .accordion-item {
+    padding: 5px 0px 0px;
+}
+
+/* career page */
+
+h4.product_heading {
+    font-size: 26px; 
+}
+
+.contact_us_form.career_form .form-control, .contact_us_form.career_form textarea {
+    padding: 10px 15px;
+}
+
+.contact_us_form .form-control, .contact_us_form textarea { 
+    border-radius: 10px; 
+}
+
+.contact_us_form button {
+    width: 8em; 
+    padding: 3px 0px; 
+    font-size: 16px; 
+}
+
+/* contact us page */
+
+.contact_us_page .product_heading {
+    font-size: 28px;
+    line-height: 30px;
+}
+
+.contact_info>div p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 18px;
+}
+
+.contact_us_form .form-control, .contact_us_form textarea {
+    padding: 15px 15px;
+}
+
+.contact_us_page .contact_us_form button {
+    width: 8em;
+    padding: 8px 0px;
+    font-size: 21px;
+}
+
+.contact_us_page .contact_us_form {
+    border-radius: 30px;
+}
+
+/* about use page */
+
+.partnership .col-md-5 {
+    padding: 0px;
+}
+
+.our_vission_main_div, .our_mission_main_div {
+    height: auto;
+}
+
+.vision_mission img {
+    width: 25%;
+}
+
+}
+
+
 @media screen and (max-width:767px) {
 
     .container {
@@ -31,6 +518,54 @@ img.banner_img {
     line-height: 24px;
     margin-bottom: 30px;
 }
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+/* Navbar sliding effect */
+
+.fa-bars:before, .fa-navicon:before {
+    content: "\f0c9";
+    color: #fff;
+}
+
+.transparent button.navbar-toggler {
+    border: 1px solid #fff;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.offcanvas.offcanvas-end {
+    transform: translatey(-100%);
+    background-color: #c1c6ca; /* Navbar background color */
+    height: 100vh;
+    width: 100%;
+    z-index: 1050;
+    transition: all 0.4s ease-in-out;
+}
+
+.offcanvas.offcanvas-end.show {
+    transform: translatey(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.offcanvas-header .header_logo {
+    width: 40%;
+}
+
+.header.transparent .navbar-nav .nav-item .nav-link {
+    color: #5F5F5F;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+header.transparent .nav-item {
+    text-align: center;
+}
+
 .banner_view_button {
     font-size: 16px;
 } 
@@ -124,18 +659,19 @@ marquee.banner_marque {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    border-radius: 45px 50px 10px 40px;
+    border-radius: 30px 20px 10px 40px;
     width: 45%;
 }
 
 .info_box::before, .about_info_box::before {
-    border-radius: 45px 50px 10px 45px;
+    border-radius: 30px 30px 10px 38px;
 }
 
 .up_and_down {
     animation: none;
     transform: translateY(0px);
 }
+
 .info_box h4, .about_info_box h4 {
     font-size: 24px;
 }
@@ -198,7 +734,7 @@ img.rotate45 {
 }
 
 .what_we_do_link, .future_activites_link {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 section.why_sscpl {
@@ -210,9 +746,43 @@ section.why_sscpl {
     top: 10px; 
 }
 
+img.sscl_img {
+    width: 100%;
+}
+
+.sscl_content {
+    font-size: 16px; 
+    line-height: 20px; 
+    margin-bottom: 10px;
+}
+
+.spply_chn_box {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.spply_chn_box_img_div {
+    height: 60px;
+    margin: 5px 0px;
+}
+
+.spply_chn_box_img {
+    width: 80%;
+}
+
 .sply_chn_content {
-    font-size: 18px; 
-    line-height: 22px;
+    font-size: 16px; 
+    line-height: 20px;
+}
+
+.spply_chn_title {
+    font-size: 14px;
+}
+
+.spply_chn_btn {  
+    padding: 3px 12px; 
+    width: 110px;
+    font-size: 12px;
 }
 
 .three_boxes_div {
@@ -235,7 +805,255 @@ section.why_sscpl {
     line-height: 22px;
 }
 
-/* home page end */
+/* home page close*/
 
+
+
+/* what we do page start */
+
+.banner_heading_text {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.banner_heading_breadcrumb li {
+    font-size: 14px; 
+    font-weight: 400;
+}
+
+.banner_heading_div {
+    padding: 50px 0px;
+}
+
+img.right_img.what_we_do_img { 
+    margin-top: 0px;
+}
+
+/* what we do page close*/
+
+
+/* enquire page start */
+
+.enquiry_section {
+    padding: 20px 10px;
+}
+
+.enquiry_section .left_section .since_content { 
+    line-height: 22px;
+}
+
+.since_content.fs-24 {
+    font-size: 20px !important;
+}
+
+.enquiry_section .left_section li.since_content {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.enquiry_section .right_section { 
+    padding: 20px; 
+    position: static;
+    text-align: center;
+    box-shadow: none;
+}
+
+.enquiry_section .right_section .form-control, .enquiry_section .right_section textarea { 
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.enquiry_section .right_section form .btn {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.faq .container {
+    padding: 20px 10px !important;
+}
+
+#faq_accordion .accordion-item {
+    padding: 10px 10px;
+}
+
+#faq_accordion .accordion-body p {
+    margin-bottom: 0px;
+}
+
+/* enquire page close*/
+
+
+/* career page start */
+
+h4.product_heading {
+    font-size: 28px;
+}
+
+.contact_us_form.career_form .form-control, .contact_us_form.career_form textarea,
+.contact_us_form .form-control, .contact_us_form textarea {
+    padding: 15px 15px;
+    border-radius: 14px;
+    font-size: 14px;
+}
+
+.contact_us_form button { 
+    padding: 3px 0px; 
+    font-size: 16px;
+    font-weight: 500; 
+    margin-bottom: 16px;
+}
+
+/* career page close*/
+
+
+/* contact us page start */
+
+.address_and_map iframe {
+    border-radius: 20px !important;
+}
+
+.contact_us_form { 
+    border-radius: 20px;
+}
+
+h5.form_mark { 
+    font-size: 18px;
+}
+
+/* contact us page close*/
+
+
+/* product categories page close*/
+
+.product_categories_page .our_product_cards_div .fa-arrow-right:before, 
+.product_filter_gallery_div .fa-arrow-right:before, 
+.btn_next_prev_div .fa-arrow-right:before, 
+.btn_next_prev_div .fa-arrow-left:before {
+    position: relative;
+    bottom: 3px;
+}
+
+.search_btn {
+    background-color: #fff;
+    font-size: 14px;
+    padding: 10px 10px 10px 10px;
+}
+
+.filter_list .list-group-item { 
+    padding: 5px 0px;
+}
+
+.search-bar input {
+    font-size: 14px;
+}
+
+.product_filter_gallery {
+    padding: 10px 10px 20px;
+}
+
+.product_filter_gallery_div:nth-child(odd) {
+    padding-left: 7px;
+}
+
+.product_filter_gallery_div:nth-child(even) {
+    padding-right: 7px;
+}
+.product_filter_gallery_div {
+    margin: 10px 0px;
+}
+
+.product_filter_gallery .card-body {
+    height: 70px; 
+    top: 5px;
+}
+
+.product_filter_gallery_div .fa-arrow-right:before { 
+    font-size: 13px;
+}
+
+
+/* product categories page close*/
+
+/* dibutyl phosphate css open */
+
+.product_img_div { 
+    position: static;
+    margin-bottom: 15px;
+}
+
+.function_title button, .accordion-body {
+    padding: 10px 10px;
+}
+
+.product_description .accordion-body {
+    margin-bottom: 15px;
+}
+
+.product_heading_btn_next_prev_div .fa-arrow-left:before, 
+.product_heading_btn_next_prev_div .fa-arrow-right:before {
+    font-size: 14px;
+}
+
+/* dibutyl phosphate page close*/
+
+
+/* about us page open*/
+
+
+.about_us_story_div .saagar_speciality_chemical_machines img {
+    position: static; 
+}
+
+.about_info_box.info-box {
+    float: none;
+    border-radius: 45px 50px 10px 40px;
+    left: 12px;
+}
+
+.story_small {
+    margin-bottom: 10px;
+}
+
+.management_team .container {
+    text-align: center;
+}
+
+.sscl_img_div {
+    height: 60px;
+    display: flex;
+    justify-content: center;        
+    align-items: center;
+    width: 40px;    
+}
+
+.sscl_img { 
+    left: 0px;
+}
+
+.our_vission_main_div, .our_mission_main_div {
+    height: auto;
+    padding: 20px;
+}
+
+
+
+/* about us page close*/
+
+/* footer start */
+
+footer a {
+    font-size: 14px;
+    padding-bottom: 0px;
+}
+
+.social_media_icon .fa {
+    font-size: 20px;
+}
+
+.copyright_content {
+    font-size: 14px;
+}
 
 }

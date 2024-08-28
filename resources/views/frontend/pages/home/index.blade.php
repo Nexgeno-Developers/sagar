@@ -93,14 +93,15 @@
             </div>
         </div>
     </section>
+
     @if(!empty($products))
         <section class="white_section our_products" id="our_products">
             <div class="container pt-md-5 pt-5 pb-md-2">
                 <h2 class="product_heading text-center pb-md-1"><span class="our">OUR</span> PRODUCT</h2>
 
-                <div class="row">
+                <div class="row justify-content-center">
                     @foreach($products as $product)
-                        <div class="col-md-3 col-6 our_product_cards_div">
+                        <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
                             <a href="{{ route('product.detail', $product->slug) }}"
                                 class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                                 <div class="card">
@@ -127,11 +128,11 @@
 
 
     <section class="white_section py-5" id="company_section">
-        <div class="container ">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-md-11 background_blue_img p-md-5 px-2">
-                        <div class="text-light col-md-8 p-md-5 p-3 py-4">
+                    <div class="col-md-11 background_blue_img p-lg-5 p-md-4 p-3">
+                        <div class="col-md-8">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i
                                     class="fa fa-arrow-right"></i></a>
@@ -158,8 +159,8 @@
         </div>
     </section>
 
-    <section class="white_section industry_we_cater">
-        <div class="container py-md-5 py-3">
+    <section class="white_section industry_we_cater py-md-5 py-3">
+        <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
                     <h2 class="product_heading text-center pb-md-1 float-start"><span class="our">INDUSTRY</span> WE
@@ -182,7 +183,7 @@
                     @endif
                         <div class="d-flex industry_content">
                             <span class="industry_text_link ps-md-4">{{ $category->title }}</span>
-                            <span class="industry_arrow_link pe-md-3">
+                            <span class="industry_arrow_link pe-lg-3">
                                 <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png">
                             </span>
                         </div>
@@ -190,7 +191,7 @@
                 </div>                
             @endforeach
 
-            <div class="col-md-6 d-md-none d-block py-3 text-center">
+            <div class="col-md-4 col-6 mb-0 pe-md-0">
                 <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end">
                     View All
                 </a>
@@ -198,8 +199,8 @@
         </div>
     </section>
 
-    <section class="blue_section what_we_do">
-        <div class="container py-md-5 py-3">
+    <section class="blue_section what_we_do py-lg-5 pt-md-4 py-3">
+        <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
                     <h2 class="product_heading what_we_do_heading text-center pb-1 float-start"><span
@@ -223,8 +224,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{$row->text}}</h5>
                                         <p class="card-text">{{$row->content}}</p>
-                                        <a href="{{route('what_we_do')}}" class="what_we_do_link">Read More<i
-                                                class="fa fa-arrow-right"></i></a>
+                                        <a href="{{route('what_we_do')}}" class="what_we_do_link">Read More
+                                            <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -241,54 +242,54 @@
         </div>
     </section>
 
-    <section class="white_section why_sscpl pb-md-5 pb-3">
-        <div class="container py-md-5 py-3 mb-md-5">
+    <section class="white_section why_sscpl py-md-5 py-3 mb-md-5">
+        <div class="container">
             <div class="row justify-content-between position-relative">
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
                 </div>
                 <div class="col-12">
                     <div class="why_sscpl_bg_img">
-                        <h2 class="product_heading text-light text-center pt-md-5 pt-3 mt-md-4">WHY SSCPL?</h2>
+                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
                         <div class="row pt-md-5 pt-3">
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Product</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img
                                         src="/assets/frontend/images/home/competitve_pricing.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Competitve Pricing</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/packaging.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Packaging</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/commitment.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Commitment</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/delivery.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Delivery</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img
                                         src="/assets/frontend/images/home/customised_solutions.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Customised Solutions</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/compliances.png"
                                         alt="" class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Compliances</p>
                             </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
+                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customer_support.png"
                                         alt="" class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Customer Support</p>
@@ -302,8 +303,8 @@
 
 
     @if (!empty($activities))
-    <section class="white_section future_activity">
-        <div class="container pb-md-5 pb-3">
+    <section class="white_section future_activity pb-lg-5 pb-3">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
                     <h2 class="product_heading text-center pb-md-1 float-start"><span class="our">FUTURE</span>
@@ -333,23 +334,23 @@
     @endif
 
 
-    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 pb-3">
-        <div class="container py-md-4 py-3">
+    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-4 py-3">
+        <div class="container">
             <div class="row d-flex justify-content-center position-relative">
                 <div class="col-12">
-                    <div class="content_img_div p-md-0 p-3">
-                        <h2 class="product_heading text-light text-center pt-md-5 pt-3">Supply Chain Partner</h2>
+                    <div class="content_img_div p-md-0 p-3 py-2">
+                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3">Supply Chain Partner</h2>
                         <br class="d-md-block d-none">
                         <div class="d-flex justify-content-center spply-chn-content_div">
-                            <p class="col-md-9 sply_chn_content text-md-center pb-md-5 pb-3">
+                            <p class="col-md-9 sply_chn_content text-md-center pb-lg-5">
                                 {{$scp_content}}
                             </p>
                         </div>
-                        <div class="three_boxes_div col-md-11 row row-cols-1 row-cols-md-3">
+                        <div class="three_boxes_div col-md-11 row row-cols-2 row-cols-md-3">
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img">
-                                    <h5 class="spply_chn_title my-md-5">{{$scp_text1}}</h5>
+                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text1}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf1) }}"
                                         class="spply_chn_btn">Download</a>
                                 </div>
@@ -358,7 +359,7 @@
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
-                                    <h5 class="spply_chn_title my-md-5">{{$scp_text2}}</h5>
+                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
                                     <a target="_blank" href="{{$scp_url}}" class="spply_chn_btn">Connect Now</a>
                                 </div>
                             </div>
@@ -366,7 +367,7 @@
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img">
-                                    <h5 class="spply_chn_title my-md-5">{{$scp_text3}}</h5>
+                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text3}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf2) }}"
                                         class="spply_chn_btn">View</a>
                                 </div>
@@ -378,28 +379,30 @@
         </div>
     </section>
 
-    <section class="white_section code_of_conduct bg-light">
-        <div class="container text-center pb-md-5 py-3 pt-md-4">
+    <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-5">
+        <div class="container text-center">
             <h2 class="col-12 product_heading text-center pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
-            <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="col-12 spply_chn_btn">Read More</a>
+            <div class="col-md-6 d-md-none d-block pb-3 pt-2 text-center">
+                <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn float-md-end">Read More</a>
+            </div>
         </div>
     </section>
 
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-            <iframe id="videoIframe" width="100%" height="480" src="" title="Introduction to Resin Art by Poonam Bukalsaria Shah | GoodHomes Craft Studio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <iframe id="videoIframe" width="100%" height="480" src="" title="Introduction to Resin Art by Poonam Bukalsaria Shah | GoodHomes Craft Studio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 
 @endsection
