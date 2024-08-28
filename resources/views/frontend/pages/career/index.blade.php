@@ -23,11 +23,11 @@
     </div>
 </section>
 
-<section class="white_section career_contact_form">
-    <div class="container py-md-5">
+<section class="white_section career_contact_form py-lg-5 py-md-4 py-3 pb-4">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 pe-md-5">
-                <div class="col-md-12 contact_us_form career_form bg-transparent">
+                <div class="col-md-12 contact_us_form career_form bg-transparent text-md-start text-center">
                     <h4 class="col-md-12 product_heading text-start pb-md-3 float-start">
                         Enroll Now
                     </h4><br>
@@ -37,23 +37,23 @@
 
                         <input type="hidden" name="form_type" value="career">
 
-                        <div class="col-md-12 mb-4">                                
+                        <div class="col-md-12 mb-lg-4 mb-3">                                
                             <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
                         </div>
-                        <div class="row col-md-12 mb-2 ms-md-0">
-                            <div class="col-md-6 mb-3 px-0 pe-md-3">                                    
+                        <div class="row col-md-12 mb-lg-2 mb-md-0 mb-3 ms-md-0">
+                            <div class="col-md-6 mb-md-3 mb-3 px-md-0 pe-md-3">                                    
                                 <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                             </div>
-                            <div class="col-md-6 mb-3 ps-md-3 pe-md-0">                                    
+                            <div class="col-md-6 mb-3 mb-md-3 mb-0 ps-md-3 pe-md-0">                                    
                                 <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
                             </div>
                         </div>
-                        <div class="col-12 mb-4">                                    
+                        <div class="col-12 mb-lg-4 mb-3">                                    
                             <input required type="text" class="form-control" name="apply_for" placeholder="Apply For*">
                         </div> 
-                        <textarea class="col-md-12 mb-3" name="message" placeholder="Message"></textarea>
+                        <textarea class="col-md-12 mb-lg-3 mb-2" name="message" placeholder="Message"></textarea>
                         
-                        <div class="col-12 mb-4">                                    
+                        <div class="col mb-lg-4 mb-3">                                    
                             <input required type="text" class="form-control" name="type_code" placeholder="Type Code*">
                         </div>                                
                         <button type="submit" class="">SUBMIT</button>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="col-md-6 ps-md-5">
-                <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/career/career_form_right_img.png">
+                <img class="right_img what_we_do_img pe-lg-3" src="/assets/frontend/images/career/career_form_right_img.png">
             </div>
         </div>
     </div>

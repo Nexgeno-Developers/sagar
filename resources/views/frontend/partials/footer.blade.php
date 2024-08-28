@@ -10,25 +10,25 @@
 @endphp
 
 
-<footer class="footer bg-dark text-light pt-md-5 pb-md-3">
+<footer class="footer bg-dark text-light pt-lg-5 pt-md-4 py-3 pb-md-3">
         <div class="container">
             <div class="row">
                 <!-- Locations Section -->
-                <div class="col-md-4 footer_location_div">
-                    <h5 class="pb-md-4 footer_location_heading">Locations</h5>
-                    <a href="#" class="d-flex align-items-start gap-2 footer_location_1">
+                <div class="col-lg-4 col-md-6 footer_location_div">
+                    <h5 class="pb-lg-4 pb-3 footer_location_heading">Locations</h5>
+                    <a href="#" class="d-flex align-items-start gap-2 footer_location_1 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_india.png">
                         <span class="text-light location_text"> 
                             {{$contacts[0]->address}}
                         </span> 
                     </a>
-                    <a href="#" class="d-flex align-items-start gap-2 footer_location_2">
+                    <a href="#" class="d-flex align-items-start gap-2 footer_location_2 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_brazil.png">
                         <span class="text-light location_text"> 
                             {{$contacts[1]->address}} 
                         </span> 
                     </a>
-                    <div class="d-flex gap-2">
+                    <div class="d-flex gap-2 pb-3">
                         <i class="fa fa-phone"></i>
                         <span>
                             <h6 class="d-block mb-0">Overseas Business Enquiries: <br>
@@ -41,9 +41,9 @@
                 </div>
     
                 <!-- Contact Info Section -->
-                <div class="col-md-3 footer_contact_div ps-md-0">
-                    <h5 class="pb-md-4 footer_contact_heading">Contact Info</h5>
-                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                <div class="col-lg-3 col-md-5 footer_contact_div ps-md-0 py-2">
+                    <h5 class="pb-lg-4 pb-md-2 pb-1 footer_contact_heading">Contact Info</h5>
+                    <div class="d-flex align-items-start gap-2 pb-2">
                         <i class="fa fa-phone"></i>
                         <span>Mobile Number: <br>
                             <a href="tel:{{$contacts[0]->phone1}}" class="footer_contact_links">
@@ -51,7 +51,7 @@
                             </a>
                         </span> 
                     </div>
-                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                    <div class="d-flex align-items-start gap-2 pb-2">
                         <i class="fa fa-phone"></i>
                         <span>Landline Number: <br>
                             <a href="tel:{{$contacts[0]->phone2}}" class="footer_contact_links">
@@ -63,7 +63,7 @@
                          
                         </span> 
                     </div>
-                    <div class="d-flex align-items-start gap-2 pb-md-3">
+                    <div class="d-flex align-items-md-start align-items-center gap-2 pb-3">
                         <i class="fa fa-envelope"></i>
                             <a href="mailto:{{$contacts[0]->email1}}" class="footer_contact_links">
                             {{$contacts[0]->email1}}
@@ -72,8 +72,8 @@
                 </div>
     
                 <!-- Useful Links Section -->
-                <div class="col-md-2 footer_useful_link_1_div ps-md-3">
-                    <h5 class="pb-md-4 footer_useful_link_1_heading">Useful Links</h5>
+                <div class="col-lg-2 col-6 footer_useful_link_1_div ps-md-3">
+                    <h5 class="pb-lg-4 footer_useful_link_1_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
                         <li class="list-item"> <a href="{{route('index')}}" class="footer_useful_link_1_links">Home</a> </li>
                         <li class="list-item"> <a href="{{route('about_us')}}" class="footer_useful_link_1_links">Company Profile</a> </li>
@@ -90,7 +90,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 footer_useful_link_2_div">
+                <div class="col-lg-3 col-5 footer_useful_link_2_div">
                 <h5 class="pb-md-4 footer_useful_link_2_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
