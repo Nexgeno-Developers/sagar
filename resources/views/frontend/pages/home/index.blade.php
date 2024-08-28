@@ -303,7 +303,7 @@
 
 
     @if (!empty($activities))
-    <section class="white_section future_activity py-lg-5 py-3">
+    <section class="white_section future_activity pb-lg-5 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
