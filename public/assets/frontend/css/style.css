@@ -405,6 +405,7 @@ section.white_section  {
 }
 
 .company_heading {
+    color: #fff;
     font-size: 36px;
     font-weight: 700;
     line-height: 57px;
@@ -413,6 +414,7 @@ section.white_section  {
 .after_success_content {
     font-size: 14px;
     font-weight: 300;
+    color: #fff;
 }
 
 .white_btn {
@@ -449,6 +451,7 @@ section.white_section  {
 .since_content {
     font-size: 20px;
     font-weight: 600;
+    color: #fff;
 }
 
 .saagar_speciality_chemical_machine {
