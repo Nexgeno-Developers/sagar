@@ -242,7 +242,7 @@
         </div>
     </section>
 
-    <section class="white_section why_sscpl py-md-5 py-3 mb-md-5">
+    <section class="white_section why_sscpl py-md-5 py-3">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
@@ -303,7 +303,7 @@
 
 
     @if (!empty($activities))
-    <section class="white_section future_activity pb-lg-5 pb-3">
+    <section class="white_section future_activity py-lg-5 py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
