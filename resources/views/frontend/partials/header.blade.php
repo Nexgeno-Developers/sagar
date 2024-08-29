@@ -2,6 +2,11 @@
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
+<header id="mainHeader" class="header pt-lg-0 pt-3">
+        <div class="container">
+            <div class="d-flex flex-column">
+                <div class="top_bar col-12 py-md-3 pt-2 d-lg-block d-none">                
+                    <ul class="mb-2 list-group list-unstyled list-group-horizontal mb-md-0 float-end">
 <header id="mainHeader" class="header transparent pt-md-0 pt-3">
       <div class="container">
           <div class="d-flex flex-column">
