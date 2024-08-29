@@ -72,6 +72,22 @@ p {
     top: 5px;
 }
 
+.gt_container--hich1m .gt_switcher .gt_selected a { 
+    width: 168px !important;
+}
+
+.gt_container--hich1m .gt_switcher .gt_option {
+    width: 181px !important;
+}
+
+.gt_container--hich1m .gt_switcher {
+    width: 181px !important;
+}
+
+.gt_container--hich1m .gt_switcher a {
+    line-height: 16px ;
+}
+
 a.inline-box.nav-link {
     position: absolute;
     right: 0px;
@@ -1168,10 +1184,30 @@ section#product_categories_banner_img {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .product_img {
     object-fit: contain;
+}
+
+/* Basic image styles */
+.product_img {
+    cursor: zoom-in; /* Default magnifying glass cursor */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform-origin: center; /* Scale from the center */
+    max-width: 100%; /* Ensure it fits within the container */
+}
+
+/* Zoomed-in styles */
+.product_img.zoomed {
+    cursor: zoom-out; /* Change cursor to indicate zoom-out */
+    transform: scale(2); /* Zoom level */
+}
+
+/* Styles to enable dragging */
+.product_img.zoomed.dragging {
+    cursor: grab; /* Hand cursor when dragging */
 }
 
 .product_heading_btn_next_prev_div {
