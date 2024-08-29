@@ -97,6 +97,20 @@
                                     <div class="gtranslate_wrapper"></div>
                                 </a>
                             </li> 
+                            <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
+                                <div class="search-icon-wrapper">
+                                    <button type="button" class="btn search-icon" onclick="toggleSearchBar2()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="search-bar-for-tab d-none">
+                                    <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product" value="{{ request('search') }}">
+                                    <input type="hidden" name="category_id" id="category_id" value="">
+                                    <button type="submit" class="btn search_btn search_btn_2">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                                 <span class="fa fa-bars"></span>
                             </button>
@@ -127,20 +141,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                         </li>
-                                        <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
-                                            <div class="search-icon-wrapper">
-                                                <button type="button" class="btn search-icon" onclick="toggleSearchBar2()">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </div>
-                                            <div class="search-bar-for-tab d-none">
-                                                <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product" value="{{ request('search') }}">
-                                                <input type="hidden" name="category_id" id="category_id" value="">
-                                                <button type="submit" class="btn search_btn search_btn_2">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </form>
                                         <li class="nav-item d-flex justify-content-md-start justify-content-center">
                                             <ul class="mb-2 list-group list-unstyled list-group-horizontal mb-md-0 float-end">
                                                 <!-- <li class="list-group-item">
