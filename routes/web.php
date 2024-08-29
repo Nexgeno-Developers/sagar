@@ -50,7 +50,7 @@ Route::get('/what-we-do', [IndexController::class, 'what_we_do'])->name('what_we
 
 Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('partner_with_us');
-Route::get('/product-categories', [IndexController::class, 'products_category'])->name('products_category');
+Route::get('/categories', [IndexController::class, 'products_category'])->name('products_category');
 Route::get('/products', [IndexController::class, 'products_s'])->name('products_s');
 
 

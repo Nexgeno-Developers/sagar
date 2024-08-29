@@ -67,9 +67,14 @@ p {
 /* language filter */
 
  .google_translate_desktop {
+    position: relative;
+    right: 5px;
+    top: 5px;
+}
+
+a.inline-box.nav-link {
     position: absolute;
-    left: 0px;
-    top: 6px;
+    right: 0px;
 }
 
 
@@ -156,6 +161,7 @@ input:focus-visible {
     /* position: absolute;
     bottom: 10px; */
     padding: 0px;
+    margin-top: -25px;
 }
 
 .navbar {
@@ -170,7 +176,7 @@ input:focus-visible {
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    padding-bottom: 0px;
+    padding: 8px 8px 0px;
 }
 
 .header .top_bar .list-group-item a {
@@ -285,7 +291,7 @@ input[type="file"] {
     z-index: 1;
     width: 40%;
     top: 50%; /* Positioning from top */
-    left: 10%; /* Positioning from left */
+    left: 8%; /* Positioning from left */
     transform: translateY(-50%); /* Centering vertically */
     text-align: left; /* Ensuring text alignment */
 }
@@ -693,6 +699,7 @@ section.what_we_do .owl-carousel .owl-stage-outer, section.future_activity .owl-
     color: #fff;
     font-size: 20px;
     font-weight: 300;
+    position: relative;
 }
 
 img.arrow_right_img {
@@ -750,6 +757,7 @@ img.moving_machine {
     border-radius: 30px;
     position: relative;
     top: 85px;
+    padding: 10px 60px;
 }
 
 .sscl_contents_main_div {
@@ -930,9 +938,50 @@ img.moving_machine {
 }
 
 .contact_us_form .form-control, .contact_us_form textarea {
-    padding: 25px 25px;
-    border-radius: 20px;
+    padding: 20px 20px;
+    border-radius: 16px;
     border: 0;
+}
+
+.search-bar-filter {
+    margin-bottom: 1rem;
+    display: flex;
+    border-radius: 15px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.search-bar-filter input {
+    border: 0;
+    padding: 5px 0px 5px 5px;
+    border-radius: 15px;
+}
+
+.search-bar-filter input:focus {
+    border: 0;
+    box-shadow: none;
+}
+
+.search-bar-filter .fa-search:before {
+    content: "\f002";
+    font-size: 20px;
+    color: #999;
+}
+
+.gallery_filter .sidebar {
+    margin-top: 25px;
+}
+
+.sidebar .search_btn {
+    border: none;
+    color: #777 !important;
+    padding-left: 20px;
+}
+
+.gallery_filter .sidebar li {
+    white-space: nowrap;          /* Prevents text from wrapping to the next line */
+    overflow: hidden;             /* Hides any text that overflows the container */
+    text-overflow: ellipsis;
 }
 
 .contact_us_form .form-control::placeholder, .contact_us_form textarea::placeholder {
@@ -1054,6 +1103,7 @@ section#product_categories_banner_img {
     background-color: #fff;
     padding: 15px 10px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .filter_list .list-group-item {
@@ -1128,10 +1178,16 @@ section#product_categories_banner_img {
     justify-content: space-between;
 }
 
+.product_heading_btn_next_prev_div .product_heading {
+    font-size: 32px;
+    font-weight: 600;
+}
+
 .btn_next_prev_div {
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
+    gap: 20px;
 }
 
  .accordion-item {
@@ -1160,7 +1216,16 @@ section#product_categories_banner_img {
     padding: 20px 30px;
 } */
 
-/* dibutyl phosphate css open */
+.product_info.product-section .product_filter_gallery_div {
+    margin: 15px 0px 30px;
+}
+
+.product_description .accordion-body {
+    padding-top: 0px;
+}
+
+/* dibutyl phosphate css close */
+
 
 
 /* about us css open */
@@ -1233,7 +1298,7 @@ section.why_sscpl.height670 {
 }
 
 .enquiry_section {
-    padding-top: 70px;
+    padding-top: 40px;
 }
 
 .enquiry_section .left_section .since_content{
@@ -1258,7 +1323,7 @@ section.why_sscpl.height670 {
     border-radius: 30px;
     position: relative;
     top: 45px;
-    box-shadow: 1px 1px 3px #0000004d;
+    /* box-shadow: 1px 1px 3px #0000004d; */
 }
 
 .right_section h5 {
@@ -1310,8 +1375,13 @@ section.why_sscpl.height670 {
 }
 
 #faq_accordion .accordion-item {
-    padding: 24px 15px;
+    padding: 24px 15px 1px;
     border-radius: 15px;
+}
+
+.faq .accordion-body {
+    padding-top: 0px;
+    padding-bottom: 30px;
 }
 
 #faq_accordion .accordion-body p {
@@ -1363,12 +1433,20 @@ footer {
     background-position: center;
 }
 
+footer.footer {
+    padding: 70px 0px 30px !important;
+}
+
 footer a {
     text-decoration: none;
     color: #fff;
     font-weight: 300;
     font-size: 14px;
     padding-bottom: 18px;
+}
+
+.footer_location_1, .footer_location_2 {
+    cursor: auto;
 }
 
 footer span {

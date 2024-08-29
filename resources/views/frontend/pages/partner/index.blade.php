@@ -45,10 +45,8 @@
                             @csrf
                             <input type="hidden" name="form_type" value="partner_us">
 
-                            <input required type="text" name="company_name" class="form-control" placeholder="Company Name*">
-                            <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
-                            <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
-                            <input required type="email" name="email" class="form-control" placeholder="Email Address*">
+                            <input required type="text" name="company_name" class="form-control" placeholder="Company Name">
+                            <input required type="text" name="full_name" class="form-control" placeholder="Full Name">
                             <div class="custom-dropdown">
                                 <select required name="product" class="form-control custom-select">
                                     <option value="">Select Product*</option>
@@ -59,7 +57,9 @@
                                     <!-- Add your options here -->
                                 </select>
                             </div>
-                            <!--<input type="number" class="form-control" placeholder="Quantity">-->
+                            <!-- <input required type="tel" name="mobile" class="form-control" placeholder="Mobile"> -->
+                            <input type="number" class="form-control" placeholder="Quantity">
+                            <input required type="email" name="email" class="form-control" placeholder="Email Address">
                             <!-- <input type="text" class="form-control" placeholder="Type Code">
                             
                             <div>

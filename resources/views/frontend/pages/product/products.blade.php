@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-3 sidebar ps-0">                
                 <form action="{{ route('products_s') }}" method="GET" id="searchForm">
-                    <div class="search-bar">
+                    <div class="search-bar-filter">
                         <button type="submit" class="btn search_btn me-2">
                             <i class="fa fa-search"></i>
                         </button>
