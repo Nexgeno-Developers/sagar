@@ -13,10 +13,6 @@
         position: absolute;
         left: 0px;
     } */
-    
-.gt_container--hich1m .gt_switcher .gt_selected {
-    z-index: 2 !important;
-}
 
 .banner_img {
     object-fit: cover;
@@ -59,11 +55,39 @@
     padding: 10px 0px;
 }
 
+.search_btn.search_btn_2 {
+    padding: 7px 7px 7px 7px;
+    background-color: #0060ff;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.search-bar, .search-bar-for-tab {
+    border-radius: 7px;
+    position: absolute;
+    top: 0px;
+    right: 13px;
+}
+
+.search-icon-wrapper {
+    position: relative;
+    left: 30px;
+}
+
+input.product-search {
+    border: 0px;
+}
+
 .google_translate_tab {
     position: absolute;
     /* left: 0px; */
     /* top: 6px; */
-    right: 80px;
+    right: 60px;
+}
+
+.gtranslate_wrapper.gt_container--hich1m {
+    top: 2px;
+        position: absolute;
+        right: 0px;
 }
 
 button.navbar-toggler {
@@ -523,14 +547,28 @@ h4.product_heading {
     justify-content: center;
 }
 
+.gtranslate_wrapper.gt_container--hich1m {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+} 
+
 .gt_switcher.notranslate {
     width: 100% !important;
 }
 .gt_container--hich1m .gt_switcher .gt_selected a {
-    width: 80px !important;
+    width: 100px !important;
+}
+.gt_container--hich1m .gt_switcher a {
+    font-size: 12px !important;
+    line-height: 16px;
 }
 
+.gt_container--hich1m .gt_switcher .gt_option {
+    width: 110px !important;
+}
 .gt_container--hich1m .gt_switcher .gt_selected {
+    position: relative;
     z-index: 2 !important;
 }
 .navbar-brand {
@@ -538,7 +576,7 @@ h4.product_heading {
 }
 .navbar-brand img {
     height: auto;
-    width: 70%;
+    width: 65%;
 }
 img.banner_img {
     width: 100%;
@@ -565,10 +603,13 @@ img.banner_img {
 .fa-bars:before, .fa-navicon:before {
     content: "\f0c9";
     color: #fff;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 .transparent button.navbar-toggler {
     border: 1px solid #fff;
+    padding: 1px 7px;
 }
 
 .navbar-toggler:focus {
@@ -591,6 +632,21 @@ img.banner_img {
 
 .offcanvas-header .header_logo {
     width: 40%;
+}
+
+.search_btn.search_btn_2 {
+    padding: 7px 7px 7px 7px;
+    background-color: #0060ff;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.search-bar, .search-bar-for-tab {
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+input.product-search {
+    border: 0px;
 }
 
 .header.transparent .navbar-nav .nav-item .nav-link {
