@@ -23,16 +23,16 @@
             </div>
         </section>
 
-        <section class="white_section product_info">
-            <div class="container product-section py-md-5">
+        <section class="white_section product_info py-lg-5 pt-md-5 py-3">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-5 text-center product_img_div">
+                    <div class="col-md-5 col-12 text-center product_img_div">
                         <img class="img-fluid product_img" src="{{ asset('storage/' . $image)}}" alt="Chemical Structure">
                     </div>
                     <div class="col-md-7 ps-md-5 product_details">
                         <div class="product_heading_btn_next_prev_div">
                             <h2 class="product_heading text-start pb-md-1"><span class="our">{{$page_name}}</span></h2>
-                            <div class="col-md-2 btn_next_prev_div">
+                            <div class="col-md-3 col-2 btn_next_prev_div">
                                     <i class="fa fa-arrow-left btn btn-primary disabled"></i>
                                     <i class="fa fa-arrow-right btn btn-primary"></i>
                             </div>
@@ -42,7 +42,7 @@
                         <div class="product_description">
                             <div class="accordion" id="product_accordion">
                                 <div class="accordion-item mb-2">
-                                    <h5 class="function_title mb-3">
+                                    <h5 class="function_title mb-md-3 mb-0">
                                         <button 
                                             class="accordion-button show" 
                                             type="button" 
@@ -84,9 +84,9 @@
                         <!-- Add more product information here -->
                     </div>
                 </div>
-                <div class="col-md-12 pt-md-5">
+                <div class="col-md-12 pt-md-5 delievery_types">
                     <h4 class="product_heading text-start pb-md-1"><span class="our">Modes </span>of Delivery:</h4>
-                    <p class="since_content">
+                    <p>
                         We supply material by road, sea and air depending upon the nature of chemical and shipping requirement.
                     </p>
                 </div>
@@ -94,8 +94,8 @@
             </div>
         </section>
         
-        <section class="white_section product_info">
-            <div class="container product-section pb-md-5 product_filter_gallery ">
+        <section class="white_section product_info product-section pb-md-5 product_filter_gallery">
+            <div class="container">
                 <div class="row">
                     <h2 class="product_heading text-start pb-md-1"><span class="our">Related </span>Products</h2>
                     @foreach($related_products as $related_product)

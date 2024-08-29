@@ -9,10 +9,14 @@
         font-size: 22px !important;
     }
 
-    .top_bar {
+    /* .top_bar {
         position: absolute;
         left: 0px;
-    }
+    } */
+    
+.gt_container--hich1m .gt_switcher .gt_selected {
+    z-index: 2 !important;
+}
 
 .banner_img {
     object-fit: cover;
@@ -20,7 +24,7 @@
 }
 
 .menu {
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 .transparent .navbar-brand img {
@@ -49,6 +53,17 @@
     height: 24px;
     display: block;
     font-size: 26px;
+}
+
+.navbar {
+    padding: 10px 0px;
+}
+
+.google_translate_tab {
+    position: absolute;
+    /* left: 0px; */
+    /* top: 6px; */
+    right: 80px;
 }
 
 button.navbar-toggler {
@@ -134,7 +149,7 @@ marquee.banner_marque {
 }
 
 .product_heading {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .our_product_cards_div .card img { 
@@ -377,6 +392,12 @@ footer .row {
     font-size: 12px;
 }
 
+.delievery_types p {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+}
+
 
 /* enquire page */
 
@@ -384,6 +405,11 @@ footer .row {
     line-height: 20px; 
     font-size: 16px;
 } 
+
+.enquiry_section .left_section p { 
+    line-height: 20px; 
+    font-size: 16px;
+}
 
 .enquiry_section form {
     text-align: center;
@@ -495,6 +521,17 @@ h4.product_heading {
     .top_bar {
     display: flex;
     justify-content: center;
+}
+
+.gt_switcher.notranslate {
+    width: 100% !important;
+}
+.gt_container--hich1m .gt_switcher .gt_selected a {
+    width: 80px !important;
+}
+
+.gt_container--hich1m .gt_switcher .gt_selected {
+    z-index: 2 !important;
 }
 .navbar-brand {
     position: static !important;
@@ -993,6 +1030,10 @@ h5.form_mark {
 
 .product_heading_btn_next_prev_div .fa-arrow-left:before, 
 .product_heading_btn_next_prev_div .fa-arrow-right:before {
+    font-size: 14px;
+}
+
+.delievery_types p {
     font-size: 14px;
 }
 

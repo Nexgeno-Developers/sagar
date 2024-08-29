@@ -188,50 +188,48 @@
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
                 </div>
-                <div class="col-12 why_sscpl_bg_img">
-                    <div class="why_sscpl_bg_img">
-                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
-                        <div class="row pt-lg-5 pt-3 px-md-0 px-3">
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
-                                        class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Product</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/competitve_pricing.png"
-                                        alt="" class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Competitve Pricing</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/packaging.png" alt=""
-                                        class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Packaging</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/commitment.png" alt=""
-                                        class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Commitment</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/delivery.png" alt=""
-                                        class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Delivery</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customised_solutions.png"
-                                        alt="" class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Customised Solutions</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/compliances.png" alt=""
-                                        class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Compliances</p>
-                            </div>
-                            <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customer_support.png"
-                                        alt="" class="sscl_img"></div>
-                                <p class="sscl_content mt-md-3">Customer Support</p>
-                            </div>
+                <div class="col-12 why_sscpl_bg_img">                    
+                    <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
+                    <div class="row pt-lg-5 pt-3 px-md-0 px-3">
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
+                                    class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Product</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/competitve_pricing.png"
+                                    alt="" class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Competitve Pricing</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/packaging.png" alt=""
+                                    class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Packaging</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/commitment.png" alt=""
+                                    class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Commitment</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/delivery.png" alt=""
+                                    class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Delivery</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customised_solutions.png"
+                                    alt="" class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Customised Solutions</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/compliances.png" alt=""
+                                    class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Compliances</p>
+                        </div>
+                        <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
+                            <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customer_support.png"
+                                    alt="" class="sscl_img"></div>
+                            <p class="sscl_content mt-md-3">Customer Support</p>
                         </div>
                     </div>
                 </div>

@@ -24,12 +24,11 @@
         </div>
     </section>
 
-    <section class="white_section  partnership">
-        <div class="container py-md-5">
+    <section class="white_section  partnership py-md-5 py-3 pb-4">
+        <div class="container ">
             <div class="row">
                 <div class="col-md-7 pe-md-3">
-                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Multi</span>
-                        Brand Partnership</h2>
+                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Multi</span> Brand Partnership</h2>
                     <p class="fs-14 lh-20">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -50,18 +49,17 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do/what_we_do_img.png">
+                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do//what-we-do/what_we_do_img.png">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="blue_section  partnership">
-        <div class="container py-md-5">
-            <div class="d-flex flex-row-reverse">
+    <section class="blue_section  partnership py-md-5 py-3 pt-4">
+        <div class="container ">
+            <div class="d-flex flex-md-row-reverse flex-column pb-3">
                 <div class="col-md-7 ps-md-3">
-                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start text-light"><span
-                            class="our">Supply Chain </span> Management</h2>
+                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start text-light"><span class="our">Supply Chain </span> Management</h2>
                     <p class="fs-14 lh-20 text-light">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -82,16 +80,15 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/what-we-do/what_we_do_img.png">
+                    <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/what-we-do//what-we-do/what_we_do_img.png">
                 </div>
             </div>
         </div>
 
-        <div class="container py-md-5 pt-md-4">
+        <div class="container py-md-5 pt-md-4 py-3">
             <div class="row">
                 <div class="col-md-7 pe-md-3">
-                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start text-light"><span
-                            class="our">Contract Manufacturing </span> <br> of Customized Products </h2>
+                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start text-light"><span class="our">Contract Manufacturing </span> <br> of Customized Products </h2>
                     <p class="fs-14 lh-20 text-light">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -112,18 +109,17 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do/what_we_do_img.png">
+                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do//what-we-do/what_we_do_img.png">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="white_section  partnership">
-        <div class="container py-md-5">
+    <section class="white_section  partnership py-md-5 py-3 pb-4">
+        <div class="container">
             <div class="row">
                 <div class="col-md-7 pe-md-3">
-                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Value </span>
-                        Addition</h2>
+                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Value </span> Addition</h2>
                     <p class="fs-14 lh-20">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -143,17 +139,16 @@
                         quaerat voluptatem. Ut enim ad minima veniam
                     </p>
                 </div>
-                <div class="col-md-5">
-                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do/what_we_do_img.png">
+                <div class="col-md-5 pb-3">
+                    <img class="right_img what_we_do_img ps-md-3" src="/assets/frontend/images/what-we-do//what-we-do/what_we_do_img.png">
                 </div>
             </div>
         </div>
 
-        <div class="container py-md-5 pt-md-4">
-            <div class="d-flex flex-row-reverse">
+        <div class="container py-md-5 pt-md-4 pt-2">
+            <div class="d-flex flex-md-row-reverse flex-column">
                 <div class="col-md-7 ps-md-3">
-                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Logistic
-                        </span>Support</h2>
+                    <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our">Logistic </span>Support</h2>
                     <p class="fs-14 lh-20">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -174,7 +169,7 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/what-we-do/what_we_do_img.png">
+                    <img class="right_img what_we_do_img pe-md-3" src="/assets/frontend/images/what-we-do//what-we-do/what_we_do_img.png">
                 </div>
             </div>
         </div>
