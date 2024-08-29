@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', 'Saagar')
+@section('page.title', 'Contact us')
 
-@section('page.description', 'description')
+@section('page.description', 'Saagar Contact Us Page')
 
 @section('page.type', 'website')
 
@@ -80,12 +80,11 @@
                                         {{$contacts[1]->phone1}}
                                     </a>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-
                     <div class="col-lg-7 col-md-6 mb-md-0 mb-3">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1699375418936!2d144.9560543153246!3d-37.81627997975182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727f5e2b0d4e0!2sMelbourne%20Central%20Station!5e0!3m2!1sen!2sau!4v1627548037391!5m2!1sen!2sau" 
+                            src="{{$contacts[0]->google_map}}" 
                             width="100%" 
                             height="440" 
                             style="border:0; border-radius: 50px;" 

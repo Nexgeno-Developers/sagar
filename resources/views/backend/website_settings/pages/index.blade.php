@@ -47,10 +47,10 @@
         		
 				@if($page->type == 'home_page')
         			<td><a href="{{ route('custom-pages.show_custom_page', $page->slug) }}" class="text-reset">{{ $page->title }}</a></td>
-					<td>{{ route('index') }}</td>
-				@else
+					<td><a target="_blank" href="{{ route('index') }}">{{ route('index') }}</a></td>
+                    @else
         			<td><a href="{{ route('custom-pages.show_custom_page', $page->slug) }}" class="text-reset">{{ $page->title }}</a></td>
-					<td>{{ route('index') }}/{{ $page->slug }}</td>
+					<td><a target="_blank" href="{{ route('index') }}/{{ $page->slug }}">{{ route('index') }}/{{ $page->slug }}</a></td>
 				@endif
         		<td class="text-right">
 					@if($page->type == 'home_page')

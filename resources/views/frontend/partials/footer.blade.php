@@ -1,5 +1,6 @@
 @php
-    $allpages = DB::table('pages')->where('type', 'custom_page')
+    $allpages = DB::table('pages')
+    //->where('type', 'custom_page')
         ->select('title', 'slug')
         ->limit(10)
         ->get();
@@ -7,6 +8,7 @@
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $contacts = json_decode($footer->contacts);
     $social_media = json_decode($footer->social_media);
+    $pdf = $footer->pdf;
 @endphp
 
 
@@ -75,18 +77,16 @@
                 <div class="col-lg-2 col-6 footer_useful_link_1_div ps-md-3">
                     <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_1_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
-                        <li class="list-item"> <a href="{{route('index')}}" class="footer_useful_link_1_links">Home</a> </li>
-                        <li class="list-item"> <a href="{{route('about_us')}}" class="footer_useful_link_1_links">Company Profile</a> </li>
-                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_1_links">Industry Areas</a> </li>
-                        <li class="list-item"> <a href="{{route('partner_with_us')}}" class="footer_useful_link_1_links">Client</a> </li>
-                        <li class="list-item"> <a href="{{route('contact_us')}}" class="footer_useful_link_1_links">Contact Us</a> </li>
                         @foreach ($allpages as $page)
-                            <li class="list-item">
-                                <a href="{{ url(route('page.detail',$page->slug)) }}">
-                                    {{ $page->title }}
-                                </a>
-                            </li>
+                        <li class="list-item">
+                            <a href="{{ url(route('page.detail',$page->slug)) }}">
+                                {{ $page->title }}
+                            </a>
+                        </li>
                         @endforeach
+                        <li class="list-item"><a class="footer_useful_link_1_links" href="{{route('career')}}">Career</a></li>
+                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_1_links">Industry Areas</a> </li>
+                        <li class="list-item"> <a href="{{route('contact_us')}}" class="footer_useful_link_1_links">Contact Us</a> </li>
                     </ul>
                 </div>
 
@@ -124,33 +124,27 @@
     
     <div class="sidebar_instant_links">
           <div class="sidebar_social_media">
-              <ul class="list-group-item list-unstyled mb-0 mt-1">
-                  <li class="list-item">
-                      <a href="" class="sidebar_social_media_link">
-                          <i class="fa fa-linkedin-in"></i>                       
-                      </a>
-                  </li>
-                  <li class="list-item">
-                      <a href="" class="sidebar_social_media_link">
-                          <i class="fa fa-instagram"></i>                       
-                      </a>
-                  </li>
-                  <li class="list-item">
-                      <a href="" class="sidebar_social_media_link">
-                          <i class="fa fa-x-twitter"></i>                       
-                      </a>
-                  </li>
-                  <li class="list-item">
-                      <a href="" class="sidebar_social_media_link">
-                          <i class="fa fa-facebook"></i>                       
-                      </a>
-                  </li>
-              </ul>
+            @if (isset($social_media) && !empty($social_media))
+                <ul class="list-group-item list-unstyled mb-0 mt-1">
+                    @foreach ($social_media as $index => $row )
+                    <li class="list-item"> 
+                        <a href="{{ $row->url}}" class="sidebar_social_media_link">
+                            {!! $row->icon !!}
+                        </a> 
+                    </li>
+                    @endforeach                                
+                </ul> 
+            @endif               
           </div>
-          <div class="newsletter">
-              <div class="d-flex position-relative rotate-90">
-                  <label class="file-upload-label" for="fileUpload">NewsLetter<i class="fa fa-file-arrow-down"> </i></label>
-                  <input type="file" id="fileUpload" name="file" class="file-upload-input">
-              </div>
-          </div>
+          @if(!empty($pdf)) 
+            <a href="{{ asset('storage/' . $pdf) }}" download="{{ asset('storage/' . $pdf) }}" class="newsletter-download-link text-white">
+                <div class="newsletter">
+                    <div class="d-flex position-relative rotate-90">
+                        <label class="file-upload-label" for="fileUpload">NewsLetter
+                            <i class="fa fa-file-arrow-down"></i>
+                        </label>                
+                    </div>
+                </div>
+            </a>
+          @endif
       </div>

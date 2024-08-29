@@ -1,4 +1,10 @@
 @php
+$allpages = DB::table('pages')
+        ->where('type', '!=', 'custom_page')
+        ->select('title', 'slug', 'type')
+        ->limit(10)
+        ->get();
+
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
@@ -45,20 +51,20 @@
                           
                             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                                 <ul class="navbar-nav gap-md-3 mb-2 mb-lg-0">
+                                @foreach ($allpages as $page)
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('products_category')}}">Products</a>
+                                        <a class="nav-link" 
+                                        href="@if($page->type == 'home_page'){{ route('index')}} @else {{ url(route('page.detail', $page->slug)) }} @endif">
+                                            {{ $page->title }}
+                                        </a>
                                     </li>
+                                @endforeach
+
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('about_us')}}">Company Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{route('partner_with_us')}}">Partner with us</a>
+                                        <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('career')}}">Career</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">Client</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>

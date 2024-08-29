@@ -276,6 +276,22 @@ public function product_detail($slug) {
     $meta_description = $product_detail->meta_description;
     $is_active = $product_detail->is_active;
 
+    // Fetch the previous product
+    $previous_product = DB::table('products')
+        ->where('id', '<', $product_detail->id)
+        ->where('is_active', 1)
+        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
+        ->orderBy('id', 'desc')
+        ->first();
+
+    // Fetch the next product
+    $next_product = DB::table('products')
+        ->where('id', '>', $product_detail->id)
+        ->where('is_active', 1)
+        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
+        ->orderBy('id', 'asc')
+        ->first();
+
     // Fetch related products
     $related_products = DB::table('products')
         ->where('id', '!=', $product_detail->id) // Exclude the current product
@@ -284,7 +300,7 @@ public function product_detail($slug) {
         ->limit(4)
         ->get();
 
-    return view('frontend.pages.product.product_detail', compact('product_detail', 'is_active', 'function_description',  'product_description', 'product_information', 'delivery_description', 'product_category_ids', 'slug', 'page_name', 'image', 'meta_title', 'meta_description', 'related_products'));
+    return view('frontend.pages.product.product_detail', compact('previous_product','next_product','product_detail', 'is_active', 'function_description',  'product_description', 'product_information', 'delivery_description', 'product_category_ids', 'slug', 'page_name', 'image', 'meta_title', 'meta_description', 'related_products'));
 }
 
 public function page_detail($page_slug) {

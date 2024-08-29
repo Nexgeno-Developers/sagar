@@ -48,21 +48,21 @@
         <input type="hidden" name="id" value="{{ $page->id }}">
         <div class="col-sm-12">
             <div class="form-group mb-3">
-                <label>Title <span class="red">*</span></label>
+                <label>Title <span class="red">*</span><span class="small"> (Used For Backend Name) </span></label>
                 <input type="text" class="form-control" name="title"  maxlength="155" value="{{ $page->title }}" required>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group mb-3">
-                <label>Slug (URL) <span class="red">*</span></label>
-                <input type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
+                <label>Slug (URL) <span class="red">*</span><span class="small"> (Deafult Pages Slug Not Editable) </span></label>
+                <input readonly type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
             </div>
         </div>
 
         <div class="col-sm-6">
             <div class="form-group mb-3">
-                <label>Status <span class="red">*</span></label>
-                <select class="form-select" name="is_active" required>
+                <label>Status <span class="red">*</span><span class="small"> (Deafult Pages Status Not Editable) </span></label>
+                <select class="pe-none form-select" name="is_active" required>
                     <option value="0" {{ $page->is_active == 0 ? 'selected' : '' }}>Inactive</option>
                     <option value="1" {{ $page->is_active == 1 ? 'selected' : '' }}>Active</option>
                 </select>

@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', 'Saagar')
+@section('page.title', $meta_title)
 
-@section('page.description', 'description')
+@section('page.description', $meta_description)
 
 @section('page.type', 'website')
 
@@ -33,8 +33,21 @@
                         <div class="product_heading_btn_next_prev_div">
                             <h2 class="product_heading text-start pb-md-1"><span class="our">{{$page_name}}</span></h2>
                             <div class="col-md-3 col-2 btn_next_prev_div">
+                                @if($previous_product)
+                                    <a href="{{ route('product.detail', $previous_product->slug) }}">
+                                        <i class="fa fa-arrow-left btn btn-primary"></i>
+                                    </a>
+                                @else
                                     <i class="fa fa-arrow-left btn btn-primary disabled"></i>
-                                    <i class="fa fa-arrow-right btn btn-primary"></i>
+                                @endif
+
+                                @if($next_product)
+                                    <a href="{{ route('product.detail', $next_product->slug) }}">
+                                        <i class="fa fa-arrow-right btn btn-primary"></i>
+                                    </a>
+                                @else
+                                    <i class="fa fa-arrow-right btn btn-primary disabled"></i>
+                                @endif
                             </div>
                         </div>
                         <h5 class="function_title text-dark">Function</h5>

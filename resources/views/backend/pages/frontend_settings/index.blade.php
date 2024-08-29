@@ -41,7 +41,7 @@
                     </div>
                 @endif
 
-                
+               
                 <div class="col-12">
                     <div class="form-group mb-3">
                         <label>Meta Title<span class="red">*</span></label>
@@ -52,7 +52,7 @@
                         <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required>{{ isset($settings->meta_description) ? $settings->meta_description : '' }}</textarea>
                     </div>
                 </div>
-
+                
                 <hr>
                 <h3>Contact Section</h3>
                 @if (!empty($contacts_data))
@@ -65,7 +65,7 @@
                                         <input type="text" name="contacts_name[]" class="form-control" value="{{ $contact->name }}" required>
                                     </div>
                                     <div class="form-group col-6 mb-3">
-                                        <label for="contacts_address">Address</label>
+                                        <label for="contacts_address">Address {{$index + 1}}</label>
                                         <textarea class="form-control"  maxlength="255" name="contacts_address[]" rows="3" required>{{ isset($contact->address) ? $contact->address : '' }}</textarea>
                                     </div>
                                     <div class="form-group col-6 mb-3">

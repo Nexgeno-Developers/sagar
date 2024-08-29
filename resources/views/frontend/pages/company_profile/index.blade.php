@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', 'Saagar')
+@section('page.title', $page->meta_title)
 
-@section('page.description', 'description')
+@section('page.description', $page->meta_description)
 
 @section('page.type', 'website')
 

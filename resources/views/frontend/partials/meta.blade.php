@@ -1,10 +1,14 @@
 @php
+$frontend = DB::table('frontend_settings')->where('id', 1)->first();
+$meta_description=$frontend->meta_description;
+$meta_title=$frontend->meta_title;
 
-$title = !empty(trim($__env->yieldContent('page.title'))) ? str_replace(['&nbsp;', '&amp;', '&amp;amp;'], ['&amp;', '&', '&'], htmlspecialchars_decode($__env->yieldContent('page.title'))) : 'Seedling Associates:Top Lawyers &amp; Law Firms in Delhi, India';
+
+$title = !empty(trim($__env->yieldContent('page.title'))) ? str_replace(['&nbsp;', '&amp;', '&amp;amp;'], ['&amp;', '&', '&'], htmlspecialchars_decode($__env->yieldContent('page.title'))) : 
+$meta_title;
 
 $description = !empty(trim($__env->yieldContent('page.description'))) ? str_replace(['&nbsp;', '&amp;', '&amp;amp;'], ['&amp;', '&', '&'], htmlspecialchars_decode($__env->yieldContent('page.description'))) :
-'Seedling Associates is one of the best law firms in Delhi, India. We provide legal assistance for startups, FDI,
-Property law, IP, and more.';
+$meta_description;
 
 $page_type = !empty(trim($__env->yieldContent('page.type'))) ? $__env->yieldContent('page.type') : 'website';
 
@@ -33,7 +37,7 @@ $url = url()->current();
 <meta property="og:title" content="@php echo htmlspecialchars_decode($title) @endphp">
 <meta property="og:description" content="@php echo htmlspecialchars_decode($description) @endphp">
 
-<meta property="article:publisher" content="https://www.facebook.com/ahlawatassociates/" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
 <meta property="article:modified_time" content="{{ $publish_time }}" />
 
 
@@ -50,8 +54,8 @@ $url = url()->current();
 <!----------------- twitter ------------------->
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ahlawat & Associates">
-<meta name="twitter:description" content="Ahlawat & Associates">
+<meta name="twitter:title" content="Saagar">
+<meta name="twitter:description" content="Saagar">
 <meta name="twitter:image" content="{{ asset('assets/frontend/images/logo.png') }}">
 <meta name="twitter:site" content="@ahlawatlaw" />
 <link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
