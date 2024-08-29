@@ -56,6 +56,9 @@
                 <hr>
                 <h3>Contact Section</h3>
                 @if (!empty($contacts_data))
+                    @php
+                        $lastindex = is_array($contacts_data) ? count($contacts_data) : $contacts_data->count();
+                    @endphp
                     @foreach ($contacts_data as $index => $contact )
                         <div class="row gallery-image-row2">
                             <div class="col-md-9">
@@ -100,7 +103,9 @@
                                 </div>
                             </div>
                             <div class="add-row-col-3-div col-md-3 ">
-                                <button type="button" class="btn btn-outline-success add-row2 m-2">Add +</button>
+                                @if ($index === 0 || $index === $lastindex - 1)
+                                    <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                                @endif
                                 @if ($index > 0)
                                 <button type="button" class="btn btn-outline-danger remove-row2 my-2">Remove -</button>
                                 @endif
@@ -158,7 +163,10 @@
 
                 <hr>
                 <h3>Social Media</h3>
-                @if (isset($social_media_data) && !empty($social_media_data))        
+                @if (isset($social_media_data) && !empty($social_media_data))     
+                    @php
+                        $lastindex = is_array($social_media_data) ? count($social_media_data) : $social_media_data->count();
+                    @endphp   
                     @foreach ($social_media_data as $index => $row)
                             <div class="row gallery-image-row">
                                 <div class="col-md-9">
@@ -187,7 +195,9 @@
                                     </div>
                                 </div>
                                 <div class="add-row-col-3-div col-md-3">
-                                    <button type="button" class="btn btn-outline-success add-row m-2">Add +</button>
+                                    @if ($index === 0 || $index === $lastindex - 1)
+                                        <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                                    @endif
                                     @if ($index > 0)
                                     <button type="button" class="btn btn-outline-danger remove-row my-2">Remove -</button>
                                     @endif

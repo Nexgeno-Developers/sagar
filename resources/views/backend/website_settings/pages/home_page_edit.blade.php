@@ -69,7 +69,10 @@
             </div>
         </div>
 
-        @if (!empty($banners))        
+        @if (!empty($banners))  
+        @php
+            $lastindex = is_array($banners) ? count($banners) : $banners->count();
+        @endphp      
             @foreach ($banners as $index => $banner)
                     <div class="row gallery-image-row">
                         <div class="col-md-9">
@@ -101,7 +104,9 @@
                             </div>
                         </div>
                         <div class="add-row-col-3-div col-md-3">
-                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                            @if ($index === 0 || $index === $lastindex - 1)
+                                <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                            @endif
                             @if ($index > 0)
                             <button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button>
                             @endif
@@ -192,6 +197,9 @@
         <hr>
         <h3>What we do Section</h3>
         @if (!empty($wwd))
+        @php
+            $lastindex = is_array($wwd) ? count($wwd) : $wwd->count();
+        @endphp
             @foreach ($wwd as $index => $wwd_data )
                 <div class="row gallery-image-row2">
                     <div class="col-md-9">
@@ -218,7 +226,9 @@
                         </div>
                     </div>
                     <div class="add-row-col-3-div col-md-3 ">
-                        <button type="button" class="btn btn-outline-success add-row2 m-2">Add More +</button>
+                        @if ($index === 0 || $index === $lastindex - 1)
+                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                        @endif
                         @if ($index > 0)
                         <button type="button" class="btn btn-outline-danger remove-row2 my-2">Remove</button>
                         @endif
@@ -252,6 +262,9 @@
 <hr>
 <h3>Activities Section </h3>
         @if (!empty($activities))
+        @php
+            $lastindex = is_array($activities) ? count($activities) : $activities->count();
+        @endphp
             @foreach ($activities as $index => $row )
                 <div class="row gallery-image-row3">
                     <div class="col-md-9">
@@ -274,7 +287,9 @@
                     </div>
                     </div>
                     <div class="add-row-col-3-div col-md-3 ">
-                        <button type="button" class="btn btn-outline-success add-row3 m-2">Add More +</button>
+                        @if ($index === 0 || $index === $lastindex - 1)
+                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                        @endif
                         @if ($index > 0)
                         <button type="button" class="btn btn-outline-danger remove-row3 my-2">Remove</button>
                         @endif

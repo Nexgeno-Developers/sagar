@@ -150,7 +150,10 @@
 
 <hr>
 <h3>Team section</h3>
-        @if (!empty($teams))        
+        @if (!empty($teams))     
+        @php
+            $lastindex = is_array($teams) ? count($teams) : $teams->count();
+        @endphp   
             @foreach ($teams as $index => $team)
                     <div class="row gallery-image-row">
                         <div class="col-md-9">
@@ -177,7 +180,9 @@
                             </div>
                         </div>
                         <div class="add-row-col-3-div col-md-3">
-                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                            @if ($index === 0 || $index === $lastindex - 1)
+                                <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                            @endif
                             @if ($index > 0)
                             <button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button>
                             @endif

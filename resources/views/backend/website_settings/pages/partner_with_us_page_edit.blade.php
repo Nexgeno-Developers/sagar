@@ -63,6 +63,9 @@
 
     <hr>
     <h3>Team section</h3>
+    @php
+        $lastindex = is_array($faqs) ? count($faqs) : $faqs->count();
+    @endphp
     @if (!empty($faqs))        
         @foreach ($faqs as $index => $faq)
                 <div class="row gallery-image-row">
@@ -79,7 +82,9 @@
                         </div>
                     </div>
                     <div class="add-row-col-3-div col-md-3">
-                        <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                        @if ($index === 0 || $index === $lastindex - 1)
+                            <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                        @endif
                         @if ($index > 0)
                         <button type="button" class="btn btn-outline-danger remove-row my-2">Remove</button>
                         @endif
