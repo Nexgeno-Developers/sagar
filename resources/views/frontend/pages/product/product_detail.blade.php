@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-12 text-center product_img_div">
-                        <img class="img-fluid product_img" src="{{ asset('storage/' . $image)}}" alt="Chemical Structure">
+                        <img id="zoomable-image" class="img-fluid product_img" src="{{ asset('storage/' . $image)}}" alt="Chemical Structure">
                     </div>
                     <div class="col-md-7 ps-md-5 product_details">
                         <div class="product_heading_btn_next_prev_div">

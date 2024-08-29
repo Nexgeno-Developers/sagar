@@ -10,6 +10,49 @@
     }
 
 
+    
+$(document).ready(function() {
+    var isDragging = false;  // Track whether the image is being dragged
+    var startX, startY, scrollLeft, scrollTop; // Variables for mouse position and scroll
+    
+    $('#zoomable-image').on('click', function(e) {
+        $(this).toggleClass('zoomed'); // Toggle zoom
+        $('body').toggleClass('zoomed-image'); // Add body class for panning cursor control
+        isDragging = false; // Reset dragging state
+    });
+
+    // Mouse down event
+    $('#zoomable-image').on('mousedown', function(e) {
+        if ($(this).hasClass('zoomed')) {
+            isDragging = true;
+            startX = e.pageX - this.offsetLeft; // Mouse X position relative to image
+            startY = e.pageY - this.offsetTop;  // Mouse Y position relative to image
+            scrollLeft = $(this).parent().scrollLeft(); // Image container scroll position
+            scrollTop = $(this).parent().scrollTop();
+            $(this).addClass('dragging'); // Change cursor to grabbing
+        }
+    });
+
+    // Mouse move event
+    $('#zoomable-image').on('mousemove', function(e) {
+        if (isDragging) {
+            e.preventDefault(); // Prevent default action
+            var x = e.pageX - this.offsetLeft; // Current mouse X
+            var y = e.pageY - this.offsetTop;  // Current mouse Y
+            var walkX = (x - startX) * 1; // Distance moved in X direction
+            var walkY = (y - startY) * 1; // Distance moved in Y direction
+            $(this).parent().scrollLeft(scrollLeft - walkX); // Scroll image container
+            $(this).parent().scrollTop(scrollTop - walkY);
+        }
+    });
+
+    // Mouse up and mouse leave event
+    $(document).on('mouseup mouseleave', function() {
+        isDragging = false;
+        $('#zoomable-image').removeClass('dragging'); // Reset cursor
+    });
+});
+
 
 $(document).ready(function () {
     var owl = $("#home_page_banner_slider").owlCarousel({
