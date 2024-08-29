@@ -72,16 +72,12 @@ p {
     top: 6px;
 }
 
-.gtranslate_wrapper.gt_container--hich1m {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-} 
 
 /* for search bar */
 
 .search-icon-wrapper {
     position: relative;
+    left: 5px;
 }
 
 .search-bar, .search-bar-for-tab {
