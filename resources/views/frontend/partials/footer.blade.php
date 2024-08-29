@@ -73,7 +73,7 @@
     
                 <!-- Useful Links Section -->
                 <div class="col-lg-2 col-6 footer_useful_link_1_div ps-md-3">
-                    <h5 class="pb-lg-4 footer_useful_link_1_heading">Useful Links</h5>
+                    <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_1_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
                         <li class="list-item"> <a href="{{route('index')}}" class="footer_useful_link_1_links">Home</a> </li>
                         <li class="list-item"> <a href="{{route('about_us')}}" class="footer_useful_link_1_links">Company Profile</a> </li>
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="col-lg-3 col-5 footer_useful_link_2_div">
-                <h5 class="pb-md-4 footer_useful_link_2_heading">Useful Links</h5>
+                <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_2_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Solutions</a> </li>
@@ -120,3 +120,37 @@
             </div>
         </div>
     </footer>
+
+    
+    <div class="sidebar_instant_links">
+          <div class="sidebar_social_media">
+              <ul class="list-group-item list-unstyled mb-0 mt-1">
+                  <li class="list-item">
+                      <a href="" class="sidebar_social_media_link">
+                          <i class="fa fa-linkedin-in"></i>                       
+                      </a>
+                  </li>
+                  <li class="list-item">
+                      <a href="" class="sidebar_social_media_link">
+                          <i class="fa fa-instagram"></i>                       
+                      </a>
+                  </li>
+                  <li class="list-item">
+                      <a href="" class="sidebar_social_media_link">
+                          <i class="fa fa-x-twitter"></i>                       
+                      </a>
+                  </li>
+                  <li class="list-item">
+                      <a href="" class="sidebar_social_media_link">
+                          <i class="fa fa-facebook"></i>                       
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="newsletter">
+              <div class="d-flex position-relative rotate-90">
+                  <label class="file-upload-label" for="fileUpload">NewsLetter<i class="fa fa-file-arrow-down"> </i></label>
+                  <input type="file" id="fileUpload" name="file" class="file-upload-input">
+              </div>
+          </div>
+      </div>

@@ -1,3 +1,15 @@
+//for search bar
+    function toggleSearchBar() {
+        var searchBar = document.querySelector('.search-bar');
+        searchBar.classList.toggle('d-none');
+    }
+
+    function toggleSearchBar2() {
+        var searchBar2 = document.querySelector('.search-bar-for-tab');
+        searchBar2.classList.toggle('d-none');
+    }
+
+
 
 $(document).ready(function () {
     var owl = $("#home_page_banner_slider").owlCarousel({

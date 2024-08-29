@@ -19,11 +19,11 @@
     </div>
 </section>
 
-<section class="white_section career_contact_form">
-    <div class="container py-md-5">
-        <div class="row">
+<section class="white_section career_contact_form py-lg-5 py-3">
+    <div class="container">
+        <div class="row justify-content-center">
             @foreach($productCategories as $category)
-                <div class="col-md-3 our_product_cards_div">
+                <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                         <div class="card">
                             {{--
@@ -43,7 +43,7 @@
 
         <!-- Pagination Links -->
         <div class="row">
-            <div class="col-12 text-center pt-md-4">
+            <div class="col-12 text-center pt-md-4 pt-4">
                 {{ $productCategories->links('pagination::bootstrap-5') }}
             </div>
         </div>

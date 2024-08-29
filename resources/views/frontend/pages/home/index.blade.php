@@ -61,6 +61,28 @@
         $cocs_pdf = '';
     }
 @endphp
+
+<style>    
+    .header {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .header {
+        background-color: transparent;
+    }
+
+    .search-icon {
+        color: #fff; /* Icon color */
+    }
+
+    .search-icon:hover {
+        color: #fff; /* Icon color */
+    }
+</style>
+
+
 <main class="home-page">
 
     <section id="slider_banner_section">
@@ -95,8 +117,8 @@
     </section>
 
     @if(!empty($products))
-        <section class="white_section our_products" id="our_products">
-            <div class="container pt-md-5 pt-5 pb-md-2">
+        <section class="white_section our_products pt-md-5 pt-5 pb-md-2" id="our_products">
+            <div class="container">
                 <h2 class="product_heading text-center pb-md-1"><span class="our">OUR</span> PRODUCT</h2>
 
                 <div class="row justify-content-center">
@@ -145,7 +167,7 @@
                                     class="img-fluid rounded">
                             @endif
 
-                            <div class="info_box text-md-start text-center text-light p-md-4 up_and_down">
+                            <div class="info_box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
                                 <h4>100k+</h4>
                                 <p>Lorem Ipsum</p>
                                 <hr>
@@ -191,7 +213,7 @@
                 </div>                
             @endforeach
 
-            <div class="col-md-4 col-6 mb-0 pe-md-0">
+            <div class="col-md-6 d-md-none d-block py-3 text-center">
                 <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end">
                     View All
                 </a>
@@ -242,7 +264,7 @@
         </div>
     </section>
 
-    <section class="white_section why_sscpl py-md-5 py-3">
+    <section class="white_section why_sscpl py-lg-5 py-3">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
@@ -251,7 +273,7 @@
                 <div class="col-12">
                     <div class="why_sscpl_bg_img">
                         <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
-                        <div class="row pt-md-5 pt-3">
+                        <div class="row pt-lg-5 pt-3">
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
                                         class="sscl_img"></div>
@@ -349,7 +371,9 @@
                         <div class="three_boxes_div col-md-11 row row-cols-2 row-cols-md-3">
                             <div class="col ">
                                 <div class="spply_chn_box">
-                                    <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img">
+                                    <div class="spply_chn_box_img_div"> 
+                                        <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img">
+                                    </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text1}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf1) }}"
                                         class="spply_chn_btn">Download</a>
@@ -358,7 +382,9 @@
 
                             <div class="col ">
                                 <div class="spply_chn_box">
-                                    <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
+                                    <div class="spply_chn_box_img_div"> 
+                                        <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
+                                    </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
                                     <a target="_blank" href="{{$scp_url}}" class="spply_chn_btn">Connect Now</a>
                                 </div>
@@ -366,7 +392,9 @@
 
                             <div class="col ">
                                 <div class="spply_chn_box">
-                                    <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img">
+                                    <div class="spply_chn_box_img_div"> 
+                                        <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img">
+                                    </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text3}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf2) }}"
                                         class="spply_chn_btn">View</a>
