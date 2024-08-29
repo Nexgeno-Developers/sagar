@@ -63,10 +63,10 @@
 
     <hr>
     <h3>Team section</h3>
-    @php
-        $lastindex = is_array($faqs) ? count($faqs) : $faqs->count();
-    @endphp
     @if (!empty($faqs))        
+        @php
+            $lastindex = is_array($faqs) ? count($faqs) : $faqs->count();
+        @endphp
         @foreach ($faqs as $index => $faq)
                 <div class="row gallery-image-row">
                     <div class="col-md-9">
