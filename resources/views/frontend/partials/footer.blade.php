@@ -45,7 +45,7 @@
                 <!-- Contact Info Section -->
                 <div class="col-lg-3 col-md-5 footer_contact_div ps-md-0 py-2">
                     <h5 class="pb-lg-4 pb-md-2 pb-1 footer_contact_heading">Contact Info</h5>
-                    <div class="d-flex align-items-start gap-2 pb-2">
+                    <div class="d-flex align-items-start gap-2 pb-lg-3 pb-2">
                         <i class="fa fa-phone"></i>
                         <span>Mobile Number: <br>
                             <a href="tel:{{$contacts[0]->phone1}}" class="footer_contact_links">
@@ -53,7 +53,7 @@
                             </a>
                         </span> 
                     </div>
-                    <div class="d-flex align-items-start gap-2 pb-2">
+                    <div class="d-flex align-items-start gap-2 pb-lg-3 pb-2">
                         <i class="fa fa-phone"></i>
                         <span>Landline Number: <br>
                             <a href="tel:{{$contacts[0]->phone2}}" class="footer_contact_links">
@@ -98,7 +98,7 @@
                         <li class="list-item"> <a href="#" class="footer_useful_link_2_links">Supply Chain Partner</a> </li>
                         <li class="list-item">
                             @if (isset($social_media) && !empty($social_media))
-                            <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-md-3">
+                            <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-lg-5">
                                 @foreach ($social_media as $index => $row )
                                 <li class="list-item"> 
                                     <a href="{{ $row->url}}" class="footer_useful_link_2_links">

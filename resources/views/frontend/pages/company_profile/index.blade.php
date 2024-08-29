@@ -141,7 +141,7 @@
                         </div>
                         <div class="col-md-9">
                             <h5 class="name_and_position text-light pb-md-3">{{ isset($team->name) ? $team->name : '' }}</h5>
-                            <p class="about_description text-light fs-14 lh-20 fw-light"> {{ isset($team->description) ? $team->description : '' }} </p>
+                            <p class="about_description text-light"> {{ isset($team->description) ? $team->description : '' }} </p>
                         </div>
                     </div>
                     @if ($index < count($teams) - 1)
@@ -237,27 +237,27 @@
         </div>
     </section>
 
-    <section class="white_section vision_mission pb-md-5 pb-4">
+    <section class="white_section vision_mission pt-lg-4 pb-md-5 pb-4">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
+                <div class="col ps-lg-0">
                     <div class="our_vission_main_div text-light p-lg-5 p-md-4" style="background-image: url('{{ asset('storage/' . $mnv_bg_image1) }}'); background-size: cover; background-position: center; border-radius: 30px;">
                         <div class="vission_img_div">
                             <img src="{{ asset('storage/' . $mnv_image1) }}" alt="" class="vission_img">
                         </div>
                         <h2 class="vission_heading product_heading py-lg-3 py-md-2 text-light"><span
                                 class="purple_color">OUR</span> VISSION</h2>
-                            <p class="vission_para text-light fs-14 fw-light"> {!! $mnv_description1 !!} </p>
+                            <p class="vission_para text-light"> {!! $mnv_description1 !!} </p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col pe-lg-0">
                     <div class="text-light our_mission_main_div p-lg-5 p-md-4" style="background-image: url('{{ asset('storage/' . $mnv_bg_image2) }}'); background-size: cover; background-position: center; border-radius: 30px; ">
                         <div class="mission_img_div">
                             <img src="{{ asset('storage/' . $mnv_image2) }}" alt="" class="mission_img">
                         </div>
                         <h2 class="mission_heading product_heading py-lg-3 py-md-2 text-light"><span
                                 class="purple_color">OUR</span> MISSION</h2>
-                            <p class="mission_para text-light fs-14 fw-light">  {!! $mnv_description2 !!} </p>
+                            <p class="mission_para text-light">  {!! $mnv_description2 !!} </p>
                     </div>
                 </div>
             </div>

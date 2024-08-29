@@ -106,17 +106,17 @@
                             @csrf
                             <input type="hidden" name="form_type" value="contact_us">
                             <div class="col-md-12 mb-md-4 mb-3">      
-                                <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
+                                <input required type="text" name="full_name" class="form-control" placeholder="Full Name">
                             </div>
                             <div class="d-flex flex-md-row flex-column col-md-12 mb-2">
                                 <div class="col-md-6 mb-3 pe-md-2">                                    
-                                    <input required type="email" name="email" class="form-control" placeholder="Email Address*">
+                                    <input required type="email" name="email" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="col-md-6 mb-3 ps-md-2">                                    
-                                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
+                                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile">
                                 </div>
                             </div>
-                                <textarea class="col-md-12 mb-3" name="message" id="" placeholder="Message"></textarea>
+                                <textarea class="col-md-12 mb-3" name="message" id="" rows="4" placeholder="Message"></textarea>
                             <button type="submit" class="">SEND</button>
                         </form>
                     </div>

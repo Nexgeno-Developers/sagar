@@ -185,7 +185,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <h2 class="product_heading text-center pb-md-1 float-start"><span class="our">INDUSTRY</span> WE
+                    <h2 class="product_heading text-center pb-lg-4 pb-md-3 float-start"><span class="our">INDUSTRY</span> WE
                         CATER</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
@@ -225,7 +225,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <h2 class="product_heading what_we_do_heading text-center pb-1 float-start"><span
+                    <h2 class="product_heading what_we_do_heading text-center pb-lg-4 pb-md-3 pb-1 float-start"><span
                             class="text-light">WHAT</span> WE DO?</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
@@ -407,12 +407,12 @@
         </div>
     </section>
 
-    <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-5">
-        <div class="container text-center">
-            <h2 class="col-12 product_heading text-center pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
+    <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-5 text-center">
+        <div class="container">
+            <h2 class="col-12 product_heading text-center pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
-            <div class="col-md-6 d-md-none d-block pb-3 pt-2 text-center">
-                <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn float-md-end">Read More</a>
+            <div class="col-md-12 d-block pb-3 pt-2 text-center">
+                <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn">Read More</a>
             </div>
         </div>
     </section>

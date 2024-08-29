@@ -55,7 +55,7 @@
                         <div class="product_description">
                             <div class="accordion" id="product_accordion">
                                 <div class="accordion-item mb-2">
-                                    <h5 class="function_title mb-md-3 mb-0">
+                                    <h5 class="function_title mb-0">
                                         <button 
                                             class="accordion-button show" 
                                             type="button" 
