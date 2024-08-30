@@ -116,7 +116,7 @@
                                     <input required type="tel" name="mobile" class="form-control" placeholder="Mobile">
                                 </div>
                             </div>
-                                <textarea class="col-md-12 mb-3" name="message" id="" rows="4" placeholder="Message"></textarea>
+                                <textarea class="col-12 mb-3" name="message" id="" rows="4" placeholder="Message"></textarea>
                             <button type="submit" class="">SEND</button>
                         </form>
                     </div>

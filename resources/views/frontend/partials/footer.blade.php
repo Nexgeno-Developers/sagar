@@ -18,18 +18,18 @@
                 <!-- Locations Section -->
                 <div class="col-lg-4 col-md-6 footer_location_div">
                     <h5 class="pb-lg-4 pb-3 footer_location_heading">Locations</h5>
-                    <a href="#" class="d-flex align-items-start gap-2 footer_location_1 pb-3">
+                    <p class="d-flex align-items-start gap-2 footer_location_1 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_india.png">
                         <span class="text-light location_text"> 
                             {{$contacts[0]->address}}
                         </span> 
-                    </a>
-                    <a href="#" class="d-flex align-items-start gap-2 footer_location_2 pb-3">
+                    </p>
+                    <p class="d-flex align-items-start gap-2 footer_location_2 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_brazil.png">
                         <span class="text-light location_text"> 
                             {{$contacts[1]->address}} 
                         </span> 
-                    </a>
+                    </p>
                     <div class="d-flex gap-2 pb-3">
                         <i class="fa fa-phone"></i>
                         <span>

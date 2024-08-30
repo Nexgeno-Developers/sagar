@@ -177,7 +177,11 @@ input:focus-visible {
     /* position: absolute;
     bottom: 10px; */
     padding: 0px;
-    margin-top: -15px;
+    margin-top: -35px;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 0px 0px 0px;
 }
 
 .navbar {
@@ -434,7 +438,7 @@ section.white_section  {
 }
 
 .our_product_cards_div {
-    margin: 20px 0px;
+    margin: 12px 0px;
 }
 
 .our_product_cards_div .card, .product_filter_gallery_div .card {
@@ -694,6 +698,12 @@ section.blue_section {
 section.what_we_do .owl-carousel .owl-stage-outer, section.future_activity .owl-carousel .owl-stage-outer {
     height: auto !important;
 }
+
+
+#future_activity_slider .owl-nav {
+    display: none;
+}
+
 
 .what_we_do_main_div .card-text, .future_activites_main_div .card-text {
     font-size: 14px;
@@ -1508,13 +1518,13 @@ section.why_sscpl.height670 {
 }
 
 #faq_accordion .accordion-body p {
-    font-size: 12px !important;
+    font-size: 14px !important;
     line-height: 18px;
     color: #363636;
 }
 
 .accordion-body {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #faq_accordion .accordion-button:not(.collapsed)::after {
