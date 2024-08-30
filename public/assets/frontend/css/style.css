@@ -477,7 +477,7 @@ section.white_section  {
 }
 
 .product_filter_gallery_div {
-    margin: 30px 0px;
+    margin: 30px 0px 0px;
 }
 
 .product_categories_page .our_product_cards_div .fa-arrow-right:before, .product_filter_gallery_div .fa-arrow-right:before, .btn_next_prev_div .fa-arrow-right:before, .btn_next_prev_div .fa-arrow-left:before{
@@ -718,6 +718,86 @@ section.what_we_do .owl-carousel .owl-stage-outer, section.future_activity .owl-
     font-weight: 300;
     position: relative;
 }
+
+button.btn.gallery_yt_video {
+    width: 75px;
+    height: auto;
+    opacity: 1;
+    position: absolute;
+    top: 28%;
+    left: 42%;
+    z-index: 9;
+    border-radius: 50% !important;
+    height: 75px;
+    padding: 0px;
+}
+
+i.fa-regular.fa-circle-play {
+    color: #fff;
+    font-size: 6em;
+    position: absolute;
+    left: -11%;
+    top: 10%;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.fa-circle-play:before, .fa-play-circle:before {
+    content: "\f144";
+    position: relative;
+    right: 11px;
+    top: -20px;
+}
+
+#videoModal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px auto;
+}
+
+.modal-body {
+    padding: 0 0rem 0rem !important;
+}
+
+.modal-content {
+    border-radius: 6px !important;
+    padding: 0em !important;
+    background: transparent;
+    border: none;
+    /* width: 100%; */
+}
+
+.modal-header {
+    padding: 10px 21px !important;
+    border: 0;
+}
+
+.modal-title {
+    margin-top: 10px;
+}
+
+.modal-header .close {
+    padding: 5px 10px;
+    border: 0px;
+    background: transparent;
+    color: #fff;
+    position: absolute;
+    top: -8px;
+    right: 0px;
+}
+
+button.close span {
+    font-size: 4em;
+    line-height: 10px;
+    /* margin-top: 30px; */
+    position: absolute;
+    top: 5px;
+    right: 0px;
+}
+
 
 img.arrow_right_img {
     width: 30% !important;
@@ -970,7 +1050,7 @@ img.moving_machine {
 
 .search-bar-filter input {
     border: 0;
-    padding: 5px 0px 5px 5px;
+    padding: 15px 0px 15px 5px;
     border-radius: 15px;
 }
 

@@ -96,13 +96,13 @@ $allpages = DB::table('pages')
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                             </a>
-                            <li class="nav-item dropdown google_translate_tab">
+                            <div class="nav-item dropdown google_translate_tab ">
                                 <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                                     <!-- <i class="text-light fa-solid fa-language"></i> -->
                                     <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
                                     <div class="gtranslate_wrapper"></div>
                                 </a>
-                            </li> 
+                            </div> 
                             <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                 <div class="search-icon-wrapper">
                                     <button type="button" class="btn search-icon" onclick="toggleSearchBar2()">

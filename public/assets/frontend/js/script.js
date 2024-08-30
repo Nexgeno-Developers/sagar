@@ -1,16 +1,17 @@
 //for search bar
-    function toggleSearchBar() {
-        var searchBar = document.querySelector('.search-bar');
-        searchBar.classList.toggle('d-none');
-    }
+function toggleSearchBar() {
+    var searchBar = document.querySelector('.search-bar');
+    searchBar.classList.toggle('d-none');
+}
 
-    function toggleSearchBar2() {
-        var searchBar2 = document.querySelector('.search-bar-for-tab');
-        searchBar2.classList.toggle('d-none');
-    }
+function toggleSearchBar2() {
+    var searchBar2 = document.querySelector('.search-bar-for-tab');
+    searchBar2.classList.toggle('d-none');
+}
 
 
-    
+//for product zoom in and zoom out on product details page
+
 $(document).ready(function() {
     var isDragging = false;  // Track whether the image is being dragged
     var startX, startY, scrollLeft, scrollTop; // Variables for mouse position and scroll
@@ -100,7 +101,7 @@ $(document).ready(function () {
                 items: 1
             },
             600: {
-                items: 1
+                items: 2
             },
             1000: {
                 items: 3
@@ -115,7 +116,7 @@ $(document).ready(function () {
             // Adding transform3d property
             $('.owl-stage').css('transform-style', 'preserve-3d');
         },
-        loop: false,
+        loop: true,
         margin: 30,
         autoplay: false,
         autoplaySpeed:3000,
@@ -126,7 +127,7 @@ $(document).ready(function () {
                 items: 1
             },
             600: {
-                items: 1
+                items: 2
             },
             1000: {
                 items: 3
