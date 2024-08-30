@@ -581,6 +581,10 @@ h4.product_heading {
     position: relative;
     z-index: 2 !important;
 }
+a.inline-box.nav-link {
+    right: -10px;
+    top: -10px;
+}
 .navbar-brand {
     position: static !important;
     margin-top: 0px;
@@ -613,7 +617,7 @@ img.banner_img {
 
 .fa-bars:before, .fa-navicon:before {
     content: "\f0c9";
-    color: #fff;
+    color: #555;
     font-size: 16px;
     line-height: 22px;
 }
@@ -685,6 +689,12 @@ header.transparent .nav-item {
     bottom: 50%;
 }
 
+#home_page_banner_slider .owl-nav .fa { 
+    font-size: 12px; 
+    width: 20px;
+    height: 20px; 
+}
+
 marquee.banner_marque {
     bottom: 5%;
     font-size: 40px;
@@ -701,6 +711,7 @@ marquee.banner_marque {
 
 .our_product_cards_div .card-text, .product_filter_gallery_div .card-text { 
     font-size: 14px;
+    width: 80%;
 }
 
 .our_product_cards_div .fa, .product_filter_gallery_div .fa, .btn_next_prev_div .fa {
@@ -789,7 +800,7 @@ hr {
 }
 
 .product_heading {
-    font-size: 26px;
+    font-size: 24px;
     float: inherit !important;
 }
 
@@ -848,6 +859,7 @@ section.why_sscpl {
 .why_sscpl_bg_img {
     position: relative;
     top: 10px; 
+    padding: 10px 10px;
 }
 
 img.sscl_img {
@@ -855,9 +867,10 @@ img.sscl_img {
 }
 
 .sscl_content {
-    font-size: 16px; 
-    line-height: 20px; 
-    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 .spply_chn_box {
@@ -869,6 +882,13 @@ img.sscl_img {
     height: 60px;
     margin: 5px 0px;
 }
+
+
+.three_boxes_div > div:nth-child(odd) {
+    padding-right: 9px;
+}
+
+.three_boxes_div > div:nth-child(even) {padding-left: 9px;}
 
 .spply_chn_box_img {
     width: 80%;
@@ -905,7 +925,7 @@ img.sscl_img {
 }
 
 .code_of_content_div {
-    font-size: 18px; 
+    font-size: 14px; 
     line-height: 22px;
 }
 
@@ -940,6 +960,10 @@ img.right_img.what_we_do_img {
 
 .enquiry_section {
     padding: 20px 10px;
+}
+
+.enquiry_section p {
+    font-size: 16px;
 }
 
 .enquiry_section .left_section .since_content { 
@@ -992,7 +1016,7 @@ img.right_img.what_we_do_img {
 /* career page start */
 
 h4.product_heading {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .contact_us_form.career_form .form-control, .contact_us_form.career_form textarea,
@@ -1133,7 +1157,7 @@ h5.form_mark {
     display: flex;
     justify-content: center;        
     align-items: center;
-    width: 40px;    
+    width: 45px;    
 }
 
 .sscl_img { 
@@ -1151,6 +1175,14 @@ h5.form_mark {
 
 /* footer start */
 
+footer.footer {
+    padding: 20px 0px 20px !important;
+}
+
+.footer_location_div p {
+    margin-bottom: 0px;
+}
+
 footer a {
     font-size: 14px;
     padding-bottom: 0px;
@@ -1162,6 +1194,14 @@ footer a {
 
 .copyright_content {
     font-size: 14px;
+}
+
+.sidebar_instant_links {
+    display: none;
+}
+
+.footer_useful_link_1_div ul {
+    margin-bottom: 5px;
 }
 
 }

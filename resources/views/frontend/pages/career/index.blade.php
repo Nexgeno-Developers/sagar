@@ -51,7 +51,7 @@
                         <div class="col-12 mb-lg-4 mb-3">                                    
                             <input required type="text" class="form-control" name="apply_for" placeholder="Apply For*">
                         </div> 
-                        <textarea class="col-md-12 mb-lg-3 mb-2" name="message" placeholder="Message"></textarea>
+                        <textarea class="col-12 mb-lg-3 mb-2" name="message" placeholder="Message"></textarea>
                         
                         <div class="col mb-lg-4 mb-3">                                    
                             <input required type="text" class="form-control" name="type_code" placeholder="Type Code*">

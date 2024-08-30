@@ -80,6 +80,29 @@
     .search-icon:hover {
         color: #fff; /* Icon color */
     }
+
+    .navbar-brand {
+        padding: 0px;
+        margin-top: -15px;
+    }
+    .navbar-nav .nav-link {
+        padding: 8px;
+    }
+
+    
+    .fa-bars:before, .fa-navicon:before {
+        color: #fff;
+    }
+
+    
+    @media screen and (max-width:767px) {
+
+        .navbar-brand {
+            padding: 0px;
+            margin-top: 0px;
+        }
+
+    }
 </style>
 
 
@@ -153,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-md-11 background_blue_img p-lg-5 p-md-4 p-3">
+                    <div class="col-md-11 background_blue_img p-lg-5 p-md-4 p-3 py-4">
                         <div class="col-md-8">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i
@@ -181,7 +204,7 @@
         </div>
     </section>
 
-    <section class="white_section industry_we_cater py-md-5 py-3">
+    <section class="white_section industry_we_cater py-md-5 py-4">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
@@ -221,7 +244,7 @@
         </div>
     </section>
 
-    <section class="blue_section what_we_do py-lg-5 pt-md-4 py-3">
+    <section class="blue_section what_we_do py-lg-5 pt-md-4 py-4">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
@@ -264,7 +287,7 @@
         </div>
     </section>
 
-    <section class="white_section why_sscpl py-lg-5 py-3">
+    <section class="white_section why_sscpl py-lg-5 py-4">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
@@ -325,7 +348,7 @@
 
 
     @if (!empty($activities))
-    <section class="white_section future_activity pb-lg-5 pb-3">
+    <section class="white_section future_activity pb-lg-5 pb-3 pt-md-0 pt-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
@@ -356,7 +379,7 @@
     @endif
 
 
-    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-4 py-3">
+    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-4 py-4">
         <div class="container">
             <div class="row d-flex justify-content-center position-relative">
                 <div class="col-12">
