@@ -68,7 +68,7 @@ p {
 
  .google_translate_desktop {
     position: relative;
-    right: 5px;
+    right: 30px;
     top: 5px;
 }
 
@@ -177,7 +177,7 @@ input:focus-visible {
     /* position: absolute;
     bottom: 10px; */
     padding: 0px;
-    margin-top: -25px;
+    margin-top: -15px;
 }
 
 .navbar {
@@ -215,6 +215,11 @@ input:focus-visible {
 
 .top_bar .fa {
     font-weight: 300;
+}
+
+.sidebar_instant_links {
+    position: relative;
+    z-index: 2;
 }
 
 .sidebar_social_media {
@@ -448,6 +453,7 @@ section.white_section  {
     padding-right: 10px;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .our_product_cards_div .product_card_image, .product_filter_gallery_div .product_card_image {
