@@ -99,7 +99,7 @@
                         <h2 class="col-md-12 product_heading text-start pb-md-1 text-md-start text-center">
                             <span class="our">Enquiry</span>
                         </h2>
-                        <br class="d-md-block d-none">
+                        <br class="d-lg-block d-none">
                         <h5 class="form_mark">All fields marked as * are mandatory</h5>
                         <form id="add_contact_us_form" action="{{ route('form.save') }}" method="post"
                             enctype="multipart/form-data">
