@@ -9,7 +9,7 @@ $allpages = DB::table('pages')
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
-<header id="mainHeader" class="header pt-md-0 py-md-0 py-2">
+<header id="mainHeader" class="header pb-lg-2 pt-md-0 py-md-0 py-2">
       <div class="container">
           <div class="d-flex flex-column">
               <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">                
