@@ -40,7 +40,7 @@
                         <div class="col-md-12 mb-lg-4 mb-3">                                
                             <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
                         </div>
-                        <div class="row col-md-12 mb-lg-2 mb-md-0 mb-3 ms-md-0">
+                        <div class="row col-md-12 mb-lg-2 mb-md-0 mb-0 ms-md-0">
                             <div class="col-md-6 mb-md-3 mb-3 px-md-0 pe-md-3">                                    
                                 <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                             </div>
