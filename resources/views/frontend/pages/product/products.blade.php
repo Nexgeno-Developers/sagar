@@ -22,7 +22,7 @@
 <section class="white_section gallery_filter">
     <div class="container py-md-5">
         <div class="row">
-            <div class="col-md-3 sidebar ps-0">                
+            <div class="col-md-3 sidebar">                
                 <form action="{{ route('products_s') }}" method="GET" id="searchForm">
                     <div class="search-bar-filter">
                         <button type="submit" class="btn search_btn me-2">

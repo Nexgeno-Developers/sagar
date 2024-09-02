@@ -24,7 +24,7 @@
         <div class="row justify-content-center">
             @foreach($productCategories as $category)
                 <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                    <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
+                    <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-flex align-items-center justify-content-md-between text-decoration-none w-100">
                         <div class="card">
                             {{--
                             @if (!empty($category->image))

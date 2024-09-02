@@ -443,6 +443,7 @@ section.white_section  {
 
 .our_product_cards_div .card, .product_filter_gallery_div .card {
     border: 0;
+    width: 100%;
 }
 
 .our_product_cards_div .card img {
@@ -458,6 +459,7 @@ section.white_section  {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    border-radius: 20px;
 }
 
 .our_product_cards_div .product_card_image, .product_filter_gallery_div .product_card_image {

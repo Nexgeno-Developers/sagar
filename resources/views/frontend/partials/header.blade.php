@@ -1,6 +1,7 @@
 @php
 $allpages = DB::table('pages')
         ->where('type', '!=', 'custom_page')
+        ->where('type', '!=', 'home_page')
         ->select('title', 'slug', 'type')
         ->limit(10)
         ->get();
@@ -8,7 +9,7 @@ $allpages = DB::table('pages')
     $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
-<header id="mainHeader" class="header pt-md-0 py-3">
+<header id="mainHeader" class="header pt-md-0 py-md-0 py-2">
       <div class="container">
           <div class="d-flex flex-column">
               <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">                
@@ -49,8 +50,8 @@ $allpages = DB::table('pages')
                            
                           <!-- N A V B A R     S T A R T -->
                           
-                            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                                <ul class="navbar-nav gap-md-3 mb-2 mb-lg-0">
+                            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">                                
+                                <ul class="navbar-nav gap-md-3 mb-2 mb-lg-0">                            
                                 @foreach ($allpages as $page)
                                     <li class="nav-item">
                                         <a class="nav-link" 
@@ -59,7 +60,6 @@ $allpages = DB::table('pages')
                                         </a>
                                     </li>
                                 @endforeach
-
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>
@@ -77,7 +77,7 @@ $allpages = DB::table('pages')
                                         </button>
                                     </div>
                                     <div class="search-bar d-none">
-                                        <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product" value="{{ request('search') }}">
+                                        <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                         <input type="hidden" name="category_id" id="category_id" value="">
                                         <button type="submit" class="btn search_btn search_btn_2">
                                             <i class="fa fa-search"></i>
@@ -110,7 +110,7 @@ $allpages = DB::table('pages')
                                     </button>
                                 </div>
                                 <div class="search-bar-for-tab d-none">
-                                    <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product" value="{{ request('search') }}">
+                                    <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                     <input type="hidden" name="category_id" id="category_id" value="">
                                     <button type="submit" class="btn search_btn search_btn_2">
                                         <i class="fa fa-search"></i>
@@ -123,7 +123,9 @@ $allpages = DB::table('pages')
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                                 <div class="offcanvas-header">
                                     <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
-                                    <img class="header_logo" src="images/header_logo_2.png" alt="Sagar Logo">
+                                    <a class="navbar-brand" href="{{route('index')}}">
+                                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
+                                    </a>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 

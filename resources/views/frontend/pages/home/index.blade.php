@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-md-11 background_blue_img p-lg-5 p-md-4 p-3 py-4">
+                    <div class="col-md-11 background_blue_img p-lg-5 p-md-4 ps-md-3 p-3 py-4">
                         <div class="col-md-8">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i
@@ -409,7 +409,7 @@
                                         <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
                                     </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
-                                    <a target="_blank" href="{{$scp_url}}" class="spply_chn_btn">Connect Now</a>
+                                    <a target="_blank" href="{{route('partner_with_us')}}" class="spply_chn_btn">Connect Now</a>
                                 </div>
                             </div>
 

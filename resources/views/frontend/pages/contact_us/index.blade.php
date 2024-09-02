@@ -82,21 +82,21 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="col-lg-7 col-md-6 mb-md-0 mb-3">
-                        <iframe 
-                            src="{{$contacts[0]->google_map}}" 
-                            width="100%" 
-                            height="440" 
-                            style="border:0; border-radius: 50px;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
+                        <div class="col-lg-7 col-md-6 mb-md-0 mb-4">
+                            <iframe 
+                                src="{{$contacts[0]->google_map}}" 
+                                width="100%" 
+                                height="440" 
+                                style="border:0; border-radius: 50px;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
 
                     </div>
 
                     <div class="col-md-12 p-lg-5 p-md-4 p-3 contact_us_form mt-lg-5 mt-md-4 text-md-start text-center">
-                        <h2 class="col-md-12 product_heading text-start pb-md-1 float-start">
+                        <h2 class="col-md-12 product_heading text-start pb-md-1 text-md-start text-center">
                             <span class="our">Enquiry</span>
                         </h2>
                         <br class="d-md-block d-none">
