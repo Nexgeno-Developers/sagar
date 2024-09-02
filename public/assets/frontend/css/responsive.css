@@ -1130,6 +1130,10 @@ h5.form_mark {
     padding: 20px 10px 10px;
 }
 
+.product_info.product-section .product_filter_gallery_div {
+    margin: 15px 0px 15px;
+}
+
 .product_info.product-section .product_heading {
     padding-left: 0px;
 }
