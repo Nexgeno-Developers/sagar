@@ -38,9 +38,9 @@
     color: #fff;
 } 
 
-.transparent button.navbar-toggler {
+/* .transparent button.navbar-toggler {
     border: 1px solid #fff;
-}
+} */
 
 .fa-bars:before, .fa-navicon:before {
     content: "\f0c9";
@@ -127,7 +127,7 @@ button.navbar-toggler {
 .header.transparent .navbar-nav .nav-item .nav-link {
     color: #5F5F5F;
     font-weight: 500;
-    font-size: 26px;
+    font-size: 18px;
 }
 
 .navbar-brand {
