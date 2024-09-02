@@ -901,6 +901,8 @@ img.rotate45 {
 
 section.why_sscpl {
     height: auto;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
 .why_sscpl_bg_img {
