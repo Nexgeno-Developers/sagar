@@ -65,7 +65,7 @@
                             <div>
                                 <img src="captcha_image.jpg" alt="CAPTCHA" class="img-fluid">
                             </div> -->
-                            <textarea class="col-md-12 mb-3" name="message" id="message" placeholder="Message" rows="2"></textarea>
+                            <textarea class="col-12 mb-3" name="message" id="message" placeholder="Message" rows="2"></textarea>
                             <button type="submit" class="btn btn-primary mt-md-3 mt-0">SEND</button>
                         </form>
                     </div>

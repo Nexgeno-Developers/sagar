@@ -98,7 +98,7 @@
             </div>
 
 
-            <div class="col-md-12 background_blue_img my-md-5 p-md-5 p-3 cor_values">
+            <div class="col-md-12 background_blue_img my-md-5 my-4 p-md-5 p-3 cor_values">
                 <h2 class="product_heading text-start text-light pb-md-1">Cor Values</h2>
                 <div class="row">
                     <div class="col-md-7 text-light pe-md-4 pt-md-3">
@@ -153,9 +153,9 @@
     @endif
 
 
-    <section class="white_section  partnership pt-md-5 pt-3">
-        <div class="container pt-md-5">
-            <div class="row align-items-center">
+    <section class="white_section  partnership py-md-5 py-3">
+        <div class="container">
+            <div class="row align-items-center ">
                 <div class="col-md-7 pe-md-5">
                     {!! $about2_content1 !!}
                 </div>
@@ -168,8 +168,8 @@
             </div>
         </div>
 
-        <div class="container pt-md-5">
-            <div class="d-flex flex-row-reverse align-items-center justify-content-between">
+        <div class="container ">
+            <div class="d-flex flex-md-row-reverse flex-column align-items-center justify-content-between pt-md-5 pt-4">
                 <div class="col-md-6 ps-md-4">
                     {!! $about2_content2 !!}
                 </div>
@@ -237,7 +237,7 @@
         </div>
     </section>
 
-    <section class="white_section vision_mission pt-lg-4 pb-md-5 pb-4">
+    <section class="white_section vision_mission pt-lg-4 py-md-5 py-4">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col ps-lg-0">
