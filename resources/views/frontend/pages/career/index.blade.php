@@ -26,7 +26,7 @@
 <section class="white_section career_contact_form py-lg-5 py-md-4 py-3 pb-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 pe-md-5">
+            <div class="col-md-6 pe-lg-5">
                 <div class="col-md-12 contact_us_form career_form bg-transparent text-md-start text-center">
                     <h4 class="col-md-12 product_heading text-start pb-md-3 float-start">
                         Enroll Now
