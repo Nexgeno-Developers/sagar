@@ -192,6 +192,15 @@ input:focus-visible {
     color: #5F5F5F;
 }
 
+.product-search::placeholder {
+    font-size: 12px;
+}
+
+.product-search {
+    font-size: 12px;
+    width: 180px;
+}
+
 .top_bar .list-group-item {
     background-color: transparent;
     border: 0;
