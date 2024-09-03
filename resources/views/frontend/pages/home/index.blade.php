@@ -131,7 +131,7 @@
             </marquee>
             <div class="animated_arrow_div text-center">
                 <span class="animated_arrow_span">
-                    <a href="#our_products">
+                    <a href="#our_products" aria-label="arrow down">
                         <i class="fa fa-arrow-down animated_arrow_down"></i>
                     </a>
                 </span>
@@ -151,7 +151,7 @@
                                 class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                                 <div class="card">
                                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
-                                        class="product_card_image card-img-top">
+                                        class="product_card_image card-img-top" alt="product image">
                                     <div class="card-body d-flex">
                                         <p class="card-text">{{ $product->title }}</p>
                                         <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -229,7 +229,7 @@
                         <div class="d-flex industry_content">
                             <span class="industry_text_link ps-md-4">{{ $category->title }}</span>
                             <span class="industry_arrow_link pe-lg-3">
-                                <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png">
+                                <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png" alt="rotate 45 deg arrow">
                             </span>
                         </div>
                     </a>
@@ -270,7 +270,7 @@
                                         <h5 class="card-title">{{$row->text}}</h5>
                                         <p class="card-text">{{$row->content}}</p>
                                         <a href="{{route('what_we_do')}}" class="what_we_do_link">Read More
-                                            <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg"> </a>
+                                            <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg" alt="arrow right image"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +364,7 @@
                                     alt="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$row->text}}</h5>
-                                    <button type="button" class="btn gallery_yt_video" data-youtube-url="https://www.youtube.com/embed/{{$row->url}}" >
+                                    <button type="button" class="btn gallery_yt_video" aria-label="Youtube btn" data-youtube-url="https://www.youtube.com/embed/{{$row->url}}" >
                                         <i class="fa-regular fa-circle-play"></i>
                                     </button>
                                 </div>
