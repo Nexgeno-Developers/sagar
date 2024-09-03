@@ -69,21 +69,22 @@ $allpages = DB::table('pages')
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                     </li>
-                                <!-- <li class="list-group-item"> -->
-                                <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
-                                    <div class="search-icon-wrapper">
-                                        <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                    <div class="search-bar d-none">
-                                        <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
-                                        <input type="hidden" name="category_id" id="category_id" value="">
-                                        <button type="submit" class="btn search_btn search_btn_2" aria-label="search btn 2">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </form>
+                                    <li class="list-group-item">
+                                        <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
+                                            <div class="search-icon-wrapper">
+                                                <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                            <div class="search-bar d-none">
+                                                <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
+                                                <input type="hidden" name="category_id" id="category_id" value="">
+                                                <button type="submit" class="btn search_btn search_btn_2" aria-label="search btn 2">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </li>
                                     <!-- <a class="nav-link" href="#"><i class="fa fa-search text-light"></i></a> -->
                                 <!-- </li> -->
                                 </ul>
