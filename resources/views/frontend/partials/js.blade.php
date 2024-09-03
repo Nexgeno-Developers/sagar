@@ -2,7 +2,7 @@
 <script type="text/javascript" src="/assets/frontend/js/owl-carousel.js"></script>
 <script type="text/javascript" src="/assets/frontend/js/bootstrap5.min.js"></script>
 <script type="text/javascript" src="/assets/frontend/js/script.js"></script>
-<script type="text/javascript" src="/assets/frontend/js/init.js"></script>
+<!-- <script type="text/javascript" src="/assets/frontend/js/init.js"></script> -->
 <!--moment js-->
 <script defer src="/assets/frontend/js/moment.min.js"></script>
 
