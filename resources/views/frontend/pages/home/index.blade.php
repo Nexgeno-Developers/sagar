@@ -118,7 +118,7 @@
                             <img src="{{ asset('storage/' . $banner->image) }}" alt="" class="banner_img">
                             <div class="banner_contents_div">
                                 <h4 class="banner_content text-light">{{$banner->text}}</h4>
-                                <a href="{{$banner->url}}" class="banner_view_button">{{$banner->button}}</a>
+                                <a href="{{$banner->url}}" class="banner_view_button" aria-label="banner slider button">{{$banner->button}}</a>
                             </div>
                         </div>
                     @endforeach
@@ -162,7 +162,7 @@
                     @endforeach
 
                     <div class="col-12 text-center pt-md-4 pt-4">
-                        <a href="{{url(route('products_s'))}}" class="btn a_btn blue_btn">
+                        <a href="{{url(route('products_s'))}}" class="btn a_btn blue_btn" aria-label="know about our proucts">
                             View All
                         </a>
                     </div>
@@ -179,8 +179,9 @@
                     <div class="col-md-11 background_blue_img p-lg-5 p-md-4 ps-md-3 p-3 py-4">
                         <div class="col-md-8">
                             {!! $about_content !!}
-                            <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0">Read More <i
-                                    class="fa fa-arrow-right"></i></a>
+                            <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0" aria-label="know about us">
+                                Read More <i class="fa fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-12 position-relative">
@@ -212,7 +213,7 @@
                         CATER</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
-                    <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end float-start">
+                    <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end float-start" aria-label="services we give">
                         View All
                     </a>
                 </div>
@@ -237,7 +238,7 @@
             @endforeach
 
             <div class="col-md-6 d-md-none d-block py-3 text-center">
-                <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end">
+                <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end" aria-label="services we give">
                     View All
                 </a>
             </div>
@@ -253,7 +254,7 @@
                 </div>
                 <div class="col-md-6 d-md-block d-none">
                     <a href="{{route('what_we_do')}}"
-                        class="btn a_btn purple_btn float-end border border-2 border-light text-light">
+                        class="btn a_btn purple_btn float-end border border-2 border-light text-light" aria-label="know about our works">
                         View All
                     </a>
                 </div>
@@ -269,7 +270,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{$row->text}}</h5>
                                         <p class="card-text">{{$row->content}}</p>
-                                        <a href="{{route('what_we_do')}}" class="what_we_do_link">Read More
+                                        <a href="{{route('what_we_do')}}" class="what_we_do_link" aria-label="see what we do">Read More
                                             <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg" alt="arrow right image"> </a>
                                     </div>
                                 </div>
@@ -280,7 +281,7 @@
             @endif
             <div class="col-md-6 d-md-none d-block py-3 text-center">
                 <a href="{{route('what_we_do')}}"
-                    class="btn a_btn purple_btn float-md-end border border-2 border-light text-light">
+                    class="btn a_btn purple_btn float-md-end border border-2 border-light text-light" aria-label="know about our works">
                     View All
                 </a>
             </div>
@@ -357,22 +358,22 @@
                 </div>
                 <div class="owl-theme owl-carousel" id="future_activity_slider">
                     @foreach ($activities as $index => $row )
-                    
                     <div class="col-12 future_activites_main_div">
-                            <div class="card">
-                                <img src="https://img.youtube.com/vi/{{ $row->url }}/hqdefault.jpg" class="card-img-top"
-                                    alt="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$row->text}}</h5>
-                                    <button type="button" class="btn gallery_yt_video" aria-label="Youtube btn" data-youtube-url="https://www.youtube.com/embed/{{$row->url}}" >
-                                        <i class="fa-regular fa-circle-play"></i>
-                                    </button>
-                                </div>
+                        <div class="card">
+                            <!-- Add lazy class to images for lazy loading -->
+                            <img src="/assets/frontend/images/home/unnamed.jpg" data-src="https://img.youtube.com/vi/{{ $row->url }}/hqdefault.jpg" class="card-img-top lazy"
+                            alt="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$row->text}}</h5>
+                                <button type="button" class="btn gallery_yt_video" aria-label="Youtube btn" data-youtube-url="https://www.youtube.com/embed/{{$row->url}}">
+                                    <i class="fa-regular fa-circle-play"></i>
+                                </button>
                             </div>
-                        </div>                  
+                        </div>
+                    </div>                  
                     @endforeach          
-
                 </div>
+
             </div>
         </div>
     </section>
@@ -435,7 +436,7 @@
             <h2 class="col-12 product_heading text-center pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
             <div class="col-md-12 d-block pb-3 pt-2 text-center">
-                <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn">Read More</a>
+                <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn" aria-label="see pdf for this">Read More</a>
             </div>
         </div>
     </section>

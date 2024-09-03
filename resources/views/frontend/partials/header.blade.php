@@ -51,7 +51,10 @@ $allpages = DB::table('pages')
                           <!-- N A V B A R     S T A R T -->
                           
                             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">                                
-                                <ul class="navbar-nav">                            
+                                <ul class="navbar-nav">     
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('products_s')}}">Products</a>
+                                    </li>                       
                                 @foreach ($allpages as $page)
                                     <li class="nav-item">
                                         <a class="nav-link" 
@@ -60,9 +63,6 @@ $allpages = DB::table('pages')
                                         </a>
                                     </li>
                                 @endforeach
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{route('products_s')}}">Products</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('career')}}">Career</a>
                                     </li>
