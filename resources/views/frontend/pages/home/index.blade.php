@@ -126,7 +126,7 @@
 
                 </div>
             @endif
-            <marquee behavior="scroll" direction="left" class="banner_marque">
+            <marquee behavior="scroll" direction="left" class="">
                 Your Dedicated Partners for Supply of Specialty Chemicals
             </marquee>
             <div class="animated_arrow_div text-center">
@@ -140,7 +140,7 @@
     </section>
 
     @if(!empty($products))
-        <section class="white_section our_products pt-md-5 pt-5 pb-md-2" id="our_products">
+        <section class="white_section our_products pt-5 pb-md-2" id="our_products">
             <div class="container">
                 <h2 class="product_heading text-center pb-md-1"><span class="our">OUR</span> PRODUCT</h2>
 

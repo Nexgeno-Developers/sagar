@@ -387,7 +387,7 @@ input[type="file"] {
     bottom: 50%;
 }
 
-marquee.banner_marque {
+marquee {
     position: absolute;
     bottom: 0px;
     z-index: 1;

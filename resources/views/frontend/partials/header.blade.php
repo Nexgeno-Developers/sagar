@@ -13,7 +13,7 @@ $allpages = DB::table('pages')
       <div class="container">
           <div class="d-flex flex-column">
               <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">                
-                  <ul class="mb-2 list-group list-unstyled list-group-horizontal mb-md-0 float-end position-relative">
+                  <ul class="mb-2 list-group list-group-horizontal mb-md-0 float-end">
                         <li class="nav-item dropdown google_translate_desktop">
                             <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                                 <!-- <i class="text-light fa-solid fa-language"></i> -->
@@ -40,7 +40,7 @@ $allpages = DB::table('pages')
                 </div>
                 <div class="menu">                    
                     <nav class="navbar d-none d-lg-inline navbar-expand-lg navbar-dark py-lg-0">
-                        <div class="container px-md-0">
+                        <div class="container">
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                             </a>
