@@ -140,9 +140,9 @@
     </section>
 
     @if(!empty($products))
-        <section class="white_section our_products pt-5 pb-md-2" id="our_products">
+        <section class="pt-5 pb-md-2" id="our_products">
             <div class="container">
-                <h2 class="product_heading text-center pb-md-1"><span class="our">OUR</span> PRODUCT</h2>
+                <h2 class="product_heading text-center"><span class="our">OUR</span> PRODUCT</h2>
 
                 <div class="row justify-content-center">
                     @foreach($products as $product)
@@ -224,7 +224,7 @@
                 <div class="col-md-4 col-6 mb-0 pe-md-0">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
-                    <img src="{{ asset('storage/' . $category->image) }}" alt="" class="industry_img">
+                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img">
                     @endif
                         <div class="d-flex industry_content">
                             <span class="industry_text_link ps-md-4">{{ $category->title }}</span>
