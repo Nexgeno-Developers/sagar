@@ -183,7 +183,7 @@ button.navbar-toggler {
     padding: 5px 26px;
 }
 
-marquee.banner_marque { 
+marquee { 
     bottom: 20px; 
     font-size: 50px;
 }
@@ -738,7 +738,7 @@ header .nav-item {
     height: 20px; 
 }
 
-marquee.banner_marque {
+marquee {
     bottom: 5%;
     font-size: 40px;
 }
