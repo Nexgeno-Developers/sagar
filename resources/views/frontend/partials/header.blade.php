@@ -13,7 +13,7 @@ $allpages = DB::table('pages')
       <div class="container">
           <div class="d-flex flex-column">
               <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">                
-                  <ul class="mb-2 list-group list-group-horizontal mb-md-0 float-end">
+                  <ul class="list-group list-group-horizontal">
                         <li class="nav-item dropdown google_translate_desktop">
                             <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                                 <!-- <i class="text-light fa-solid fa-language"></i> -->
@@ -51,7 +51,7 @@ $allpages = DB::table('pages')
                           <!-- N A V B A R     S T A R T -->
                           
                             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">                                
-                                <ul class="navbar-nav gap-md-3 mb-2 mb-lg-0">                            
+                                <ul class="navbar-nav">                            
                                 @foreach ($allpages as $page)
                                     <li class="nav-item">
                                         <a class="nav-link" 
