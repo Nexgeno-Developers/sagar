@@ -19,13 +19,13 @@
                 <div class="col-lg-4 col-md-6 footer_location_div">
                     <h5 class="pb-lg-4 pb-3 footer_location_heading">Locations</h5>
                     <p class="d-flex align-items-start gap-2 footer_location_1 pb-3">
-                        <img class="location_flags" src="/assets/frontend/images/flag_india.png">
+                        <img class="location_flags" src="/assets/frontend/images/flag_india.png" alt="indian flag">
                         <span class="text-light location_text"> 
                             {{$contacts[0]->address}}
                         </span> 
                     </p>
                     <p class="d-flex align-items-start gap-2 footer_location_2 pb-3">
-                        <img class="location_flags" src="/assets/frontend/images/flag_brazil.png">
+                        <img class="location_flags" src="/assets/frontend/images/flag_brazil.png" alt="brazilian flag">
                         <span class="text-light location_text"> 
                             {{$contacts[1]->address}} 
                         </span> 
@@ -101,7 +101,7 @@
                             <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-lg-5">
                                 @foreach ($social_media as $index => $row )
                                 <li class="list-item"> 
-                                    <a href="{{ $row->url}}" class="footer_useful_link_2_links">
+                                    <a href="{{ $row->url}}" class="footer_useful_link_2_links" aria-label="social media links">
                                         {!! $row->icon !!}
                                     </a> 
                                 </li>
@@ -128,7 +128,7 @@
                 <ul class="list-group-item list-unstyled mb-0 mt-1">
                     @foreach ($social_media as $index => $row )
                     <li class="list-item"> 
-                        <a href="{{ $row->url}}" class="sidebar_social_media_link">
+                        <a href="{{ $row->url}}" class="sidebar_social_media_link" aria-label="sidebar social media links">
                             {!! $row->icon !!}
                         </a> 
                     </li>

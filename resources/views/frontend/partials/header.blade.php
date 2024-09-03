@@ -25,16 +25,16 @@ $allpages = DB::table('pages')
                             <a class="nav-link" href="#">ENG</a>
                         </li> -->
                         <li class="list-group-item">
-                            <a class="nav-link" href="#"><i class="fa fa-linkedin-in"></i></a>
+                            <a class="nav-link" href="#"><i class="fa fa-linkedin-in" role="link" aria-label="linkedin logo"></i></a>
                         </li>
                         <li class="list-group-item">
-                            <a class="nav-link" href="#"><i class="fa fa-instagram"></i></a>
+                            <a class="nav-link" href="#"><i class="fa fa-instagram" role="link" aria-label="instagram logo"></i></a>
                         </li>
                         <li class="list-group-item">
-                            <a class="nav-link" href="#"><i class="fa fa-x-twitter"></i></a>
+                            <a class="nav-link" href="#"><i class="fa fa-x-twitter" role="link" aria-label="x-twitter logo"></i></a>
                         </li>
                         <li class="list-group-item">
-                            <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
+                            <a class="nav-link" href="#"><i class="fa fa-facebook" role="link" aria-label="facebook logo"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@ $allpages = DB::table('pages')
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-label="Toggler">
                                 <span class="navbar-toggler-icon"></span>
                             </button>                           
                            
@@ -72,14 +72,14 @@ $allpages = DB::table('pages')
                                 <!-- <li class="list-group-item"> -->
                                 <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                     <div class="search-icon-wrapper">
-                                        <button type="button" class="btn search-icon" onclick="toggleSearchBar()">
+                                        <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>
                                     <div class="search-bar d-none">
                                         <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                         <input type="hidden" name="category_id" id="category_id" value="">
-                                        <button type="submit" class="btn search_btn search_btn_2">
+                                        <button type="submit" class="btn search_btn search_btn_2" aria-label="search btn 2">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -105,19 +105,19 @@ $allpages = DB::table('pages')
                             </div> 
                             <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                 <div class="search-icon-wrapper">
-                                    <button type="button" class="btn search-icon" onclick="toggleSearchBar2()">
+                                    <button type="button" class="btn search-icon" onclick="toggleSearchBar2()" aria-label="search btn 3">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
                                 <div class="search-bar-for-tab d-none">
                                     <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                     <input type="hidden" name="category_id" id="category_id" value="">
-                                    <button type="submit" class="btn search_btn search_btn_2">
+                                    <button type="submit" class="btn search_btn search_btn_2" aria-label="search">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
                             </form>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="offcanvas bars">
                                 <span class="fa fa-bars"></span>
                             </button>
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -126,7 +126,7 @@ $allpages = DB::table('pages')
                                     <a class="navbar-brand" href="{{route('index')}}">
                                         <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                                     </a>
-                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" aria-label="bar close"></button>
                                 </div>
                                 
                                 <div class="offcanvas-body">
@@ -155,16 +155,16 @@ $allpages = DB::table('pages')
                                                     <a class="nav-link" href="#">ENG</a>
                                                 </li> -->
                                                 <li class="px-2">
-                                                    <a class="nav-link" href="#"><i class="fa fa-linkedin-in"></i></a>
+                                                    <a class="nav-link" href="#"><i class="fa fa-linkedin-in" aria-label="linkedin logo"></i></a>
                                                 </li>
                                                 <li class="px-2">
-                                                    <a class="nav-link" href="#"><i class="fa fa-instagram"></i></a>
+                                                    <a class="nav-link" href="#"><i class="fa fa-instagram" aria-label="instagram logo"></i></a>
                                                 </li>
                                                 <li class="px-2">
-                                                    <a class="nav-link" href="#"><i class="fa fa-x-twitter"></i></a>
+                                                    <a class="nav-link" href="#"><i class="fa fa-x-twitter" aria-label="x-twitter logo"></i></a>
                                                 </li>
                                                 <li class="px-2">
-                                                    <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
+                                                    <a class="nav-link" href="#"><i class="fa fa-facebook" aria-label=" facebook logo"></i></a>
                                                 </li>
                                             </ul>
                                         </li>
