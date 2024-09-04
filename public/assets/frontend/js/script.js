@@ -104,6 +104,12 @@ $(document).ready(function() {
 		}
 	})
 }), 
+
+document.addEventListener("DOMContentLoaded",function(){
+    var e=document.getElementById("mainHeader");
+    ("/"===window.location.pathname||"/index.html"===window.location.pathname)&&e.classList.add("transparent")
+});
+
 document.addEventListener("DOMContentLoaded", function() {
 	const lazyImages = document.querySelectorAll('img.lazy');
 
