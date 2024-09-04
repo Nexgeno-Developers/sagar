@@ -115,7 +115,7 @@
 
                     @foreach ($banners as $banner)
                         <div class="banner_slides">
-                            <img src="{{ asset('storage/' . $banner->image) }}" alt="" class="banner_img">
+                            <img src="{{ asset('storage/' . $banner->image) }}" alt="" class="banner_img" loading="lazy">
                             <div class="banner_contents_div">
                                 <h4 class="banner_content text-light">{{$banner->text}}</h4>
                                 <a href="{{$banner->url}}" class="banner_view_button" aria-label="banner slider button">{{$banner->button}}</a>
@@ -151,7 +151,7 @@
                                 class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                                 <div class="card">
                                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
-                                        class="product_card_image card-img-top" alt="product image">
+                                        class="product_card_image card-img-top" alt="product image" loading="lazy">
                                     <div class="card-body d-flex">
                                         <p class="card-text">{{ $product->title }}</p>
                                         <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -188,7 +188,7 @@
                         <div class="col-md-5 saagar_speciality_chemical_machine float-end">
                             @if (!empty($about_image))
                                 <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process"
-                                    class="img-fluid rounded">
+                                    class="img-fluid rounded" loading="lazy">
                             @endif
 
                             <div class="info_box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
@@ -225,12 +225,12 @@
                 <div class="col-md-4 col-6 mb-0 pe-md-0">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
-                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img">
+                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
                     @endif
                         <div class="d-flex industry_content">
                             <span class="industry_text_link ps-md-4">{{ $category->title }}</span>
                             <span class="industry_arrow_link pe-lg-3">
-                                <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png" alt="rotate 45 deg arrow">
+                                <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png" alt="rotate 45 deg arrow" loading="lazy">
                             </span>
                         </div>
                     </a>
@@ -266,12 +266,12 @@
                         @foreach ($wwd as $index => $row)
                             <div class="col-12 what_we_do_main_div">
                                 <div class="card">
-                                    <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top" alt="card-img-top">
+                                    <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top" alt="card-img-top" loading="lazy">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$row->text}}</h5>
                                         <p class="card-text">{{$row->content}}</p>
                                         <a href="{{route('what_we_do')}}" class="what_we_do_link" aria-label="see what we do">Read More
-                                            <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg" alt="arrow right image"> </a>
+                                            <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg" alt="arrow right image" loading="lazy"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +292,7 @@
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <div class="animated_moving_machine py-md-2 d-md-block d-none">
-                    <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
+                    <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="moving top tank">
                 </div>
                 <div class="col-12">
                     <div class="why_sscpl_bg_img">
@@ -300,43 +300,43 @@
                         <div class="row pt-lg-5 pt-3">
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
-                                        class="sscl_img"></div>
+                                        class="sscl_img" loading="lazy"></div>
                                 <p class="sscl_content mt-md-3">Product</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                                 <div class="sscl_img_div"> <img
                                         src="/assets/frontend/images/home/competitve_pricing.png" alt=""
-                                        class="sscl_img"></div>
+                                        class="sscl_img" loading="lazy"></div>
                                 <p class="sscl_content mt-md-3">Competitve Pricing</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/packaging.png" alt=""
+                                <div class="sscl_img_div" loading="lazy"> <img src="/assets/frontend/images/home/packaging.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Packaging</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/commitment.png" alt=""
+                                <div class="sscl_img_div" loading="lazy"> <img src="/assets/frontend/images/home/commitment.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Commitment</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/delivery.png" alt=""
+                                <div class="sscl_img_div" loading="lazy"> <img src="/assets/frontend/images/home/delivery.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Delivery</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img
+                                <div class="sscl_img_div" loading="lazy"> <img
                                         src="/assets/frontend/images/home/customised_solutions.png" alt=""
                                         class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Customised Solutions</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/compliances.png"
+                                <div class="sscl_img_div" loading="lazy"> <img src="/assets/frontend/images/home/compliances.png"
                                         alt="" class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Compliances</p>
                             </div>
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
-                                <div class="sscl_img_div"> <img src="/assets/frontend/images/home/customer_support.png"
+                                <div class="sscl_img_div" loading="lazy"> <img src="/assets/frontend/images/home/customer_support.png"
                                         alt="" class="sscl_img"></div>
                                 <p class="sscl_content mt-md-3">Customer Support</p>
                             </div>
@@ -396,7 +396,7 @@
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <div class="spply_chn_box_img_div"> 
-                                        <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img">
+                                        <img src="{{ asset('storage/' . $scp_image1) }}" alt="" class="spply_chn_box_img" loading="lazy">
                                     </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text1}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf1) }}"
@@ -407,7 +407,7 @@
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <div class="spply_chn_box_img_div"> 
-                                        <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img">
+                                        <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img" loading="lazy">
                                     </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
                                     <a target="_blank" href="{{route('partner_with_us')}}" class="spply_chn_btn">Connect Now</a>
@@ -417,7 +417,7 @@
                             <div class="col ">
                                 <div class="spply_chn_box">
                                     <div class="spply_chn_box_img_div"> 
-                                        <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img">
+                                        <img src="{{ asset('storage/' . $scp_image3) }}" alt="" class="spply_chn_box_img" loading="lazy">
                                     </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text3}}</h5>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf2) }}"
