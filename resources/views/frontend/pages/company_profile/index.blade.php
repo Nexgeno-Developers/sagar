@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-md-row-reverse flex-column col-md-12 py-md-0 py-3">
+            <div class="d-flex flex-md-row-reverse flex-column col-md-12 py-md-3 py-3">
                 <div class="col-md-7 ps-md-5">
                     <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our"> COMPANY
                         </span>POLICY</h2>

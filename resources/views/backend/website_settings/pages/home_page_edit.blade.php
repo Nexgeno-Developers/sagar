@@ -349,7 +349,7 @@
                 @if (!empty($scp_image1))
                     <div class="div-preview-image col-3 form-group mb-3">
                         <input type="hidden" name="existing_scp_image1" value="{{ $scp_image1 }}">
-                        <img width="180" src="{{ asset('storage/' . $scp_image1) }}">                                       
+                        <img width="80" src="{{ asset('storage/' . $scp_image1) }}">                                       
                     </div>                                
                 @endif
                 <div class="col-6 form-group mb-3">
@@ -374,7 +374,7 @@
                 @if (!empty($scp_image2))
                     <div class="div-preview-image col-3 form-group mb-3">
                         <input type="hidden" name="existing_scp_image2" value="{{ $scp_image2 }}">
-                        <img width="180" src="{{ asset('storage/' . $scp_image2) }}">                                       
+                        <img width="80" src="{{ asset('storage/' . $scp_image2) }}">                                       
                     </div>                                
                 @endif
                
@@ -395,7 +395,7 @@
                 @if (!empty($scp_image3))
                     <div class="div-preview-image col-3 form-group mb-3">
                         <input type="hidden" name="existing_scp_image3" value="{{ $scp_image3 }}">
-                        <img width="180" src="{{ asset('storage/' . $scp_image3) }}">                                       
+                        <img width="80" src="{{ asset('storage/' . $scp_image3) }}">                                       
                     </div>                                
                 @endif
                 <div class="col-6 form-group mb-3">

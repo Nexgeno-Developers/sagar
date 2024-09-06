@@ -65,6 +65,24 @@ p {
 .gt_container--hich1m .gt_switcher a {
     line-height: 16px;
 }
+
+header.transparent .gt_container--hich1m .gt_switcher .gt_selected, 
+header.transparent .gt_container--hich1m .gt_switcher .gt_selected a:hover { 
+    background: transparent !important;
+}
+
+header.transparent .gt_container--hich1m .gt_switcher .gt_selected a { 
+    color: #ffffff !important; 
+    font-weight: 600;
+}
+
+header.transparent .google_translate_desktop .gt_container--hich1m .gt_switcher .gt_selected a:after {
+    content: "\f107" !important;
+    font-size: 14px;
+    color: #fff;
+    font-family: fontawesome;
+}
+
 a.inline-box.nav-link {
     position: absolute;
     right: 0;
@@ -114,6 +132,70 @@ a.inline-box.nav-link {
 .what_we_do_main_div .card-title {
     color: #fff;
 }
+
+/* Dropdown hover effect */
+.drop {
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0px;
+    width: max-content;
+    left: 10px;
+    top: 40px;
+}
+
+.drop div {
+    -webkit-transform: translate(0, -100%);
+    -moz-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+    -webkit-transition: all 0.5s 0.1s;
+    -moz-transition: all 0.5s 0.1s;
+    -ms-transition: all 0.5s 0.1s;
+    transition: all 0.5s 0.1s;
+    position: relative;
+    width: max-content;
+}
+
+li.nav-item.dropdown {
+    display: flex;
+}
+
+.dropdown:hover .drop div {
+    transform: translate(0, 0%);
+}
+
+.drop li {
+    display: block;
+    padding: 3px 7px;
+    width: 100%;
+    background: #ffffff;
+}
+
+.drop li:hover {
+    background-color: #eee;
+}
+
+.sub_menu {
+    color: #333;
+    text-decoration: none;
+}
+
+li.nav-item.dropdown .fa-angle-down:before {
+    position: relative;
+    top: 14px;
+    right: 0px;
+    color: #333;
+}
+
+header.transparent li.nav-item.dropdown .fa-angle-down:before {
+    color: #fff;
+}
+
+li.nav-item.dropdown .fa-angle-down:before {
+    color: #333;
+}
+
 input:focus-visible {
     outline: -webkit-focus-ring-color auto 0;
 }
@@ -155,10 +237,12 @@ input:focus-visible {
 }
 
 .product-search::placeholder {
-    font-size: 12px;
+    font-size: 14px;
+    color: #000;
 }
 .product-search {
-    font-size: 12px;
+    font-size: 14px;
+    color: #000;
     width: 180px;
 }
 .top_bar .list-group-item {
@@ -383,6 +467,7 @@ section.white_section {
     align-items: center;
     gap: 10px;
     border-radius: 20px;
+    box-shadow: 0px 0px 10px #ccc;
 }
 .our_product_cards_div .product_card_image,
 .product_filter_gallery_div .product_card_image {
@@ -628,6 +713,13 @@ section.what_we_do .owl-carousel .owl-stage-outer {
     font-weight: 300;
     position: relative;
 }
+
+.future_activites_main_div img {
+    width: 100%;
+    height: 295px;
+    object-fit: contain;
+}
+
 button.btn.gallery_yt_video {
     width: 75px;
     opacity: 1;
@@ -874,6 +966,7 @@ img.moving_machine {
 .contact_us_form {
     background-color: #eee;
     border-radius: 45px;
+    box-shadow: 0px 0px 10px #ccc;
 }
 .contact_us_form .form-control,
 .contact_us_form textarea {
@@ -900,7 +993,7 @@ h5.form_mark {
 .search-bar-filter .fa-search:before {
     content: "\f002";
     font-size: 20px;
-    color: #999;
+    color: #000000;
 }
 .gallery_filter .sidebar {
     margin-top: 25px;
@@ -950,7 +1043,7 @@ section#what_we_do_banner {
 img.right_img.what_we_do_img {
     width: 100%;
     height: auto;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 section#career_banner_img {
     background-image: url("../images/career/career_banner_img.png");
@@ -998,13 +1091,14 @@ section#product_categories_banner_img {
 .filter_list .list-group-item {
     border: 0;
     background: 0 0;
-    color: #aaa;
+    color: #000000;
     font-size: 14px;
     padding: 5px 18px;
 }
 .list-group-item.active {
-    color: #333 !important;
+    color: #000000 !important;
     background: 0 0 !important;
+    font-weight: 700;
 }
 .product-card {
     border: 1px solid #eaeaea;
