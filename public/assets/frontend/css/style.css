@@ -475,8 +475,13 @@ section.white_section {
     align-items: center;
     gap: 10px;
     border-radius: 20px;
+}
+
+.product_categories_page .our_product_cards_div .card-body {
     box-shadow: 0px 0px 10px #ccc;
 }
+
+
 .our_product_cards_div .product_card_image,
 .product_filter_gallery_div .product_card_image {
     border-radius: 0;
