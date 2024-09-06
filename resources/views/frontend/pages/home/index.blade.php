@@ -86,7 +86,7 @@
         margin-top: -15px;
     }
     .navbar-nav .nav-link {
-        padding: 8px;
+        padding: 0px !important;
     }
 
     
