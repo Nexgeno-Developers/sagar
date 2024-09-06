@@ -190,6 +190,7 @@ li.nav-item.dropdown .fa-angle-down:before {
 
 header.transparent li.nav-item.dropdown .fa-angle-down:before {
     color: #fff;
+    top: 12px;
 }
 
 li.nav-item.dropdown .fa-angle-down:before {
