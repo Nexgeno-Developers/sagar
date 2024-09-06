@@ -353,7 +353,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
-                    <h2 class="product_heading text-center pt-md-3 pb-md-1 float-start"><span class="our">FUTURE</span>
+                    <h2 class="product_heading text-center pt-md-4 pb-md-1 float-start"><span class="our">FUTURE</span>
                         ACTIVITES & OBJECTIVES</h2>
                 </div>
                 <div class="owl-theme owl-carousel" id="future_activity_slider">

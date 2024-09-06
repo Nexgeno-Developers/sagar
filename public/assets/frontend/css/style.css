@@ -833,11 +833,13 @@ img.moving_machine {
 }
 .moving_machine {
     animation: 6s infinite leftRight;
-    transform: translateX(0);
+    /* transform: translateX(0); */
+    position: absolute;
+    right: 0%;
 }
 @keyframes leftRight {
     100% {
-        transform: translateX(-62em);
+        right: 87%;
     }
 }
 .why_sscpl_bg_img {
