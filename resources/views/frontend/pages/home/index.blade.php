@@ -142,7 +142,7 @@
     @if(!empty($products))
         <section class="pt-5 pb-md-2" id="our_products">
             <div class="container">
-                <h2 class="product_heading text-center"><span class="our">OUR</span> PRODUCT</h2>
+                <h2 class="product_heading text-center pt-md-1 pb-md-2"><span class="our">OUR</span> PRODUCT</h2>
 
                 <div class="row justify-content-center">
                     @foreach($products as $product)
@@ -353,7 +353,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 pb-md-3">
-                    <h2 class="product_heading text-center pb-md-1 float-start"><span class="our">FUTURE</span>
+                    <h2 class="product_heading text-center pt-md-1 pb-md-1 float-start"><span class="our">FUTURE</span>
                         ACTIVITES & OBJECTIVES</h2>
                 </div>
                 <div class="owl-theme owl-carousel" id="future_activity_slider">
@@ -433,7 +433,7 @@
 
     <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-5 text-center">
         <div class="container">
-            <h2 class="col-12 product_heading text-center pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
+            <h2 class="col-12 product_heading text-center mt-md-3 pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
             <div class="col-md-12 d-block pb-3 pt-2 text-center">
                 <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn" aria-label="see pdf for this">Read More</a>
