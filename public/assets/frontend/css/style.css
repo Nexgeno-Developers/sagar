@@ -139,7 +139,7 @@ a.inline-box.nav-link {
     list-style: none;
     position: absolute;
     padding: 0px;
-    width: max-content;
+    width: 94%;
     left: 10px;
     top: 39px;
 }
@@ -154,7 +154,7 @@ a.inline-box.nav-link {
     -ms-transition: all 0.5s 0.1s;
     transition: all 0.5s 0.1s;
     position: relative;
-    width: max-content;
+    width: 100%;
 }
 
 li.nav-item.dropdown {
