@@ -130,3 +130,64 @@ document.addEventListener("DOMContentLoaded", function() {
 		imageObserver.observe(image);
 	});
 });
+
+// JavaScript/jQuery for mobile and tablet view
+$(document).ready(function() {
+    if ($(window).width() <= 768) {
+        $('.nav-item.dropdown .fa-angle-down').on('click', function(e) {
+            e.preventDefault();
+            var parentDropdown = $(this).closest('.nav-item.dropdown');
+            var submenu = parentDropdown.find('.submenu');
+
+            // Toggle the submenu
+            if (parentDropdown.hasClass('open')) {
+                // Close the submenu
+                submenu.css({
+                    'height': submenu.get(0).scrollHeight + 'px', // Get current height
+                });
+                setTimeout(function () {
+                    submenu.css({
+                        'height': '0', // Collapse the height
+                        'opacity': '0',
+                        'visibility': 'hidden',
+                    });
+                }, 10); // Delay to ensure the smooth transition
+
+                parentDropdown.removeClass('open');
+                $(this).removeClass('rotate');
+            } else {
+                // Open the submenu
+                submenu.css({
+                    'height': '0',
+                    'opacity': '1',
+                    'visibility': 'visible',
+                });
+
+                setTimeout(function () {
+                    submenu.css({
+                        'height': submenu.get(0).scrollHeight + 'px', // Transition to full height
+                    });
+                }, 10); // Small delay to allow smooth height transition
+
+                parentDropdown.addClass('open');
+                $(this).addClass('rotate');
+            }
+        });
+
+        // Close dropdown when clicking anywhere else
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.nav-item.dropdown').length) {
+                $('.nav-item.dropdown').addClass('close');
+                $('.submenu').css({
+                    'height': '0',
+                    'opacity': '0',
+                    'visibility': 'hidden',
+                });
+                $('.fa-angle-down').addClass('rotateoff');
+            }
+        });
+    }
+});
+
+
+
