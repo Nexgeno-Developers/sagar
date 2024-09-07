@@ -80,9 +80,8 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>       
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="{{route('about_us')}}">Company Profile</a>
-                                        <ul class="drop">
-                                            <div>
+                                        <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
+                                        <ul class="submenu">
                                                 <li>
                                                     <a href="" class="sub_menu"> scss</a>
                                                 </li>
@@ -92,7 +91,6 @@ $allpages = DB::table('pages')
                                                 <li>
                                                     <a href="" class="sub_menu"> html</a>
                                                 </li>
-                                            </div>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>  
@@ -132,6 +130,8 @@ $allpages = DB::table('pages')
                             </div>
                         </div>
                     </nav>
+
+                    <!-- navbar for mobile -->
 
                     <nav class="navbar d-lg-none d-block">
                         <div class="container-fluid">
@@ -176,9 +176,21 @@ $allpages = DB::table('pages')
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('products_category')}}">Products</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('about_us')}}">Company Profile</a>
-                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <a href="" class="sub_menu"> scss</a>
+                                                </li>
+                                                <li>
+                                                    <a href="" class="sub_menu"> jquery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="" class="sub_menu"> html</a>
+                                                </li>
+                                            </ul>
+                                            <i class="fa fa-angle-down"></i>
+                                        </li>  
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('partner_with_us')}}">Partner with us</a>
                                         </li>
