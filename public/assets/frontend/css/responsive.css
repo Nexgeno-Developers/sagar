@@ -25,8 +25,34 @@
         transform: rotate(180deg);
     }
 
+    .nav-item.dropdown .fa-angle-down { 
+        top: 8px;
+        right: 94px;
+        position: absolute;
+    }
+    .submenu {
+        transition: height 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        top: 10px;
+        position: relative;
+    }
+    
+    .nav-item.dropdown.open .submenu {
+        opacity: 1;
+        visibility: visible;
+        height: auto; /* This will allow natural height after opening */
+    }
+
+    li.nav-item.dropdown { 
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .submenu { 
-        left: 6px;
+        left: 0px;
     }
 
     .nav-item.dropdown .fa-angle-down.rotateoff {
@@ -42,7 +68,7 @@
 
     .transparent .navbar-brand img {
         height: auto;
-        width: 100%;
+        width: 70%;
     }
     .navbar-brand img {
         height: auto;
@@ -83,8 +109,11 @@
         top: 2px;
     }
     input.product-search {
+        border: 0; 
+    }
+    .search-bar-filter input.product-search {
         border: 0;
-        width: 190px;
+        width: 80%;
     }
     .google_translate_tab {
         position: absolute;
@@ -105,7 +134,7 @@
         position: relative;
         padding: 0;
         bottom: 0;
-        margin-top: 0;
+        margin-top: 0 !important;
     }
     .navbar .container-fluid,
     .partnership .col-md-5 {
@@ -117,6 +146,9 @@
         width: 40%;
         z-index: 1050;
         transition: 0.4s ease-in-out;
+    }
+    .btn-close:focus { 
+        box-shadow: none; 
     }
     .header .navbar-nav .nav-item .nav-link,
     .header.transparent .navbar-nav .nav-item .nav-link {
@@ -149,6 +181,9 @@
     .our_product_cards_div .card-text,
     .product_filter_gallery_div .card-text {
         font-size: 14px;
+        white-space: nowrap;          /* Prevents text from wrapping to the next line */
+        overflow: hidden;             /* Hides any text that overflows the container */
+        text-overflow: ellipsis;
     }
     .banner_content {
         font-size: 20px;
@@ -169,7 +204,7 @@
         font-size: 50px;
     }
     .product_heading {
-        font-size: 28px;
+        font-size: 28px !important;
     }
     .our_product_cards_div .card img {
         width: 100%;
@@ -217,14 +252,20 @@
         left: 0;
         border-radius: 35px 35px 10px 38px;
         width: 45%;
+        /* transform: translate(-1em, 0); */
     }
     .about_info_box::before,
     .info_box::before {
         border-radius: 35px 40px 10px 35px;
     }
     .up_and_down {
-        animation: none;
+        animation: 3s infinite upDown;
         transform: translate(-1em, 0);
+    }
+    @keyframes upDown {
+        50% {
+            transform: translate(-1em, -127px);
+        }
     }
     .about_info_box h4,
     .info_box h4 {
@@ -250,9 +291,9 @@
     .a_btn {
         padding: 2px 22px;
     }
-    .owl-nav {
+    /* .owl-nav {
         display: none;
-    }
+    } */
     section.why_sscpl {
         height: 580px;
     }
@@ -336,20 +377,58 @@
         line-height: 40px;
     }
     .our_product_cards_div {
-        margin: 10px 0;
+        margin: 12px 0;
     }
     .product_filter_gallery_div {
-        margin: 0 0 30px;
+        margin: 0px 0 16px;
+        padding: 0px 6px;
+    }
+    .search-bar-filter .fa-search:before { 
+        font-size: 14px; 
+    }
+    .search-bar-filter input { 
+        padding: 10px 5px 10px 5px;
+        border-radius: 10px;
+    }
+    .sidebar .search_btn { 
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+    .search-bar-filter input::placeholder {
+        font-size: 12px;
+    }
+    .filter_list {
+        background-color: #fff;
+        padding: 10px 10px;
+    }
+    .filter_list .list-group-item { 
+        font-size: 12px;
+        padding: 3px 3px;
     }
     .product_filter_gallery .card-body {
-        height: 65px;
+        height: 50px;
+    }
+    .btn_next_prev_div .fa, .our_product_cards_div .fa, .product_filter_gallery_div .fa {
+        width: 20px;
+        height: 20px;
+        padding: 3px; 
+    }
+    .product_details .fa {
+        width: 25px !important;
+        height: 25px !important;
+        padding: 5px !important;
+    }
+    .product_categories_page .our_product_cards_div .fa-arrow-right:before, .product_filter_gallery_div .fa-arrow-right:before {
+        position: relative;
+        bottom: 4px;
+        font-size: 12px;
     }
     .btn_next_prev_div {
         justify-content: end;
         gap: 7px;
     }
     .function_title button.show {
-        padding-bottom: 0;
+        padding: 10px;
     }
     .product_di_butyl_phosphate .product_filter_gallery_div .card-text {
         font-size: 12px;
@@ -401,18 +480,26 @@
     #faq_accordion .accordion-item {
         padding: 5px 0 0;
     }
+    .faq .accordion-body { 
+        padding: 0px 10px 20px;
+    }
     h4.product_heading {
-        font-size: 26px;
+        font-size: 26px !important;
+    }
+    #add_career_form input::placeholder{
+        font-size: 14px;
     }
     .contact_us_form.career_form .form-control,
     .contact_us_form.career_form textarea {
         padding: 10px 15px;
+        font-size: 14px;
     }
     .contact_us_form button {
         width: 8em;
         padding: 3px 0;
-        font-size: 16px;
+        font-size: 14px;
     }
+
     .contact_us_page .product_heading {
         font-size: 28px;
         line-height: 30px;
@@ -497,8 +584,12 @@
         height: auto;
         width: 65%;
     }
+    .btn-close:focus { 
+        box-shadow: none; 
+    }
     li.nav-item.dropdown { 
         justify-content: center;
+        flex-direction: column;
     }
     .nav-item.dropdown .fa-angle-down.rotateoff {
         transform: rotate(0deg);
@@ -509,14 +600,35 @@
     header li.nav-item.dropdown .fa-angle-down:before {
         color: #555 !important;
     }
-    .nav-item.dropdown.close.open > .submenu {
+    .nav-item.dropdown .fa-angle-down { 
+        top: 7px;
+        right: 44px;
+        position: absolute;
+    }
+    /* .nav-item.dropdown.close.open > .submenu {
         height: auto;
         transition: height 0.5s;
     }
     .nav-item.dropdown.close > .submenu {
         height: 0;
         transition: height 0.5s;
+    } */
+    .submenu {
+        transition: height 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        top: 15px;
+        position: relative;
     }
+    
+    .nav-item.dropdown.open .submenu {
+        opacity: 1;
+        visibility: visible;
+        height: auto; /* This will allow natural height after opening */
+    }
+    
     img.banner_img {
         width: 100%;
         object-fit: cover;
@@ -631,9 +743,9 @@
     .btn_next_prev_div .fa,
     .our_product_cards_div .fa,
     .product_filter_gallery_div .fa {
-        width: 20px;
-        height: 20px;
-        padding: 3px;
+        width: 22px;
+        height: 22px;
+        padding: 4px;
     }
     .our_product_cards_div .fa-arrow-right:before {
         bottom: 3px;
@@ -683,6 +795,7 @@
     .saagar_speciality_chemical_machine img {
         position: relative;
         right: 0;
+        width: 100% !important;
     }
     .about_info_box,
     .info_box {
@@ -797,6 +910,9 @@
         width: 110px;
         font-size: 12px;
     }
+    .future_activites_main_div img { 
+        height: auto;
+    }
     .three_boxes_div {
         position: relative;
         left: 0;
@@ -806,6 +922,10 @@
     .about_us_story_div .saagar_speciality_chemical_machines img,
     .product_img_div {
         position: static;
+        width: 100%;
+    }
+    .cor_values .right_img {
+        width: 100%;
     }
     .product_filter_gallery_div,
     .three_boxes_div > div {
@@ -824,7 +944,7 @@
     }
     .banner_heading_text {
         font-size: 30px;
-        line-height: 30px;
+        line-height: 34px;
     }
     .banner_heading_breadcrumb li {
         font-size: 14px;
@@ -916,7 +1036,7 @@
     .product_info.product-section .product_filter_gallery_div {
         margin: 15px 0;
     }
-    .product_categories_page .product_filter_gallery_div:nth-child(2n),
+    /* .product_categories_page .product_filter_gallery_div:nth-child(2n),
     .product_categories_page .product_filter_gallery_div:nth-child(odd),
     .product_info.product-section .product_heading {
         padding-left: 0;
@@ -926,7 +1046,7 @@
     }
     .product_filter_gallery_div:nth-child(2n) {
         padding-right: 7px;
-    }
+    } */
     .product_filter_gallery .card-body {
         height: 70px;
         top: 5px;

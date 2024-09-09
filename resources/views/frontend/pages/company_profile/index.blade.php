@@ -100,11 +100,11 @@
 
             <div class="col-md-12 background_blue_img my-md-5 my-4 p-md-5 p-3 cor_values">
                 <h2 class="product_heading text-start text-light pb-md-1">Cor Values</h2>
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-7 text-light pe-md-4 pt-md-3">
                         {!! $core_content !!}
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-12">
                         @if (!empty($core_image))
                             <img src="{{ asset('storage/' . $core_image) }}" alt="Chemical Process"
                                 class="img-fluid right_img ps-md-3">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-md-row-reverse flex-column col-md-12 py-md-3 py-3">
+            <div class="d-flex flex-md-row-reverse flex-column align-items-center col-md-12 py-md-3 py-3 company_policies">
                 <div class="col-md-7 ps-md-5">
                     <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our"> COMPANY
                         </span>POLICY</h2>
@@ -245,7 +245,7 @@
                         <div class="vission_img_div">
                             <img src="{{ asset('storage/' . $mnv_image1) }}" alt="" class="vission_img">
                         </div>
-                        <h2 class="vission_heading product_heading py-lg-3 py-md-2 text-light"><span
+                        <h2 class="vission_heading product_heading py-lg-3 py-2 text-light"><span
                                 class="purple_color">OUR</span> VISSION</h2>
                             <p class="vission_para text-light"> {!! $mnv_description1 !!} </p>
                     </div>
@@ -255,7 +255,7 @@
                         <div class="mission_img_div">
                             <img src="{{ asset('storage/' . $mnv_image2) }}" alt="" class="mission_img">
                         </div>
-                        <h2 class="mission_heading product_heading py-lg-3 py-md-2 text-light"><span
+                        <h2 class="mission_heading product_heading py-lg-3 py-2 text-light"><span
                                 class="purple_color">OUR</span> MISSION</h2>
                             <p class="mission_para text-light">  {!! $mnv_description2 !!} </p>
                     </div>

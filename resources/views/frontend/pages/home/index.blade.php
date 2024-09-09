@@ -185,7 +185,7 @@
                         </div>
                     </div>
                     <div class="col-12 position-relative">
-                        <div class="col-md-5 saagar_speciality_chemical_machine float-end">
+                        <div class="col-md-5 col-12 saagar_speciality_chemical_machine float-end">
                             @if (!empty($about_image))
                                 <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process"
                                     class="img-fluid rounded" loading="lazy">

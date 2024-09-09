@@ -6,6 +6,83 @@ function toggleSearchBar2() {
 	document.querySelector(".search-bar-for-tab").classList.toggle("d-none")
 }
 
+// Clear search field after the page loads
+window.addEventListener("DOMContentLoaded", function() {
+    let searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        // Clear the input field on all devices, including mobile
+        searchInput.value = "";
+
+        // Reset the form to ensure any cached values are removed
+        document.getElementById("searchForm").reset();
+    }
+});
+
+// for sub menu closing and opening
+// JavaScript/jQuery for mobile and tablet view 
+$(document).ready(function() {
+    if ($(window).width() <= 991) {
+        $('.nav-item.dropdown .fa-angle-down').on('click', function(e) {
+            e.preventDefault();
+            var parentDropdown = $(this).closest('.nav-item.dropdown');
+            var submenu = parentDropdown.find('.submenu');
+
+            // Toggle the submenu
+            if (parentDropdown.hasClass('open')) {
+                // Close the submenu using CSS transitions
+                submenu.css({
+                    'height': submenu.get(0).scrollHeight + 'px', // Get current height
+                });
+
+                setTimeout(function () {
+                    submenu.css({
+                        'height': '0', // Collapse the height
+                        'opacity': '0',
+                        'visibility': 'hidden',
+                    });
+                }, 10);
+
+                parentDropdown.removeClass('open');
+                $(this).removeClass('rotate');
+            } else {
+                // Open the submenu
+                submenu.css({
+                    'height': '0',
+                    'opacity': '1',
+                    'visibility': 'visible',
+                });
+
+                setTimeout(function () {
+                    submenu.css({
+                        'height': submenu.get(0).scrollHeight + 'px', // Transition to full height
+                    });
+                }, 10);
+
+                setTimeout(function() {
+                    submenu.css('height', 'auto'); // Allow it to expand naturally
+                }, 300); // After transition duration (ensure it matches your CSS)
+
+                parentDropdown.addClass('open');
+                $(this).addClass('rotate');
+            }
+        });
+
+        // Close dropdown when clicking anywhere else
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.nav-item.dropdown').length) {
+                $('.nav-item.dropdown').removeClass('open');
+                $('.submenu').css({
+                    'height': '0',
+                    'opacity': '0',
+                    'visibility': 'hidden',
+                });
+                $('.fa-angle-down').addClass('rotateoff');
+            }
+        });
+    }
+});
+
+
 $(document).ready(function() {
 	var e, o, t, a, s = !1;
 	$("#zoomable-image").on("click", function(e) {
@@ -130,64 +207,4 @@ document.addEventListener("DOMContentLoaded", function() {
 		imageObserver.observe(image);
 	});
 });
-
-// JavaScript/jQuery for mobile and tablet view
-$(document).ready(function() {
-    if ($(window).width() <= 768) {
-        $('.nav-item.dropdown .fa-angle-down').on('click', function(e) {
-            e.preventDefault();
-            var parentDropdown = $(this).closest('.nav-item.dropdown');
-            var submenu = parentDropdown.find('.submenu');
-
-            // Toggle the submenu
-            if (parentDropdown.hasClass('open')) {
-                // Close the submenu
-                submenu.css({
-                    'height': submenu.get(0).scrollHeight + 'px', // Get current height
-                });
-                setTimeout(function () {
-                    submenu.css({
-                        'height': '0', // Collapse the height
-                        'opacity': '0',
-                        'visibility': 'hidden',
-                    });
-                }, 10); // Delay to ensure the smooth transition
-
-                parentDropdown.removeClass('open');
-                $(this).removeClass('rotate');
-            } else {
-                // Open the submenu
-                submenu.css({
-                    'height': '0',
-                    'opacity': '1',
-                    'visibility': 'visible',
-                });
-
-                setTimeout(function () {
-                    submenu.css({
-                        'height': submenu.get(0).scrollHeight + 'px', // Transition to full height
-                    });
-                }, 10); // Small delay to allow smooth height transition
-
-                parentDropdown.addClass('open');
-                $(this).addClass('rotate');
-            }
-        });
-
-        // Close dropdown when clicking anywhere else
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('.nav-item.dropdown').length) {
-                $('.nav-item.dropdown').addClass('close');
-                $('.submenu').css({
-                    'height': '0',
-                    'opacity': '0',
-                    'visibility': 'hidden',
-                });
-                $('.fa-angle-down').addClass('rotateoff');
-            }
-        });
-    }
-});
-
-
 

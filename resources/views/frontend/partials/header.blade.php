@@ -109,14 +109,14 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
+                                        <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative" id="searchForm">
                                             <div class="search-icon-wrapper">
                                                 <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </div>
                                             <div class="search-bar d-none">
-                                                <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
+                                                <input type="text" class="product-search" name="search" id="searchInput" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                                 <input type="hidden" name="category_id" id="category_id" value="">
                                                 <button type="submit" class="btn search_btn search_btn_2" aria-label="search btn 2">
                                                     <i class="fa fa-search"></i>
