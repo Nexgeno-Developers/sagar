@@ -87,7 +87,7 @@
                     @if (!empty($about_image))
                         <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid rounded">
                     @endif
-                    <div class="about_info_box info-box text-md-start text-center text-light p-md-4 up_and_down">
+                    <div class="about_info_box info-box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
                         <h4>100k+</h4>
                         <p>Lorem Ipsum</p>
                         <hr>

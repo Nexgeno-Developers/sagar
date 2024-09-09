@@ -254,6 +254,10 @@
         width: 45%;
         /* transform: translate(-1em, 0); */
     }
+
+    .about_info_box { 
+        left: 28px;
+    }
     .about_info_box::before,
     .info_box::before {
         border-radius: 35px 40px 10px 35px;
@@ -264,7 +268,7 @@
     }
     @keyframes upDown {
         50% {
-            transform: translate(-1em, -127px);
+            transform: translate(-1em, -115px);
         }
     }
     .about_info_box h4,
