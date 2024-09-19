@@ -513,6 +513,15 @@ section.white_section {
     height: 261px;
     object-fit: cover;
 }
+span.product_img_heading {
+    font-size: 24px;
+    font-weight: 600;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 14px;
+}
 .our_product_cards_div .card-body {
     height: 88px;
     background-color: #fff;
@@ -949,7 +958,8 @@ img.moving_machine {
 }
 .three_boxes_div {
     position: absolute;
-    bottom: -80px;
+    /* bottom: -80px; */
+    bottom: 60px;
     text-align: center;
     --bs-gutter-x: 35px;
 }
