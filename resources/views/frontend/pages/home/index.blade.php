@@ -150,8 +150,9 @@
                             <a href="{{ route('product.detail', $product->slug) }}"
                                 class="d-flex align-items-center justify-content-between text-decoration-none w-100">
                                 <div class="card">
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
-                                        class="product_card_image card-img-top" alt="product image" loading="lazy">
+                                    <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
+                                        class="product_card_image card-img-top" alt="product image" loading="lazy"> -->
+                                        <span class="product_img_heading">{{ $product->title }}</span>
                                     <div class="card-body d-flex">
                                         <p class="card-text">{{ $product->title }}</p>
                                         <i class="btn btn-primary fa fa-arrow-right"></i>
@@ -385,13 +386,13 @@
             <div class="row d-flex justify-content-center position-relative">
                 <div class="col-12">
                     <div class="content_img_div p-md-0 p-3 py-2">
-                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3">Supply Chain Partner</h2>
+                        <!-- <h2 class="product_heading text-light text-center pt-lg-5 pt-3">Supply Chain Partner</h2>
                         <br class="d-md-block d-none">
                         <div class="d-flex justify-content-center spply-chn-content_div">
                             <p class="col-md-9 sply_chn_content text-md-center pb-lg-5">
                                 {{$scp_content}}
                             </p>
-                        </div>
+                        </div> -->
                         <div class="three_boxes_div col-md-11 row row-cols-2 row-cols-md-3">
                             <div class="col ">
                                 <div class="spply_chn_box">
