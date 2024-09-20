@@ -349,7 +349,7 @@
     </section>
 
 
-    @if (!empty($activities))
+    {{-- @if (!empty($activities))
     <section class="white_section future_activity pb-lg-5 pb-3 pt-md-0 pt-3">
         <div class="container">
             <div class="row">
@@ -378,7 +378,7 @@
             </div>
         </div>
     </section>
-    @endif
+    @endif --}}
 
 
     <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-4 py-4">
