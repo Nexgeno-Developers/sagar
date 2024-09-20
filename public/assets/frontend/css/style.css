@@ -1048,6 +1048,9 @@ img.moving_machine {
     border-radius: 16px;
     border: 0;
 }
+textarea:focus-visible {
+    outline: none;
+}
 .search-bar-filter {
     margin-bottom: 1rem;
     display: flex;
