@@ -944,7 +944,7 @@ img.moving_machine {
 }
 .content_img_div {
     background-image: url("../images/home/supply_chain_partner_bg_img.webp");
-    height: 450px;
+    height: 280px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -957,9 +957,9 @@ img.moving_machine {
     line-height: 30px;
 }
 .three_boxes_div {
-    position: absolute;
-    /* bottom: -80px; */
-    bottom: 60px;
+    position: relative;
+    bottom: -60px;
+    /* bottom: 60px; */
     text-align: center;
     --bs-gutter-x: 35px;
 }
