@@ -46,10 +46,10 @@
         		<td>{{ $key+1 }}</td>
         		
 				@if($page->type == 'home_page')
-        			<td><a href="{{ route('custom-pages.show_custom_page', $page->slug) }}" class="text-reset">{{ $page->title }}</a></td>
+        			<td>{{ $page->title }}</td>
 					<td><a target="_blank" href="{{ route('index') }}">{{ route('index') }}</a></td>
                     @else
-        			<td><a href="{{ route('custom-pages.show_custom_page', $page->slug) }}" class="text-reset">{{ $page->title }}</a></td>
+        			<td>{{ $page->title }}</td>
 					<td><a target="_blank" href="{{ route('index') }}/{{ $page->slug }}">{{ route('index') }}/{{ $page->slug }}</a></td>
 				@endif
         		<td class="text-right">
