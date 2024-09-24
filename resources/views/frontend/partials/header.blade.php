@@ -82,15 +82,15 @@ $allpages = DB::table('pages')
                                     <li class="nav-item dropdown">
                                         <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
                                         <ul class="submenu">
-                                                <li>
-                                                    <a href="" class="sub_menu"> scss</a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="sub_menu"> jquery</a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="sub_menu"> html</a>
-                                                </li>
+                                            <li>
+                                                <a href="" class="sub_menu"> About us</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="sub_menu"> Compliances</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="sub_menu"> What We Do</a>
+                                            </li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>  
@@ -180,13 +180,13 @@ $allpages = DB::table('pages')
                                             <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
                                             <ul class="submenu">
                                                 <li>
-                                                    <a href="" class="sub_menu"> scss</a>
+                                                    <a href="" class="sub_menu"> About us</a>
                                                 </li>
                                                 <li>
-                                                    <a href="" class="sub_menu"> jquery</a>
+                                                    <a href="" class="sub_menu"> Compliances</a>
                                                 </li>
                                                 <li>
-                                                    <a href="" class="sub_menu"> html</a>
+                                                    <a href="" class="sub_menu"> What We Do</a>
                                                 </li>
                                             </ul>
                                             <i class="fa fa-angle-down"></i>
