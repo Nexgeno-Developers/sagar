@@ -93,7 +93,7 @@
                                     {{$faq->question}}
                                 </button>
                             </h5>
-                            <div id="collapse{{$index}}" class="accordion-collapse collapse show" aria-labelledby="heading{{$index}}" data-bs-parent="#product_accordion">
+                            <div id="collapse{{$index}}" class="accordion-collapse collapse" aria-labelledby="heading{{$index}}" data-bs-parent="#product_accordion">
                                 <div class="accordion-body">
                                     {!! $faq->answer !!}
                                 </div>

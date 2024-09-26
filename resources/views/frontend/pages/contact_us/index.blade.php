@@ -35,9 +35,12 @@
                         </h2>
                         <div class="col-12 d-flex align-items-start gap-2 footer_location_1">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_india.png">
-                            <p class="pb-md-1 location_text"> 
-                                {{$contacts[0]->address}} 
-                            </p> 
+                            <div class="address_div">
+                                <p class="pb-md-1 location_text"> 
+                                    {{$contacts[0]->address}} 
+                                </p> 
+                                <span class="view_map_text" id="address1">View in Map</span>
+                            </div>
                         </div>
 
                         <div class="d-flex flex-lg-row flex-column col-12 mb-md-0 mb-3">
@@ -67,9 +70,12 @@
 
                         <div class="d-flex align-items-start gap-2 pt-lg-4">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_brazil.png">
-                            <p class="text-dark mb-3 pb-2 location_text"> 
-                                {{$contacts[1]->address}}  
-                            </p> 
+                            <div class="address_div">
+                                <p class="text-dark mb-3 pb-2 location_text"> 
+                                    {{$contacts[1]->address}}  
+                                </p> 
+                                <span class="view_map_text" id="address1">View in Map</span>
+                            </div>
                         </div>
                         <div class="d-flex gap-2 mb-md-0 mb-3">
                             <i class="fa fa-phone mt-2"></i>
@@ -82,9 +88,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-md-6 mb-md-0 mb-4">
+                        <div class="col-lg-7 col-md-6 mb-md-0 mb-4 position-relative">
                             <iframe 
+                                class="address_maps"
+                                id="map1"
                                 src="{{$contacts[0]->google_map}}" 
+                                width="100%" 
+                                height="440" 
+                                style="border:0; border-radius: 50px;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+
+                            <iframe 
+                                class="address_maps"
+                                id="map2"
+                                src="{{$contacts[0]->google_map}}"
                                 width="100%" 
                                 height="440" 
                                 style="border:0; border-radius: 50px;" 
@@ -164,6 +183,16 @@
                 }
             });
         });
+    });
+</script>
+
+<script>
+    document.getElementById('address1').addEventListener('click', function() {
+        document.getElementById('map1').src = "{{$contacts[0]->google_map}}";
+    });
+
+    document.getElementById('address2').addEventListener('click', function() {
+        document.getElementById('map2').src = "{{$contacts[0]->google_map}}";
     });
 </script>
 

@@ -500,7 +500,7 @@ section.white_section {
     font-size: 38px;
     font-weight: 600;
 }
-.our_product_cards_div {
+.product_categories_page .our_product_cards_div {
     margin: 12px 0;
 }
 .our_product_cards_div .card,
@@ -508,6 +508,9 @@ section.white_section {
     border: 0;
     width: 100%;
     border-radius: 20px;
+}
+.product_categories_page .our_product_cards_div .fa-arrow-right {
+    top: 30px;
 }
 .our_product_cards_div .card img {
     width: 100%;
@@ -537,6 +540,9 @@ span.product_img_heading {
 
 .product_categories_page .our_product_cards_div .card-body {
     box-shadow: 0px 0px 10px #ccc;
+    flex-direction: column;
+    padding: 15px 0px;
+    gap: 0px;
 }
 
 
@@ -568,7 +574,7 @@ span.product_img_heading {
     padding: 7px;
     border-radius: 50px;
     position: relative;
-    top: 20px;
+    top: 15px;
 }
 .product_filter_gallery_div {
     margin: 30px 0 0;
@@ -1036,6 +1042,22 @@ img.moving_machine {
     color: #333;
     font-weight: 500;
 }
+.address_div {
+    margin-bottom: 15px;
+}
+.location_text {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+.view_map_text {
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+}
+.address_maps#map2 {
+    position: absolute; 
+    left: 0px;
+}
 .contact_info > div a {
     color: #333;
     font-size: 14px;
@@ -1206,16 +1228,18 @@ section#product_categories_banner_img {
     margin-top: 0.5rem;
 }
 .product_filter_gallery_div .card {
-    background: 0 0;
+    background: 0 0 #fff;
 }
 .product_filter_gallery .card-body {
-    height: 88px;
+    height: auto;
     padding-right: 10px;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    top: 5px;
+    top: 0px;
     background-color: #fff;
+    padding: 0px 16px;
+    border-radius: 20px;
 }
 .product_img_div {
     background-color: #fff;

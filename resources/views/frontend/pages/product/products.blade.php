@@ -55,8 +55,9 @@
                             <div class="col-md-4 product_filter_gallery_div">
                                 <a href="{{ route('product.detail', $product->slug) }}" class="d-block text-decoration-none">
                                     <div class="card">
-                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top">
-                                        <div class="card-body d-flex align-items-center justify-content-between">
+                                        <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
+                                        <span class="product_img_heading">{{ $product->title }}</span>
+                                        <div class="card-body d-flex align-items-center justify-content-center">
                                             <p class="card-text">{{ $product->title }}</p>
                                             <i class="btn btn-primary fa fa-arrow-right"></i>
                                         </div>
