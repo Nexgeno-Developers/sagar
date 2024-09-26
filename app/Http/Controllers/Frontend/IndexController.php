@@ -218,6 +218,12 @@ class IndexController extends Controller
 
 //     return view('frontend.pages.product.product_category', compact('productCategories', 'products'));
 // }
+public function industrie_s(){
+        
+    $page = DB::table('pages')->where('is_active',1)->first();
+    
+    return view('frontend.pages.industries.index',compact('page'));
+}
 
 public function products_category(Request $request)
 {
