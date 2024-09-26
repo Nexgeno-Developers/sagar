@@ -1425,6 +1425,13 @@ section.why_sscpl.height670 {
     background-image: none !important;
     transform: rotate(0);
 }
+
+/* industries page */
+
+.industries_accordion .accordion-item {
+    padding: 8px 8px 1px !important; 
+}
+
 footer {
     background-image: url("../images/footer_bg_img.webp");
     background-size: cover;
