@@ -4,7 +4,7 @@
 
 @section('page.content')
   
-<main class="product_categories_page">
+<main class="industries_page" id="industries_page">
 
 <section class="banner" id="product_categories_banner_img">
     <div class="container">
@@ -19,34 +19,95 @@
     </div>
 </section>
 
-<section class="white_section career_contact_form py-lg-5 py-3">
+<section class="white_section industries_product_section py-lg-5 py-3">
     <div class="container">
-        <div class="row justify-content-center">
-            
-                <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                    <a href="" class="d-flex align-items-center justify-content-md-between text-decoration-none w-100">
-                        <div class="card">
-                            {{--
-                            @if (!empty($category->image))
-                                <img src="{{ asset('storage/' . $category->image) }}" alt="" class="product_card_image card-img-top">
-                            @endif
-                            --}}
-                            
-                            <div class="card-body d-flex">
-                                <p class="card-text d-block">Title</p>
-                                <i class="btn btn-primary fa fa-arrow-right"></i>
-                            </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 accordion mb-md-3 industries_accordion" id="faq_accordion"> 
+            <div class="col">
+                <div class="accordion-item mb-2">
+                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
+                        <button 
+                            class="accordion-button show" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#collapse1" 
+                            aria-expanded="true" 
+                            aria-controls="collapse">
+                            question
+                        </button>
+                    </h5>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
+                        <div class="accordion-body">
+                            descripttion
                         </div>
-                    </a>
+                    </div>
                 </div>
+            </div> 
+
+            <div class="col">
+                <div class="accordion-item mb-2">
+                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
+                        <button 
+                            class="accordion-button show" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#collapse2" 
+                            aria-expanded="true" 
+                            aria-controls="collapse">
+                            question
+                        </button>
+                    </h5>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
+                        <div class="accordion-body">
+                            descripttion
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col">
+                <div class="accordion-item mb-2">
+                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
+                        <button 
+                            class="accordion-button show" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#collapse3" 
+                            aria-expanded="true" 
+                            aria-controls="collapse">
+                            question
+                        </button>
+                    </h5>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
+                        <div class="accordion-body">
+                            descripttion
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col">
+                <div class="accordion-item mb-2">
+                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
+                        <button 
+                            class="accordion-button show" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#collapse4" 
+                            aria-expanded="true" 
+                            aria-controls="collapse">
+                            question
+                        </button>
+                    </h5>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
+                        <div class="accordion-body">
+                            descripttion
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
 
         <!-- Pagination Links -->
-        <div class="row">
-            <div class="col-12 text-center pt-md-4 pt-4">
-                {{ $productCategories->links('pagination::bootstrap-5') }}
-            </div>
-        </div>
     </div>
 </section>
 
