@@ -104,32 +104,44 @@ $(document).ready(function() {
 }), 
 
 $(document).ready(function() {
-	$("#home_page_banner_slider").owlCarousel({
-		onInitialized: function(e) {
-			$(".owl-stage").css("transform-style", "preserve-3d")
-		},
-		loop: !0,
-		margin: 0,
-		autoplay: !0,
-		nav: !0,
-		dots: !1,
-		animateOut: "fadeOut",
-		animateIn: "fadeIn",
-		mouseDrag: !1,
-		touchDrag: !1,
-		responsive: {
-			0: {
-				items: 1
-			},
-			600: {
-				items: 1
-			},
-			1e3: {
-				items: 1
-			}
-		}
-	})
-}), 
+    $("#home_page_banner_slider").owlCarousel({
+        onInitialized: function(e) {
+            $(".owl-stage").css("transform-style", "preserve-3d");
+            // Trigger animation for the first slide
+            var activeSlide = $('.owl-item.active');
+            activeSlide.find('.banner_content').addClass('active');
+        },
+        onTranslated: function(e) {
+            // Remove the 'active' class from all banner text to reset animations
+            $('.banner_content').removeClass('active');
+
+            // Find the active slide and trigger animation for its text
+            var activeSlide = $('.owl-item.active');
+            activeSlide.find('.banner_content').addClass('active');
+        },
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        nav: true,
+        dots: false,
+        animateOut: "fadeOut",
+        animateIn: "fadeIn",
+        mouseDrag: false,
+        touchDrag: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+});
+
 
 $(document).ready(function() {
 	$("#what_we_do_slider").owlCarousel({
