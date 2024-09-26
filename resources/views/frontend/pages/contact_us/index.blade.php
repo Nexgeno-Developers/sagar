@@ -188,11 +188,11 @@
 
 <script>
     document.getElementById('address1').addEventListener('click', function() {
-        document.getElementById('map1').src = "{{$contacts[0]->google_map}}";
+        document.getElementById('map').setAttribute('src', "{{$contacts[0]->google_map}}");
     });
 
     document.getElementById('address2').addEventListener('click', function() {
-        document.getElementById('map2').src = "{{$contacts[0]->google_map}}";
+        document.getElementById('map').setAttribute('src', "{{$contacts[1]->google_map}}");
     });
 </script>
 
