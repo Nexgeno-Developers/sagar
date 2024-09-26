@@ -38,8 +38,8 @@
                             <div class="address_div">
                                 <p class="pb-md-1 location_text"> 
                                     {{$contacts[0]->address}} 
-                                </p> 
-                                <span class="view_map_text" id="address1">View in Map</span>
+                                </p>
+                                <span class="view_map_text" data-src="{{$contacts[0]->google_map}}" id="address1">View in Map</span>
                             </div>
                         </div>
 
@@ -59,11 +59,7 @@
                                     <a href="tel:{{$contacts[0]->phone3}}" class="fw-500">{{$contacts[0]->phone3}}</a>
                                 </div>
                             </div>
-                        </div>
-                        @php
-                            var_dump($contacts[0]->google_map);
-                           
-                            @endphp
+                        </div>                    
 
                         <div class="col-md-12 d-flex align-items-cemter gap-2 pb-md-3 mb-md-0 mb-3">
                             <i class="fa fa-envelope mt-1"></i>
@@ -77,8 +73,8 @@
                             <div class="address_div">
                                 <p class="text-dark mb-3 pb-2 location_text"> 
                                     {{$contacts[1]->address}}  
-                                </p> 
-                                <span class="view_map_text" id="address1">View in Map</span>
+                                </p>                                
+                                <span class="view_map_text" data-src="{{$contacts[1]->google_map}}" id="address2">View in Map</span>
                             </div>
                         </div>
                         <div class="d-flex gap-2 mb-md-0 mb-3">
@@ -93,10 +89,13 @@
                             </div>
                         </div>
                         <div class="col-lg-7 col-md-6 mb-md-0 mb-4 position-relative">
-
+                        <iframe class="address_maps" id="iframe_map" src="" width="100%" height="440"
+                        style="border:0; border-radius: 50px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            {{--
                             <iframe 
                                 class="address_maps"
-                                id="map1"
+                                id="map"
                                 src="{{$contacts[0]->google_map}}" 
                                 width="100%" 
                                 height="440" 
@@ -104,17 +103,7 @@
                                 allowfullscreen="" 
                                 loading="lazy">
                             </iframe>
-
-                            <iframe 
-                                class="address_maps"
-                                id="map2"
-                                src="{{$contacts[1]->google_map}}"
-                                width="100%" 
-                                height="440" 
-                                style="border:0; border-radius: 50px;" 
-                                allowfullscreen="" 
-                                loading="lazy">
-                            </iframe>
+                        --}}
                         </div>
 
                     </div>
@@ -148,15 +137,47 @@
             </div>
         </section>
     </main> 
+<script>
+        // Function to set the iframe source based on the clicked span
+        function setIframeSource(index) {
+        const googleMapUrl = {!! json_encode($contacts) !!}[index]?.google_map; // Use optional chaining to avoid errors
+        if (googleMapUrl) {
+            document.getElementById('iframe_map').setAttribute('src', googleMapUrl);
+        } else {
+            console.error('Google Map URL not found for index:', index);
+        }
+    }
 
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if elements exist before adding event listeners
+        const address1 = document.getElementById('address1');
+        const address2 = document.getElementById('address2');
+        if (address1) {
+            address1.addEventListener('click', function() {
+                //console.log('Clicked Address 1');
+                setIframeSource(0); // Pass the index of the first address
+            });
+            // Simulate a click on address1 on initial page load
+            address1.click();
+        } else {
+            console.error('Element with ID address1 not found');
+        }
 
-@endsection
-@section('page.scripts')
+        if (address2) {
+            address2.addEventListener('click', function() {
+                //console.log('Clicked Address 2');
+                setIframeSource(1); // Pass the index of the second address
+            });
+        } else {
+            console.error('Element with ID address2 not found');
+        }
+    });
+</script>
 
 <script>
     $(document).ready(function () {
         initValidate('#add_contact_us_form');
-        
+
         $('#add_contact_us_form').submit(function (e) {
             e.preventDefault();
 
@@ -177,7 +198,6 @@
                         // Clear form fields
                         form[0].reset();
                     } else {
-                        // toastr.error(response.notification.join('<br>'), 'Validation Error');
                         // Number the error messages
                         let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
                         toastr.error(errorMessages, 'Validation Error');
@@ -189,17 +209,11 @@
             });
         });
     });
+
+ 
 </script>
 
-<script>
-    document.getElementById('address1').addEventListener('click', function() {
-        document.getElementById('map1').setAttribute('src', "{{$contacts[0]->google_map}}");
-    });
 
-    document.getElementById('address2').addEventListener('click', function() {
-        document.getElementById('map2').setAttribute('src', "{{$contacts[1]->google_map}}");
-    });
-</script>
 
 
 @endsection
