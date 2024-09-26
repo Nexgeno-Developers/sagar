@@ -26,7 +26,7 @@
                 <div class="accordion-item mb-2">
                     <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
                         <button 
-                            class="accordion-button show" 
+                            class="accordion-button collapsed" 
                             type="button" 
                             data-bs-toggle="collapse" 
                             data-bs-target="#collapse1" 
@@ -47,7 +47,7 @@
                 <div class="accordion-item mb-2">
                     <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
                         <button 
-                            class="accordion-button show" 
+                            class="accordion-button collapsed" 
                             type="button" 
                             data-bs-toggle="collapse" 
                             data-bs-target="#collapse2" 
@@ -68,7 +68,7 @@
                 <div class="accordion-item mb-2">
                     <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
                         <button 
-                            class="accordion-button show" 
+                            class="accordion-button collapsed" 
                             type="button" 
                             data-bs-toggle="collapse" 
                             data-bs-target="#collapse3" 
@@ -89,7 +89,7 @@
                 <div class="accordion-item mb-2">
                     <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
                         <button 
-                            class="accordion-button show" 
+                            class="accordion-button collapsed" 
                             type="button" 
                             data-bs-toggle="collapse" 
                             data-bs-target="#collapse4" 

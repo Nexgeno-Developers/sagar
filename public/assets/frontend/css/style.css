@@ -408,6 +408,17 @@ li.nav-item {
     line-height: 60px;
     margin-bottom: 40px;
 }
+.banner_content {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.banner_content.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .banner_view_button {
     color: #fff;
     font-size: 22px;
@@ -501,6 +512,9 @@ section.white_section {
     font-weight: 600;
 }
 .product_categories_page .our_product_cards_div {
+    margin: 12px 0;
+}
+.our_product_cards_div {
     margin: 12px 0;
 }
 .our_product_cards_div .card,
@@ -1416,14 +1430,14 @@ section.why_sscpl.height670 {
     color: #363636;
 }
 #faq_accordion .accordion-button:not(.collapsed)::after {
-    content: "\f106";
+    content: "\f061";
     background-image: none;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
-.accordion-button::after {
-    content: "\f106" !important;
-    background-image: none !important;
-    transform: rotate(0);
+#faq_accordion .accordion-button.collapsed::after {
+    content: "\f061";
+    background-image: none;
+    transform: rotate(0deg);
 }
 
 /* industries page */
