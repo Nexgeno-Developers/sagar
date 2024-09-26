@@ -60,6 +60,10 @@
                                 </div>
                             </div>
                         </div>
+                        @php
+                            var_dump($contacts[0]->google_map);
+                           
+                            @endphp
 
                         <div class="col-md-12 d-flex align-items-cemter gap-2 pb-md-3 mb-md-0 mb-3">
                             <i class="fa fa-envelope mt-1"></i>
@@ -89,6 +93,7 @@
                             </div>
                         </div>
                         <div class="col-lg-7 col-md-6 mb-md-0 mb-4 position-relative">
+
                             <iframe 
                                 class="address_maps"
                                 id="map1"
@@ -103,7 +108,7 @@
                             <iframe 
                                 class="address_maps"
                                 id="map2"
-                                src="{{$contacts[0]->google_map}}"
+                                src="{{$contacts[1]->google_map}}"
                                 width="100%" 
                                 height="440" 
                                 style="border:0; border-radius: 50px;" 
@@ -188,11 +193,11 @@
 
 <script>
     document.getElementById('address1').addEventListener('click', function() {
-        document.getElementById('map').setAttribute('src', "{{$contacts[0]->google_map}}");
+        document.getElementById('map1').setAttribute('src', "{{$contacts[0]->google_map}}");
     });
 
     document.getElementById('address2').addEventListener('click', function() {
-        document.getElementById('map').setAttribute('src', "{{$contacts[1]->google_map}}");
+        document.getElementById('map2').setAttribute('src', "{{$contacts[1]->google_map}}");
     });
 </script>
 
