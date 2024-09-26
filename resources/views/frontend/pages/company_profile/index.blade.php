@@ -153,8 +153,8 @@
     @endif
 
 
-    <section class="white_section  partnership py-md-5 py-3">
-        <div class="container">
+    <section class="white_section  partnership py-md-0 py-3">
+        {{-- <div class="container">
             <div class="row align-items-center ">
                 <div class="col-md-7 pe-md-5">
                     {!! $about2_content1 !!}
@@ -166,7 +166,7 @@
                     </div>
                 @endif
             </div>
-        </div>
+        </div> --}}
 
         <div class="container ">
             <div class="d-flex flex-md-row-reverse flex-column align-items-center justify-content-between pt-md-5 pt-4">
@@ -179,15 +179,15 @@
                     </div>
                 @endif
             </div>
-        </div>
+        </div> 
     </section>
 
     <section class="white_section why_sscpl py-lg-5 py-3 pb-md-5 pb-3">
         <div class="container mb-md-5">
             <div class="row justify-content-between position-relative">
-                <div class="animated_moving_machine py-md-2 d-md-block d-none">
+                <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
-                </div>
+                </div> -->
                 <div class="col-12 why_sscpl_bg_img">                    
                     <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
                     <div class="row pt-lg-5 pt-3 px-md-0 px-3">

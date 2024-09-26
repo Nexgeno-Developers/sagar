@@ -126,16 +126,16 @@
 
                 </div>
             @endif
-            <marquee behavior="scroll" direction="left" class="">
+            <!-- <marquee behavior="scroll" direction="left" class="">
                 Your Dedicated Partners for Supply of Specialty Chemicals
-            </marquee>
-            <div class="animated_arrow_div text-center">
+            </marquee> -->
+            <!-- <div class="animated_arrow_div text-center">
                 <span class="animated_arrow_span">
                     <a href="#our_products" aria-label="arrow down">
                         <i class="fa fa-arrow-down animated_arrow_down"></i>
                     </a>
                 </span>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -193,11 +193,11 @@
                             @endif
 
                             <div class="info_box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
-                                <h4>100k+</h4>
-                                <p>Lorem Ipsum</p>
+                                <h4>700+ </h4>
+                                <p>Customers</p>
                                 <hr>
-                                <h4>12M</h4>
-                                <p>Lorem Ipsum Lans</p>
+                                <h4>100+</h4>
+                                <p>Products</p>
                             </div>
                         </div>
                     </div>
@@ -210,8 +210,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <h2 class="product_heading text-center pb-lg-4 pb-md-3 float-start"><span class="our">INDUSTRY</span> WE
-                        CATER</h2>
+                    <h2 class="product_heading text-center pb-lg-4 pb-md-3 float-start"><span class="our">INDUSTRY</span> WE CATER</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
                     <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end float-start" aria-label="services we give">
@@ -223,13 +222,13 @@
            
             @foreach($productCategories as $category)
                 <!-- Add your achievement items here -->
-                <div class="col-md-4 col-6 mb-0 pe-md-0">
+                <div class="col-md-3 col-6 mb-0 pe-md-0">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
                     @endif
                         <div class="d-flex industry_content">
-                            <span class="industry_text_link ps-md-4">{{ $category->title }}</span>
+                            <span class="industry_text_link ps-md-2">{{ $category->title }}</span>
                             <span class="industry_arrow_link pe-lg-3">
                                 <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png" alt="rotate 45 deg arrow" loading="lazy">
                             </span>
@@ -292,9 +291,9 @@
     <section class="white_section why_sscpl py-lg-5 py-4">
         <div class="container">
             <div class="row justify-content-between position-relative">
-                <div class="animated_moving_machine py-md-2 d-md-block d-none">
+                <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="moving top tank">
-                </div>
+                </div> -->
                 <div class="col-12">
                     <div class="why_sscpl_bg_img">
                         <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>

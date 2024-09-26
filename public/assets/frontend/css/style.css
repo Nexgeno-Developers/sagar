@@ -403,9 +403,9 @@ li.nav-item {
     text-align: left;
 }
 .banner_content {
-    font-size: 24px;
+    font-size: 48px;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 60px;
     margin-bottom: 40px;
 }
 .banner_view_button {
@@ -507,6 +507,7 @@ section.white_section {
 .product_filter_gallery_div .card {
     border: 0;
     width: 100%;
+    border-radius: 20px;
 }
 .our_product_cards_div .card img {
     width: 100%;
@@ -514,22 +515,24 @@ section.white_section {
     object-fit: cover;
 }
 span.product_img_heading {
-    font-size: 24px;
-    font-weight: 600;
-    height: 200px;
+    font-size: 22px;
+    font-weight: 500;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0px 14px;
+    text-align: center;
 }
 .our_product_cards_div .card-body {
-    height: 88px;
+    /* height: 48px; */
     background-color: #fff;
-    padding-right: 10px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 20px;
+    padding: 5px 0px 5px 0px;
+    /* text-align: center; */
 }
 
 .product_categories_page .our_product_cards_div .card-body {
@@ -546,6 +549,7 @@ span.product_img_heading {
     font-weight: 500;
     color: #363636;
     margin-bottom: 0;
+    display: none;
 }
 .our_product_cards_div a.btn,
 .product_filter_gallery_div a.btn {
@@ -563,6 +567,8 @@ span.product_img_heading {
     height: 30px;
     padding: 7px;
     border-radius: 50px;
+    position: relative;
+    top: 20px;
 }
 .product_filter_gallery_div {
     margin: 30px 0 0;
@@ -709,7 +715,7 @@ span.product_img_heading {
     position: absolute;
     z-index: 2;
     bottom: 8px;
-    width: 96%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -736,14 +742,15 @@ span.product_img_heading {
 .industry_text_link {
     font-size: 24px;
     font-weight: 400;
-    line-height: 36px;
+    line-height: 30px;
     color: #fff;
-    width: 60%;
+    width: 70%;
 }
 .industry_arrow_link {
     color: #fff;
     font-size: 50px;
     font-weight: 300;
+    /* width: 23%; */
 }
 section.blue_section {
     background-color: #18224e;
@@ -903,7 +910,7 @@ img.moving_machine {
 .why_sscpl_bg_img {
     background-image: url("../images/home/background_blue_img.webp");
     position: relative;
-    top: 85px;
+    top: 5px;
     padding: 10px 60px;
 }
 .sscl_contents_main_div {
