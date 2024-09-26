@@ -21,90 +21,34 @@
 
 <section class="white_section industries_product_section py-lg-5 py-3">
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4 accordion mb-md-3 industries_accordion" id="faq_accordion"> 
-            <div class="col">
-                <div class="accordion-item mb-2">
-                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
-                        <button 
-                            class="accordion-button collapsed" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapse1" 
-                            aria-expanded="true" 
-                            aria-controls="collapse">
-                            question
-                        </button>
-                    </h5>
-                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
-                        <div class="accordion-body">
-                            descripttion
+        <div class="row row-cols-1 row-cols-md-3 g-4 accordion mb-md-3 industries_accordion" id="faq_accordion">  
+           
+                @foreach ($products as $index => $product)
+                    <div class="col">
+                        <div class="accordion-item mb-2">
+                            <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
+                                <button 
+                                    class="accordion-button collapsed" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse{{ $index }}" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse{{ $index }}">
+                                    {{ $product->title }} <!-- Product title -->
+                                </button>
+                            </h5>
+                            <div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $index }}" data-bs-parent="#product_accordion">
+                                <div class="accordion-body">
+                                    {!! $product->product_description !!} <!-- Product description -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div> 
+                @endforeach
 
-            <div class="col">
-                <div class="accordion-item mb-2">
-                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
-                        <button 
-                            class="accordion-button collapsed" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapse2" 
-                            aria-expanded="true" 
-                            aria-controls="collapse">
-                            question
-                        </button>
-                    </h5>
-                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
-                        <div class="accordion-body">
-                            descripttion
-                        </div>
-                    </div>
-                </div>
-            </div> 
 
-            <div class="col">
-                <div class="accordion-item mb-2">
-                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
-                        <button 
-                            class="accordion-button collapsed" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapse3" 
-                            aria-expanded="true" 
-                            aria-controls="collapse">
-                            question
-                        </button>
-                    </h5>
-                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
-                        <div class="accordion-body">
-                            descripttion
-                        </div>
-                    </div>
-                </div>
-            </div> 
 
-            <div class="col">
-                <div class="accordion-item mb-2">
-                    <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
-                        <button 
-                            class="accordion-button collapsed" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapse4" 
-                            aria-expanded="true" 
-                            aria-controls="collapse">
-                            question
-                        </button>
-                    </h5>
-                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#product_accordion">
-                        <div class="accordion-body">
-                            descripttion
-                        </div>
-                    </div>
-                </div>
-            </div> 
+        
         </div>
 
         <!-- Pagination Links -->

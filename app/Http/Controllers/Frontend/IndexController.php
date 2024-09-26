@@ -218,12 +218,6 @@ class IndexController extends Controller
 
 //     return view('frontend.pages.product.product_category', compact('productCategories', 'products'));
 // }
-public function industrie_s(){
-        
-    $page = DB::table('pages')->where('is_active',1)->first();
-    
-    return view('frontend.pages.industries.index',compact('page'));
-}
 
 public function products_category(Request $request)
 {
@@ -258,6 +252,26 @@ public function products_s(Request $request)
 
     return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryId', 'searchQuery'));
 }
+
+
+
+public function industrie_s(Request $request)
+{
+    // Fetch all active products
+    $products = DB::table('products')
+        ->where('is_active', 1)
+        ->get();
+
+    if ($products->isEmpty()) {
+        abort(404, 'No products found');
+    }
+
+    // Fetch a page detail (assuming you want this too)
+    $page = DB::table('pages')->where('is_active', 1)->first();
+
+    return view('frontend.pages.industries.index', compact('products', 'page'));
+}
+
 
 public function product_detail($slug) {
     // Fetch the product details
