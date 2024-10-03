@@ -23,6 +23,15 @@
             </div>                                
         @endif
 
+        <div class="form-group col-3 mb-3">
+            <label>Categorys For<span class="red">*</span></label>
+            <select required name="is_industry" class="form-control" required>
+                <option value="1" {{ old('is_industry', $productCategory->is_industry) == 1 ? 'selected' : '' }}>Industry</option>
+                <option value="0" {{ old('is_active', $productCategory->is_industry) == 0 ? 'selected' : '' }}>Products</option>
+            </select>
+        </div>
+
+
         <div class="form-group col-6 mb-3">
             <label>Status<span class="red">*</span></label>
             <select name="is_active" class="form-control">

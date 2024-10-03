@@ -176,7 +176,7 @@
                 <div class="form-group mb-3">
                     <label>Industry section <span class="red">*</span></label>
                     <select class="form-select select2" name="product_category_id[]" multiple required>                        
-                        @foreach ($product_categories as $product_category )
+                        @foreach ($product_categories->where('is_industry', 1) as $product_category )
                         <option value="{{ $product_category->id }}" 
                             {{ in_array($product_category->id, explode(',', $decoded_data->product_category_id ?? '')) ? 'selected' : '' }}>
                             {{ $product_category->title }}

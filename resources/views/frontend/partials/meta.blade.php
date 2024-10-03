@@ -57,7 +57,7 @@ $url = url()->current();
 <meta name="twitter:title" content="Saagar">
 <meta name="twitter:description" content="Saagar">
 <meta name="twitter:image" content="{{ asset('assets/frontend/images/logo.png') }}">
-<meta name="twitter:site" content="@ahlawatlaw" />
+<meta name="twitter:site" content="@sagar" />
 <link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
 
 <!----------------- twitter ------------------->
@@ -70,59 +70,12 @@ $url = url()->current();
 
 <!---------------- logo Schema ------------------->
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Seedling Associates",
-    "url": "{{ url('') }}/",
-    "logo": "{{ asset('/assets/frontend/images/logo.png') }}",
-    "sameAs": [
-      "https://www.facebook.com/ahlawatassociates/",
-      "https://twitter.com/AhlawatLaw/",
-      "https://in.linkedin.com/company/ahlawat-associates"
-    ]
-  }
-</script>
+
   
 <!---------------- logo schema end --------------->
 
 <!---------------- Contact Address Schema ------------------->
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Seedling Associates",
-    "image": "{{ asset('/assets/frontend/images/logo.png') }}",
-    "@id": "",
-    "url": "{{ url('') }}/",
-    "telephone": "011-41023400",
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "Plot No. 66, LGF, #TheHub, Okhla Phase III, Okhla Industrial Estate,",
-        "addressLocality": "New Delhi",
-        "postalCode": "110020",
-        "addressCountry": "IN"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "No. 611, Reliables Pride opp.Om Heera Panna Mall, Anand Nagar, Jogeshwari West,",
-        "addressLocality": "Mumbai",
-        "postalCode": "400102",
-        "addressCountry": "IN"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "Space jam, SCO, 50-51, Sector 34A,",
-        "addressLocality": "Chandigarh",
-        "postalCode": "160022",
-        "addressCountry": "IN"
-      }
-    ]  
-  }
-</script>
 
 @yield('page.schema')
   

@@ -31,6 +31,7 @@ class ProductCategoryController extends Controller
             'slug' => 'required|string|max:255|unique:product_categories',
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
+            'is_industry' => 'required|boolean',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -56,6 +57,7 @@ class ProductCategoryController extends Controller
             $product_category->title = $request->title;
             $product_category->slug = $slug;
             $product_category->is_active = $request->is_active;
+            $product_category->is_industry = $request->is_industry;
             $product_category->image = $image;
             $product_category->description = $request->description;
             $product_category->meta_title = $request->meta_title;
@@ -93,6 +95,7 @@ class ProductCategoryController extends Controller
             'slug' => 'required|string|max:255|unique:product_categories,slug,' . $id,
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
+            'is_industry' => 'required|boolean',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -131,6 +134,7 @@ class ProductCategoryController extends Controller
         $productCategory->title = $request->title;
         $productCategory->slug = $slug;
         $productCategory->is_active = $request->is_active;
+        $productCategory->is_industry = $request->is_industry;
         $productCategory->image = $image;
         $productCategory->description = $request->description;
         $productCategory->meta_title = $request->meta_title;
