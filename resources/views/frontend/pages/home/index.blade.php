@@ -220,7 +220,7 @@
             </div>
             <div class="row industry_contents_main_div">
            
-            @foreach($productCategories as $category)
+           @foreach($productCategories->take(8) as $category)
                 <!-- Add your achievement items here -->
                 <div class="col-md-3 col-6 mb-0 pe-md-0">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
