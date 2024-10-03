@@ -231,7 +231,7 @@ public function products_category(Request $request)
 public function products_s(Request $request)
 {
     // Fetch all product categories with pagination
-    $productCategories = ProductCategory::where('is_active', 1)->get();
+    $productCategories = ProductCategory::where('is_active', 1)->where('is_industry', 0)->get();
 
     // Initialize query for products
     $query = Product::where('is_active', 1);
@@ -259,13 +259,9 @@ public function products_s(Request $request)
 public function industrie_s(Request $request)
 {
     // Fetch all active categories
-    $product_categories = DB::table('product_categories')->get();
+    $product_categories = DB::table('product_categories')->where('is_active', 1)->where('is_industry', 1)->get();
 
-
-    // Fetch a page detail (assuming you want this too)
-    $page = DB::table('pages')->where('is_active', 1)->first();
-
-    return view('frontend.pages.industries.index', compact('page', 'product_categories'));
+    return view('frontend.pages.industries.index', compact('product_categories'));
 }
 
 
