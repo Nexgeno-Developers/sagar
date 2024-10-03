@@ -36,10 +36,12 @@
                         <div class="col-12 d-flex align-items-start gap-2 footer_location_1">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_india.png">
                             <div class="address_div">
+
+                            <h4> {{$contacts[0]->name}}</h4>
                                 <p class="pb-md-1 location_text"> 
-                                    {{$contacts[0]->address}} 
+                                    {{$contacts[0]->address}}  <span class="view_map_text" data-src="{{$contacts[0]->google_map}}" id="address1">View Map</span>
                                 </p>
-                                <span class="view_map_text" data-src="{{$contacts[0]->google_map}}" id="address1">View in Map</span>
+                                
                             </div>
                         </div>
 
@@ -71,10 +73,11 @@
                         <div class="d-flex align-items-start gap-2 pt-lg-4">
                             <img class="location_flags mt-1" src="/assets/frontend/images/flag_brazil.png">
                             <div class="address_div">
+                                <h4> {{$contacts[1]->name}}</h4>
                                 <p class="text-dark mb-3 pb-2 location_text"> 
-                                    {{$contacts[1]->address}}  
+                                    {{$contacts[1]->address}}   <span class="view_map_text" data-src="{{$contacts[1]->google_map}}" id="address2">View Map</span>
                                 </p>                                
-                                <span class="view_map_text" data-src="{{$contacts[1]->google_map}}" id="address2">View in Map</span>
+                                
                             </div>
                         </div>
                         <div class="d-flex gap-2 mb-md-0 mb-3">
@@ -119,17 +122,17 @@
                             @csrf
                             <input type="hidden" name="form_type" value="contact_us">
                             <div class="col-md-12 mb-md-4 mb-3">      
-                                <input required type="text" name="full_name" class="form-control" placeholder="Full Name">
+                                <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
                             </div>
                             <div class="d-flex flex-md-row flex-column col-md-12 mb-2">
                                 <div class="col-md-6 mb-3 pe-md-2">                                    
-                                    <input required type="email" name="email" class="form-control" placeholder="Email Address">
+                                    <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                                 </div>
                                 <div class="col-md-6 mb-3 ps-md-2">                                    
-                                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile">
+                                    <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
                                 </div>
                             </div>
-                                <textarea class="col-12 mb-3" name="message" id="" rows="4" placeholder="Message"></textarea>
+                                <textarea class="col-12 mb-3" name="message" id="" rows="4" placeholder="Message*"></textarea>
                             <button type="submit" class="">SEND</button>
                         </form>
                     </div>

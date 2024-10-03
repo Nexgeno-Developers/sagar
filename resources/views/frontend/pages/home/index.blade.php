@@ -108,7 +108,7 @@
 
 <main class="home-page">
 
-    <section id="slider_banner_section">
+    <!-- <section id="slider_banner_section">
         <div class="container-fluid px-0">
             @if (!empty($banners))
                 <div class="owl-theme owl-carousel home_page_banner_slides" id="home_page_banner_slider">
@@ -122,10 +122,11 @@
                             </div>
                         </div>
                     @endforeach
-
-
                 </div>
             @endif
+
+
+
             <!-- <marquee behavior="scroll" direction="left" class="">
                 Your Dedicated Partners for Supply of Specialty Chemicals
             </marquee> -->
@@ -135,9 +136,36 @@
                         <i class="fa fa-arrow-down animated_arrow_down"></i>
                     </a>
                 </span>
-            </div> -->
+            </div>
         </div>
-    </section>
+    </section> -->
+
+<section class="banner_slider">
+    @if (!empty($banners))
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false"> <!-- 5-second interval -->
+            <div class="carousel-inner">
+                @foreach ($banners as $index => $banner)
+                    <div class="carousel-item @if($index==0) active @endif">
+                        <img src="{{ asset('storage/' . $banner->image) }}" class="d-block w-100 carousel-image" alt="...">
+                        <div class="carousel-caption d-none d-md-block banner_contents">
+                            <h5>{{$banner->text}}</h5>
+                            <a href="{{$banner->url}}" class="banner_view_button" aria-label="banner slider button">{{$banner->button}}</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    @endif
+</section>
+
 
     @if(!empty($products))
         <section class="pt-5 pb-md-2" id="our_products">
@@ -171,6 +199,9 @@
             </div>
         </section>
     @endif
+
+
+   
 
 
     <section class="white_section py-5" id="company_section">
@@ -223,7 +254,7 @@
            @foreach($productCategories as $category)
                 <!-- Add your achievement items here -->
                 <div class="col-md-3 col-6 mb-0 pe-md-0">
-                    <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
+                    <a class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
                     @endif
