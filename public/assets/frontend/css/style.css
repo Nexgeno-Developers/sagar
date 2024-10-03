@@ -477,7 +477,7 @@ li.nav-item {
 
 .banner_view_button {
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     border: 2px solid #00a5f1;
     border-radius: 50px;
@@ -1037,10 +1037,6 @@ img.arrow_right_img {
     50% {
         transform: translateY(-130px);
     }
-}
-
-section.why_sscpl {
-    height: 730px;
 }
 
 .animated_moving_machine {
@@ -1757,9 +1753,43 @@ footer span {
     padding: 1px 6px;
 }
 
+
+.filter_list li {
+    cursor: pointer;
+}
+
+
 @media(max-width:767px) {
     .gtranslate_wrapper select {
         padding: 0px 0px;
         font-size: 14px;
+    }
+}
+
+.banner_contents h5 {
+    font-size: 38px;
+    margin-top: 10%;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.banner_contents {
+    top: 28%;
+}
+
+.banner_slider .carousel-item img {
+    animation: zoomAnimation 7s ease-in-out infinite;
+    /* 5-second zoom effect */
+}
+
+@keyframes zoomAnimation {
+    0% {
+        transform: scale(1);
+        /* Start at normal size */
+    }
+
+    100% {
+        transform: scale(1.2);
+        /* Zoom in by 20% */
     }
 }
