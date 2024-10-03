@@ -137,6 +137,9 @@
             </div>
         </section>
     </main> 
+@endsection
+
+@section("page.scripts")
 <script>
         // Function to set the iframe source based on the clicked span
         function setIframeSource(index) {
@@ -175,45 +178,21 @@
 </script>
 
 <script>
-    $(document).ready(function () {
+    toastr.success('webtest', 'success');
+    $(document).ready(function() {
         initValidate('#add_contact_us_form');
-
-        $('#add_contact_us_form').submit(function (e) {
-            e.preventDefault();
-
+        $("#add_contact_us_form").submit(function(e) {
             var form = $(this);
-            var formData = new FormData(form[0]);
-
-            $.ajax({
-                type: "POST",
-                url: form.attr('action'),
-                data: formData,
-                processData: false,
-                contentType: false,
-                dataType: "json",
-                success: function (response) {
-                    if (response.status) {
-                        toastr.success(response.notification, 'Success');
-
-                        // Clear form fields
-                        form[0].reset();
-                    } else {
-                        // Number the error messages
-                        let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
-                        toastr.error(errorMessages, 'Validation Error');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    toastr.error('An unexpected error occurred. Please try again later.', 'Error');
-                }
-            });
+            ajaxSubmit(e, form, responseHandler);
         });
+
+        var responseHandler = function(response) {
+            $('input, textarea').val('');
+            $("select option:first").prop('selected', true);
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+        }
     });
-
- 
 </script>
-
-
-
-
 @endsection

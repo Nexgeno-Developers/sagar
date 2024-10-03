@@ -66,19 +66,20 @@ function closeConfirmModel() {
 }
 
 //jquery validator
-function initValidate(selector) {
+function initValidate(selector)
+{
     $(selector).validate({
-        errorElement: "div",
+        /*errorElement: 'div',
         errorPlacement: function (error, element) {
-            error.addClass("invalid-feedback");
-            element.closest(".form-group").append(error);
-        },
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+        },            
         highlight: function (element, errorClass, validClass) {
-            $(element).addClass("is-invalid");
+        $(element).addClass('is-invalid');
         },
         unhighlight: function (element, errorClass, validClass) {
-            $(element).removeClass("is-invalid");
-        },
+        $(element).removeClass('is-invalid');
+        }*/       
     });
 }
 
@@ -89,16 +90,16 @@ function initSelect2(selector) {
 
 //Form Submition
 function ajaxSubmit(e, form, callBackFunction) {
-    if (form.valid()) {
+    if(form.valid()) {
         e.preventDefault();
-
+        
         var btn = $(form).find('button[type="submit"]');
         var btn_text = $(btn).html();
-        $(btn).html('<i class="ri-refresh-line"></i>');
-        $(btn).css("opacity", "0.7");
-        $(btn).css("pointer-events", "none");
+        $(btn).html('<i class="fa fa-refresh fa-spin" aria-hidden="true"></i>');
+        $(btn).css('opacity', '0.7');
+        $(btn).css('pointer-events', 'none');
 
-        var action = form.attr("action");
+        var action = form.attr('action');
         var form = e.target;
         var data = new FormData(form);
         $.ajax({
@@ -106,38 +107,32 @@ function ajaxSubmit(e, form, callBackFunction) {
             url: action,
             processData: false,
             contentType: false,
-            dataType: "json",
+            dataType: 'json',
             data: data,
-            success: function (response) {
+            success: function(response)
+            {
                 $(btn).html(btn_text);
-                $(btn).css("opacity", "1");
-                $(btn).css("pointer-events", "inherit");
+                $(btn).css('opacity', '1');
+                $(btn).css('pointer-events', 'inherit');
 
                 if (response.status) {
-                    Command: toastr["success"](
-                        response.notification,
-                        "Success"
-                    );
+                    Command: toastr["success"](response.notification, "Success");
                     callBackFunction(response);
-                } else {
-                    if (typeof response.notification === "object") {
-                        var errors = "";
-                        $.each(response.notification, function (key, msg) {
-                            errors +=
-                                "<div>" + (key + 1) + ". " + msg + "</div>";
+                }else{
+                    if(typeof response.notification === 'object') {
+                        var errors = '';
+                        $.each( response.notification, function( key, msg ) {
+                            errors += '<div>' + (key + 1) + '. ' + msg + '</div>';
                         });
                         Command: toastr["error"](errors, "Alert");
-                    } else {
-                        Command: toastr["error"](
-                            response.notification,
-                            "Alert"
-                        );
+                    }else {
+                        Command: toastr["error"](response.notification, "Alert");
                     }
                 }
-            },
+            }
         });
-    } else {
-        toastr.error("Please make sure to fill all the necessary fields");
+    }else {
+        toastr.error('Please make sure to fill all the necessary fields');
     }
 }
 

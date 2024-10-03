@@ -1,16 +1,18 @@
-<script type="text/javascript" defer src="/assets/frontend/js/jquery.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/owl-carousel.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/bootstrap5.min.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/script.js"></script>
-<!-- <script type="text/javascript" defer src="/assets/frontend/js/init.js"></script> -->
+<script type="text/javascript" src="/assets/frontend/js/jquery.js"></script>
+<script type="text/javascript" src="/assets/frontend/js/owl-carousel.js"></script>
+<script type="text/javascript" src="/assets/frontend/js/bootstrap5.min.js"></script>
+<script type="text/javascript" src="/assets/frontend/js/script.js"></script>
+
 <!--moment js-->
-<!-- <script defer defer src="/assets/frontend/js/moment.min.js"></script> -->
+<script src="/assets/frontend/js/moment.min.js"></script>
 
 <!--jQuery Validate-->
-<!-- <script defer src="/assets/frontend/js/jquery.validate.min.js"></script> -->
+<script type="text/javascript" src="/assets/frontend/js/jquery.validate.min.js"></script>
 
 <!--Toast Js-->
-<!-- <script defer defer src="/assets/frontend/js/toastr.min.js"></script> -->
+<script type="text/javascript" src="/assets/frontend/js/toastr.min.js"></script>
+
+<script type="text/javascript" src="/assets/frontend/js/init.js"></script>
 
 <!-- <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
