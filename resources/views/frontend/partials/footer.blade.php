@@ -18,12 +18,14 @@
                 <!-- Locations Section -->
                 <div class="col-lg-4 col-md-6 footer_location_div">
                     <h5 class="pb-lg-4 pb-3 footer_location_heading">Locations</h5>
+                    <h5>{{$contacts[0]->name}}</h5>
                     <p class="d-flex align-items-start gap-2 footer_location_1 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_india.png" alt="indian flag">
                         <span class="text-light location_text"> 
                             {{$contacts[0]->address}}
                         </span> 
                     </p>
+                    <h5> {{$contacts[1]->name}}</h5>
                     <p class="d-flex align-items-start gap-2 footer_location_2 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_brazil.png" alt="brazilian flag">
                         <span class="text-light location_text"> 
