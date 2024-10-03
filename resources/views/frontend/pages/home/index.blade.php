@@ -213,14 +213,14 @@
                     <h2 class="product_heading text-center pb-lg-4 pb-md-3 float-start"><span class="our">INDUSTRY</span> WE CATER</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
-                    <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end float-start" aria-label="services we give">
+                    <a href="/industries" class="btn a_btn blue_btn float-md-end float-start" aria-label="services we give">
                         View All
                     </a>
                 </div>
             </div>
             <div class="row industry_contents_main_div">
            
-           @foreach($productCategories->take(8) as $category)
+           @foreach($productCategories as $category)
                 <!-- Add your achievement items here -->
                 <div class="col-md-3 col-6 mb-0 pe-md-0">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-block industry_content_div position-relative">
