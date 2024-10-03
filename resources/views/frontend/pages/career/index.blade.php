@@ -73,42 +73,21 @@
 @section('page.scripts')
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         initValidate('#add_career_form');
-        
-        $('#add_career_form').submit(function (e) {
-            e.preventDefault();
-
+        $("#add_career_form").submit(function(e) {
             var form = $(this);
-            var formData = new FormData(form[0]);
-
-            $.ajax({
-                type: "POST",
-                url: form.attr('action'),
-                data: formData,
-                processData: false,
-                contentType: false,
-                dataType: "json",
-                success: function (response) {
-                    if (response.status) {
-                        toastr.success(response.notification, 'Success');
-
-                        // Clear form fields
-                        form[0].reset();
-                    } else {
-                        // toastr.error(response.notification.join('<br>'), 'Validation Error');
-                        // Number the error messages
-                        let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
-                        toastr.error(errorMessages, 'Validation Error');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    toastr.error('An unexpected error occurred. Please try again later.', 'Error');
-                }
-            });
+            ajaxSubmit(e, form, responseHandler);
         });
+
+        var responseHandler = function(response) {
+            $('input, textarea').val('');
+            $("select option:first").prop('selected', true);
+            setTimeout(function() {
+                location.reload();
+            }, 5000);
+        }
     });
 </script>
-
 
 @endsection

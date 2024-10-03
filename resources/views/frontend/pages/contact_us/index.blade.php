@@ -178,7 +178,6 @@
 </script>
 
 <script>
-    toastr.success('webtest', 'success');
     $(document).ready(function() {
         initValidate('#add_contact_us_form');
         $("#add_contact_us_form").submit(function(e) {
@@ -191,7 +190,7 @@
             $("select option:first").prop('selected', true);
             setTimeout(function() {
                 location.reload();
-            }, 2000);
+            }, 5000);
         }
     });
 </script>

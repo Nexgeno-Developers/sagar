@@ -79,8 +79,8 @@ class IndexController extends Controller
 
         // Prepare data for sending the email
         $data = [
-            'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
-            'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
+            'sender' => ['name' => 'Saagar SCPL', 'email' => 'khanfaisal.makent@gmail.com'],
+            'to' => [['email' => 'khanfaisal.makent@gmail.com', 'name' => 'Saagar SCPL']],
             'subject' => 'New Contact Form Submission',
             'htmlContent' => "
                 <h2>Contact Form Submission</h2>
@@ -96,7 +96,7 @@ class IndexController extends Controller
         ];
 
         // Send the email using Brevo API
-        $apiKey = env('MAIL_API');
+        $apiKey = env('BREVO_API_KEY');
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
@@ -190,7 +190,8 @@ class IndexController extends Controller
     
     public function partner_with_us(){
         $page = DB::table('pages')->where('type','partner_with_us')->first();
-        return view('frontend.pages.partner.index',compact('page'));
+        $products_list = DB::table('products')->where('is_active','1')->select('title')->get();
+        return view('frontend.pages.partner.index',compact('page','products_list'));
     }
     public function what_we_do(){
         return view('frontend.pages.what_we_do.index');

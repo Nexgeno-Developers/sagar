@@ -49,12 +49,10 @@
                             <input required type="text" name="full_name" class="form-control" placeholder="Full Name">
                             <div class="custom-dropdown">
                                 <select required name="product" class="form-control custom-select">
-                                    <option value="">Select Product*</option>
-                                    <option value="vinyl">Vinyl</option>
-                                    <option value="ethelene">Ethelene</option>
-                                    <option value="methyl">Methyl</option>
-                                    <option value="acetone">Acetone</option>
                                     <!-- Add your options here -->
+                                    @foreach ($products_list as $row)
+                                        <option value="{{ $row->title }}">{{ $row->title }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <!-- <input required type="tel" name="mobile" class="form-control" placeholder="Mobile"> -->
@@ -111,43 +109,24 @@
     @endsection
     @section('page.scripts')
 
-    <script>
-        $(document).ready(function () {
-            initValidate('#add_partner_us_form');
-            
-            $('#add_partner_us_form').submit(function (e) {
-                e.preventDefault();
-
-                var form = $(this);
-                var formData = new FormData(form[0]);
-
-                $.ajax({
-                    type: "POST",
-                    url: form.attr('action'),
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    dataType: "json",
-                    success: function (response) {
-                        if (response.status) {
-                            toastr.success(response.notification, 'Success');
-
-                            // Clear form fields
-                            form[0].reset();
-                        } else {
-                                // Number the error messages
-                                let errorMessages = response.notification.map((message, index) => (index + 1) + '. ' + message).join('<br>');
-                                toastr.error(errorMessages, 'Validation Error');
-                        
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        toastr.error('An unexpected error occurred. Please try again later.', 'Error');
-                    }
+        <script>
+            $(document).ready(function() {
+                initSelect2('.select2');
+                initValidate('#add_partner_us_form');
+                $("#add_partner_us_form").submit(function(e) {
+                    var form = $(this);
+                    ajaxSubmit(e, form, responseHandler);
                 });
+        
+                var responseHandler = function(response) {
+                    $('input, textarea').val('');
+                    $("select option:first").prop('selected', true);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 5000);
+                }
             });
-        });
-    </script>
+        </script>
 
 
     @endsection

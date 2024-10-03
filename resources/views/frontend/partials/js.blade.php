@@ -9,6 +9,9 @@
 <!--jQuery Validate-->
 <script type="text/javascript" src="/assets/frontend/js/jquery.validate.min.js"></script>
 
+<!--select2-->
+<script type="text/javascript" src="/assets/frontend/js/select2.full.min.js"></script>
+
 <!--Toast Js-->
 <script type="text/javascript" src="/assets/frontend/js/toastr.min.js"></script>
 
