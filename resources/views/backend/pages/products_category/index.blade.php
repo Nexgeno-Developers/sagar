@@ -23,6 +23,7 @@
                 <th>#</th>
                 <th>Title</th>
                 <th>Slug</th>
+                <th>Type</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -34,6 +35,7 @@
                 <td>{{$i++}}</td>
                 <td>{{$row->title}}</td>
                 <td>{{$row->slug}}</td>
+                <td>{{ ( $row->is_industry == 1) ? 'Industry' : 'Products' }}</td>
                 <td>
                     @if($row->is_active == 1)
                     <span class="badge bg-success" title="Inactive">Active</span>

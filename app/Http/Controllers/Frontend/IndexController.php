@@ -140,6 +140,7 @@ class IndexController extends Controller
         // Fetch the ProductCategory that are active and match the IDs, order by ID descending, and limit to 9
         $productCategories = ProductCategory::where('is_active', 1)
             ->whereIn('id', $productCategoryIds)
+            ->where('is_industry',1)
             ->orderBy('id', 'asc')
             ->limit(9)
             ->get();

@@ -17,7 +17,15 @@
             <input type="file" name="image" class="form-control">
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-3 mb-3">
+            <label>Categorys For<span class="red">*</span></label>
+            <select required name="is_industry" class="form-control" required>
+                <option value="1">Industry</option>
+                <option value="0" selected>Products</option>
+            </select>
+        </div>
+
+        <div class="form-group col-3 mb-3">
             <label>Status<span class="red">*</span></label>
             <select required name="is_active" class="form-control">
                 <option value="1">Active</option>
