@@ -1737,3 +1737,29 @@ footer span {
     font-size: 20px;
     margin-bottom: 7px;
 }
+
+.gt_switcher.notranslate {
+    display: none;
+}
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.gtranslate_wrapper select option {
+    cursor: pointer;
+}
+
+.gtranslate_wrapper select {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 1px 6px;
+}
+
+@media(max-width:767px) {
+    .gtranslate_wrapper select {
+        padding: 0px 0px;
+        font-size: 14px;
+    }
+}

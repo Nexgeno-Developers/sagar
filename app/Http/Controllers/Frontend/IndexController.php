@@ -258,19 +258,14 @@ public function products_s(Request $request)
 
 public function industrie_s(Request $request)
 {
-    // Fetch all active products
-    $products = DB::table('products')
-        ->where('is_active', 1)
-        ->get();
+    // Fetch all active categories
+    $product_categories = DB::table('product_categories')->get();
 
-    if ($products->isEmpty()) {
-        abort(404, 'No products found');
-    }
 
     // Fetch a page detail (assuming you want this too)
     $page = DB::table('pages')->where('is_active', 1)->first();
 
-    return view('frontend.pages.industries.index', compact('products', 'page'));
+    return view('frontend.pages.industries.index', compact('page', 'product_categories'));
 }
 
 
