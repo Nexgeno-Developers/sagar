@@ -9,11 +9,11 @@
          <div class="col-sm-5">
             <!--<h3>List</h3>-->
          </div>
-         <div class="col-sm-7">
+         {{-- <div class="col-sm-7">
             <div class="text-sm-end">
                 <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="largeModal('{{ url(route('custom-pages.create')) }}', 'Add')"><i class="mdi mdi-plus-circle me-2"></i> Add Page</a>
             </div>
-         </div>
+         </div> --}}
          <!-- end col-->
       </div>
 
@@ -58,9 +58,9 @@
 					@else
 					<a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>env('DEFAULT_LANGUAGE'), 'page'=>$page->id] )) }}', 'Edit')"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
 					@endif
-					@if($page->type == 'custom_page')
+					{{-- @if($page->type == 'custom_page')
 					<a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('custom-pages.destroy', $page->id)) }}', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>
-          			@endif
+          			@endif --}}
         		</td>
         	</tr>
         	@endforeach

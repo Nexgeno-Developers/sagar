@@ -100,7 +100,7 @@
                         <li class="side-nav-item">
                             <a href="{{ route('frontend_settings.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-discuss-line"></i>                                
-                                <span> FrontEnd Settings </span>
+                                <span> Frontend Settings </span>
                             </a>
                         </li>
 
