@@ -147,7 +147,7 @@
                 @foreach ($banners as $index => $banner)
                     <div class="carousel-item @if($index==0) active @endif">
                         <img src="{{ asset('storage/' . $banner->image) }}" class="d-block w-100 carousel-image" alt="...">
-                        <div class="carousel-caption d-none d-md-block banner_contents">
+                        <div class="carousel-caption banner_contents">
                             <h5>{{$banner->text}}</h5>
                             <a href="{{$banner->url}}" class="banner_view_button" aria-label="banner slider button">{{$banner->button}}</a>
                         </div>

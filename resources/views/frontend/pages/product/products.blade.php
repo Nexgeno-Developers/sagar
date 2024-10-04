@@ -52,7 +52,7 @@
                 @else
                     <div class="row">
                         @foreach($products as $product)
-                            <div class="col-md-4 product_filter_gallery_div">
+                            <div class="col-md-4 col-6 product_filter_gallery_div">
                                 <a href="{{ route('product.detail', $product->slug) }}" class="d-block text-decoration-none">
                                     <div class="card">
                                         <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
@@ -62,12 +62,14 @@
                                             <i class="btn btn-primary fa fa-arrow-right"></i>
                                         </div>
                                     </div>
+
+                                    
                                 </a>
                             </div>
                         @endforeach
                     </div>
                     <!-- Pagination Links -->
-                    <div class="col-12 text-center pt-md-4">
+                    <div class="col-12 text-center pt-md-5 mt-md-0 mt-4">
                         {{ $products->appends(['category_id' => $categoryId])->links('pagination::bootstrap-5') }}
                     </div>
                 @endif

@@ -23,19 +23,18 @@
     <div class="container">
         <div class="row justify-content-center">
             @foreach($productCategories as $category)
-                <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
+                <div class="col-lg-3 col-md-4 col-6 our_product_cards_div category_listing">
                     <a href="{{ route('products_s', ['category_id' => $category->id]) }}" class="d-flex align-items-center justify-content-md-between text-decoration-none w-100">
                         <div class="card">
-                            {{--
+                            <!-- {{--
                             @if (!empty($category->image))
                                 <img src="{{ asset('storage/' . $category->image) }}" alt="" class="product_card_image card-img-top">
                             @endif
-                            --}}
-                            
-                            <div class="card-body d-flex">
-                                <p class="card-text d-block">{{ $category->title }}</p>
-                                <i class="btn btn-primary fa fa-arrow-right"></i>
-                            </div>
+                            --}} -->
+                            <span class="product_img_heading">{{ $category->title }}</span>
+                                    <div class="card-body d-flex">
+                                        <i class="btn btn-primary fa fa-arrow-right"></i>
+                                    </div>
                         </div>
                     </a>
                 </div>

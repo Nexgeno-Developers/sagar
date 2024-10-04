@@ -23,7 +23,7 @@
             </div>
         </section>
 
-        <section class="white_section product_info py-lg-5 pt-md-5 py-3">
+        <section class="white_section product_info pt-lg-5 pb-4 pt-md-5 py-3">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-12 text-center product_img_div">
@@ -97,7 +97,7 @@
                         <!-- Add more product information here -->
                     </div>
                 </div>
-                <div class="col-md-12 pt-md-5 delievery_types">
+                <div class="col-md-12 pt-md-5 delievery_types pt-md-0 pt-3 ">
                     <h4 class="product_heading text-start pb-md-1"><span class="our">Modes </span>of Delivery:</h4>
                     <p>
                         We supply material by road, sea and air depending upon the nature of chemical and shipping requirement.
@@ -107,21 +107,21 @@
             </div>
         </section>
         
-        <section class="white_section product_info product-section pb-md-5 product_filter_gallery">
+        <section class="white_section product_info product-section pb-md-5 product_filter_gallery pb-md-0 pb-4 ">
             <div class="container">
                 <div class="row">
                     <h2 class="product_heading text-start pb-md-1"><span class="our">Related </span>Products</h2>
                     @foreach($related_products as $related_product)
-                        <div class="col-md-3 product_filter_gallery_div">
-                            <div class="card">
-                                <img src="{{ asset('storage/' . $related_product->image) }}" alt="{{ $related_product->title }}" class="product_card_image card-img-top">
-                                <div class="card-body d-flex">
-                                    <a href="{{ route('product.detail', $related_product->slug) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                                        <p class="card-text">{{ $related_product->title }}</p>
-                                        <i class="btn btn-primary fa fa-arrow-right"></i>
-                                    </a>
+                        <div class="col-md-3 col-6 product_filter_gallery_div">
+
+                        <div class="card text-center">
+                                   <span class="product_img_heading">{{ $related_product->title }}</span>
+                                    <div class="card-body d-flex text-center">
+                                         <a href="{{ route('product.detail', $related_product->slug) }}" class="text-decoration-none w-100"><i class="btn btn-primary fa fa-arrow-right"></i>
+</a>
+                                        </div>
                                 </div>
-                            </div>
+
                         </div>
                     @endforeach
                 </div>

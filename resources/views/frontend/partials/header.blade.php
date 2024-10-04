@@ -92,13 +92,11 @@ $allpages = DB::table('pages')
                                         <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="about-us" class="sub_menu"> About us</a>
+                                                <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
                                             </li>
+                                           
                                             <li>
-                                                <a href="" class="sub_menu"> Compliances</a>
-                                            </li>
-                                            <li>
-                                                <a href="what-we-do" class="sub_menu"> What We Do</a>
+                                                <a href="/what-we-do" class="sub_menu"> What We Do</a>
                                             </li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
@@ -195,13 +193,11 @@ $allpages = DB::table('pages')
                                             <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
                                             <ul class="submenu">
                                                 <li>
-                                                    <a href="" class="sub_menu"> About us</a>
+                                                    <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
                                                 </li>
+                                              
                                                 <li>
-                                                    <a href="" class="sub_menu"> Compliances</a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="sub_menu"> What We Do</a>
+                                                    <a href="/what-we-do" class="sub_menu"> What We Do</a>
                                                 </li>
                                             </ul>
                                             <i class="fa fa-angle-down"></i>

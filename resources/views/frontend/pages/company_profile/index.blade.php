@@ -182,8 +182,8 @@
         </div> 
     </section>
 
-    <section class="white_section why_sscpl py-lg-5 py-3 pb-md-5 pb-3">
-        <div class="container mb-md-5">
+    <section class="white_section why_sscpl p-lg-5 py-3 pb-md-5 pb-3">
+        <div class="container">
             <div class="row justify-content-between position-relative">
                 <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
