@@ -194,6 +194,7 @@ li.nav-item.dropdown {
     background: transparent;
     z-index: 100;
     transition: all 0.5s;
+    border-radius: 6px;
 }
 
 

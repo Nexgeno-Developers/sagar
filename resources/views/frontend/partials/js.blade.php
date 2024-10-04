@@ -15,7 +15,7 @@
 <!--Toast Js-->
 <script type="text/javascript" src="/assets/frontend/js/toastr.min.js"></script>
 
-<script type="text/javascript" src="/assets/frontend/js/init.js"></script>
+<script type="text/javascript" src="/assets/frontend/js/Init.js"></script>
 
 <!-- <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
