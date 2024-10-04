@@ -838,6 +838,26 @@ span.product_img_heading {
 .industry_content_div {
     margin: 7px 0;
     padding-right: 0;
+    position: relative;
+}
+
+.industry_content_div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0505054d;
+    /* Initial background color */
+    opacity: 1;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 1;
+    width: 100%;
+}
+
+.industry_content_div:hover::before {
+    background-color: #0060ff40;
+    /* Background color on hover */
 }
 
 .modal-body,

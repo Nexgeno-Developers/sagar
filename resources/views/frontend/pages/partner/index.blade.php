@@ -58,7 +58,7 @@
                                 </select>
                             </div>
                             <!-- <input required type="tel" name="mobile" class="form-control" placeholder="Mobile"> -->
-                           <div class="form-group"> <input type="number" class="form-control" required placeholder="Quantity"></div>
+                           <div class="form-group"> <input type="number" class="form-control" required placeholder="Quantity" min="0"></div>
                             <div class="form-group"><input required type="email" name="email" class="form-control" placeholder="Email Address"></div>
                             <!-- <input type="text" class="form-control" placeholder="Type Code">
                             
