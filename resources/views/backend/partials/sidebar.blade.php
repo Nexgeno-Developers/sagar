@@ -54,15 +54,6 @@
                             </a>
                         </li>
 
-                        <li class="side-nav-item">
-                            <a href="{{ route('contact.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                                <i class="ri-bar-chart-2-line"></i> 
-                                <span> Leads </span>
-                            </a>
-                        </li>
-
-
-
                         {{--
                         <li class="side-nav-item">
                             <a href="{{ route('mediacoverage.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -109,7 +100,7 @@
                         <li class="side-nav-item">
                             <a href="{{ route('frontend_settings.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-discuss-line"></i>                                
-                                <span> Front End Setting </span>
+                                <span> FrontEnd Settings </span>
                             </a>
                         </li>
 
@@ -141,7 +132,7 @@
                         <li class="side-nav-item">
                             <a href="{{ route('website.pages') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-discuss-line"></i>                                
-                                <span> Pages Listing </span>
+                                <span> Pages </span>
                             </a>
                         </li>
                         <li class="side-nav-item">
@@ -160,6 +151,13 @@
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('contact.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-bar-chart-2-line"></i> 
+                                <span> Leads </span>
+                            </a>
                         </li>
                         
 
