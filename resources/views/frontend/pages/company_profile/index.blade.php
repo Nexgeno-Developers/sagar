@@ -88,11 +88,11 @@
                         <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid rounded">
                     @endif
                     <div class="about_info_box info-box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
-                        <h4>100k+</h4>
-                        <p>Lorem Ipsum</p>
-                        <hr>
-                        <h4>12M</h4>
-                        <p>Lorem Ipsum Lans</p>
+                       <h4>700+ </h4>
+                                <p>Customers</p>
+                                <hr>
+                                <h4>100+</h4>
+                                <p>Products</p>
                     </div>
                 </div>
             </div>
