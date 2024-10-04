@@ -50,6 +50,7 @@
                             <div class="custom-dropdown">
                                 <select required name="product" class="form-control custom-select">
                                     <!-- Add your options here -->
+                                     <option value="Select Product">---Select Product---</option>
                                     @foreach ($products_list as $row)
                                         <option value="{{ $row->title }}">{{ $row->title }}</option>
                                     @endforeach

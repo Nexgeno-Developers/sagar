@@ -33,7 +33,7 @@
                     <div class="d-flex justify-content-between">
                         <ul class="list-group filter_list">
                             <li onclick="viewAllCategories()" class="cursor-pointer list-group-item @if($categoryId == '') active @endif">
-                                View All Categories
+                                All Categories
                             </li>
                             @foreach($productCategories as $category)
                                 <li onclick="submitCategoryForm({{ $category->id }})"

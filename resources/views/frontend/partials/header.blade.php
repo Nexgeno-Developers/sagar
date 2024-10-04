@@ -22,10 +22,10 @@ $allpages = DB::table('pages')
 
 
 <div class="gtranslate_wrapper">
-    <select onchange="doGTranslate(this);">
-        <option value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English</option>
-        <option value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese</option>
-        <option value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish</option>
+    <select translate="no" onchange="doGTranslate(this);">
+        <option translate="no" value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English</option>
+        <option translate="no" value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese</option>
+        <option translate="no" value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish</option>
     </select>
 </div>
 
