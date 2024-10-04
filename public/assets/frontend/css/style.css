@@ -1793,6 +1793,8 @@ footer span {
     border-radius: 5px;
     border: 1px solid #999;
     padding: 1px 6px;
+    font-size: 14px;
+    color: #666;
 }
 
 
