@@ -27,7 +27,7 @@ class IndexController extends Controller
             $validated = Validator::make($request->all(), [
                 'company_name' => 'required|string|max:255',
                 'full_name' => 'required|string|max:255',
-                'mobile' => 'required|string|max:20',
+
                 'email' => 'required|email|max:255',
                 'product' => 'required|string|max:255',
                 'message' => 'nullable|string|max:500',
@@ -49,7 +49,7 @@ class IndexController extends Controller
                 'mobile' => 'required|string|max:20',
                 'email' => 'required|email|max:255',
                 'apply_for' => 'required|string|max:255',
-                'type_code' => 'required|string|max:255',
+                // 'type_code' => 'required|string|max:255',
                 'message' => 'nullable|string|max:500',
             ]);
         }
