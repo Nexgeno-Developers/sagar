@@ -1895,3 +1895,38 @@ ul.submenu li a {
     }
 
 }
+
+/* General Styling for the Banner Section */
+.banner_slider {
+    position: relative;
+}
+
+
+.banner_contents {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    /* Initially hide the text */
+    animation: fadeInText 1.5s forwards;
+    /* Animate text */
+    animation-delay: 0.5s;
+    /* Delay text animation slightly after image slides */
+}
+
+/* Keyframes for the text fade-in */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        /* Move text slightly down */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Move text back to its original position */
+    }
+}

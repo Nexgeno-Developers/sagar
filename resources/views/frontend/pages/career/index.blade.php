@@ -37,25 +37,25 @@
 
                         <input type="hidden" name="form_type" value="career">
 
-                        <div class="col-md-12 mb-lg-4 mb-3">                                
+                        <div class="col-md-12 mb-lg-4 mb-3 form-group">                                
                             <input required type="text" name="full_name" class="form-control" placeholder="Full Name*">
                         </div>
                         <div class="row col-md-12 mb-lg-2 mb-md-0 mb-0 ms-md-0">
-                            <div class="col-md-6 mb-md-3 mb-3 px-md-0 pe-md-3">                                    
+                            <div class="col-md-6 mb-md-3 mb-3 px-md-0 pe-md-3 form-group" >                                    
                                 <input required type="email" name="email" class="form-control" placeholder="Email Address*">
                             </div>
-                            <div class="col-md-6 mb-3 mb-md-3 mb-0 ps-md-3 pe-md-0">                                    
+                            <div class="col-md-6 mb-3 mb-md-3 mb-0 ps-md-3 pe-md-0 form-group">                                    
                                 <input required type="tel" name="mobile" class="form-control" placeholder="Mobile*">
                             </div>
                         </div>
-                        <div class="col-12 mb-lg-4 mb-3">                                    
+                        <div class="col-12 mb-lg-4 mb-3 form-group">                                    
                             <input required type="text" class="form-control" name="apply_for" placeholder="Apply For*">
                         </div> 
                         <textarea class="col-12 mb-lg-3 mb-2" name="message" placeholder="Message"></textarea>
                         
-                        <div class="col mb-lg-4 mb-3">                                    
+                        <!-- <div class="col mb-lg-4 mb-3 form-group">                                    
                             <input required type="text" class="form-control" name="type_code" placeholder="Type Code*">
-                        </div>                                
+                        </div>                                 -->
                         <button type="submit" class="">SUBMIT</button>
                     </form>
                 </div>

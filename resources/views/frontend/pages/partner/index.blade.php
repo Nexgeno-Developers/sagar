@@ -43,12 +43,13 @@
                         <form id="add_partner_us_form" action="{{ route('form.save') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="form_type" value="partner_us">
+                            <div class="form-group"><input type="hidden" name="form_type" value="partner_us"></div>
+                            
 
-                            <input required type="text" name="company_name" class="form-control" placeholder="Company Name">
-                            <input required type="text" name="full_name" class="form-control" placeholder="Full Name">
+                            <div class="form-group"><input required type="text" name="company_name" class="form-control" placeholder="Company Name"></div>
+                            <div class="form-group"><input required type="text" name="full_name" class="form-control" placeholder="Full Name"></div>
                             <div class="custom-dropdown">
-                                <select required name="product" class="form-control custom-select">
+                                <select required name="product" class="form-control custom-select form-group">
                                     <!-- Add your options here -->
                                      <option value="Select Product">---Select Product---</option>
                                     @foreach ($products_list as $row)
@@ -57,8 +58,8 @@
                                 </select>
                             </div>
                             <!-- <input required type="tel" name="mobile" class="form-control" placeholder="Mobile"> -->
-                            <input type="number" class="form-control" placeholder="Quantity">
-                            <input required type="email" name="email" class="form-control" placeholder="Email Address">
+                           <div class="form-group"> <input type="number" class="form-control" required placeholder="Quantity"></div>
+                            <div class="form-group"><input required type="email" name="email" class="form-control" placeholder="Email Address"></div>
                             <!-- <input type="text" class="form-control" placeholder="Type Code">
                             
                             <div>
