@@ -22,6 +22,16 @@
     <!-- Icons css -->
     <link href="/assets/backend/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+
+    <style>
+        .auth-fluid .auth-fluid-left, .auth-fluid .auth-fluid-right {
+    /* background-image: url(https://img.freepik.com/free-photo/still-life-laboratory-samples_23-2151108788.jpg?t=st=1728129068~exp=1728132668~hmac=2577b3e…&w=740) !important; */
+    background-image: url(/assets/backend/images/login_image_1.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1000px 1000px 1000px 1000px #0000004f inset;
+}
+    </style>
 </head>
 <body class="authentication-bg pb-0">
 
