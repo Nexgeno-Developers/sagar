@@ -23,7 +23,10 @@
     @if($contact->type_code)
     <p><strong>Type Code:</strong> {{$contact->type_code}}</p>
     @endif
+    @if($contact->quantity)
+    <p><strong>Quantity:</strong> {{$contact->quantity}}</p>
+    @endif
     @if($contact->message)
     <p><strong>Message:</strong> {{$contact->message}}</p>
-    @endif    
+    @endif  
 </div>

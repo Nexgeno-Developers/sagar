@@ -27,7 +27,7 @@ class IndexController extends Controller
             $validated = Validator::make($request->all(), [
                 'company_name' => 'required|string|max:255',
                 'full_name' => 'required|string|max:255',
-
+                'quantity' => 'required',
                 'email' => 'required|email|max:255',
                 'product' => 'required|string|max:255',
                 'message' => 'nullable|string|max:500',
@@ -72,6 +72,7 @@ class IndexController extends Controller
             'apply_for' => $request->input('apply_for', null),
             'type_code' => $request->input('type_code', null),
             'message' => $request->input('message', null),
+            'quantity' => $request->input('quantity', null),
             'created_at' => now(),
             'updated_at' => now(),
         ]);

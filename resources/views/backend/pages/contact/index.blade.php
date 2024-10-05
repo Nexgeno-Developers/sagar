@@ -21,6 +21,7 @@
         <thead>
             <tr>
                 <th>#</th>
+                <th>Page</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone No</th>
@@ -29,7 +30,7 @@
                 <th>Other Info</th>
                 <th>Qualification</th>
                 <th>CV</th>--}}
-                <th>Page</th>
+
                 <th>Message</th>
                 <th>Date</th>
                 <th>Action</th>
@@ -40,45 +41,15 @@
             @foreach($contact as $row)
             <tr>
                 <td>{{$i++}}</td>
+                <td>{{$row->page}}</td>
                 <td>{{$row->full_name}}</td>
                 <td>{{$row->email}}</td>
                 <td>{{$row->mobile}}</td>
-                {{--<td>{{$row->services}}</td>
-                <td>{{$row->description}}</td>
-                <td>{{$row->other_info}}</td>
-                <td>{{$row->qualification}}</td>
-                <td>
-                    @if($row->cv)
-                    <a target="_blank" href="{{ asset('storage/' . $row->cv) }}">
-                        View
-                    </a>
-                    @endif
-                </td>--}}
-                <td>{{$row->page}}</td>
                 <td>{{$row->message}}</td>
-                {{--
-                <td>
-                    @if($row->status)
-                    <span class="badge bg-success">Active</span>
-                    @else
-                    <span class="badge bg-danger">Inctive</span>
-                    @endif
-                </td> 
-                --}}
                 <td>{{datetimeFormatter($row->created_at)}}</td>
                 <td>
-                    {{--
-                    <a href="{{ url(route('contact.status', ['id' => $row->id, 'status' => ($row->status == '1') ? '0' : '1'])) }}" class="action-icon">
-                        @if ($row->status == '1')
-                            <i class="ri-eye-off-fill"></i>
-                        @else
-                            <i class="ri-eye-fill"></i>
-                        @endif
-                    </a>
-                    --}}
-                    <a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('contact.view',['id' => $row->id])) }}', 'View')"> <i class="mdi mdi-account-eye"></i></a>
 
-                    {{--<a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('contact.edit',['id' => $row->id])) }}', 'Edit contact')"> <i class="mdi mdi-square-edit-outline"></i></a>--}}
+                    <a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('contact.view',['id' => $row->id])) }}', 'View')"> <i class="mdi mdi-account-eye"></i></a>
 
                     <a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('contact.delete', $row->id)) }}', responseHandler)"><i class="mdi mdi-delete"></i></a>
                 </td>
