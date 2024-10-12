@@ -293,6 +293,7 @@ input:focus-visible {
 .navbar-nav {
     gap: 16px;
     margin-bottom: 0;
+    align-items: center;
 }
 
 .navbar-nav .nav-link {

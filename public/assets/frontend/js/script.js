@@ -6,6 +6,46 @@ function toggleSearchBar2() {
     document.querySelector(".search-bar-for-tab").classList.toggle("d-none");
 }
 
+// for search bar icon
+
+function toggleSearchBar() {
+    const searchBar = document.getElementById('searchBar');
+    const searchIcon = document.getElementById('toggleSearchIcon').querySelector('i');
+
+    if (searchBar.classList.contains('d-none')) {
+        // Show the search bar
+        searchBar.classList.remove('d-none');
+        // Change search icon to close icon
+        searchIcon.classList.remove('fa-search');
+        searchIcon.classList.add('fa-times');
+    } else {
+        // Hide the search bar
+        searchBar.classList.add('d-none');
+        // Change close icon back to search icon
+        searchIcon.classList.remove('fa-times');
+        searchIcon.classList.add('fa-search');
+    }
+}
+
+function toggleSearchBar2() {
+    const searchBar2 = document.getElementById('searchBarMobile');
+    const searchIcon2 = document.getElementById('toggleSearchIconMobile').querySelector('i');
+
+    if (searchBar2.classList.contains('d-none')) {
+        // Show the search bar
+        searchBar2.classList.remove('d-none');
+        // Change search icon to close icon
+        searchIcon2.classList.remove('fa-search');
+        searchIcon2.classList.add('fa-times');
+    } else {
+        // Hide the search bar
+        searchBar2.classList.add('d-none');
+        // Change close icon back to search icon
+        searchIcon2.classList.remove('fa-times');
+        searchIcon2.classList.add('fa-search');
+    }
+}
+
 // Clear search field after the page loads
 window.addEventListener("DOMContentLoaded", function () {
     let searchInput = document.getElementById("searchInput");
