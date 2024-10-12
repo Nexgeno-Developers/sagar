@@ -182,7 +182,7 @@
         </div> 
     </section>
 
-    <section class="white_section why_sscpl p-lg-5 py-3 pb-md-5 pb-3">
+    <section class="white_section why_sscpl p-lg-5 py-3 pb-md-1 pb-3">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">

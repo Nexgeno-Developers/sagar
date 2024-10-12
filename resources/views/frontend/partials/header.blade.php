@@ -89,7 +89,7 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>       
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
+                                        <a class="nav-link me-1">Company Profile</a>
                                         <ul class="submenu">
                                             <li>
                                                 <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
@@ -116,16 +116,16 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative" id="searchForm">
+                                    <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                             <div class="search-icon-wrapper">
-                                                <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn">
+                                                <button type="button" class="btn search-icon" onclick="toggleSearchBar()" aria-label="search btn 3" id="toggleSearchIcon">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </div>
-                                            <div class="search-bar d-none">
-                                                <input type="text" class="product-search" name="search" id="searchInput" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
+                                            <div class="search-bar d-none" id="searchBar">
+                                                <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                                 <input type="hidden" name="category_id" id="category_id" value="">
-                                                <button type="submit" class="btn search_btn search_btn_2" aria-label="search btn 2">
+                                                <button type="submit" class="btn search_btn search_btn_2" aria-label="search">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </div>
@@ -160,11 +160,11 @@ $allpages = DB::table('pages')
                             </div> 
                             <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                 <div class="search-icon-wrapper">
-                                    <button type="button" class="btn search-icon" onclick="toggleSearchBar2()" aria-label="search btn 3">
+                                    <button type="button" class="btn search-icon" onclick="toggleSearchBar2()" aria-label="search btn 3" id="toggleSearchIconMobile">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
-                                <div class="search-bar-for-tab d-none">
+                                <div class="search-bar d-none" id="searchBarMobile">
                                     <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
                                     <input type="hidden" name="category_id" id="category_id" value="">
                                     <button type="submit" class="btn search_btn search_btn_2" aria-label="search">
@@ -190,7 +190,7 @@ $allpages = DB::table('pages')
                                             <a class="nav-link" href="{{route('products_category')}}">Products</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link me-1" href="{{route('about_us')}}">Company Profile</a>
+                                            <a class="nav-link me-1">Company Profile</a>
                                             <ul class="submenu">
                                                 <li>
                                                     <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
@@ -208,9 +208,9 @@ $allpages = DB::table('pages')
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('career')}}">Career</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="">Client</a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                         </li>

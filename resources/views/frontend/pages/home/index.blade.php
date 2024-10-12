@@ -253,7 +253,7 @@
            
            @foreach($productCategories as $category)
                 <!-- Add your achievement items here -->
-                <div class="col-md-3 col-6 mb-0 pe-md-0">
+                <div class="col-lg-3 col-md-4 col-6 mb-0 pe-md-0">
                     <a class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
@@ -319,7 +319,7 @@
         </div>
     </section>
  
-    <section class="white_section why_sscpl py-lg-5 py-4">
+    <section class="white_section why_sscpl py-lg-5 pt-5">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">
@@ -411,7 +411,7 @@
     @endif --}}
 
 
-    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-4 py-4">
+    <section class="white_section supply_chain_partner text-light bg-light pb-md-5 py-md-5 py-4">
         <div class="container">
             <div class="row d-flex justify-content-center position-relative">
                 <div class="col-12">
@@ -462,7 +462,7 @@
         </div>
     </section>
 
-    <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-5 text-center">
+    <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-1 text-center">
         <div class="container">
             <h2 class="col-12 product_heading text-center mt-md-3 pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>

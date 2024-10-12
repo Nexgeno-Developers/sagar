@@ -31,7 +31,7 @@
 
     .nav-item.dropdown .fa-angle-down {
         top: 8px;
-        right: 94px;
+        left: 11em;
         position: absolute;
     }
 
@@ -185,6 +185,7 @@
     .navbar-nav {
         gap: 0;
         margin-bottom: 8px;
+        align-items: start;
     }
 
     .gt_container--hich1m .gt_switcher .gt_selected {
@@ -336,11 +337,19 @@
         margin: 0.5rem 0;
     }
 
+    .industry_contents_main_div {
+        justify-content: start;
+    }
+
+    .industry_content { 
+        padding: 0px 10px;
+    }
+
     .industry_text_link {
         font-size: 18px;
         font-weight: 400;
         line-height: 20px;
-        padding-left: 16px !important;
+        padding-left: 0px !important;
     }
 
     img.rotate45 {
@@ -355,9 +364,9 @@
     /* .owl-nav {
         display: none;
     } */
-    section.why_sscpl {
+    /* section.why_sscpl {
         height: 580px;
-    }
+    } */
 
     img.moving_machine {
         width: 16%;
@@ -502,9 +511,16 @@
     .btn_next_prev_div .fa,
     .our_product_cards_div .fa,
     .product_filter_gallery_div .fa {
-        width: 20px;
-        height: 20px;
-        padding: 3px;
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+    }
+
+    .product_filter_gallery_div .fa {
+        top: 22px;
+    }
+    .gallery_filter .sidebar {
+        margin-top: 0;
     }
 
     .product_details .fa {
@@ -520,13 +536,27 @@
         font-size: 12px;
     }
 
+    .product_categories_page span.product_img_heading,
+    .products_page span.product_img_heading {
+        font-size: 18px;
+        line-height: 24px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        height: 80px;
+        display: flex;
+        align-items: start;
+        padding: 10px;              
+    }
+
     .btn_next_prev_div {
         justify-content: end;
         gap: 7px;
     }
 
-    .function_title button.show {
-        padding: 10px;
+    .function_title button.show, .function_title button.collapsed {
+        padding: 15px;
     }
 
     .product_di_butyl_phosphate .product_filter_gallery_div .card-text {
@@ -738,12 +768,14 @@
 
     header li.nav-item.dropdown .fa-angle-down:before {
         color: #555 !important;
+        left: 4em;
     }
 
     .nav-item.dropdown .fa-angle-down {
         top: 7px;
         right: 44px;
         position: absolute;
+        z-index: 999999;
     }
 
     /* .nav-item.dropdown.close.open > .submenu {
@@ -858,6 +890,7 @@
     header .nav-item,
     header.transparent .nav-item {
         text-align: center;
+        width: max-content;
     }
 
     .banner_view_button,
