@@ -281,7 +281,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-6">
                     <h2 class="product_heading what_we_do_heading text-center pb-lg-4 pb-md-3 pb-1 float-start"><span
-                            class="text-light">WHAT</span> WE DO?</h2>
+                            class="text-light">OUR</span> BUSINESS</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
                     <a href="{{route('what_we_do')}}"
