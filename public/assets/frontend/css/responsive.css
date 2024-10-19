@@ -768,12 +768,12 @@
 
     header li.nav-item.dropdown .fa-angle-down:before {
         color: #555 !important;
-        left: 4em;
+        /* left: 4em; */
     }
 
     .nav-item.dropdown .fa-angle-down {
         top: 7px;
-        right: 44px;
+        right: -10px;
         position: absolute;
         z-index: 999999;
     }

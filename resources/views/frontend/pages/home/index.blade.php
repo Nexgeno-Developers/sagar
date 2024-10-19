@@ -281,7 +281,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-6">
                     <h2 class="product_heading what_we_do_heading text-center pb-lg-4 pb-md-3 pb-1 float-start"><span
-                            class="text-light">WHAT</span> WE DO?</h2>
+                            class="text-light">OUR</span> BUSINESS</h2>
                 </div>
                 <div class="col-md-6 d-md-block d-none">
                     <a href="{{route('what_we_do')}}"
@@ -327,7 +327,7 @@
                 </div> -->
                 <div class="col-12">
                     <div class="why_sscpl_bg_img">
-                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
+                        <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">SERVICES & SOLUTIONS</h2>
                         <div class="row pt-lg-5 pt-3">
                             <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-md-5 pb-3">
                                 <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""

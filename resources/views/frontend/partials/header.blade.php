@@ -89,14 +89,22 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>       
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link me-1">Company Profile</a>
+                                        <a class="nav-link me-1">About Us</a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
+                                                <a href="{{route('about_us')}}" class="sub_menu">Core Value</a>
                                             </li>
                                            
                                             <li>
-                                                <a href="/what-we-do" class="sub_menu"> What We Do</a>
+                                                <a href="/what-we-do" class="sub_menu">Company Policy</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="" class="sub_menu">Services & Solutions</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="" class="sub_menu">Management Team</a>
                                             </li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
@@ -190,14 +198,22 @@ $allpages = DB::table('pages')
                                             <a class="nav-link" href="{{route('products_category')}}">Products</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link me-1">Company Profile</a>
+                                            <a class="nav-link me-1">About Us</a>
                                             <ul class="submenu">
                                                 <li>
-                                                    <a href="{{route('about_us')}}" class="sub_menu"> About us</a>
+                                                    <a href="{{route('about_us')}}" class="sub_menu">Core Value</a>
                                                 </li>
                                               
                                                 <li>
-                                                    <a href="/what-we-do" class="sub_menu"> What We Do</a>
+                                                    <a href="/what-we-do" class="sub_menu">Company Policy</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="" class="sub_menu">Services & Solutions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="" class="sub_menu">Management Team</a>
                                                 </li>
                                             </ul>
                                             <i class="fa fa-angle-down"></i>

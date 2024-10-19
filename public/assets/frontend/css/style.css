@@ -188,7 +188,7 @@ li.nav-item.dropdown {
 } */
 
 .submenu {
-    min-width: 90%;
+    min-width: max-content;
     padding: 0px 0;
     position: absolute;
     background: transparent;
