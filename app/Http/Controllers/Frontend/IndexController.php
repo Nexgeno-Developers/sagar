@@ -143,7 +143,7 @@ class IndexController extends Controller
             ->whereIn('id', $productCategoryIds)
             ->where('is_industry',1)
             ->orderBy('id', 'asc')
-            ->limit(9)
+            // ->limit(9)
             ->get();
 
         return view('frontend.pages.home.index', compact('page', 'products', 'productCategories'));

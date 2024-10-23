@@ -168,7 +168,7 @@
 
 
     @if(!empty($products))
-        <section class="pt-5 pb-md-2" id="our_products">
+        {{-- <section class="pt-5 pb-md-2" id="our_products">
             <div class="container">
                 <h2 class="product_heading text-center pt-md-1 pb-md-2"><span class="our">OUR</span> PRODUCT</h2>
 
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--}}
     @endif
 
 
