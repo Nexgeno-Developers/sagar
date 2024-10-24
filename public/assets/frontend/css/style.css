@@ -436,6 +436,11 @@ li.nav-item {
     color: #ddd;
 }
 
+img.header_logo {
+    width: 200px;
+    height: auto;
+}
+
 .navbar-brand img {
     height: auto;
 }
@@ -840,6 +845,12 @@ span.product_img_heading {
     margin: 7px 0;
     padding-right: 0;
     position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.industry_contents_main_div > div {
+    padding: 0px 22px 8px;
 }
 
 .industry_content_div::before {
@@ -881,6 +892,14 @@ span.product_img_heading {
     transition: opacity 0.3s;
     height: 277px;
     object-fit: cover;
+    border-radius: 25px;
+    transform: scale(1); 
+    transition: all 0.5s ease;
+}
+
+.industry_content_div:hover .industry_img {
+    transform: scale(1.05);
+    transition: all 0.5s ease;
 }
 
 .industry_content_div::before {
@@ -894,6 +913,7 @@ span.product_img_heading {
     transition: opacity 0.3s;
     z-index: 1;
     width: 100%;
+    border-radius: 25px;
 }
 
 .industry_content_div:hover::before {
