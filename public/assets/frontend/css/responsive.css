@@ -75,12 +75,12 @@
 
     .transparent .navbar-brand img {
         height: auto;
-        width: 70%;
+        width: 100%;
     }
 
     .navbar-brand img {
         height: auto;
-        width: 70%;
+        width: 25%;
     }
 
     .transparent .fa-bars:before,
@@ -100,7 +100,8 @@
     }
 
     .navbar {
-        padding: 10px 0;
+        padding: 10px 0 10px;
+        margin-top: 10px;
     }
 
     .search_btn.search_btn_2 {
@@ -135,6 +136,11 @@
     .google_translate_tab {
         position: absolute;
         right: 60px;
+        bottom: 30px;
+    }
+
+    form.searchForm.position-relative {
+        left: 30em;
     }
 
     .gtranslate_wrapper.gt_container--hich1m {
@@ -152,10 +158,11 @@
     }
 
     .navbar-brand {
-        position: relative;
+        position: absolute;
         padding: 0;
-        bottom: 0;
+        top: 0;
         margin-top: 0 !important;
+        width: 170px;
     }
 
     .navbar .container-fluid,
@@ -729,9 +736,13 @@
         z-index: 2 !important;
     }
 
+    form.searchForm.position-relative {
+        right: 50px;
+    }
+
     a.inline-box.nav-link {
-        right: -10px;
-        top: -10px;
+        right: -20px;
+        top: -11px;
     }
 
     .navbar-toggler {
@@ -746,7 +757,7 @@
 
     .navbar-brand img {
         height: auto;
-        width: 65%;
+        width: 100%;
     }
 
     .btn-close:focus {
