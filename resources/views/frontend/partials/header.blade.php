@@ -153,19 +153,6 @@ $allpages = DB::table('pages')
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
                             </a>
-                            <div class="nav-item dropdown google_translate_tab ">
-                                <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                                    <!-- <i class="text-light fa-solid fa-language"></i> -->
-                                    <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
-                                    <div class="gtranslate_wrapper">
-    <select onchange="doGTranslate(this);">
-        <option value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English</option>
-        <option value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese</option>
-        <option value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish</option>
-    </select>
-</div>
-                                </a>
-                            </div> 
                             <form action="{{ route('products_s') }}" method="GET" class="searchForm position-relative">
                                 <div class="search-icon-wrapper">
                                     <button type="button" class="btn search-icon" onclick="toggleSearchBar2()" aria-label="search btn 3" id="toggleSearchIconMobile">
@@ -180,6 +167,19 @@ $allpages = DB::table('pages')
                                     </button>
                                 </div>
                             </form>
+                            <div class="nav-item dropdown google_translate_tab ">
+                                <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    <!-- <i class="text-light fa-solid fa-language"></i> -->
+                                    <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
+                                    <div class="gtranslate_wrapper">
+                                        <select onchange="doGTranslate(this);">
+                                            <option value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English</option>
+                                            <option value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese</option>
+                                            <option value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish</option>
+                                        </select>
+                                    </div>
+                                </a>
+                            </div> 
                             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="offcanvas bars">
                                 <span class="fa fa-bars"></span>
                             </button>

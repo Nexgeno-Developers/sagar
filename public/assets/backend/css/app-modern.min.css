@@ -6121,6 +6121,9 @@ fieldset:disabled .btn {
     align-items: center;
     min-height: calc(100% - var(--ct-modal-margin) * 2);
 }
+img.header_logo {
+    width: 200px;
+}
 .modal-content {
     position: relative;
     display: -webkit-box;

@@ -100,6 +100,7 @@
         .navbar-brand {
             padding: 0px;
             margin-top: 0px;
+            width: 45%;
         }
 
     }
@@ -259,7 +260,7 @@
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
                     @endif
                         <div class="d-flex industry_content">
-                            <span class="industry_text_link ps-md-2">{{ $category->title }}</span>
+                            <span class="industry_text_link ps-md-3">{{ $category->title }}</span>
                             <span class="industry_arrow_link pe-lg-3">
                                 <img class="rotate45" src="/assets/frontend/images/home/right_arrow_45deg.png" alt="rotate 45 deg arrow" loading="lazy">
                             </span>
