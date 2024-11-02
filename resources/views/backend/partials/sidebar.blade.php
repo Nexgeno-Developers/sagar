@@ -149,6 +149,9 @@
                                     <li>
                                         <a href="{{ route('product-categories.index') }}">Product Categories</a>
                                     </li>
+                                    <li>
+                                        <a href="{{ route('Industry.index') }}">Industry</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

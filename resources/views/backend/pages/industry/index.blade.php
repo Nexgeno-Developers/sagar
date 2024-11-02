@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('page.name', 'Product Category')
+@section('page.name', 'Industry')
 
 @section('page.content')
 <div class="card">
@@ -11,7 +11,7 @@
          </div>
          <div class="col-sm-7">
             <div class="text-sm-end">
-                <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="largeModal('{{ url(route('product-categories.create')) }}', 'Add Category')"><i class="mdi mdi-plus-circle me-2"></i> Add Category</a>
+                <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="largeModal('{{ url(route('Industry.create')) }}', 'Add Industry')"><i class="mdi mdi-plus-circle me-2"></i> Add Industry</a>
             </div>
          </div>
          <!-- end col-->
@@ -22,22 +22,22 @@
             <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Slug</th>
-                <th>Industry</th>
+                <th>Image</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @php $i = 1; @endphp
-            @foreach($productCategories as $row)
+            @foreach($Industry as $row)
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$row->title}}</td>
-                <td>{{$row->slug}}</td>
-                @php 
-                    $industry_title = DB::table('industries')->where('id', $row->industry)->value('title'); @endphp
-                <td>{{ $industry_title ?? '-' }}</td>
+                <td>
+                    <a target="_blank" href="{{ asset('storage/' . $row->image) }}">
+                        View
+                    </a>
+                </td>
                 <td>
                     @if($row->is_active == 1)
                     <span class="badge bg-success" title="Inactive">Active</span>
@@ -46,8 +46,8 @@
                     @endif
                 </td>
                 <td>
-                    <a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('product-categories.edit',['id' => $row->id])) }}', 'Edit Product')"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
-                    <a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('product-categories.destroy', $row->id)) }}', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>
+                    <a href="javascript:void(0);" class="action-icon" onclick="largeModal('{{ url(route('Industry.edit',['id' => $row->id])) }}', 'Edit Industry')"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
+                    <a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('Industry.destroy', $row->id)) }}', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>
                 </td>
             </tr>
             @endforeach

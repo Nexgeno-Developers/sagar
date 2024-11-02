@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\ProductCategoryController;
+use App\Http\Controllers\backend\IndustryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\FrontendSettingsController;
 
@@ -69,6 +70,16 @@ Route::controller(ProductCategoryController::class)->group(function () {
     Route::get('/product-categories/edit/{id}', 'edit')->name('product-categories.edit');
     Route::post('/product-categories/update/{id}', 'update')->name('product-categories.update');
     Route::post('/product-categories//delete/{id}',  'delete')->name('product-categories.destroy');
+});
+
+
+Route::controller(IndustryController::class)->group(function () {
+    Route::get('/industry', 'index')->name('Industry.index');
+    Route::get('/industry/create', 'create')->name('Industry.create');
+    Route::post('/industry/store', 'store')->name('Industry.store');
+    Route::get('/industry/edit/{id}', 'edit')->name('Industry.edit');
+    Route::post('/industry/update/{id}', 'update')->name('Industry.update');
+    Route::post('/industry//delete/{id}',  'delete')->name('Industry.destroy');
 });
 
 Route::controller(FrontendSettingsController::class)->group(function () {

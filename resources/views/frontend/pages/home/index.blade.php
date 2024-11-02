@@ -255,7 +255,7 @@
            @foreach($productCategories as $category)
                 <!-- Add your achievement items here -->
                 <div class="col-lg-3 col-md-4 col-6 mb-0 pe-md-0">
-                    <a class="d-block industry_content_div position-relative">
+                    <a href="{{ url(route('products_s') . '?industry=' . $category->id) }}" class="d-block industry_content_div position-relative">
                     @if (!empty($category->image))    
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}" class="industry_img" loading="lazy">
                     @endif

@@ -11,6 +11,7 @@ use App\Models\Page;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\PostCategory;
+use App\Models\Industry;
 
 class PageController extends Controller
 {
@@ -83,9 +84,10 @@ class PageController extends Controller
         $products = Product::where('is_active', 1)->get();
         $product_categories = ProductCategory::where('is_active', 1)->get();
         $post_categories = PostCategory::get();
+        $Industry = Industry::get();
         if ($page != null) {
             if ($page_name == 'home') {
-                return view('backend.website_settings.pages.home_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
+                return view('backend.website_settings.pages.home_page_edit', compact('page', 'products', 'post_categories', 'product_categories','Industry'));
             } elseif ($page->type == 'about_us') {
                 return view('backend.website_settings.pages.about_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
             } elseif ($page->type == 'partner_with_us') {

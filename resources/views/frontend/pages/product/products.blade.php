@@ -29,20 +29,38 @@
                             <i class="fa fa-search"></i>
                         </button>
                         <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
-                    </div>    
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label>Industry</label>
+                        <select class="select2 form-select" name="industry" id="industrySelect">
+                            <option value="">Select Industry</option>
+                            @foreach($Industry as $row)
+                                <option value="{{ $row->id }}" @if(request('industry') == $row->id) selected @endif>{{ $row->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <button onchange="submitCategoryForm()">search</button>
+
+                    <input type="hidden" id="pre_category_ids" value="{{ is_array($categoryIds) ? implode(',', $categoryIds) : $categoryIds }}">
+                    <input type="hidden" id="category_ids_hidden" name="category_ids" value="">
+                    
                     <div class="d-flex justify-content-between">
                         <ul class="list-group filter_list">
-                            <li onclick="viewAllCategories()" class="cursor-pointer list-group-item @if($categoryId == '') active @endif">
+                            <li onclick="viewAllCategories()" class="cursor-pointer list-group-item @if(empty($categoryIds)) active @endif">
                                 All Categories
                             </li>
                             @foreach($productCategories as $category)
-                                <li onclick="submitCategoryForm({{ $category->id }})"
-                                    class="cursor-pointer list-group-item @if($category->id == $categoryId) active @endif">
+                                <li class="cursor-pointer list-group-item">
+                                    <input type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
+                                    onchange="updateCategoryIds(this)"
+                                    @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
+                                    >
                                     {{ $category->title }}
                                 </li>
                             @endforeach
                         </ul>
-                        <input type="hidden" name="category_id" id="category_id" value="{{ $categoryId }}">
                     </div>
                 </form>
             </div>
@@ -53,7 +71,7 @@
                     <div class="row">
                         @foreach($products as $product)
                             <div class="col-md-4 col-6 product_filter_gallery_div">
-                                <a href="{{ route('product.detail', $product->slug) }}" class="d-block text-decoration-none">
+                                <a onclick="enquiry({{ $product->id }})" class="d-block text-decoration-none">
                                     <div class="card">
                                         <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
                                         <span class="product_img_heading">{{ $product->title }}</span>
@@ -62,15 +80,13 @@
                                             <i class="btn btn-primary fa fa-arrow-right"></i>
                                         </div>
                                     </div>
-
-                                    
                                 </a>
                             </div>
                         @endforeach
                     </div>
                     <!-- Pagination Links -->
                     <div class="col-12 text-center pt-md-5 mt-md-0 mt-4">
-                        {{ $products->appends(['category_id' => $categoryId])->links('pagination::bootstrap-5') }}
+                        {{ $products->appends(['category_id' => $categoryIds])->links('pagination::bootstrap-5') }}
                     </div>
                 @endif
             </div>
@@ -78,26 +94,97 @@
     </div>
 </section>
 
+
+{{------------------------- Modal popup ------------------------}}
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Enquire Now</h5>
+          <button type="button" onclick="closeModal()" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="add_partner_us_form" action="{{ route('form.save') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group"><input type="hidden" name="form_type" value="product_listing"></div>
+                
+                <div class="form-group"><input required type="text" name="company_name" class="form-control" placeholder="Company Name"></div>
+                <div class="form-group"><input required type="text" name="full_name" class="form-control" placeholder="Full Name"></div>
+                
+                <div class="custom-dropdown">
+                    <select required name="product" id="productSelect" class="form-control custom-select form-group">
+                        <option value="">---Select Product---</option>
+                        @foreach ($products_list as $row)
+                            <option value="{{ $row->id }}">{{ $row->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group"> <input type="number" class="form-control" name="quantity" required placeholder="Quantity" min="0"></div>
+                <div class="form-group"><input required type="email" name="email" class="form-control" placeholder="Email Address"></div>
+                
+                <textarea class="col-12 mb-3" name="message" id="message" placeholder="Message" rows="2"></textarea>
+                <button type="submit" class="btn btn-primary mt-md-3 mt-0">SEND</button>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{{------------------------- Modal popup ------------------------}}
+
 @endsection
 
 @section('page.scripts')
 <script>
-function submitCategoryForm(categoryId) {
-    // Set the category_id hidden field value
-    document.getElementById('category_id').value = categoryId;
+$(document).ready(function() {
+    initSelect2('.select2');
+});
 
-    // Clear the search input field using getElementsByClassName
-    var searchInputs = document.getElementsByClassName('product-search');
-    if (searchInputs.length > 0) {
-        searchInputs[0].value = '';
-    }
-
-    // Submit the form using getElementsByClassName
-    var searchForm = document.getElementsByClassName('searchForm');
-    if (searchForm.length > 0) {
-        searchForm[0].submit();
-    }
+function submitCategoryForm() {// Ensure the category_ids are updated before submitting
+    document.getElementById('searchForm').submit();
 }
+
+function updateCategoryIds(checkbox) {
+    // Get all checked checkboxes
+    const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+    let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+
+    // Get all checked checkboxes
+    const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+    let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    // Check if the industrySelect has a value
+    if (industrySelect.value) {
+        selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+        preCategoryIds = [];
+    } 
+
+    // Remove the unchecked checkbox value from pre_category_ids if it exists
+    if (!checkbox.checked) {
+        const index = preCategoryIds.indexOf(checkbox.value);
+        if (index !== -1) {
+            preCategoryIds.splice(index, 1); // Remove the ID
+        }
+    }
+
+    // Merge remaining pre_category_ids with selectedIds
+    const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+
+    // Update the hidden input field
+    document.getElementById('category_ids_hidden').value = allIds.join(',');
+
+    // Clear the selected value in the industry select box
+    document.getElementById('industrySelect').value = '';
+
+    submitCategoryForm();
+}
+
+
+
 
 function viewAllCategories() {
     // Clear the search input field using getElementsByClassName
@@ -116,6 +203,35 @@ function viewAllCategories() {
     }
 }
 
+function closeModal() {
+    $('#exampleModalCenter').modal('hide');
+}
+
+function enquiry(productID) {
+    // Set the selected product in the dropdown
+    const productSelect = document.getElementById('productSelect');
+    productSelect.value = productID;
+
+    // Open the modal
+    $('#exampleModalCenter').modal('show');
+}
+
+
+$(document).ready(function() {
+    initValidate('#add_partner_us_form');
+    $("#add_partner_us_form").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    var responseHandler = function(response) {
+        $('input, textarea').val('');
+        $("select option:first").prop('selected', true);
+        setTimeout(function() {
+            location.reload();
+        }, 1000);
+    }
+});
 
 </script>
 @endsection

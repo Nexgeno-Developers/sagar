@@ -17,11 +17,22 @@
             <input type="file" name="image" class="form-control">
         </div>
 
-        <div class="form-group col-3 mb-3">
+        <div class="form-group col-3 mb-3 d-none">
             <label>Categorys For<span class="red">*</span></label>
             <select required name="is_industry" class="form-control" required>
                 <option value="1">Industry</option>
                 <option value="0" selected>Products</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Industry</label>
+            <select class="select2 form-select" name="industry">
+                <option value="" disabled>Select Industry</option>
+                @foreach($Industry as $row)
+                <option value="{{ $row->id }}"}>{{ $row->title }}
+                </option>
+                @endforeach
             </select>
         </div>
 

@@ -51,16 +51,16 @@ Route::get('/what-we-do', [IndexController::class, 'what_we_do'])->name('what_we
 Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/partner-with-us', [IndexController::class, 'partner_with_us'])->name('partner_with_us');
 Route::get('/categories', [IndexController::class, 'products_category'])->name('products_category');
-Route::get('/products', [IndexController::class, 'products_s'])->name('products_s');
+Route::any('/products', [IndexController::class, 'products_s'])->name('products_s');
 Route::get('/industries', [IndexController::class, 'industrie_s'])->name('industrie_s');
 
 
-$slug = DB::table('products')->pluck('slug')->toArray();
-if (!empty($slug)) {
-Route::get('/product/{slug}', [IndexController::class, 'product_detail'])
-    ->where('slug', implode('|', $slug ))
-    ->name('product.detail');
-}
+// $slug = DB::table('products')->pluck('slug')->toArray();
+// if (!empty($slug)) {
+// Route::get('/product/{slug}', [IndexController::class, 'product_detail'])
+//     ->where('slug', implode('|', $slug ))
+//     ->name('product.detail');
+// }
 
 $page_slug = DB::table('pages')->pluck('slug')->toArray();
 if (!empty($page_slug)) {

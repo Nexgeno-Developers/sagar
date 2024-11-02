@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Industry;
 
 class ProductCategoryController extends Controller
 {
@@ -20,8 +21,9 @@ class ProductCategoryController extends Controller
 
     public function create()
     {
+        $Industry = Industry::get();
         // return view('backend.pages.products.create');
-        return view('backend.pages.products_category.create');
+        return view('backend.pages.products_category.create', compact('Industry'));
     }
 
     public function store(Request $request)
@@ -32,6 +34,7 @@ class ProductCategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
             'is_industry' => 'required|boolean',
+            'industry' => 'required',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -60,6 +63,7 @@ class ProductCategoryController extends Controller
             $product_category->is_industry = $request->is_industry;
             $product_category->image = $image;
             $product_category->description = $request->description;
+            $product_category->industry = $request->industry;
             $product_category->meta_title = $request->meta_title;
             $product_category->meta_description = $request->meta_description;
     
@@ -82,8 +86,10 @@ class ProductCategoryController extends Controller
     }
     public function edit(request $request, $id)
     {
+
+        $Industry = Industry::get();
         $productCategory = productCategory::findOrFail($id);
-        return view('backend.pages.products_category.edit', compact('productCategory'));
+        return view('backend.pages.products_category.edit', compact('productCategory','Industry'));
     }
 
 
@@ -96,6 +102,7 @@ class ProductCategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
             'is_industry' => 'required|boolean',
+            'industry'  => 'required',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -137,6 +144,7 @@ class ProductCategoryController extends Controller
         $productCategory->is_industry = $request->is_industry;
         $productCategory->image = $image;
         $productCategory->description = $request->description;
+        $productCategory->industry = $request->industry;
         $productCategory->meta_title = $request->meta_title;
         $productCategory->meta_description = $request->meta_description;
 

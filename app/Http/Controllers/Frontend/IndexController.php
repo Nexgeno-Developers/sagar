@@ -11,6 +11,7 @@ use App\Models\Faq;
 use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Industry;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 
@@ -52,7 +53,17 @@ class IndexController extends Controller
                 // 'type_code' => 'required|string|max:255',
                 'message' => 'nullable|string|max:500',
             ]);
-        }
+        } elseif ($formType === 'product_listing') {
+            $page = 'Product Listing';
+            $validated = Validator::make($request->all(), [
+                'company_name' => 'required|string|max:255',
+                'full_name' => 'required|string|max:255',
+                'quantity' => 'required',
+                'email' => 'required|email|max:255',
+                'product' => 'required|string|max:255',
+                'message' => 'nullable|string|max:500',
+            ]);
+        } 
 
         if ($validated->fails()) {
             return response()->json([
@@ -139,9 +150,8 @@ class IndexController extends Controller
             ->get();
 
         // Fetch the ProductCategory that are active and match the IDs, order by ID descending, and limit to 9
-        $productCategories = ProductCategory::where('is_active', 1)
+        $productCategories = Industry::where('is_active', 1)
             ->whereIn('id', $productCategoryIds)
-            ->where('is_industry',1)
             ->orderBy('id', 'asc')
             // ->limit(9)
             ->get();
@@ -232,18 +242,38 @@ public function products_category(Request $request)
 
 public function products_s(Request $request)
 {
-    // Fetch all product categories with pagination
+    // Fetch all product categories
     $productCategories = ProductCategory::where('is_active', 1)->where('is_industry', 0)->get();
+    $Industry = Industry::where('is_active', 1)->get();
+    $products_list = DB::table('products')->where('is_active','1')->select('id','title')->get();
 
-    // Initialize query for products
+    // Initialize the query for products
     $query = Product::where('is_active', 1);
 
-    // Get the category_id from the query parameter, default to 1 if not present
-    $categoryId = $request->query('category_id');
+    // Get category_ids and search query from request
+    $categoryIds = $request->query('category_ids', []);
     $searchQuery = $request->query('search', '');
+    $industry = $request->query('industry', '');
 
-    // Filter products by category using LIKE
-    $query->where('product_category_ids', 'LIKE', '%' . $categoryId . '%');
+    if (is_string($categoryIds)) {
+        $categoryIds = explode(',', $categoryIds);
+    }
+    
+    // Optionally, you may want to filter out any empty values or non-numeric IDs
+    $categoryIds = array_filter(array_map('trim', $categoryIds), 'is_numeric');
+
+    if ($industry) {
+        $categoryIds = $productCategories->where('industry', $industry)->pluck('id')->toArray();
+    }
+
+    // Use the array in the query if it's not empty
+    if (is_array($categoryIds) && count($categoryIds) > 0) {
+                $query->where(function ($q) use ($categoryIds) {
+            foreach ($categoryIds as $categoryId) {
+                $q->orWhere('product_category_ids', 'LIKE', '%' . $categoryId . '%');
+            }
+        });
+    }
 
     // Filter products by search query
     if ($searchQuery) {
@@ -253,7 +283,7 @@ public function products_s(Request $request)
     // Fetch products with pagination
     $products = $query->paginate(9);
 
-    return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryId', 'searchQuery'));
+    return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list'));
 }
 
 

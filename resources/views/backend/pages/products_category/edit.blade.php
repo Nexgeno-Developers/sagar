@@ -23,7 +23,7 @@
             </div>                                
         @endif
 
-        <div class="form-group col-3 mb-3">
+        <div class="form-group col-3 mb-3 d-none">
             <label>Categorys For<span class="red">*</span></label>
             <select required name="is_industry" class="form-control" required>
                 <option value="1" {{ old('is_industry', $productCategory->is_industry) == 1 ? 'selected' : '' }}>Industry</option>
@@ -31,8 +31,18 @@
             </select>
         </div>
 
+        <div class="form-group mb-3">
+            <label>Industry</label>
+            <select class="select2 form-select" name="industry">
+                <option value="">Select Industry</option>
+                @foreach($Industry as $row)
+                <option value="{{ $row->id }}" @if($productCategory->industry == $row->id) selected @endif>{{ $row->title }}
+                </option>
+                @endforeach
+            </select>
+        </div>   
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Status<span class="red">*</span></label>
             <select name="is_active" class="form-control">
                 <option value="1" {{ old('is_active', $productCategory->is_active) == 1 ? 'selected' : '' }}>Active</option>
