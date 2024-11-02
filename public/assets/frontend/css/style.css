@@ -849,7 +849,7 @@ span.product_img_heading {
     border-radius: 25px;
 }
 
-.industry_contents_main_div > div {
+.industry_contents_main_div>div {
     padding: 0px 22px 8px;
 }
 
@@ -893,7 +893,7 @@ span.product_img_heading {
     height: 277px;
     object-fit: cover;
     border-radius: 25px;
-    transform: scale(1); 
+    transform: scale(1);
     transition: all 0.5s ease;
 }
 
@@ -1972,4 +1972,92 @@ ul.submenu li a {
         transform: translateY(0);
         /* Move text back to its original position */
     }
+}
+
+.product_form .modal-content {
+    background-color: #fff;
+    padding: 20px !important;
+    border-radius: 30px;
+}
+
+.product_form .modal-content input,
+.product_form .modal-content select,
+.product_form .modal-content textarea {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+    border-radius: 0;
+    background-color: transparent;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 2px;
+    color: #5d6775;
+}
+
+.product_form .modal-content .btn {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.product_form .modal-header h5 {
+    font-size: 25px;
+}
+
+.product_form .modal-header {
+    padding: 0px 0px !important;
+    border: 0;
+    display: block !important;
+    text-align: center;
+}
+
+.product_form .modal-header .close {
+    padding: 5px 10px;
+    border: 0;
+    background: 0 0;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.product_form button.close span {
+    font-size: 33px;
+    line-height: 10px;
+    position: relative;
+    top: 12px;
+    right: 0;
+}
+
+.select2_industry span.select2-selection.select2-selection--single {
+    border-radius: 0;
+    border-right: 1px solid #fff;
+    height: 40px;
+}
+
+.select2_industry span.select2-selection.select2-selection--single span#select2-industrySelect-container {
+    line-height: 40px !important;
+}
+
+.select2_industry span.select2-selection.select2-selection--single span.select2-selection__arrow {
+    height: 40px;
+}
+
+.padding11 {
+    padding: 11px !important;
+}
+
+.margin36 {
+    margin-top: 36px;
+}
+
+.select2_industry span.select2.select2-container.select2-container--default {
+    width: 100% !important;
 }

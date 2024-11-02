@@ -348,7 +348,7 @@
         justify-content: start;
     }
 
-    .industry_content { 
+    .industry_content {
         padding: 0px 10px;
     }
 
@@ -526,6 +526,7 @@
     .product_filter_gallery_div .fa {
         top: 22px;
     }
+
     .gallery_filter .sidebar {
         margin-top: 0;
     }
@@ -554,7 +555,7 @@
         height: 80px;
         display: flex;
         align-items: start;
-        padding: 10px;              
+        padding: 10px;
     }
 
     .btn_next_prev_div {
@@ -562,7 +563,8 @@
         gap: 7px;
     }
 
-    .function_title button.show, .function_title button.collapsed {
+    .function_title button.show,
+    .function_title button.collapsed {
         padding: 15px;
     }
 
@@ -757,7 +759,11 @@
 
     .navbar-brand img {
         height: auto;
-        width: 100%;
+        width: 130px;
+    }
+
+    ul.submenu li {
+        background: transparent !important;
     }
 
     .btn-close:focus {
@@ -871,7 +877,7 @@
 
     .offcanvas-header .header_logo,
     .spply_chn_box_img {
-        width: 80%;
+        width: 40%;
     }
 
     .search_btn.search_btn_2 {

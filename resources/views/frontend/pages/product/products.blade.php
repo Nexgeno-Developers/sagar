@@ -31,9 +31,11 @@
                         <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
                     </div>
                     
-                    <div class="form-group mb-3">
-                        <label>Industry</label>
-                        <select class="select2 form-select" name="industry" id="industrySelect">
+                    <div class="row ps-3 select2_industry">
+                         <div class="col-md-10 col-10 p-0">
+                             <div class="form-group mb-3">
+                        <label class="pb-1 pt-2">Industry</label>
+                        <select class="select2 form-select border-0 rounded-0" name="industry" id="industrySelect">
                             <option value="">Select Industry</option>
                             @foreach($Industry as $row)
                                 <option value="{{ $row->id }}" @if(request('industry') == $row->id) selected @endif>{{ $row->title }}</option>
@@ -41,7 +43,12 @@
                         </select>
                     </div>
 
-                    <button onchange="submitCategoryForm()">search</button>
+                         </div>
+                     <div class="col-md-1 col-2 margin36 p-0">
+                    <button class="border-0 p-0 rounded-0" onchange="submitCategoryForm()"><i class="btn p-0 rounded-0 btn-primary fa fa-search padding11"></i></button>
+  </div>
+                    </div>
+                  
 
                     <input type="hidden" id="pre_category_ids" value="{{ is_array($categoryIds) ? implode(',', $categoryIds) : $categoryIds }}">
                     <input type="hidden" id="category_ids_hidden" name="category_ids" value="">
@@ -97,7 +104,7 @@
 
 {{------------------------- Modal popup ------------------------}}
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade product_form" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
