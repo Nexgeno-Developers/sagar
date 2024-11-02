@@ -52,7 +52,7 @@
                                 All Categories
                             </li>
                             @foreach($productCategories as $category)
-                                <li class="cursor-pointer list-group-item">
+                                <li class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif">
                                     <input type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
                                     onchange="updateCategoryIds(this)"
                                     @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
