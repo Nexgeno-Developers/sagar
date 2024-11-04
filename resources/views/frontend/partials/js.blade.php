@@ -37,6 +37,6 @@
 </script>
 
 
-<script defer src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<script defer type="text/javascript" src="/assets/frontend/js/gtranslate_dwf.js"></script>
 <!-- <script defer src="js/google_translate.js" defer></script> -->
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="/assets/frontend/js/google-translate.js"></script>

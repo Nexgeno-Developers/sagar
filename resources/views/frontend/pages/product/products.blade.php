@@ -32,10 +32,10 @@
                     </div>
                     
                     <div class="row ps-lg-3 px-3 select2_industry">
-                        <div class="col-md-10 col-10 p-0">
+                        <div class="col-md-12 col-12 p-0">
                             <div class="form-group mb-3">
-                                <label class="pb-1 pt-2">Industry</label>
-                                <select class="select2 form-select border-0 rounded-0" name="industry" id="industrySelect">
+                                {{--<label class="pb-1 pt-2">Industry</label>--}}
+                                <select class="select2 form-select border-0 rounded-0" name="industry" id="industrySelect" onchange="handleSelectChange()">
                                     <option value="">Select Industry</option>
                                     @foreach($Industry as $row)
                                         <option value="{{ $row->id }}" @if(request('industry') == $row->id) selected @endif>{{ $row->title }}</option>
@@ -43,11 +43,11 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-1 col-2 margin36 p-0">
+                        {{--<div class="col-md-1 col-2 margin36 p-0">
                             <button class="border-0 p-0 rounded-0" onchange="submitCategoryForm()">
                                 <i class="btn p-0 rounded-0 btn-primary fa fa-search padding6"></i>
                             </button>
-                        </div>
+                        </div>--}}
                     </div>
                   
 
@@ -152,8 +152,17 @@ $(document).ready(function() {
     initSelect2('.select2');
 });
 
+
+
 function submitCategoryForm() {// Ensure the category_ids are updated before submitting
     document.getElementById('searchForm').submit();
+}
+
+function handleSelectChange() {
+    const selectElement = document.getElementById('industrySelect');
+    if (selectElement.value !== '') {
+        submitCategoryForm();
+    }
 }
 
 function updateCategoryIds(checkbox) {

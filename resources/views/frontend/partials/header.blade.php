@@ -89,7 +89,7 @@ $allpages = DB::table('pages')
                                         <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>       
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link me-1">About Us</a>
+                                        <span class="nav-link me-1">About Us</span>
                                         <ul class="submenu">
                                             <li>
                                                 <a href="{{route('about_us')}}" class="sub_menu">Core Value</a>
@@ -198,7 +198,7 @@ $allpages = DB::table('pages')
                                             <a class="nav-link" href="{{route('products_category')}}">Products</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link me-1">About Us</a>
+                                            <span class="nav-link me-1">About Us</span>
                                             <ul class="submenu">
                                                 <li>
                                                     <a href="{{route('about_us')}}" class="sub_menu">Core Value</a>
