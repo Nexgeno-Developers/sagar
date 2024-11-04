@@ -103,7 +103,13 @@
             width: 45%;
         }
 
+        .offcanvas-header .header_logo,
+        .spply_chn_box_img {
+            width: 80%;
+        }
+
     }
+  
 </style>
 
 

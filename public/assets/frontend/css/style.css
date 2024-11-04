@@ -1251,7 +1251,7 @@ img.moving_machine {
     align-items: center;
 }
 
-.banner_heading_breadcrumb li {
+.banner_heading_breadcrumb li, .banner_heading_breadcrumb li p {
     font-size: 16px;
     background-color: transparent;
     border: 0;
@@ -1974,10 +1974,14 @@ ul.submenu li a {
     }
 }
 
+section {
+    margin-top: -1px;
+}
+
 .product_form .modal-content {
     background-color: #fff;
     padding: 20px !important;
-    border-radius: 30px;
+    border-radius: 15px !important;
 }
 
 .product_form .modal-content input,
@@ -1992,6 +1996,12 @@ ul.submenu li a {
     font-weight: 500;
     padding: 10px 2px;
     color: #5d6775;
+}
+
+select#productSelect {
+    font-size: 16px;
+    font-weight: 700;
+    color: #515561;
 }
 
 .product_form .modal-content .btn {
@@ -2032,26 +2042,43 @@ ul.submenu li a {
     font-size: 33px;
     line-height: 10px;
     position: relative;
-    top: 12px;
-    right: 0;
+    top: 15px;
+    right: 5px;
 }
 
 .select2_industry span.select2-selection.select2-selection--single {
-    border-radius: 0;
-    border-right: 1px solid #fff;
-    height: 40px;
+    border-radius: 0; 
+    height: 30px;
+    border-radius: 6px 0px 0px 6px;
 }
 
 .select2_industry span.select2-selection.select2-selection--single span#select2-industrySelect-container {
-    line-height: 40px !important;
+    line-height: 30px !important;
+    font-size: 14px;
 }
 
 .select2_industry span.select2-selection.select2-selection--single span.select2-selection__arrow {
-    height: 40px;
+    height: 30px;
+}
+
+li.select2-results__option {
+    font-size: 14px;
 }
 
 .padding11 {
     padding: 11px !important;
+}
+
+.padding6 {
+    padding: 6px !important;
+}
+
+.select2_industry .fa-search {
+    border-radius: 0px 6px 6px 0px !important; 
+}
+
+.select2_industry .fa-search::before {
+    font-size: 14px;
 }
 
 .margin36 {

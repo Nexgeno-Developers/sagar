@@ -235,7 +235,7 @@ $allpages = DB::table('pages')
                                                 <!-- <li class="list-group-item">
                                                     <a class="nav-link" href="#">ENG</a>
                                                 </li> -->
-                                                <li class="px-2">
+                                                <li class="px-lg-2 ps-1 pe-2">
                                                     <a class="nav-link" href="#"><i class="fa fa-linkedin-in" aria-label="linkedin logo"></i></a>
                                                 </li>
                                                 <li class="px-2">

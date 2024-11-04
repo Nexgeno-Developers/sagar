@@ -80,7 +80,19 @@
 
     .navbar-brand img {
         height: auto;
-        width: 25%;
+        width: 75%;
+    }
+
+    .offcanvas-header .navbar-brand img {
+        margin-top: 10px;
+    }
+    
+    .offcanvas-header {
+        margin-top: 10px;
+    }
+
+    .transparent .offcanvas-header .navbar-brand img {
+        width: 75%;
     }
 
     .transparent .fa-bars:before,
@@ -100,8 +112,8 @@
     }
 
     .navbar {
-        padding: 10px 0 10px;
-        margin-top: 10px;
+        padding: 15px 0 15px;
+        /* margin-top: 10px; */
     }
 
     .search_btn.search_btn_2 {
@@ -136,7 +148,7 @@
     .google_translate_tab {
         position: absolute;
         right: 60px;
-        bottom: 30px;
+        bottom: 35px;
     }
 
     form.searchForm.position-relative {
@@ -160,7 +172,7 @@
     .navbar-brand {
         position: absolute;
         padding: 0;
-        top: 0;
+        top: 10;
         margin-top: 0 !important;
         width: 170px;
     }
@@ -225,6 +237,11 @@
         overflow: hidden;
         /* Hides any text that overflows the container */
         text-overflow: ellipsis;
+    }
+
+    .banner_contents h5 {
+        font-size: 30px;
+        margin-top: 7%;
     }
 
     .banner_content {
@@ -326,7 +343,7 @@
 
     @keyframes upDown {
         50% {
-            transform: translate(-1em, -115px);
+            transform: translate(-1em, -100px);
         }
     }
 
@@ -520,7 +537,7 @@
     .product_filter_gallery_div .fa {
         width: 25px;
         height: 25px;
-        padding: 5px;
+        padding: 6px;
     }
 
     .product_filter_gallery_div .fa {
@@ -556,6 +573,14 @@
         display: flex;
         align-items: start;
         padding: 10px;
+    }
+
+    .product_form .modal-content .btn {
+        width: 50%;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 32px; 
+        border-radius: 10px;
     }
 
     .btn_next_prev_div {
@@ -688,6 +713,10 @@
     .vision_mission img {
         width: 25%;
     }
+
+    footer.footer {
+        padding: 40px 0 30px !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -698,6 +727,10 @@
     .container {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    p {
+        line-height: 20px !important;
     }
 
     .top_bar {
@@ -910,6 +943,15 @@
         width: max-content;
     }
 
+    .management_team .container {
+        width: 100%;
+    }
+
+    .banner_heading_breadcrumb li, .banner_heading_breadcrumb li p {
+        font-size: 14px;
+        font-weight: inherit;
+    }
+
     .banner_view_button,
     .enquiry_section p,
     .future_activites_link,
@@ -1050,6 +1092,10 @@
     .about_info_box::before,
     .info_box::before {
         border-radius: 30px 30px 10px 38px;
+    }
+
+    .story_small, h5.form_mark {
+        margin-bottom: 10px;
     }
 
     .up_and_down {
@@ -1389,4 +1435,81 @@
     .footer_useful_link_1_div ul {
         margin-bottom: 5px;
     }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+    img.header_logo {
+        width: 150px;
+    }
+
+    .banner_contents h5 {
+        font-size: 33px;
+        margin-top: 8%;
+    }
+
+    .banner_view_button { 
+        font-size: 16px; 
+        padding: 5px 25px;
+    }
+
+    h2, .company_heading { 
+        font-size: 32px; 
+        line-height: 40px;
+    }
+
+    .saagar_speciality_chemical_machine img { 
+        width: 23em;
+    }
+
+    @keyframes upDown {
+        50% {
+            transform: translateY(-85px);
+        }
+    }
+
+    .a_btn { 
+        padding: 5px 25px;
+    }
+    
+    .about_info_box, .info_box { 
+        width: 47%; 
+    }
+
+    .about_info_box h4, .info_box h4 { 
+        font-size: 34px;
+    }
+
+    .future_activites_main_div .card-title, .what_we_do_main_div .card-title,
+    .future_activites_link, .what_we_do_link {
+        font-size: 18px;
+    }
+
+    img.arrow_right_img {
+        width: 25% !important;
+    }
+    
+    .why_sscpl_bg_img { 
+        padding: 10px 20px;
+    }
+
+    .sscl_contents_main_div { 
+        padding-bottom: 10px !important;
+    }
+
+    span.product_img_heading {
+        font-size: 18px; 
+        line-height: 24px;
+    }
+
+    .about_info_box .up_and_down {
+        animation: 3s infinite AboutupDown;
+        transform: translateY(0);
+    }
+    
+    @keyframes AboutupDown {
+        50% {
+            transform: translateY(-113px);
+        }
+    }
+    
 }

@@ -7,7 +7,7 @@
 @section('page.type', 'website')
 
 @section('page.content')
-  
+
 <main class="contact_us_page">
         
         <section class="banner" id="contact_us_page_banner">
@@ -46,14 +46,14 @@
                         </div>
 
                         <div class="d-flex flex-lg-row flex-column col-12 mb-md-0 mb-3">
-                            <div class="col-lg-4 d-flex align-items-start gap-2 pb-md-3">
+                            <div class="col-xl-4 col-12 d-flex align-items-start gap-2 pb-md-3">
                                 <i class="fa fa-phone mt-2"></i>
                                 <div class="d-block">
                                     <span>Mobile Number: </span><br>
                                     <a href="tel:{{$contacts[0]->phone1}}" class="fw-500">{{$contacts[0]->phone1}}</a>
                                 </div> 
                             </div>
-                            <div class="col-lg-8 d-flex align-items-start justify-content-lg-center justify-content-start gap-2 pb-md-3">
+                            <div class="col-xl-8 col-12 d-flex align-items-start justify-content-xl-center justify-content-start gap-2 pb-md-3">
                                 <i class="fa fa-phone mt-2"></i>
                                 <div class="d-block">
                                     <span>Landline Number: </span>  <br>
@@ -85,7 +85,7 @@
                             <div class="block">
                                 <span class="d-block mb-0">Overseas Business Enquiries: <br>
                                 </span> 
-                                    <a href="tel:{{$contacts[1]->phone1}}" class="mt-2">
+                                    <a href="tel:{{$contacts[1]->phone1}}" class="mt-2 fw-500">
                                         {{$contacts[1]->phone1}}
                                     </a>
                                 </div>

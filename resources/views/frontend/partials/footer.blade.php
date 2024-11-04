@@ -69,7 +69,7 @@
                     </div>
                     <div class="d-flex align-items-md-start align-items-center gap-2 pb-3">
                         <i class="fa fa-envelope"></i>
-                            <a href="mailto:{{$contacts[0]->email1}}" class="footer_contact_links">
+                            <a href="mailto:{{$contacts[0]->email1}}" class="footer_contact_links text-break" >
                             {{$contacts[0]->email1}}
                             </a>
                     </div>
@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <br class="d-md-block d-none">
+            <br class="d-lg-block d-none">
             <hr>
             <div class="pt-md-2 footer_copyright text-center">
                 <span class="copyright_content"> © Copyright - Sagar Speciality Chemicals Pvt. Ltd. | Designed by <a target="_blank" href="https://nexgeno.in/"> Nexgeno</a></span>
