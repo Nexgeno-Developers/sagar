@@ -281,7 +281,7 @@ public function products_s(Request $request)
     }
 
     // Fetch products with pagination
-    $products = $query->paginate(9);
+    $products = $query->paginate(15);
 
     return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list'));
 }
