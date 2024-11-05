@@ -16,7 +16,7 @@
             <select class="select2 form-select" name="industry[]" multiple>
                 <option value="">Select Industry</option>
                 @foreach($Industry as $row)
-                <option value="{{ $row->id }}" {{ in_array($row->id, explode(',', $productCategory->industry ?? '')) ? 'selected' : '' }}>{{ $row->title }}</option>
+                <option value="{{ $row->id }}" {{ in_array($row->id, json_decode($productCategory->industry)) ? 'selected' : '' }}>{{ $row->title }}</option>
                 @endforeach
             </select>
         </div>   
