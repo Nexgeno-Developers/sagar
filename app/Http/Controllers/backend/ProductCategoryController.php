@@ -63,7 +63,7 @@ class ProductCategoryController extends Controller
             $product_category->is_industry = $request->is_industry;
             $product_category->image = $image;
             $product_category->description = $request->description;
-            $product_category->industry = $request->industry;
+            $product_category->industry = json_encode($request->industry);
             $product_category->meta_title = $request->meta_title;
             $product_category->meta_description = $request->meta_description;
     
@@ -144,7 +144,7 @@ class ProductCategoryController extends Controller
         $productCategory->is_industry = $request->is_industry;
         $productCategory->image = $image;
         $productCategory->description = $request->description;
-        $productCategory->industry = $request->industry;
+        $productCategory->industry = json_encode($request->industry);
         $productCategory->meta_title = $request->meta_title;
         $productCategory->meta_description = $request->meta_description;
 

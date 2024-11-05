@@ -36,8 +36,16 @@
                 <td>{{$row->title}}</td>
                 <td>{{$row->slug}}</td>
                 @php 
-                    $industry_title = DB::table('industries')->where('id', $row->industry)->value('title'); @endphp
-                <td>{{ $industry_title ?? '-' }}</td>
+                    $industry_title = '-';
+
+                    if (!empty($row->industry)) {
+                        $industry_title = DB::table('industries')
+                            ->whereIn('id', json_decode($row->industry))
+                            ->pluck('title')
+                            ->implode(', ');
+                    }
+                @endphp
+                <td>{{ $industry_title }}</td>
                 <td>
                     @if($row->is_active == 1)
                     <span class="badge bg-success" title="Inactive">Active</span>

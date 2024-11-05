@@ -27,7 +27,7 @@
 
         <div class="form-group mb-3">
             <label>Industry</label>
-            <select class="select2 form-select" name="industry">
+            <select class="select2 form-select" name="industry[]" multiple>
                 <option value="" disabled>Select Industry</option>
                 @foreach($Industry as $row)
                 <option value="{{ $row->id }}"}>{{ $row->title }}

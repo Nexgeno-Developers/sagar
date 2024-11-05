@@ -263,7 +263,10 @@ public function products_s(Request $request)
     $categoryIds = array_filter(array_map('trim', $categoryIds), 'is_numeric');
 
     if ($industry) {
-        $categoryIds = $productCategories->where('industry', $industry)->pluck('id')->toArray();
+        $categoryIds = DB::table('product_categories')
+            ->whereRaw('JSON_CONTAINS(industry, \'["' . $industry . '"]\')')
+            ->pluck('id')
+            ->toArray();
     }
 
     // Use the array in the query if it's not empty
