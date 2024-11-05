@@ -92,7 +92,7 @@ class IndexController extends Controller
         // Prepare data for sending the email
         $data = [
             'sender' => ['name' => 'Saagar SCPL', 'email' => 'khanfaisal.makent@gmail.com'],
-            'to' => [['email' => 'webdeveloper@nexgeno.in', 'name' => 'Saagar SCPL']],
+            'to' => [['email' => 'zuber.nexgeno@gmail.com', 'name' => 'Saagar SCPL']],
             'subject' => 'New Contact Form Submission',
             'htmlContent' => "
                 <h2>Contact Form Submission</h2>

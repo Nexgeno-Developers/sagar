@@ -125,14 +125,12 @@
                 <div class="form-group"><input required type="text" name="company_name" class="form-control" placeholder="Company Name"></div>
                 <div class="form-group"><input required type="text" name="full_name" class="form-control" placeholder="Full Name"></div>
                 
-                <div class="custom-dropdown">
-                    <select required name="product" id="productSelect" class="form-control custom-select form-group">
-                        <option value="">---Select Product---</option>
-                        @foreach ($products_list as $row)
-                            <option value="{{ $row->id }}">{{ $row->title }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <select required name="product" id="productSelect" class="select2 form-select" onchange="handleSelectChange()">
+                    <option value="">--Select Product--</option>
+                    @foreach ($products_list as $row)
+                        <option value="{{ $row->id }}">{{ $row->title }}</option>
+                    @endforeach
+                </select>
 
                 <div class="form-group"> <input type="number" class="form-control" name="quantity" required placeholder="Quantity" min="0"></div>
                 <div class="form-group"><input required type="email" name="email" class="form-control" placeholder="Email Address"></div>
