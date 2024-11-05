@@ -1309,6 +1309,13 @@ h5.form_mark {
     border-radius: 15px;
 }
 
+.filter_list label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
 select#industrySelect,
 .select2.select2-container { 
     font-size: 14px;
@@ -1328,6 +1335,11 @@ select#industrySelect,
 
 .select2-container--default .select2-selection--single { 
     border: 0px !important;
+}
+
+.modal-body .select2.select2-container {
+    width: 100% !important;
+    border-bottom: 1px solid #c6c6c6;
 }
 
 .search-bar-filter .fa-search:before {
