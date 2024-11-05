@@ -60,47 +60,50 @@
                                 All Categories
                             </li>
                            @foreach($productCategories as $category)
-    <li class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif" >
-        <label style="cursor:pointer">
-            <input style="cursor:pointer" type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
-            onchange="updateCategoryIds(this)"
-            @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
-            >
-            {{ $category->title }}
-        </label>
-    </li>
-@endforeach
+                            <li class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif" >
+                                <label style="cursor:pointer">
+                                    <input style="cursor:pointer" type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
+                                    onchange="updateCategoryIds(this)"
+                                    @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
+                                    >
+                                    {{ $category->title }}
+                                </label>
+                            </li>
+                        @endforeach
 
                         </ul>
                     </div>
                 </form>
             </div>
             <div class="col-md-9 product_filter_gallery">
-                @if($products && $products->isEmpty())
+
+                @if($no_industry == true)
                     <p class="text-center">No products available.</p>
-                @elseif($products)
-                    <div class="row">
-                        @foreach($products as $product)
-                            <div class="col-md-4 col-6 product_filter_gallery_div">
-                                <a onclick="enquiry({{ $product->id }})" class="d-block text-decoration-none">
-                                    <div class="card">
-                                        <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
-                                        <span class="product_img_heading">{{ $product->title }}</span>
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <p class="card-text">{{ $product->title }}</p>
-                                            <i class="btn btn-primary fa fa-arrow-right"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!-- Pagination Links -->
-                    <div class="col-12 text-center pt-md-5 mt-md-0 mt-4">
-                        {{ $products->appends(['category_id' => $categoryIds])->links('pagination::bootstrap-5') }}
-                    </div>
                 @else
-                    <p class="text-center">No products available.</p>
+                    @if($products->isEmpty())
+                        <p class="text-center">No products available.</p>
+                    @else
+                        <div class="row">
+                            @foreach($products as $product)
+                                <div class="col-md-4 col-6 product_filter_gallery_div">
+                                    <a onclick="enquiry({{ $product->id }})" class="d-block text-decoration-none">
+                                        <div class="card">
+                                            <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
+                                            <span class="product_img_heading">{{ $product->title }}</span>
+                                            <div class="card-body d-flex align-items-center justify-content-center">
+                                                <p class="card-text">{{ $product->title }}</p>
+                                                <i class="btn btn-primary fa fa-arrow-right"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                        <!-- Pagination Links -->
+                        <div class="col-12 text-center pt-md-5 mt-md-0 mt-4">
+                            {{ $products->appends(['category_id' => $categoryIds])->links('pagination::bootstrap-5') }}
+                        </div>
+                    @endif
                 @endif
             </div>
         </div>

@@ -261,12 +261,16 @@ public function products_s(Request $request)
     
     // Optionally, you may want to filter out any empty values or non-numeric IDs
     $categoryIds = array_filter(array_map('trim', $categoryIds), 'is_numeric');
-
+    $no_industry = false;
     if ($industry) {
         $categoryIds = DB::table('product_categories')
             ->whereRaw('JSON_CONTAINS(industry, \'["' . $industry . '"]\')')
             ->pluck('id')
             ->toArray();
+
+        if(empty($categoryIds)){
+            $no_industry = true;
+        }
     }
 
     // Use the array in the query if it's not empty
@@ -286,11 +290,7 @@ public function products_s(Request $request)
     // Fetch products with pagination
     $products = $query->paginate(15);
 
-    if(empty($categoryIds)){
-        $products = NULL;
-    }
-
-    return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list'));
+    return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list','no_industry'));
 }
 
 
