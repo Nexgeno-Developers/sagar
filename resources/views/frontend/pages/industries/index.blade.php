@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4 accordion mb-md-3 industries_accordion" id="faq_accordion">  
            
-                @foreach ($product_categories as $index => $category)
+                @foreach ($industries as $index => $industry)
                     <div class="col">
                         <div class="accordion-item mb-2">
                             <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
@@ -34,12 +34,12 @@
                                     data-bs-target="#collapse{{ $index }}" 
                                     aria-expanded="false" 
                                     aria-controls="collapse{{ $index }}">
-                                    {{ $category->title }} <!-- Product title -->
+                                    {{ $industry->title }} <!-- Product title -->
                                 </button>
                             </h5>
                             <div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $index }}" data-bs-parent="#product_accordion">
                                 <div class="accordion-body">
-                                    {!! $category->description !!} <!-- Product description -->
+                                    {!! $industry->description !!} <!-- Product description -->
                                 </div>
                             </div>
                         </div>

@@ -291,9 +291,9 @@ public function products_s(Request $request)
 public function industrie_s(Request $request)
 {
     // Fetch all active categories
-    $product_categories = DB::table('product_categories')->where('is_active', 1)->where('is_industry', 1)->get();
+    $industries = DB::table('industries')->where('is_active', 1)->where('is_active', 1)->get();
 
-    return view('frontend.pages.industries.index', compact('product_categories'));
+    return view('frontend.pages.industries.index', compact('industries'));
 }
 
 

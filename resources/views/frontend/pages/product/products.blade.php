@@ -31,12 +31,12 @@
                         <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
                     </div>
                     
-                    <div class="row ps-lg-3 px-3 select2_industry">
+                    <div class="select2_industry">
                         <div class="col-md-12 col-12 p-0">
                             <div class="form-group mb-3">
                                 {{--<label class="pb-1 pt-2">Industry</label>--}}
                                 <select class="select2 form-select border-0" name="industry" id="industrySelect" onchange="handleSelectChange()">
-                                    <option value="">Select Industry</option>
+                                    <option value="">--Select Industry--</option>
                                     @foreach($Industry as $row)
                                         <option value="{{ $row->id }}" @if(request('industry') == $row->id) selected @endif>{{ $row->title }}</option>
                                     @endforeach
@@ -59,15 +59,18 @@
                             <li onclick="viewAllCategories()" class="cursor-pointer list-group-item @if(empty($categoryIds)) active @endif">
                                 All Categories
                             </li>
-                            @foreach($productCategories as $category)
-                                <li class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif">
-                                    <input type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
-                                    onchange="updateCategoryIds(this)"
-                                    @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
-                                    >
-                                    {{ $category->title }}
-                                </li>
-                            @endforeach
+                           @foreach($productCategories as $category)
+    <li class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif" >
+        <label style="cursor:pointer">
+            <input style="cursor:pointer" type="checkbox" class="category_checkbox" id="category_ids" value="{{ $category->id }}" 
+            onchange="updateCategoryIds(this)"
+            @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) checked @endif
+            >
+            {{ $category->title }}
+        </label>
+    </li>
+@endforeach
+
                         </ul>
                     </div>
                 </form>
