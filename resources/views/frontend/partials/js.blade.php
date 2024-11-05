@@ -19,6 +19,12 @@
 
 <!-- <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
+<script defer src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<!-- <script defer type="text/javascript" src="/assets/frontend/js/gtranslate_dwf.js"></script> -->
+<!-- <script defer src="js/google_translate.js" defer></script> -->
+<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+<script type="text/javascript" src="/assets/frontend/js/google-translate.js"></script>
+
   <script>
     window.gtranslateSettings = {
         "default_language": "en",
@@ -35,8 +41,3 @@
         window.location.href = "https://translate.google.com/translate?sl=auto&tl=" + language.split('|')[1] + "&u=" + window.location.href;
     }
 </script>
-
-
-<script defer type="text/javascript" src="/assets/frontend/js/gtranslate_dwf.js"></script>
-<!-- <script defer src="js/google_translate.js" defer></script> -->
-<script type="text/javascript" src="/assets/frontend/js/google-translate.js"></script>
