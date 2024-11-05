@@ -2058,3 +2058,7 @@ li.select2-results__option {
 .product-search::placeholder {
     color: #333;
 }
+
+.form-select:focus {
+    box-shadow: none !important;
+}
