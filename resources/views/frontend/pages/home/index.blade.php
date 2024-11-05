@@ -471,7 +471,7 @@
 
     <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-1 text-center">
         <div class="container">
-            <h2 class="col-12 product_heading text-center mt-md-3 pt-lg-4 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
+            <h2 class="col-12 product_heading text-center mt-md-3 mt-lg-5 pt-lg-5 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
             <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
             <div class="col-md-12 d-block pb-3 pt-2 text-center">
                 <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn" aria-label="see pdf for this">Read More</a>
