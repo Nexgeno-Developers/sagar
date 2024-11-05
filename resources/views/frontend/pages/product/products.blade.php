@@ -76,9 +76,9 @@
                 </form>
             </div>
             <div class="col-md-9 product_filter_gallery">
-                @if($products->isEmpty())
+                @if($products && $products->isEmpty())
                     <p class="text-center">No products available.</p>
-                @else
+                @elseif($products)
                     <div class="row">
                         @foreach($products as $product)
                             <div class="col-md-4 col-6 product_filter_gallery_div">
@@ -99,6 +99,8 @@
                     <div class="col-12 text-center pt-md-5 mt-md-0 mt-4">
                         {{ $products->appends(['category_id' => $categoryIds])->links('pagination::bootstrap-5') }}
                     </div>
+                @else
+                    <p class="text-center">No products available.</p>
                 @endif
             </div>
         </div>

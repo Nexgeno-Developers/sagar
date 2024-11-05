@@ -286,6 +286,10 @@ public function products_s(Request $request)
     // Fetch products with pagination
     $products = $query->paginate(15);
 
+    if(empty($categoryIds)){
+        $products = NULL;
+    }
+
     return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list'));
 }
 
