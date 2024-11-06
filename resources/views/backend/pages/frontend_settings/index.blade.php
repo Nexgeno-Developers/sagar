@@ -104,7 +104,7 @@
                             </div>
                             <div class="add-row-col-3-div col-md-3 ">
                                 @if ($index === 0 || $index === $lastindex - 1)
-                                    <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                                    <button type="button" class="btn btn-outline-success add-row my-2">Add More +</button>
                                 @endif
                                 @if ($index > 0)
                                 <button type="button" class="btn btn-outline-danger remove-row2 my-2">Remove -</button>
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="add-row-col-3-div col-md-3 ">
-                            <button type="button" class="btn btn-outline-success add-row2 my-2">Add +</button>
+                            <button type="button" class="btn btn-outline-success add-row2 my-3">Add +</button>
                         </div>
                     </div>
                 @endif
@@ -184,11 +184,11 @@
                                             </div>
                                         @endif    
                                         --}}
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="social_media_icon">Icon</label>
                                             <input type="text" name="social_media_icon[]" class="form-control" value="{{ $row->icon }}" required>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="social_media_url">URL</label>
                                             <input type="text" name="social_media_url[]" class="form-control" value="{{ $row->url }}" required>
                                         </div>
@@ -196,7 +196,7 @@
                                 </div>
                                 <div class="add-row-col-3-div col-md-3">
                                     @if ($index === 0 || $index === $lastindex - 1)
-                                        <button type="button" class="btn btn-outline-success add-row m-2">Add More +</button>
+                                        <button type="button" class="btn btn-outline-success add-row my-2">Add More +</button>
                                     @endif
                                     @if ($index > 0)
                                     <button type="button" class="btn btn-outline-danger remove-row my-2">Remove -</button>
@@ -263,7 +263,7 @@
             newRow.find('.add-row-col-3-div').remove();
             newRow.find('.div-preview-image ').remove();
             newRow.append(
-                '<div class="col-md-3"><button type="button" class="btn btn-outline-success add-row m-2">Add +</button><button type="button" class="btn btn-outline-danger remove-row my-2">Remove -</button></div>'
+                '<div class="col-md-3"><button type="button" class="btn btn-outline-success add-row my-2">Add +</button><button type="button" class="btn btn-outline-danger remove-row my-2">Remove -</button></div>'
                 );
             $('.gallery-image-row').last().after(newRow);
         });

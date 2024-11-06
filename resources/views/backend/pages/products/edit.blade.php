@@ -45,22 +45,22 @@
     <div class="row">
         <div class="form-group col-6 mb-3">
             <label>Function Description<span class="red">*</span></label>
-            <textarea required name="function_description" class="form-control trumbowyg">{{ old('function_description', $product->function_description) }}</textarea>
+            <textarea name="function_description" class="form-control trumbowyg">{{ old('function_description', $product->function_description) }}</textarea>
         </div>
 
         <div class="form-group col-6 mb-3">
             <label>Product Description<span class="red">*</span></label>
-            <textarea required name="product_description" class="form-control trumbowyg">{{ old('product_description', $product->product_description) }}</textarea>
+            <textarea name="product_description" class="form-control trumbowyg">{{ old('product_description', $product->product_description) }}</textarea>
         </div>
 
         <div class="form-group col-6 mb-3">
             <label>Product Information<span class="red">*</span></label>
-            <textarea required name="product_information" class="form-control trumbowyg">{{ old('product_information', $product->product_information) }}</textarea>
+            <textarea name="product_information" class="form-control trumbowyg">{{ old('product_information', $product->product_information) }}</textarea>
         </div>
 
         <div class="form-group col-6 mb-3">
             <label>Delivery Description<span class="red">*</span></label>
-            <textarea required name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description', $product->delivery_description) }}</textarea>
+            <textarea name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description', $product->delivery_description) }}</textarea>
         </div>
 
         <div class="col-sm-12">

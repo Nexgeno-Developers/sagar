@@ -17,7 +17,7 @@
                 <input type="text" class="form-control" name="title"  maxlength="155" value="{{ $page->title }}" required>
             </div>
         </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label>Slug (URL) <span class="red">*</span></label>
                 <input type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
@@ -32,7 +32,7 @@
                     <option value="1" {{ $page->is_active == 1 ? 'selected' : '' }}>Active</option>
                 </select>
             </div>
-        </div>
+        </div> -->
     </div>
     <hr>
     <h3>Content</h3>
