@@ -100,11 +100,11 @@ $allpages = DB::table('pages')
                                             </li>
 
                                             <li>
-                                                <a href="" class="sub_menu">Services & Solutions</a>
+                                                <a href="#" class="sub_menu">Services & Solutions</a>
                                             </li>
 
                                             <li>
-                                                <a href="" class="sub_menu">Management Team</a>
+                                                <a href="#" class="sub_menu">Management Team</a>
                                             </li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
@@ -172,7 +172,7 @@ $allpages = DB::table('pages')
                                     <!-- <i class="text-light fa-solid fa-language"></i> -->
                                     <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
                                     <div class="gtranslate_wrapper">
-                                        <select onchange="doGTranslate(this);">
+                                        <select onchange="doGTranslate(this);" id="languageSelector">
                                             <option value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English</option>
                                             <option value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese</option>
                                             <option value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish</option>

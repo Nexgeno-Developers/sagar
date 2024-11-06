@@ -1303,7 +1303,7 @@ h5.form_mark {
     margin-bottom: 20px;
 }
 
-.search-bar-filter input{
+.search-bar-filter input {
     border: 0;
     padding: 15px 0 15px 5px;
     border-radius: 15px;
@@ -1317,7 +1317,7 @@ h5.form_mark {
 }
 
 select#industrySelect,
-.select2.select2-container { 
+.select2.select2-container {
     font-size: 14px;
 }
 
@@ -1327,13 +1327,13 @@ select#industrySelect,
     height: auto !important;
     padding: 11px 10px;
 }
- 
-.select2-container--default .select2-selection--single .select2-selection__arrow { 
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 10px !important;
-    right: 10px !important; 
+    right: 10px !important;
 }
 
-.select2-container--default .select2-selection--single { 
+.select2-container--default .select2-selection--single {
     border: 0px !important;
 }
 
@@ -2087,4 +2087,18 @@ li.select2-results__option {
 
 .form-select:focus {
     box-shadow: none !important;
+}
+
+.line-35 {
+    line-height: 35px !important;
+}
+
+.location_flags {
+    position: relative;
+    top: 6px;
+}
+
+.footer i {
+    position: relative;
+    top: 3px;
 }

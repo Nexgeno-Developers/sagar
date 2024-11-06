@@ -25,7 +25,7 @@
            
                 @foreach ($industries as $index => $industry)
                     <div class="col">
-                        <div class="accordion-item mb-2">
+                        <div class="accordion-item mb-md-2 mb-0">
                             <h5 class="function_title mb-lg-3 mb-md-1 mb-0">
                                 <button 
                                     class="accordion-button collapsed" 

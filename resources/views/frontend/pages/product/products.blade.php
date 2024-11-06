@@ -31,7 +31,7 @@
                         <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
                     </div>
                     
-                    <div class="select2_industry">
+                    <!-- <div class="select2_industry">
                         <div class="col-md-12 col-12 p-0">
                             <div class="form-group mb-3">
                                 {{--<label class="pb-1 pt-2">Industry</label>--}}
@@ -48,7 +48,7 @@
                                 <i class="btn p-0 rounded-0 btn-primary fa fa-search padding6"></i>
                             </button>
                         </div>--}}
-                    </div>
+                    </div> -->
                   
 
                     <input type="hidden" id="pre_category_ids" value="{{ is_array($categoryIds) ? implode(',', $categoryIds) : $categoryIds }}">
@@ -136,7 +136,8 @@
                 <div class="form-group"><input required type="email" name="email" class="form-control" placeholder="Email Address"></div>
                 
                 <textarea class="col-12 mb-3" name="message" id="message" placeholder="Message" rows="2"></textarea>
-                <button type="submit" class="btn btn-primary mt-md-3 mt-0">SEND</button>
+                  <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-md-3 mt-0">SEND</button></div>
             </form>
         </div>
       </div>

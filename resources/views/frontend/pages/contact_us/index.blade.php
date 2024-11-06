@@ -45,7 +45,7 @@
                             </div>
                         </div>
 
-                        <div class="d-flex flex-lg-row flex-column col-12 mb-md-0 mb-3">
+                        <div class="d-flex flex-lg-row flex-column flex_coloum_md col-12 mb-md-0 mb-3">
                             <div class="col-xl-4 col-12 d-flex align-items-start gap-2 pb-md-3">
                                 <i class="fa fa-phone mt-2"></i>
                                 <div class="d-block">

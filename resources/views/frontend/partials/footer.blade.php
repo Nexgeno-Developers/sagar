@@ -35,7 +35,7 @@
                     <div class="d-flex gap-2 pb-3">
                         <i class="fa fa-phone"></i>
                         <span>
-                            <h6 class="d-block mb-0">Overseas Business Enquiries: <br>
+                            <h6 class="d-block mb-2">Overseas Business Enquiries: <br>
                             </h6> 
                                 <a href="tel:{{$contacts[1]->phone1}}" class="footer_contact_links">
                                     {{$contacts[1]->phone1}} 

@@ -58,7 +58,7 @@ $url = url()->current();
 <meta name="twitter:description" content="Saagar">
 <meta name="twitter:image" content="{{ asset('assets/frontend/images/logo.png') }}">
 <meta name="twitter:site" content="@sagar" />
-<link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
+<link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.webp') }}">
 
 <!----------------- twitter ------------------->
 

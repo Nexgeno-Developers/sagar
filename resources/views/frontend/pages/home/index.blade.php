@@ -412,7 +412,7 @@
                     @endforeach          
                 </div>
 
-            </div>
+            </div> 
         </div>
     </section>
     @endif --}}
@@ -448,7 +448,7 @@
                                         <img src="{{ asset('storage/' . $scp_image2) }}" alt="" class="spply_chn_box_img" loading="lazy">
                                     </div>
                                     <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
-                                    <a target="_blank" href="{{route('partner_with_us')}}" class="spply_chn_btn">Connect Now</a>
+                                    <a href="{{route('partner_with_us')}}" class="spply_chn_btn">Connect Now</a>
                                 </div>
                             </div>
 
@@ -472,7 +472,7 @@
     <section class="white_section code_of_conduct bg-light pb-md-5 py-3 pt-md-1 text-center">
         <div class="container">
             <h2 class="col-12 product_heading text-center mt-md-3 mt-lg-5 pt-lg-5 pb-md-3">CODE of <span class="our">CONDUCT</span></h2>
-            <p class="col-12 code_of_content_div pb-md-3">{{$cocs_description }}</p>
+            <p class="col-12 code_of_content_div pb-md-3 line-35">{{$cocs_description }}</p>
             <div class="col-md-12 d-block pb-3 pt-2 text-center">
                 <a target="_blank" href="{{ asset('storage/' . $cocs_pdf) }}" class="btn a_btn blue_btn" aria-label="see pdf for this">Read More</a>
             </div>

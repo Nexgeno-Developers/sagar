@@ -25,7 +25,7 @@
 <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 <script type="text/javascript" src="/assets/frontend/js/google-translate.js"></script>
 
-  <script>
+ <script>
     window.gtranslateSettings = {
         "default_language": "en",
         "detect_browser_language": true,
@@ -33,11 +33,19 @@
         "flag_size": 16,
         "switcher_horizontal_position": "inline"
     };
-</script>
 
-<script type="text/javascript">
+    // Function to handle language selection and navigate to the translated page
     function doGTranslate(select) {
-        var language = select.value;
-        window.location.href = "https://translate.google.com/translate?sl=auto&tl=" + language.split('|')[1] + "&u=" + window.location.href;
+        const language = select.value.split('|')[1];
+        window.location.href = "https://translate.google.com/translate?sl=auto&tl=" + language + "&u=" + window.location.href;
     }
+
+    // Set the language to English on every page load
+    window.addEventListener('load', function() {
+        const languageSelector = document.getElementById('languageSelector');
+        
+        // Always select English on load
+        languageSelector.value = "en|en"; // Set the dropdown to English
+        doGTranslate(languageSelector); // Automatically translate to English
+    });
 </script>
