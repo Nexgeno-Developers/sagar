@@ -98,7 +98,7 @@
             </div>
 
 
-            <div class="col-md-12 background_blue_img my-md-5 my-4 p-md-5 p-3 cor_values">
+            <div class="col-md-12 background_blue_img my-md-5 my-4 p-md-5 p-3 cor_values" id="cor_values">
                 <h2 class="product_heading text-start text-light pb-md-1">Cor Values</h2>
                 <div class="row align-items-center">
                     <div class="col-md-7 text-light pe-md-4 pt-md-3">
@@ -112,7 +112,8 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-md-row-reverse flex-column align-items-center col-md-12 py-md-3 py-3 company_policies">
+
+            <div class="d-flex flex-md-row-reverse flex-column align-items-center col-md-12 py-md-3 py-3 company_policies" id="company_policies">
                 <div class="col-md-7 ps-md-5">
                     <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our"> COMPANY
                         </span>POLICY</h2>
@@ -128,7 +129,7 @@
     </section>
 
     @if (!empty($teams))
-        <section class="blue_section management_team py-md-5 py-3">
+        <section class="blue_section management_team py-md-5 py-3" id="management_team">
             <div class="container">
                 <h2 class="vission_heading product_heading py-md-3 text-light">MANAGEMENT<span class="purple_color">
                         TEAM</span></h2>
@@ -182,14 +183,14 @@
         </div> 
     </section>
 
-    <section class="white_section why_sscpl p-lg-5 py-3 pb-md-1 pb-3">
+    <section class="white_section why_sscpl p-lg-5 py-3 pb-md-1 pb-3" id="services_n_solution">
         <div class="container">
             <div class="row justify-content-between position-relative">
                 <!-- <div class="animated_moving_machine py-md-2 d-md-block d-none">
                     <img class="moving_machine" src="/assets/frontend/images/home/animated_top-tank.png" alt="">
                 </div> -->
                 <div class="col-12 why_sscpl_bg_img">                    
-                    <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">WHY SSCPL?</h2>
+                    <h2 class="product_heading text-light text-center pt-lg-5 pt-3 mt-md-4">SERVICES & SOLUTIONS</h2>
                     <div class="row pt-lg-5 pt-3 px-md-0 px-3">
                         <div class="col-md-3 col-6 sscl_contents_main_div text-center pb-lg-5 pb-3">
                             <div class="sscl_img_div"> <img src="/assets/frontend/images/home/funnel.png" alt=""
