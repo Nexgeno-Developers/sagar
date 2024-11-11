@@ -7,7 +7,7 @@
 <link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
 
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v=1.0.2" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v=1.0.3" />
 
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v=1.0.1" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css" />
@@ -16,6 +16,8 @@
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.theme.default.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/frontend/css/fonts.css" />
 <!-- <link href="/assets/frontend/css/select2.min.css" rel="stylesheet"/> -->
-<link href="assets/frontend/css/select2.min.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="assets/frontend/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <title>Saagar Speciality</title>
