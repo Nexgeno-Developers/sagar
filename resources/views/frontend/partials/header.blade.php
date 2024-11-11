@@ -121,9 +121,9 @@ $logo = $footer->logo ?? '';
                                                 class="sub_menu">Services & Solutions</a>
                                         </li>
 
-                                        <li>
+                                        <!-- <li>
                                             <a href="/what-we-do" class="sub_menu">What We Do</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     <i class="fa fa-angle-down"></i>
                                 </li>
@@ -252,9 +252,9 @@ $logo = $footer->logo ?? '';
                                                     class="sub_menu">Services & Solutions</a>
                                             </li>
 
-                                            <li>
+                                            <!-- <li>
                                                 <a href="/what-we-do" class="sub_menu">What We Do</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>
