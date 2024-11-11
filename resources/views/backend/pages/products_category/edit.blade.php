@@ -11,7 +11,7 @@
             <input type="text" name="slug" class="form-control" value="{{ old('slug', $productCategory->slug) }}" required>
         </div>
 
-        <div class="form-group col-4 mb-3">
+        {{-- <div class="form-group col-4 mb-3">
             <label>Industry</label>
             <select class="select2 form-select" name="industry[]" multiple>
                 <option value="">Select Industry</option>
@@ -19,7 +19,7 @@
                 <option value="{{ $row->id }}" {{ in_array($row->id, json_decode($productCategory->industry)) ? 'selected' : '' }}>{{ $row->title }}</option>
                 @endforeach
             </select>
-        </div>   
+        </div>    --}}
         
         <div class="form-group col-8 mb-3 col-sm-{{ !empty($productCategory->image) ? 3 : 6 }}">
             <label>Image<span class="red">*</span></label>

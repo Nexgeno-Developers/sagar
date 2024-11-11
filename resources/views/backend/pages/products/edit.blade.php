@@ -41,6 +41,20 @@
                 @endforeach
             </select>
         </div>
+
+        @php
+            $selected_industry = $product->industry ?? '[]';
+        @endphp
+        <div class="form-group col-4 mb-3">
+            <label>Industry</label>
+            <select class="select2 form-select" name="industry[]" multiple>
+                <option value="">Select Industry</option>
+                @foreach($Industry as $row)
+                <option value="{{ $row->id }}" {{ in_array($row->id, json_decode($selected_industry)) ? 'selected' : '' }}>{{ $row->title }}</option>
+                @endforeach
+            </select>
+        </div>   
+
     </div>
     <div class="row">
         <div class="form-group col-6 mb-3">

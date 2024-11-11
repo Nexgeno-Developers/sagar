@@ -136,7 +136,7 @@ $allpages = DB::table('pages')
                                             </div>
                                             <div class="search-bar d-none" id="searchBar">
                                                 <input type="text" class="product-search" name="search" class="form-control" placeholder="Search for Product..." value="{{ request('search') }}">
-                                                <input type="hidden" name="category_id" id="category_id" value="">
+                                                <input type="hidden" name="category_ids" id="category_id" value="">
                                                 <button type="submit" class="btn search_btn search_btn_2" aria-label="search">
                                                     <i class="fa fa-search"></i>
                                                 </button>

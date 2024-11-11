@@ -35,6 +35,19 @@
                         </div>
 
                         <!-- <div class="select2_industry">
+<section class="white_section gallery_filter">
+    <div class="container py-md-5">
+        <div class="row">
+            <div class="col-md-3 sidebar">                
+                <form action="{{ route('products_s') }}" method="GET" id="searchForm">
+                    <div class="search-bar-filter">
+                        <button type="submit" class="btn search_btn me-2">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
+                    </div>
+                    
+                    <div class="select2_industry">
                         <div class="col-md-12 col-12 p-0">
                             <div class="form-group mb-3">
                                 {{--<label class="pb-1 pt-2">Industry</label>--}}
@@ -218,7 +231,29 @@
     }
 
 
+    function updateCategoryIds_2() {
+        // Get all checked checkboxes
+        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
+        // Get all checked checkboxes
+        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        // Check if the industrySelect has a value
+        // if (industrySelect.value) {
+        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+        //     preCategoryIds = [];
+        // } 
+
+        // Merge remaining pre_category_ids with selectedIds
+        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+
+        // Update the hidden input field
+        document.getElementById('category_ids_hidden').value = allIds.join(',');
+    }
+
+    updateCategoryIds_2();
 
     function viewAllCategories() {
         // Clear the search input field using getElementsByClassName

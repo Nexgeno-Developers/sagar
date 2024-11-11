@@ -261,17 +261,6 @@ public function products_s(Request $request)
     
     // Optionally, you may want to filter out any empty values or non-numeric IDs
     $categoryIds = array_filter(array_map('trim', $categoryIds), 'is_numeric');
-    $no_industry = false;
-    if ($industry) {
-        $categoryIds = DB::table('product_categories')
-            ->whereRaw('JSON_CONTAINS(industry, \'["' . $industry . '"]\')')
-            ->pluck('id')
-            ->toArray();
-
-        if(empty($categoryIds)){
-            $no_industry = true;
-        }
-    }
 
     // Use the array in the query if it's not empty
     if (is_array($categoryIds) && count($categoryIds) > 0) {
@@ -281,6 +270,22 @@ public function products_s(Request $request)
             }
         });
     }
+
+
+    $no_industry = false;
+    if ($industry) {
+        // $categoryIds = DB::table('product_categories')
+        //     ->whereRaw('JSON_CONTAINS(industry, \'["' . $industry . '"]\')')
+        //     ->pluck('id')
+        //     ->toArray();
+
+        $query->whereRaw('JSON_CONTAINS(industry, \'["' . $industry . '"]\')');
+
+        if(empty($categoryIds)){
+            $no_industry = true;
+        }
+    }
+
 
     // Filter products by search query
     if ($searchQuery) {

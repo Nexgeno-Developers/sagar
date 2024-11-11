@@ -23,6 +23,7 @@
                 <th>#</th>
                 <th>Title</th>
                 <th>Slug</th>
+                <th>Industry</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -34,6 +35,17 @@
                 <td>{{$i++}}</td>
                 <td>{{$row->title}}</td>
                 <td>{{$row->slug}}</td>
+                @php 
+                    $industry_title = '-';
+
+                    if (!empty($row->industry)) {
+                        $industry_title = DB::table('industries')
+                            ->whereIn('id', json_decode($row->industry))
+                            ->pluck('title')
+                            ->implode(', ');
+                    }
+                @endphp
+                <td>{{ $industry_title }}</td>
                 <td>
                     @if($row->is_active == 1)
                     <span class="badge bg-success" title="Inactive">Active</span>
