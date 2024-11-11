@@ -12,8 +12,8 @@
         </div>
 
         <div class="form-group col-6 mb-3">
-            <label>Image<span class="red">*</span></label>
-            <input required type="file" name="image" class="form-control">
+            <label>Image</label>
+            <input type="file" name="image" class="form-control">
         </div>
 
         <div class="form-group col-6 mb-3">
@@ -35,7 +35,7 @@
             </select>
         </div>
 
-        <div class="form-group col-3 mb-3">
+        <div class="form-group col-6 mb-6">
             <label>Industry</label>
             <select class="select2 form-select" name="industry[]" multiple>
                 <option value="" disabled>Select Industry</option>
@@ -48,22 +48,22 @@
 
     </div>
     <div class="row">
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Function Description<span class="red">*</span></label>
             <textarea name="function_description" class="form-control trumbowyg">{{ old('function_description') }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-12 mb-3">
             <label>Product Description<span class="red">*</span></label>
             <textarea name="product_description" class="form-control trumbowyg">{{ old('product_description') }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Product Information<span class="red">*</span></label>
             <textarea name="product_information" class="form-control trumbowyg">{{ old('product_information') }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Delivery Description<span class="red">*</span></label>
             <textarea name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description') }}</textarea>
         </div>

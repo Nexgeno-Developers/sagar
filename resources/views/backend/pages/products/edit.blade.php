@@ -13,8 +13,8 @@
         </div>
 
         <div class="form-group mb-3 col-sm-{{ !empty($product->image) ? 3 : 6 }}">
-            <label>Image<span class="red">*</span></label>
-            <input class="form-control" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" @if (empty($product->image)) required @endif>
+            <label>Image</label>
+            <input class="form-control" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" @if (empty($product->image)) @endif>
         </div>
         @if (!empty($product->image))
             <div class="div-preview-image col-3 form-group mb-3">
@@ -45,7 +45,7 @@
         @php
             $selected_industry = $product->industry ?? '[]';
         @endphp
-        <div class="form-group col-4 mb-3">
+        <div class="form-group col-6 mb-3">
             <label>Industry</label>
             <select class="select2 form-select" name="industry[]" multiple>
                 <option value="">Select Industry</option>
@@ -57,22 +57,22 @@
 
     </div>
     <div class="row">
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Function Description<span class="red">*</span></label>
             <textarea name="function_description" class="form-control trumbowyg">{{ old('function_description', $product->function_description) }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-12 mb-3">
             <label>Product Description<span class="red">*</span></label>
             <textarea name="product_description" class="form-control trumbowyg">{{ old('product_description', $product->product_description) }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Product Information<span class="red">*</span></label>
             <textarea name="product_information" class="form-control trumbowyg">{{ old('product_information', $product->product_information) }}</textarea>
         </div>
 
-        <div class="form-group col-6 mb-3">
+        <div class="form-group col-6 mb-3 d-none">
             <label>Delivery Description<span class="red">*</span></label>
             <textarea name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description', $product->delivery_description) }}</textarea>
         </div>
