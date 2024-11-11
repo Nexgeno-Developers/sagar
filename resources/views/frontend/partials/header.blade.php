@@ -7,10 +7,11 @@ $allpages = DB::table('pages')
 ->limit(10)
 ->get();
 
-$footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single
-record
+$footer = DB::table('frontend_settings')->where('id', 1)->first();
 $logo = $footer->logo ?? '';
 @endphp
+
+
 <header id="mainHeader" class="header pb-lg-2 pt-md-0 py-md-0 py-2">
     <div class="container">
         <div class="d-flex flex-column">
@@ -120,9 +121,9 @@ $logo = $footer->logo ?? '';
                                                 class="sub_menu">Services & Solutions</a>
                                         </li>
 
-                                        <!-- <li>
+                                        <li>
                                             <a href="/what-we-do" class="sub_menu">What We Do</a>
-                                        </li> -->
+                                        </li>
                                     </ul>
                                     <i class="fa fa-angle-down"></i>
                                 </li>
@@ -251,9 +252,9 @@ $logo = $footer->logo ?? '';
                                                     class="sub_menu">Services & Solutions</a>
                                             </li>
 
-                                            <!-- <li>
+                                            <li>
                                                 <a href="/what-we-do" class="sub_menu">What We Do</a>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>
