@@ -34,37 +34,27 @@
                                 placeholder="Search for Product" value="{{ request('search') }}">
                         </div>
 
-                        <!-- <div class="select2_industry">
-<section class="white_section gallery_filter">
-    <div class="container py-md-5">
-        <div class="row">
-            <div class="col-md-3 sidebar">                
-                <form action="{{ route('products_s') }}" method="GET" id="searchForm">
-                    <div class="search-bar-filter">
-                        <button type="submit" class="btn search_btn me-2">
-                            <i class="fa fa-search"></i>
-                        </button>
-                        <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
-                    </div>
-                    
-                    <div class="select2_industry">
-                        <div class="col-md-12 col-12 p-0">
-                            <div class="form-group mb-3">
-                                {{--<label class="pb-1 pt-2">Industry</label>--}}
-                                <select class="select2 form-select border-0" name="industry" id="industrySelect" onchange="handleSelectChange()">
-                                    <option value="">--Select Industry--</option>
-                                    @foreach($Industry as $row)
-                                        <option value="{{ $row->id }}" @if(request('industry') == $row->id) selected @endif>{{ $row->title }}</option>
-                                    @endforeach
-                                </select>
+                        <div class="select2_industry">
+                            <div class="col-md-12 col-12 p-0">
+                                <div class="form-group mb-3">
+                                    {{--<label class="pb-1 pt-2">Industry</label>--}}
+                                    <select class="select2 form-select border-0" name="industry" id="industrySelect"
+                                        onchange="handleSelectChange()">
+                                        <option value="">--Select Industry--</option>
+                                        @foreach($Industry as $row)
+                                        <option value="{{ $row->id }}" @if(request('industry')==$row->id) selected
+                                            @endif>{{ $row->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        {{--<div class="col-md-1 col-2 margin36 p-0">
+                            {{--<div class="col-md-1 col-2 margin36 p-0">
                             <button class="border-0 p-0 rounded-0" onchange="submitCategoryForm()">
                                 <i class="btn p-0 rounded-0 btn-primary fa fa-search padding6"></i>
                             </button>
                         </div>--}}
-                    </div> -->
+                        </div>
+
 
 
                         <input type="hidden" id="pre_category_ids"
@@ -188,118 +178,174 @@
         document.getElementById('searchForm').submit();
     }
 
+    <<
+    <<
+    <<
+    <
+    HEAD
+
     function handleSelectChange() {
         const selectElement = document.getElementById('industrySelect');
         if (selectElement.value !== '') {
-            submitCategoryForm();
-        }
-    }
+            submitCategoryForm(); ===
+            ===
+            =
+            function updateCategoryIds(checkbox) {
+                // Get all checked checkboxes
+                const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+                let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
-    function updateCategoryIds(checkbox) {
-        // Get all checked checkboxes
-        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
-        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+                // Get all checked checkboxes
+                const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+                let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-        // Get all checked checkboxes
-        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
-        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+                // Check if the industrySelect has a value
+                // if (industrySelect.value) {
+                //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+                //     preCategoryIds = [];
+                // } 
 
-        // Check if the industrySelect has a value
-        if (industrySelect.value) {
-            selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-            preCategoryIds = [];
-        }
+                // Remove the unchecked checkbox value from pre_category_ids if it exists
+                if (!checkbox.checked) {
+                    const index = preCategoryIds.indexOf(checkbox.value);
+                    if (index !== -1) {
+                        preCategoryIds.splice(index, 1); // Remove the ID
+                        >>>
+                        >>>
+                        >
+                        48 a965cf2a40c8381f76c993b2ef9164df916a10
+                    }
+                }
 
-        // Remove the unchecked checkbox value from pre_category_ids if it exists
-        if (!checkbox.checked) {
-            const index = preCategoryIds.indexOf(checkbox.value);
-            if (index !== -1) {
-                preCategoryIds.splice(index, 1); // Remove the ID
-            }
-        }
+                function updateCategoryIds(checkbox) {
+                    // Get all checked checkboxes
+                    const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+                    let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
-        // Merge remaining pre_category_ids with selectedIds
-        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+                    // Get all checked checkboxes
+                    const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+                    let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-        // Update the hidden input field
-        document.getElementById('category_ids_hidden').value = allIds.join(',');
+                    <<
+                    <<
+                    <<
+                    <
+                    HEAD
+                    // Check if the industrySelect has a value
+                    if (industrySelect.value) {
+                        selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+                        preCategoryIds = [];
+                    } ===
+                    ===
+                    =
+                    // Clear the selected value in the industry select box
+                    // document.getElementById('industrySelect').value = '';
+                    >>>
+                    >>>
+                    >
+                    48 a965cf2a40c8381f76c993b2ef9164df916a10
 
-        // Clear the selected value in the industry select box
-        document.getElementById('industrySelect').value = '';
+                    // Remove the unchecked checkbox value from pre_category_ids if it exists
+                    if (!checkbox.checked) {
+                        const index = preCategoryIds.indexOf(checkbox.value);
+                        if (index !== -1) {
+                            preCategoryIds.splice(index, 1); // Remove the ID
+                        }
+                    }
 
-        submitCategoryForm();
-    }
+                    // Merge remaining pre_category_ids with selectedIds
+                    const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
 
+                    <<
+                    <<
+                    <<
+                    <
+                    HEAD
+                    // Update the hidden input field
+                    document.getElementById('category_ids_hidden').value = allIds.join(',');
 
-    function updateCategoryIds_2() {
-        // Get all checked checkboxes
-        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
-        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+                    // Clear the selected value in the industry select box
+                    document.getElementById('industrySelect').value = ''; ===
+                    ===
+                    =
+                    function updateCategoryIds_2() {
+                        // Get all checked checkboxes
+                        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+                        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
-        // Get all checked checkboxes
-        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
-        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+                        // Get all checked checkboxes
+                        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+                        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-        // Check if the industrySelect has a value
-        // if (industrySelect.value) {
-        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-        //     preCategoryIds = [];
-        // } 
+                        // Check if the industrySelect has a value
+                        // if (industrySelect.value) {
+                        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+                        //     preCategoryIds = [];
+                        // } 
 
-        // Merge remaining pre_category_ids with selectedIds
-        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+                        // Merge remaining pre_category_ids with selectedIds
+                        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
 
-        // Update the hidden input field
-        document.getElementById('category_ids_hidden').value = allIds.join(',');
-    }
+                        // Update the hidden input field
+                        document.getElementById('category_ids_hidden').value = allIds.join(',');
+                    }
 
-    updateCategoryIds_2();
+                    updateCategoryIds_2(); >>>
+                    >>>
+                    >
+                    48 a965cf2a40c8381f76c993b2ef9164df916a10
 
-    function viewAllCategories() {
-        // Clear the search input field using getElementsByClassName
-        var searchInputs = document.getElementsByClassName('product-search');
-        if (searchInputs.length > 0) {
-            searchInputs[0].value = '';
-        }
-
-        // Clear the category_id hidden field
-        document.getElementById('category_id').value = '';
-
-        // Submit the form using getElementsByClassName
-        var searchForm = document.getElementsByClassName('searchForm');
-        if (searchForm.length > 0) {
-            searchForm[0].submit();
-        }
-    }
-
-    function closeModal() {
-        $('#exampleModalCenter').modal('hide');
-    }
-
-    function enquiry(productID) {
-        // Set the selected product in the dropdown
-        const productSelect = document.getElementById('productSelect');
-        productSelect.value = productID;
-
-        // Open the modal
-        $('#exampleModalCenter').modal('show');
-    }
+                    submitCategoryForm();
+                }
 
 
-    $(document).ready(function() {
-        initValidate('#add_partner_us_form');
-        $("#add_partner_us_form").submit(function(e) {
-            var form = $(this);
-            ajaxSubmit(e, form, responseHandler);
-        });
 
-        var responseHandler = function(response) {
-            $('input, textarea').val('');
-            $("select option:first").prop('selected', true);
-            setTimeout(function() {
-                location.reload();
-            }, 1000);
-        }
-    });
+
+                function viewAllCategories() {
+                    // Clear the search input field using getElementsByClassName
+                    var searchInputs = document.getElementsByClassName('product-search');
+                    if (searchInputs.length > 0) {
+                        searchInputs[0].value = '';
+                    }
+
+                    // Clear the category_id hidden field
+                    document.getElementById('category_id').value = '';
+
+                    // Submit the form using getElementsByClassName
+                    var searchForm = document.getElementsByClassName('searchForm');
+                    if (searchForm.length > 0) {
+                        searchForm[0].submit();
+                    }
+                }
+
+                function closeModal() {
+                    $('#exampleModalCenter').modal('hide');
+                }
+
+                function enquiry(productID) {
+                    // Set the selected product in the dropdown
+                    const productSelect = document.getElementById('productSelect');
+                    productSelect.value = productID;
+
+                    // Open the modal
+                    $('#exampleModalCenter').modal('show');
+                }
+
+
+                $(document).ready(function() {
+                    initValidate('#add_partner_us_form');
+                    $("#add_partner_us_form").submit(function(e) {
+                        var form = $(this);
+                        ajaxSubmit(e, form, responseHandler);
+                    });
+
+                    var responseHandler = function(response) {
+                        $('input, textarea').val('');
+                        $("select option:first").prop('selected', true);
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000);
+                    }
+                });
     </script>
     @endsection
