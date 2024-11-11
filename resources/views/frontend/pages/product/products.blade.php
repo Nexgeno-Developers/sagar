@@ -56,7 +56,6 @@
                         </div>
 
 
-
                         <input type="hidden" id="pre_category_ids"
                             value="{{ is_array($categoryIds) ? implode(',', $categoryIds) : $categoryIds }}">
                         <input type="hidden" id="category_ids_hidden" name="category_ids" value="">
@@ -178,174 +177,118 @@
         document.getElementById('searchForm').submit();
     }
 
-    <<
-    <<
-    <<
-    <
-    HEAD
-
     function handleSelectChange() {
         const selectElement = document.getElementById('industrySelect');
         if (selectElement.value !== '') {
-            submitCategoryForm(); ===
-            ===
-            =
-            function updateCategoryIds(checkbox) {
-                // Get all checked checkboxes
-                const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
-                let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+            submitCategoryForm();
+        }
+    }
 
-                // Get all checked checkboxes
-                const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
-                let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+    function updateCategoryIds(checkbox) {
+        // Get all checked checkboxes
+        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
-                // Check if the industrySelect has a value
-                // if (industrySelect.value) {
-                //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-                //     preCategoryIds = [];
-                // } 
+        // Get all checked checkboxes
+        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-                // Remove the unchecked checkbox value from pre_category_ids if it exists
-                if (!checkbox.checked) {
-                    const index = preCategoryIds.indexOf(checkbox.value);
-                    if (index !== -1) {
-                        preCategoryIds.splice(index, 1); // Remove the ID
-                        >>>
-                        >>>
-                        >
-                        48 a965cf2a40c8381f76c993b2ef9164df916a10
-                    }
-                }
+        // Check if the industrySelect has a value
+        // if (industrySelect.value) {
+        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+        //     preCategoryIds = [];
+        // } 
 
-                function updateCategoryIds(checkbox) {
-                    // Get all checked checkboxes
-                    const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
-                    let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+        // Remove the unchecked checkbox value from pre_category_ids if it exists
+        if (!checkbox.checked) {
+            const index = preCategoryIds.indexOf(checkbox.value);
+            if (index !== -1) {
+                preCategoryIds.splice(index, 1); // Remove the ID
+            }
+        }
 
-                    // Get all checked checkboxes
-                    const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
-                    let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+        // Merge remaining pre_category_ids with selectedIds
+        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
 
-                    <<
-                    <<
-                    <<
-                    <
-                    HEAD
-                    // Check if the industrySelect has a value
-                    if (industrySelect.value) {
-                        selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-                        preCategoryIds = [];
-                    } ===
-                    ===
-                    =
-                    // Clear the selected value in the industry select box
-                    // document.getElementById('industrySelect').value = '';
-                    >>>
-                    >>>
-                    >
-                    48 a965cf2a40c8381f76c993b2ef9164df916a10
+        // Update the hidden input field
+        document.getElementById('category_ids_hidden').value = allIds.join(',');
 
-                    // Remove the unchecked checkbox value from pre_category_ids if it exists
-                    if (!checkbox.checked) {
-                        const index = preCategoryIds.indexOf(checkbox.value);
-                        if (index !== -1) {
-                            preCategoryIds.splice(index, 1); // Remove the ID
-                        }
-                    }
+        // Clear the selected value in the industry select box
+        // document.getElementById('industrySelect').value = '';
 
-                    // Merge remaining pre_category_ids with selectedIds
-                    const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
-
-                    <<
-                    <<
-                    <<
-                    <
-                    HEAD
-                    // Update the hidden input field
-                    document.getElementById('category_ids_hidden').value = allIds.join(',');
-
-                    // Clear the selected value in the industry select box
-                    document.getElementById('industrySelect').value = ''; ===
-                    ===
-                    =
-                    function updateCategoryIds_2() {
-                        // Get all checked checkboxes
-                        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
-                        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
-
-                        // Get all checked checkboxes
-                        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
-                        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
-
-                        // Check if the industrySelect has a value
-                        // if (industrySelect.value) {
-                        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-                        //     preCategoryIds = [];
-                        // } 
-
-                        // Merge remaining pre_category_ids with selectedIds
-                        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
-
-                        // Update the hidden input field
-                        document.getElementById('category_ids_hidden').value = allIds.join(',');
-                    }
-
-                    updateCategoryIds_2(); >>>
-                    >>>
-                    >
-                    48 a965cf2a40c8381f76c993b2ef9164df916a10
-
-                    submitCategoryForm();
-                }
+        submitCategoryForm();
+    }
 
 
+    function updateCategoryIds_2() {
+        // Get all checked checkboxes
+        const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+        let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
+
+        // Get all checked checkboxes
+        const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+        let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        // Check if the industrySelect has a value
+        // if (industrySelect.value) {
+        //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+        //     preCategoryIds = [];
+        // } 
+
+        // Merge remaining pre_category_ids with selectedIds
+        const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+
+        // Update the hidden input field
+        document.getElementById('category_ids_hidden').value = allIds.join(',');
+    }
+
+    updateCategoryIds_2();
+
+    function viewAllCategories() {
+        // Clear the search input field using getElementsByClassName
+        var searchInputs = document.getElementsByClassName('product-search');
+        if (searchInputs.length > 0) {
+            searchInputs[0].value = '';
+        }
+
+        // Clear the category_id hidden field
+        document.getElementById('category_id').value = '';
+
+        // Submit the form using getElementsByClassName
+        var searchForm = document.getElementsByClassName('searchForm');
+        if (searchForm.length > 0) {
+            searchForm[0].submit();
+        }
+    }
+
+    function closeModal() {
+        $('#exampleModalCenter').modal('hide');
+    }
+
+    function enquiry(productID) {
+        // Set the selected product in the dropdown
+        const productSelect = document.getElementById('productSelect');
+        productSelect.value = productID;
+
+        // Open the modal
+        $('#exampleModalCenter').modal('show');
+    }
 
 
-                function viewAllCategories() {
-                    // Clear the search input field using getElementsByClassName
-                    var searchInputs = document.getElementsByClassName('product-search');
-                    if (searchInputs.length > 0) {
-                        searchInputs[0].value = '';
-                    }
+    $(document).ready(function() {
+        initValidate('#add_partner_us_form');
+        $("#add_partner_us_form").submit(function(e) {
+            var form = $(this);
+            ajaxSubmit(e, form, responseHandler);
+        });
 
-                    // Clear the category_id hidden field
-                    document.getElementById('category_id').value = '';
-
-                    // Submit the form using getElementsByClassName
-                    var searchForm = document.getElementsByClassName('searchForm');
-                    if (searchForm.length > 0) {
-                        searchForm[0].submit();
-                    }
-                }
-
-                function closeModal() {
-                    $('#exampleModalCenter').modal('hide');
-                }
-
-                function enquiry(productID) {
-                    // Set the selected product in the dropdown
-                    const productSelect = document.getElementById('productSelect');
-                    productSelect.value = productID;
-
-                    // Open the modal
-                    $('#exampleModalCenter').modal('show');
-                }
-
-
-                $(document).ready(function() {
-                    initValidate('#add_partner_us_form');
-                    $("#add_partner_us_form").submit(function(e) {
-                        var form = $(this);
-                        ajaxSubmit(e, form, responseHandler);
-                    });
-
-                    var responseHandler = function(response) {
-                        $('input, textarea').val('');
-                        $("select option:first").prop('selected', true);
-                        setTimeout(function() {
-                            location.reload();
-                        }, 1000);
-                    }
-                });
+        var responseHandler = function(response) {
+            $('input, textarea').val('');
+            $("select option:first").prop('selected', true);
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
+        }
+    });
     </script>
     @endsection
