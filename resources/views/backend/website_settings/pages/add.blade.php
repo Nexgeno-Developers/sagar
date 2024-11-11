@@ -5,17 +5,17 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Title <span class="red">*</span></label>
-                <input type="text" class="form-control" name="title"  maxlength="155" required>
+                <input type="text" class="form-control" name="title" maxlength="155" required>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 d-none">
             <div class="form-group mb-3">
                 <label>Slug (URL) <span class="red">*</span></label>
-                <input type="text" class="form-control"  maxlength="155" name="slug" required>
+                <input type="text" class="form-control" maxlength="155" name="slug" required>
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 d-none">
             <div class="form-group mb-3">
                 <label>Status <span class="red">*</span></label>
                 <select class="form-select" name="is_active" required>
@@ -41,11 +41,11 @@
     <div class="col-sm-12">
         <div class="form-group mb-3">
             <label>Meta Title<span class="red">*</span></label>
-            <input type="text" class="form-control"  maxlength="255" name="meta_title" required>
+            <input type="text" class="form-control" maxlength="255" name="meta_title" required>
         </div>
         <div class="form-group mb-3">
             <label>Meta Description<span class="red">*</span></label>
-            <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required></textarea>
+            <textarea class="form-control" maxlength="255" name="meta_description" rows="3" required></textarea>
         </div>
     </div>
 
@@ -54,7 +54,7 @@
             <button type="submit" class="btn btn-block btn-primary">Create</button>
         </div>
     </div>
-    
+
 </form>
 
 <script>
