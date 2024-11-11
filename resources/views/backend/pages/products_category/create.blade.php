@@ -12,7 +12,7 @@
             <input required type="text" name="slug" class="form-control" >
         </div>
 
-        <div class="form-group col-3 mb-3">
+        {{-- <div class="form-group col-3 mb-3">
             <label>Industry</label>
             <select class="select2 form-select" name="industry[]" multiple>
                 <option value="" disabled>Select Industry</option>
@@ -21,7 +21,7 @@
                 </option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
 
         <div class="form-group col-2 mb-3">
             <label>Status<span class="red">*</span></label>

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Industry;
 
 class ProductController extends Controller
 {
@@ -20,8 +21,9 @@ class ProductController extends Controller
 
     public function create()
     {
+        $Industry = Industry::get();
         $categories = ProductCategory::pluck('title', 'id');
-        return view('backend.pages.products.create', compact('categories'));
+        return view('backend.pages.products.create', compact('categories','Industry'));
     }
 
     public function store(Request $request)
@@ -35,6 +37,7 @@ class ProductController extends Controller
             'product_description' => 'nullable|string',
             'product_information' => 'nullable|string',
             'delivery_description' => 'nullable|string',
+            'industry'  => 'required',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
             'product_category' => 'nullable|array',
@@ -66,6 +69,7 @@ class ProductController extends Controller
             $product->product_information = $request->product_information;
             $product->delivery_description = $request->delivery_description;
             $product->product_category_ids = $request->product_category;
+            $product->industry = json_encode($request->industry);
             $product->meta_title = $request->meta_title;
             $product->meta_description = $request->meta_description;
 
@@ -88,9 +92,10 @@ class ProductController extends Controller
 
     public function edit(Product $product, $id)
     {
+        $Industry = Industry::get();
         $product = Product::findOrFail($id);  // Retrieve the product by ID
         $categories = ProductCategory::pluck('title', 'id');
-        return view('backend.pages.products.edit', compact('product', 'categories'));
+        return view('backend.pages.products.edit', compact('product', 'categories','Industry'));
     }
     
 
@@ -107,6 +112,7 @@ class ProductController extends Controller
         'product_description' => 'nullable|string',
         'product_information' => 'nullable|string',
         'delivery_description' => 'nullable|string',
+        'industry'  => 'required',
         'meta_title' => 'nullable|string|max:255',
         'meta_description' => 'nullable|string|max:255',
     ]);
@@ -152,6 +158,7 @@ class ProductController extends Controller
     $product->product_information = $request->product_information;
     $product->delivery_description = $request->delivery_description;
     $product->product_category_ids = $request->product_category;
+    $product->industry = json_encode($request->industry);
     $product->meta_title = $request->meta_title;
     $product->meta_description = $request->meta_description;
 

@@ -34,7 +34,7 @@ class ProductCategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
             'is_industry' => 'required|boolean',
-            'industry' => 'required',
+            // 'industry' => 'required',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -63,7 +63,8 @@ class ProductCategoryController extends Controller
             $product_category->is_industry = $request->is_industry;
             $product_category->image = $image;
             $product_category->description = $request->description;
-            $product_category->industry = json_encode($request->industry);
+            // $product_category->industry = json_encode($request->industry);
+            $product_category->industry = null;
             $product_category->meta_title = $request->meta_title;
             $product_category->meta_description = $request->meta_description;
     
@@ -102,7 +103,7 @@ class ProductCategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'is_active' => 'required|boolean',
             'is_industry' => 'required|boolean',
-            'industry'  => 'required',
+            // 'industry'  => 'required',
             'description' => 'nullable|string',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
@@ -144,7 +145,8 @@ class ProductCategoryController extends Controller
         $productCategory->is_industry = $request->is_industry;
         $productCategory->image = $image;
         $productCategory->description = $request->description;
-        $productCategory->industry = json_encode($request->industry);
+        // $productCategory->industry = json_encode($request->industry);
+        $productCategory->industry = null;
         $productCategory->meta_title = $request->meta_title;
         $productCategory->meta_description = $request->meta_description;
 

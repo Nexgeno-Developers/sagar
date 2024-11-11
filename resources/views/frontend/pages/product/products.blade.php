@@ -31,7 +31,7 @@
                         <input type="text" name="search" class="product-search form-control" placeholder="Search for Product" value="{{ request('search') }}">
                     </div>
                     
-                    <!-- <div class="select2_industry">
+                    <div class="select2_industry">
                         <div class="col-md-12 col-12 p-0">
                             <div class="form-group mb-3">
                                 {{--<label class="pb-1 pt-2">Industry</label>--}}
@@ -48,7 +48,7 @@
                                 <i class="btn p-0 rounded-0 btn-primary fa fa-search padding6"></i>
                             </button>
                         </div>--}}
-                    </div> -->
+                    </div>
                   
 
                     <input type="hidden" id="pre_category_ids" value="{{ is_array($categoryIds) ? implode(',', $categoryIds) : $categoryIds }}">
@@ -177,10 +177,10 @@ function updateCategoryIds(checkbox) {
     let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
 
     // Check if the industrySelect has a value
-    if (industrySelect.value) {
-        selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
-        preCategoryIds = [];
-    } 
+    // if (industrySelect.value) {
+    //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+    //     preCategoryIds = [];
+    // } 
 
     // Remove the unchecked checkbox value from pre_category_ids if it exists
     if (!checkbox.checked) {
@@ -197,13 +197,35 @@ function updateCategoryIds(checkbox) {
     document.getElementById('category_ids_hidden').value = allIds.join(',');
 
     // Clear the selected value in the industry select box
-    document.getElementById('industrySelect').value = '';
+    // document.getElementById('industrySelect').value = '';
 
     submitCategoryForm();
 }
 
 
+function updateCategoryIds_2() {
+    // Get all checked checkboxes
+    const preCategoryIdsValue = document.querySelector('input[id="pre_category_ids"]').value;
+    let preCategoryIds = preCategoryIdsValue ? preCategoryIdsValue.split(',') : [];
 
+    // Get all checked checkboxes
+    const checkboxes = document.querySelectorAll('input[id="category_ids"]:checked');
+    let selectedIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    // Check if the industrySelect has a value
+    // if (industrySelect.value) {
+    //     selectedIds = selectedIds.filter(id => !preCategoryIds.includes(id));
+    //     preCategoryIds = [];
+    // } 
+
+    // Merge remaining pre_category_ids with selectedIds
+    const allIds = [...new Set([...preCategoryIds, ...selectedIds])];
+
+    // Update the hidden input field
+    document.getElementById('category_ids_hidden').value = allIds.join(',');
+}
+
+updateCategoryIds_2();
 
 function viewAllCategories() {
     // Clear the search input field using getElementsByClassName
