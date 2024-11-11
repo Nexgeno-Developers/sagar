@@ -2,29 +2,30 @@
     enctype="multipart/form-data">
     @csrf
     @php
-		if (!empty($page->content)) {
-			$content = $page->content ?? '';
-		} else {
-			$content =  '';        
-		}
-	@endphp
+    if (!empty($page->content)) {
+    $content = $page->content ?? '';
+    } else {
+    $content = '';
+    }
+    @endphp
 
     <div class="row">
         <input type="hidden" name="id" value="{{ $page->id }}">
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Title <span class="red">*</span></label>
-                <input type="text" class="form-control" name="title"  maxlength="155" value="{{ $page->title }}" required>
+                <input type="text" class="form-control" name="title" maxlength="155" value="{{ $page->title }}"
+                    required>
             </div>
         </div>
-        <!-- <div class="col-sm-6">
+        <div class="col-sm-6 d-none">
             <div class="form-group mb-3">
                 <label>Slug (URL) <span class="red">*</span></label>
-                <input type="text" class="form-control"  maxlength="155" value="{{ $page->slug }}" name="slug" required>
+                <input type="text" class="form-control" maxlength="155" value="{{ $page->slug }}" name="slug" required>
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 d-none">
             <div class="form-group mb-3">
                 <label>Status <span class="red">*</span></label>
                 <select class="form-select" name="is_active" required>
@@ -32,7 +33,7 @@
                     <option value="1" {{ $page->is_active == 1 ? 'selected' : '' }}>Active</option>
                 </select>
             </div>
-        </div> -->
+        </div>
     </div>
     <hr>
     <h3>Content</h3>
@@ -40,7 +41,8 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="content" rows="3"  @if (empty($content)) required @endif>{{ $content }}</textarea>
+                <textarea class="form-control trumbowyg" name="content" rows="3" @if (empty($content)) required
+                    @endif>{{ $content }}</textarea>
             </div>
         </div>
     </div>
@@ -50,11 +52,13 @@
     <div class="col-sm-12">
         <div class="form-group mb-3">
             <label>Meta Title<span class="red">*</span></label>
-            <input type="text" class="form-control"  maxlength="255" name="meta_title" value="{{ $page->meta_title }}" required>
+            <input type="text" class="form-control" maxlength="255" name="meta_title" value="{{ $page->meta_title }}"
+                required>
         </div>
         <div class="form-group mb-3">
             <label>Meta Description<span class="red">*</span></label>
-            <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required>{{ $page->meta_description }}</textarea>
+            <textarea class="form-control" maxlength="255" name="meta_description" rows="3"
+                required>{{ $page->meta_description }}</textarea>
         </div>
     </div>
 
@@ -63,7 +67,7 @@
             <button type="submit" class="btn btn-block btn-primary">Update</button>
         </div>
     </div>
-    
+
 </form>
 
 <script>
