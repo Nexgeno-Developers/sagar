@@ -2102,3 +2102,39 @@ li.select2-results__option {
     position: relative;
     top: 3px;
 }
+
+.privacy_pages h4 {
+    font-size: 20px;
+    color: #333 !important;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.privacy_pages ul li {
+    color: #333 !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+    list-style: auto;
+}
+
+.no_product {
+    font-size: 28px;
+    padding-top: 30px;
+    font-weight: 700;
+}
+
+.paddingbtm100 {
+    padding-bottom: 160px !important;
+}
+
+@media(max-width:767px) {
+    .paddingbtm100 {
+        padding-bottom: 20px !important;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .paddingbtm100 {
+        padding-bottom: 40px !important;
+    }
+}
