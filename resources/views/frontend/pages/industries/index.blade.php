@@ -58,7 +58,9 @@
                         <div class="product_description_div">
                             <img src="/assets/frontend/images/industry_img_4.png" 
                             class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <p class="product_description pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            <div class="product_description">
+                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            </div>
                         </div>
                         <div class="card-body d-flex">
                             <span class="product_img_heading">Lorem ipsum</span>
@@ -75,7 +77,9 @@
                         <div class="product_description_div">
                             <img src="/assets/frontend/images/industry_img_3.png" 
                             class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <p class="product_description pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            <div class="product_description">
+                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            </div>
                         </div>
                         <div class="card-body d-flex">
                             <span class="product_img_heading">Lorem ipsum</span>
@@ -92,7 +96,9 @@
                         <div class="product_description_div">
                             <img src="/assets/frontend/images/industry_img_2.png" 
                             class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <p class="product_description pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            <div class="product_description">
+                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            </div>
                         </div>
                         <div class="card-body d-flex">
                             <span class="product_img_heading">Lorem ipsum</span>
@@ -109,7 +115,9 @@
                         <div class="product_description_div">
                             <img src="/assets/frontend/images/industry_img_1.png" 
                             class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <p class="product_description pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            <div class="product_description">
+                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+                            </div>
                         </div>
                         <div class="card-body d-flex">
                             <span class="product_img_heading">Lorem ipsum</span>
