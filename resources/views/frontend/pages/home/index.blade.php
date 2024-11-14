@@ -190,20 +190,19 @@ $cocs_pdf = '';
                 <div class="row justify-content-center">
                     @foreach($products as $product)
                         <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                            <a href="{{ route('product.detail', $product->slug) }}"
-    class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-    <div class="card">
-        <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
-                                        class="product_card_image card-img-top" alt="product image" loading="lazy"> -->
-        <span class="product_img_heading">{{ $product->title }}</span>
-        <div class="card-body d-flex">
-            <p class="card-text">{{ $product->title }}</p>
-            <i class="btn btn-primary fa fa-arrow-right"></i>
-        </div>
-    </div>
-    </a>
-    </div>
-    @endforeach
+                            <a href="{{ route('product.detail', $product->slug) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
+                                <div class="card">
+                                    <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
+                                                                    class="product_card_image card-img-top" alt="product image" loading="lazy"> -->
+                                    <span class="product_img_heading">{{ $product->title }}</span>
+                                    <div class="card-body d-flex">
+                                        <p class="card-text">{{ $product->title }}</p>
+                                        <i class="btn btn-primary fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
 
     <div class="col-12 text-center pt-md-4 pt-4">
         <a href="{{url(route('products_s'))}}" class="btn a_btn blue_btn" aria-label="know about our proucts">
