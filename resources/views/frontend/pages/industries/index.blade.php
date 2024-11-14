@@ -52,81 +52,29 @@
         </div> --}}
 
         <div class="row justify-content-center"> 
-            <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                <a href="" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                    <div class="card">
-                        <div class="product_description_div">
-                            <img src="/assets/frontend/images/industry_img_4.png" 
-                            class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <div class="product_description">
-                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex">
-                            <span class="product_img_heading">Lorem ipsum</span>
-                            <!-- <p class="card-text">Hello</p> -->
-                            <i class="btn btn-primary fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div> 
 
-            <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                <a href="" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                    <div class="card">
-                        <div class="product_description_div">
-                            <img src="/assets/frontend/images/industry_img_3.png" 
-                            class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <div class="product_description">
-                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
+            @foreach ($industries as $index => $industry)
+                <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
+                    <a href="{{ url(route('products_s') . '?industry=' . $industry->id) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
+                        <div class="card">
+                            <div class="product_description_div">
+                                <img src="{{ asset('storage/' . $industry->image) }}" alt="{{ $industry->title }}"
+                                class="industry_img" loading="lazy">
+                                <div class="product_description">
+                                    <p class="product_description_text">{!! $industry->description !!}</p>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex">
+                                <span class="product_img_heading">{{ $industry->title }}</span>
+                                <!-- <p class="card-text">Hello</p> -->
+                                <i class="btn btn-primary fa fa-arrow-right"></i>
                             </div>
                         </div>
-                        <div class="card-body d-flex">
-                            <span class="product_img_heading">Lorem ipsum</span>
-                            <!-- <p class="card-text">Hello</p> -->
-                            <i class="btn btn-primary fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-            
-            <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                <a href="" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                    <div class="card">
-                        <div class="product_description_div">
-                            <img src="/assets/frontend/images/industry_img_2.png" 
-                            class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <div class="product_description">
-                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex">
-                            <span class="product_img_heading">Lorem ipsum</span>
-                            <!-- <p class="card-text">Hello</p> -->
-                            <i class="btn btn-primary fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-            
-            <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
-                <a href="" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                    <div class="card">
-                        <div class="product_description_div">
-                            <img src="/assets/frontend/images/industry_img_1.png" 
-                            class="product_card_image card-img-top" alt="product image" loading="lazy">
-                            <div class="product_description">
-                                <p class="product_description_text pe-lg-3">Lorem ipsum Doler Dummy text and div</p>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex">
-                            <span class="product_img_heading">Lorem ipsum</span>
-                            <!-- <p class="card-text">Hello</p> -->
-                            <i class="btn btn-primary fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div> 
+                    </a>
+                </div> 
+            @endforeach
+
+
             
         </div>
 
