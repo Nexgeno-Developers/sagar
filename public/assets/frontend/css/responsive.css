@@ -281,6 +281,17 @@
         height: 160px;
     }
 
+    .product_description {
+        display: none;
+    }
+    
+    span.product_img_heading {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
     .our_product_cards_div .card,
     .product_filter_gallery_div .card {
         width: 100%;
@@ -719,6 +730,14 @@
     .product_description {
         display: none;
     }
+
+    .industry_contents_main_div>div {
+        padding: 0px 14px 0px;
+    }
+
+    .industry_img { 
+        height: 226px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -982,8 +1001,7 @@
     }
 
     .our_product_cards_div .card img {
-        width: 100%;
-        height: auto;
+        width: 100%; 
     }
 
     .our_product_cards_div .card-body {
@@ -1030,6 +1048,7 @@
     .industry_content_div,
     .our_product_cards_div {
         margin: 5px 0;
+        border-radius: 15px;
     }
 
     .our_product_cards_div a {
@@ -1187,7 +1206,16 @@
     }
 
     .industry_img {
-        height: auto;
+        height: 180px;
+        border-radius: 15px;
+    }
+
+    .product_description {
+        display: none;
+    }
+
+    .industry_content_div::before { 
+        border-radius: 15px !important;
     }
 
     .product_filter_gallery_div .card-text {
@@ -1488,6 +1516,27 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1100px) {
+    
+    .industry_img { 
+        height: 226px;
+    }
+
+    .industry_text_link {
+        font-size: 20px; 
+        line-height: 22px;
+    }
+
+    .industry_arrow_link img.rotate45 {
+        width: 50px;
+    }
+    
+    span.product_img_heading {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
     img.header_logo {
         width: 150px;
     }
@@ -1552,8 +1601,8 @@
     }
 
     span.product_img_heading {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .about_info_box .up_and_down {
