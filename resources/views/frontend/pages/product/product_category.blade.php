@@ -31,7 +31,9 @@
                                 <img src="{{ asset('storage/' . $category->image) }}" alt="" class="product_card_image card-img-top">
                             @endif
                             --}} -->
-                            <span class="product_img_heading">{{ $category->title }}</span>
+                            <div class="product_img_heading_div">
+                                <span class="product_img_heading">{{ $category->title }}</span>
+                            </div>
                                     <div class="card-body d-flex">
                                         <i class="btn btn-primary fa fa-arrow-right"></i>
                                     </div>

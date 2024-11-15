@@ -34,6 +34,7 @@
                                 placeholder="Search for Product" value="{{ request('search') }}">
                         </div>
 
+                        <h6 class="select_industry_text">Industry</h6>
                         <div class="select2_industry">
                             <div class="col-md-12 col-12 p-0">
                                 <div class="form-group mb-3">
