@@ -289,7 +289,7 @@ $cocs_pdf = '';
                 @endforeach
 
                 <div class="col-md-6 d-md-none d-block py-3 text-center">
-                    <a href="{{route('products_category')}}" class="btn a_btn blue_btn float-md-end"
+                    <a href="/industries" class="btn a_btn blue_btn float-md-end"
                         aria-label="services we give">
                         View All
                     </a>
