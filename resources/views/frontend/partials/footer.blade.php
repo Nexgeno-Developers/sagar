@@ -127,9 +127,9 @@
     <div class="sidebar_instant_links">
           <div class="sidebar_social_media">
             @if (isset($social_media) && !empty($social_media))
-                <ul class="list-group-item list-unstyled mb-0 mt-1">
+                <ul class="list-group list-group-horizontal list-unstyled mb-0 mt-1">
                     @foreach ($social_media as $index => $row )
-                    <li class="list-item"> 
+                    <li class="list-group-item"> 
                         <a href="{{ $row->url}}" class="sidebar_social_media_link" aria-label="sidebar social media links">
                             {!! $row->icon !!}
                         </a> 
@@ -140,12 +140,10 @@
           </div>
           @if(!empty($pdf)) 
             <a href="{{ asset('storage/' . $pdf) }}" download="{{ asset('storage/' . $pdf) }}" class="newsletter-download-link text-white">
-                <div class="newsletter">
-                    <div class="d-flex position-relative rotate-90">
+                <div class="newsletter"> 
                         <label class="file-upload-label" for="fileUpload">NewsLetter
                             <i class="fa fa-file-arrow-down"></i>
-                        </label>                
-                    </div>
+                        </label>     
                 </div>
             </a>
           @endif
