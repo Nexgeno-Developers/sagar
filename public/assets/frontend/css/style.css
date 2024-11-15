@@ -871,6 +871,8 @@ section.white_section {
     bottom: 0;
     width: 26em;
     right: 1em;
+    height: 354px;
+    object-fit: cover;
 }
 
 .about_info_box h4,
@@ -1049,6 +1051,11 @@ section.what_we_do .owl-carousel .owl-stage-outer {
 .what_we_do_main_div .card {
     background-color: transparent;
     border: 0;
+}
+
+.home-page .what_we_do_main_div img {
+    height: 363px;
+    object-fit: cover;
 }
 
 .future_activites_main_div .card-title,
