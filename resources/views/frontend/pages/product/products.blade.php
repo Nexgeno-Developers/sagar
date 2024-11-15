@@ -34,7 +34,7 @@
                                 placeholder="Search for Product" value="{{ request('search') }}">
                         </div>
 
-                        <h6 class="select_industry_text">Industry</h6>
+                        <h6 class="select_industry_text">Industries</h6>
                         <div class="select2_industry">
                             <div class="col-md-12 col-12 p-0">
                                 <div class="form-group mb-3">
@@ -95,7 +95,9 @@
                             <a onclick="enquiry({{ $product->id }})" class="d-block text-decoration-none">
                                 <div class="card">
                                     <!-- <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_card_image card-img-top"> -->
-                                    <span class="product_img_heading">{{ $product->title }}</span>
+                                    <div class="product_img_heading_div">
+                                        <span class="product_img_heading">{{ $product->title }}</span>
+                                    </div>
                                     <div class="card-body d-flex align-items-center justify-content-center">
                                         <p class="card-text">{{ $product->title }}</p>
                                         <i class="btn btn-primary fa fa-arrow-right"></i>

@@ -603,7 +603,7 @@ section.white_section {
 .product_img_heading {
     font-size: 22px;
     font-weight: 500;
-    height: 110px;
+    /* height: 110px; */
     display: -webkit-box;
     padding: 5px 14px;
     text-align: center;
