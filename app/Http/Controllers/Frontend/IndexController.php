@@ -266,7 +266,9 @@ public function products_s(Request $request)
     if (is_array($categoryIds) && count($categoryIds) > 0) {
                 $query->where(function ($q) use ($categoryIds) {
             foreach ($categoryIds as $categoryId) {
-                $q->orWhere('product_category_ids', 'LIKE', '%' . $categoryId . '%');
+                // $q->orWhere('product_category_ids', 'LIKE', '%' . $categoryId . '%');
+
+                $q->whereRaw('JSON_CONTAINS(product_category_ids, \'["' . $categoryId . '"]\')');
             }
         });
     }
