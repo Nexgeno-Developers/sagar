@@ -268,7 +268,7 @@ public function products_s(Request $request)
             foreach ($categoryIds as $categoryId) {
                 // $q->orWhere('product_category_ids', 'LIKE', '%' . $categoryId . '%');
 
-                $q->whereRaw('JSON_CONTAINS(product_category_ids, \'["' . $categoryId . '"]\')');
+                $q->orWhereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode([$categoryId])]);
             }
         });
     }
