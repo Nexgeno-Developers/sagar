@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-md-5 saagar_speciality_chemical_machine float-md-end">
                     @if (!empty($about_image))
-                        <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="">
+                        <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid rounded">
                     @endif
                     <div class="about_info_box info-box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
                        <h4>700+ </h4>
@@ -107,7 +107,7 @@
                     <div class="col-md-5 col-12">
                         @if (!empty($core_image))
                             <img src="{{ asset('storage/' . $core_image) }}" alt="Chemical Process"
-                                class="right_img ps-md-3">
+                                class="img-fluid right_img ps-md-3">
                         @endif
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                     <div class="col-md-12 row align-items-center">
                         <div class="col-md-3 my-md-0 my-2">
                             <img src="{{ isset($team->image) ? asset('storage/' . $team->image) : '' }}"
-                                alt="{{ isset($team->name) ? $team->name : '' }}" class="profile_img">
+                                alt="{{ isset($team->name) ? $team->name : '' }}" class="img-fluid profile_img">
                         </div>
                         <div class="col-md-9">
                             <h5 class="name_and_position text-light pb-md-3">{{ isset($team->name) ? $team->name : '' }}</h5>

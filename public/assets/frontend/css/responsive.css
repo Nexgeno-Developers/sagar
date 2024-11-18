@@ -346,22 +346,12 @@
 
     .saagar_speciality_chemical_machine img.saagar_speciality_chemical_machine_img {
         position: relative;
-        right: 1em;
-        width: 18.7em; 
-        height: 242px; 
+        right: 1em; 
         border-radius: 34px 35px 10px 34px;
     }
 
     .info_box {
         left: 12px;
-    }
-
-    .about_us_story_div .saagar_speciality_chemical_machine img {
-        width: 19.7em;
-        height: 280px;
-        float: right;
-        border-radius: 34px 35px 10px 34px;
-        object-fit: cover;
     }
 
     .about_us_page .about_info_box {
@@ -422,7 +412,7 @@
 
     @keyframes upDown {
         50% {
-            transform: translate(-1em, -200px);
+            transform: translate(-1em, -112px);
         }
     }
 
@@ -1175,7 +1165,7 @@
     .info_box {
         float: none;
         position: absolute;
-        bottom: 0;
+        bottom: -1em;
         left: 0;
         border-radius: 30px 20px 10px 40px;
         width: 45%;
@@ -1199,6 +1189,13 @@
     .up_and_down {
         animation: none;
         transform: translateY(0);
+    }
+
+    .saagar_speciality_chemical_machine img.saagar_speciality_chemical_machine_img {
+        position: relative;
+        bottom: 0;
+        right: 0em;
+        top: 1em;
     }
 
     .about_info_box h4,
@@ -1663,13 +1660,9 @@
         line-height: 40px;
     }
 
-    .saagar_speciality_chemical_machine img {
-        width: 23em;
-    }
-
     @keyframes upDown {
         50% {
-            transform: translateY(-85px);
+            transform: translateY(-126px);
         }
     }
 
