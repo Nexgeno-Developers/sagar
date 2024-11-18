@@ -344,12 +344,16 @@
         right: -24px;
     }
 
-    .saagar_speciality_chemical_machine img {
+    .saagar_speciality_chemical_machine img.saagar_speciality_chemical_machine_img {
         position: relative;
         right: 1em;
         width: 18.7em; 
         height: 242px; 
         border-radius: 34px 35px 10px 34px;
+    }
+
+    .info_box {
+        left: 12px;
     }
 
     .about_us_story_div .saagar_speciality_chemical_machine img {
