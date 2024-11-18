@@ -273,6 +273,10 @@
         const productSelect = document.getElementById('productSelect');
         productSelect.value = productID;
 
+        // Trigger the 'change' event to simulate user interaction (optional)
+        const changeEvent = new Event('change');
+        productSelect.dispatchEvent(changeEvent);
+
         // Open the modal
         $('#exampleModalCenter').modal('show');
     }

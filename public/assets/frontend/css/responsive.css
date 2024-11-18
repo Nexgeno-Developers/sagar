@@ -226,22 +226,31 @@
         z-index: 2 !important;
     }
 
-    .sidebar_social_media {
+    /* .sidebar_social_media {
         width: 35px;
         padding: 15px 5px 0 10px;
         height: 140px;
-    }
+    } */
 
     .fa-file-arrow-down,
     .sidebar_social_media_link {
         font-size: 18px;
     }
 
-    .sidebar_instant_links .newsletter {
+    .sidebar_instant_links { 
+        right: 6px;
+    }
+
+    .file-upload-label {
+        bottom: 0px;
+        position: absolute;
+    }
+
+    /* .sidebar_instant_links .newsletter {
         width: 35px;
         padding: 20px 12px 0 22px;
         height: 133px;
-    }
+    } */
 
     .file-upload-label,
     .our_product_cards_div .card-text,
@@ -1106,7 +1115,7 @@
 
     .saagar_speciality_chemical_machine {
         position: relative;
-        bottom: -2em;
+        bottom: 0em;
     }
 
     .saagar_speciality_chemical_machine img {

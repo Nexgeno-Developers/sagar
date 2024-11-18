@@ -429,7 +429,7 @@ img.header_logo {
     height: auto;
 }
 
-.about_us_story_div .saagar_speciality_chemical_machines,
+.about_us_story_div .saagar_speciality_chemical_machine,
 .banner_slides,
 .custom-dropdown {
     position: relative;
@@ -866,13 +866,14 @@ section.white_section {
     bottom: -2em;
 }
 
-.saagar_speciality_chemical_machine img {
+.saagar_speciality_chemical_machine img.saagar_speciality_chemical_machine_img {
     position: absolute;
     bottom: 0;
     width: 26em;
     right: 1em;
     height: 354px;
     object-fit: cover;
+    border-radius: 50px 50px 10px;
 }
 
 .about_info_box h4,
@@ -1523,6 +1524,7 @@ section#what_we_do_banner {
 img.right_img.what_we_do_img {
     width: 100%;
     height: auto;
+    border-radius: 50px 50px 10px;
 }
 
 section#career_banner_img {
@@ -1695,9 +1697,11 @@ section#product_categories_banner_img {
     align-items: center;
 }
 
-.about_us_story_div .saagar_speciality_chemical_machines img {
+.about_us_story_div .saagar_speciality_chemical_machine img {
     width: 26em;
+    height: 354px;
     float: right;
+    border-radius: 50px 50px 10px;
 }
 
 .about_info_box.info-box {
@@ -1719,6 +1723,13 @@ section#product_categories_banner_img {
 .cor_values_content {
     font-size: 14px;
     line-height: 26px;
+}
+
+.profile_img {
+    height: 168px;
+    width: 181px;
+    border-radius: 50px 50px 10px;
+    object-fit: cover;
 }
 
 .our_mission_main_div,
@@ -2024,6 +2035,12 @@ section {
     background-color: #fff;
     padding: 20px !important;
     border-radius: 15px !important;
+}
+
+#add_partner_us_form span {
+    font-weight: 600;
+    font-size: 16px;
+    padding-left: 0px;
 }
 
 .product_form .modal-content input,

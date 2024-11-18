@@ -7,9 +7,9 @@
 <link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
 
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v=1.2.1" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v=1.2.2" />
 
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v=1.0.6" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v=1.0.7" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css" />
 <!-- <link rel="stylesheet" type="text/css" href="/assets/frontend/css/font-awesome.all.min.css" /> -->
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.carousel.min.css" />
