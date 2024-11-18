@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-md-5 saagar_speciality_chemical_machine float-md-end">
                     @if (!empty($about_image))
-                        <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid rounded">
+                        <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process" class="img-fluid">
                     @endif
                     <div class="about_info_box info-box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
                        <h4>700+ </h4>
