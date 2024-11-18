@@ -161,7 +161,9 @@
         <div class="row">
             <div class="col-sm-{{ !empty($about_image) ? 3 : 6 }}">
                 <div class="form-group mb-3">
-                    <label>About Images</label>
+                    <label>About Image
+                        <span style="font-size: 12px; margin-left: 6px;">(Image size: 425px X 360px) </span>
+                    </label>
                     <input class="form-control" type="file" id="about_image" name="about_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($about_image)) required @endif >
                 </div>
             </div>

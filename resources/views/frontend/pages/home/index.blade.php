@@ -223,7 +223,7 @@ $cocs_pdf = '';
             <div class="row">
                 <div class="col-12">
                     <div class="col-md-11 background_blue_img p-lg-5 p-md-4 ps-md-3 p-3 py-4">
-                        <div class="col-md-8">
+                        <div class="col-xl-8 col-md-7">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0"
                                 aria-label="know about us">
@@ -235,7 +235,7 @@ $cocs_pdf = '';
                         <div class="col-md-5 col-12 saagar_speciality_chemical_machine float-end">
                             @if (!empty($about_image))
                             <img src="{{ asset('storage/' . $about_image) }}" alt="Chemical Process"
-                                class="saagar_speciality_chemical_machine_img" loading="lazy">
+                                class="saagar_speciality_chemical_machine_img img-fluid" loading="lazy">
                             @endif
 
                             <div class="info_box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">

@@ -82,7 +82,10 @@
     <div class="row">
         <div class="col-sm-{{ !empty($about_image) ? 3 : 6 }}">
             <div class="form-group mb-3">
-                <label>Image <span class="red">*</span></label>
+                <label>Image 
+                    <span class="red">*</span>
+                    <span style="font-size: 13px; margin-left: 10px;">(Image size: 425px X 360px) </span>
+                </label>
                 <input class="form-control" type="file" id="about_image" name="about_image" accept=".jpg,.jpeg,.png,.webp" @if (empty($about_image)) required @endif >
             </div>
         </div>
@@ -159,7 +162,10 @@
                         <div class="col-md-9">
                             <div class="form-group row mb-3 ">
                                 <div class="form-group mb-3 col-sm-{{ !empty($team->image) ? 9 : 12 }}">                                
-                                    <label>Image <span class="red">*</span> </label>
+                                    <label>Image 
+                                        <span class="red">*</span> 
+                                        <span style="font-size: 13px; margin-left: 10px;">(Image size: 180px X 180px) </span>
+                                    </label>
                                     <input class="form-control" type="file" name="team_image[]"
                                         accept=".jpg,.jpeg,.png,.webp" @if (empty($team->image)) required @endif>
                                 </div>
