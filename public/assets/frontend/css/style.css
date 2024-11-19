@@ -803,8 +803,8 @@ section.white_section {
 }
 
 .background_blue_img {
-    background-color: #0056b3;
-    background-image: url("../images/home/background_blue_img.webp");
+    background-color: #0d6efd;
+    /* background-image: url("../images/home/background_blue_img.webp"); */
     background-size: cover;
     background-position: center;
     border-radius: 30px;
@@ -1205,10 +1205,11 @@ img.moving_machine {
 }
 
 .why_sscpl_bg_img {
-    background-image: url("../images/home/background_blue_img.webp");
+    /* background-image: url("../images/home/background_blue_img.webp"); */
     position: relative;
     top: 5px;
     padding: 10px 60px;
+    background-color: #0d6efd;
 }
 
 .sscl_contents_main_div {
