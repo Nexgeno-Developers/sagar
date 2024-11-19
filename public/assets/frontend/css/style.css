@@ -678,6 +678,12 @@ section.white_section {
     z-index: 1;
 }
 
+.industries_page .white_text p, .industries_page .white_text span {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0px;
+}
+
 .product_description_div:hover .product_description {
     top: 0%;
     transition: all 0.5s ease;
