@@ -223,7 +223,7 @@ $cocs_pdf = '';
             <div class="row">
                 <div class="col-12">
                     <div class="col-md-11 background_blue_img p-lg-5 p-md-4 ps-md-3 p-3 py-4">
-                        <div class="col-xl-8 col-md-7">
+                        <div class="col-xl-8 col-md-7 white_text">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0"
                                 aria-label="know about us">

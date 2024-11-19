@@ -25,7 +25,7 @@
             </select>
         </div>
 
-        <div class="form-group col-12    mb-3">
+        <div class="form-group col-12 mb-3">
             <label>Description<span class="red">*</span></label>
             <textarea name="description" class="form-control trumbowyg">{{ old('description', $Industry->description) }}</textarea>
         </div>
