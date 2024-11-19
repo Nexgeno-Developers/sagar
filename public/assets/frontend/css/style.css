@@ -1053,8 +1053,9 @@ section.what_we_do .owl-carousel .owl-stage-outer {
 }
 
 .home-page .what_we_do_main_div img {
-    height: 363px;
+    height: 280px;
     object-fit: cover;
+    border-radius: 15px 15px 0px;
 }
 
 .future_activites_main_div .card-title,
