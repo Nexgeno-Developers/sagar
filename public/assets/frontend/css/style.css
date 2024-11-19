@@ -808,6 +808,7 @@ section.white_section {
     background-size: cover;
     background-position: center;
     border-radius: 30px;
+    color: #fff;
 }
 
 .company_heading {
