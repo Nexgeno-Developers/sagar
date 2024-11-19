@@ -192,7 +192,7 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>About Content<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="about_content" rows="3"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
+                <textarea class="form-control trumbowyg" name="about_content" rows="13"  @if (empty($about_content)) required @endif>{{ $about_content }}</textarea>
             </div>            
         </div>
         

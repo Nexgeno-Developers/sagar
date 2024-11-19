@@ -41,7 +41,7 @@
         <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Description<span class="red">*</span></label>
-                <textarea class="form-control trumbowyg" name="content" rows="3" @if (empty($content)) required
+                <textarea class="form-control trumbowyg" name="content" rows="13" @if (empty($content)) required
                     @endif>{{ $content }}</textarea>
             </div>
         </div>
