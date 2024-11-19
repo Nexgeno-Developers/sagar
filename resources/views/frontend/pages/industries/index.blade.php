@@ -60,7 +60,7 @@
                             <div class="product_description_div">
                                 <img src="{{ asset('storage/' . $industry->image) }}" alt="{{ $industry->title }}"
                                 class="industry_img" loading="lazy">
-                                <div class="product_description">
+                                <div class="product_description white_text">
                                     <p class="product_description_text">{!! $industry->description !!}</p>
                                 </div>
                             </div>

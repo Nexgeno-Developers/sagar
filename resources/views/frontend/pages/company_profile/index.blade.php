@@ -79,7 +79,7 @@
     <section class="white_section about_us py-md-5 py-3">
         <div class="container">
             <div class="row about_us_story_div">
-                <div class="col-md-7 pe-md-4">
+                <div class="col-md-7 pe-md-4 black_text">
                     <h2 class="product_heading text-start pb-md-1"><span class="our">ABOUT </span>US</h2>
                     {!! $about_content !!}
                 </div>
@@ -114,7 +114,7 @@
             </div>
 
             <div class="d-flex flex-md-row-reverse flex-column align-items-center col-md-12 py-md-3 py-3 company_policies" id="company_policies">
-                <div class="col-md-7 ps-md-5">
+                <div class="col-md-7 ps-md-5 black_text">
                     <h2 class="col-md-12 product_heading text-start pb-md-3 float-start"><span class="our"> COMPANY
                         </span>POLICY</h2>
                     {!! $policy_content !!}
@@ -171,7 +171,7 @@
 
         <div class="container ">
             <div class="d-flex flex-md-row-reverse flex-column align-items-center justify-content-between pt-md-5 pt-4">
-                <div class="col-md-6 ps-md-4">
+                <div class="col-md-6 ps-md-4 black_text">
                     {!! $about2_content2 !!}
                 </div>
                 @if (!empty($about2_image1))

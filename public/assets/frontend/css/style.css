@@ -40,6 +40,15 @@ p {
     font-family: FontAwesome !important;
 }
 
+.black_text p, .black_text li, .black_text span {
+    color: #333;
+}
+
+.white_text p, .white_text span {
+    color: #fff;
+}
+
+
 .enquiry_section .right_section .form-control:focus,
 .page-link:focus {
     box-shadow: none;

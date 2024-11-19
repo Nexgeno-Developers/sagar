@@ -34,7 +34,7 @@
     <section class="first_section bg_smoky_img">
         <div class="container enquiry_section">
             <div class="row justify-content-between align-items-center">
-                <div class="col-md-6 left_section text-light">
+                <div class="col-md-6 left_section text-light white_text">
                     {!! $about_content !!}
                 </div>
                 <div class="col-lg-5 col-md-6">
