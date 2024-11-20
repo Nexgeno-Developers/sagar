@@ -39,7 +39,7 @@
             </div>
             <div class="form-group mb-3">
                 <label>Meta Description<span class="red">*</span></label>
-                <textarea class="form-control"  maxlength="255" name="meta_description" rows="3" required>{{ $productCategory->meta_description }}</textarea>
+                <textarea class="form-control"  maxlength="255" name="meta_description" rows="13" required>{{ $productCategory->meta_description }}</textarea>
             </div>
         </div>
 

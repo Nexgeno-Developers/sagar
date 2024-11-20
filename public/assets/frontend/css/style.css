@@ -40,11 +40,11 @@ p {
     font-family: FontAwesome !important;
 }
 
-.black_text p, .black_text li, .black_text span {
+.black_text p, .black_text span, .black_text li, .black_text a {
     color: #333;
 }
 
-.white_text p, .white_text span {
+.white_text p, .white_text span, .white_text li, .white_text a {
     color: #fff;
 }
 
