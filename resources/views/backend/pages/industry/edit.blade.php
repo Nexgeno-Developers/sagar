@@ -27,7 +27,7 @@
 
         <div class="form-group col-12 mb-3">
             <label>Description<span class="red">*</span></label>
-            <textarea name="description" class="form-control trumbowyg">{{ old('description', $Industry->description) }}</textarea>
+            <textarea name="description" class="form-control trumbowyg" rows="13">{{ old('description', $Industry->description) }}</textarea>
         </div>
 
         <div class="col-sm-12">
