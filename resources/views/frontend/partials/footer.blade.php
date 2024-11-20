@@ -93,11 +93,11 @@
                 </div>
 
                 <div class="col-lg-3 col-5 footer_useful_link_2_div">
-                <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_2_heading">Useful Links</h5>
+                <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_2_heading">Social Media</h5>
                     <ul class="list-group-item list-unstyled">
-                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
+                        <!-- <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
                         <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Supply Chain Solutions</a> </li>
-                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Supply Chain Partner</a> </li>
+                        <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Supply Chain Partner</a> </li> -->
                         <li class="list-item">
                             @if (isset($social_media) && !empty($social_media))
                             <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-lg-5">
