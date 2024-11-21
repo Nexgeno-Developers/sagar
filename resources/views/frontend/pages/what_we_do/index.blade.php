@@ -35,45 +35,48 @@
     </section>
 
     <section class="white_section partnership py-md-5 py-3 pb-4">
-        <div class="container">
 
-            @php
-                $a = 0;
-            @endphp
-    
-            @foreach ($data as $row)
-                @if($a == 0 || $a % 2 == 0)
-                    <div class="row align-items-md-center">
-                        <div class="col-md-7 pe-md-3">
-                            <h2 class="col-md-12 product_heading text-start pb-md-3">{{ $row['text'] }}</h2>
-                            <div class="fs-14 lh-20">
-                                {!! $row['description'] !!}
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <img class="right_img what_we_do_img ps-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
-                        </div>
-                    </div>
-                @else
-                    <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-3">
-                        <div class="col-md-7 ps-md-3">
-                            <h2 class="col-md-12 product_heading text-start pb-md-3 text-light">{{ $row['text'] }}</h2>
-                            <div class="fs-14 lh-20 text-light">
-                                {!! $row['description'] !!}
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <img class="right_img what_we_do_img pe-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
-                        </div>
-                    </div>
-                @endif
-                
+        @if(!empty($data))
+            <div class="container">
+
                 @php
-                    $a++;
+                    $a = 0;
                 @endphp
-            @endforeach
-    
-        </div>
+        
+                @foreach ($data as $row)
+                    @if($a == 0 || $a % 2 == 0)
+                        <div class="row align-items-md-center">
+                            <div class="col-md-7 pe-md-3">
+                                <h2 class="col-md-12 product_heading text-start pb-md-3">{{ $row['text'] }}</h2>
+                                <div class="fs-14 lh-20">
+                                    {!! $row['description'] !!}
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <img class="right_img what_we_do_img ps-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
+                            </div>
+                        </div>
+                    @else
+                        <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-3">
+                            <div class="col-md-7 ps-md-3">
+                                <h2 class="col-md-12 product_heading text-start pb-md-3 text-light">{{ $row['text'] }}</h2>
+                                <div class="fs-14 lh-20 text-light">
+                                    {!! $row['description'] !!}
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <img class="right_img what_we_do_img pe-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
+                            </div>
+                        </div>
+                    @endif
+                    
+                    @php
+                        $a++;
+                    @endphp
+                @endforeach
+        
+            </div>
+        @endif
     </section>
 
 
