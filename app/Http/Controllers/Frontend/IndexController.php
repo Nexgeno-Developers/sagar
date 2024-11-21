@@ -205,7 +205,8 @@ class IndexController extends Controller
         return view('frontend.pages.partner.index',compact('page','products_list'));
     }
     public function what_we_do(){
-        return view('frontend.pages.what_we_do.index');
+        $page = DB::table('pages')->where('type','what_we_do')->first();
+        return view('frontend.pages.what_we_do.index',compact('page'));
     }
 
 // ProductController.php

@@ -92,6 +92,8 @@ class PageController extends Controller
                 return view('backend.website_settings.pages.about_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
             } elseif ($page->type == 'partner_with_us') {
                 return view('backend.website_settings.pages.partner_with_us_page_edit', compact('page', 'products', 'post_categories', 'product_categories'));
+            } elseif ($page->type == 'what_we_do') {
+                return view('backend.website_settings.pages.what_we_do_edit', compact('page'));
             } else {
                 return view('backend.website_settings.pages.edit', compact('page'));
             }
@@ -346,6 +348,67 @@ class PageController extends Controller
                 }
 
             }
+
+
+
+            if ($page->type == 'what_we_do') {
+                $validator = Validator::make($request->all(), [
+                    'title' => 'required|max:155',
+                    'slug' => 'required',
+                    'is_active' => 'required|boolean',
+                    'banner.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'banner_text.*' => 'required|max:155',
+                    'description.*' => 'required',
+                    'meta_title' => 'required|max:255',
+                    'meta_description' => 'required|max:255',
+                ]);
+
+                if ($validator->fails()) {
+                    return response()->json([
+                        'status' => false,
+                        'notification' => $validator->errors()->all()
+                    ], 200);
+                }
+
+                if (!empty($request->input('slug'))) {
+                    $slug = customSlug($request->input('slug'));
+                }
+
+                // Handle Banner Images
+                $banners = [];
+                $banner_texts = $request->input('banner_text', []);
+                $banner_buttons = $request->input('description', []);
+                $existing_banner_images = $request->input('existing_banner_image', []);
+
+                foreach ($banner_texts as $key => $text) {
+                    // Check if a new file was uploaded for this banner
+                    if ($request->hasFile("banner.$key")) {
+                        $path = $request->file("banner.$key")->store('assets/images', 'public');
+                    } else {
+                        // Retain the existing image
+                        $path = $existing_banner_images[$key] ?? null;
+                    }
+
+                    // Add to the banners array if either the image path or text is present
+                    if (!empty($path) || !empty($text)) {
+                        $banners[] = [
+                            'image' => $path,
+                            'text' => $text,
+                            'description' => $banner_buttons[$key] ?? '',
+                        ];
+                    }
+                }
+
+                // Save banners array to the database or use it as needed
+                $content['banner'] = array_filter($banners, function ($banner) {
+                    return !empty(array_filter($banner));
+                });
+
+
+            }
+
+
+
             if ($page->type == 'about_us') {
                 $validator = Validator::make($request->all(), [
                     'title' => 'required|max:155',
