@@ -100,7 +100,7 @@
                         <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Supply Chain Partner</a> </li> -->
                         <li class="list-item">
                             @if (isset($social_media) && !empty($social_media))
-                            <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon pt-lg-5">
+                            <ul class="list-group-item list-unstyled d-flex gap-4 social_media_icon">
                                 @foreach ($social_media as $index => $row )
                                 <li class="list-item"> 
                                     <a href="{{ $row->url}}" class="footer_useful_link_2_links" aria-label="social media links">
