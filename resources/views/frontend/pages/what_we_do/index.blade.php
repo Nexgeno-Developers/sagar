@@ -45,10 +45,10 @@
         
                 @foreach ($data as $row)
                     @if($a == 0 || $a % 2 == 0)
-                        <div class="row align-items-md-center">
+                        <div class="row align-items-md-center pb-md-5 pb-3">
                             <div class="col-md-7 pe-md-3">
-                                <h2 class="col-md-12 product_heading text-start pb-md-3">{{ $row['text'] }}</h2>
-                                <div class="fs-14 lh-20">
+                                <h2 class="col-md-12 product_heading text-start pt-md-3">{{ $row['text'] }}</h2>
+                                <div class="fs-14 lh-20 black_text">
                                     {!! $row['description'] !!}
                                 </div>
                             </div>
@@ -57,10 +57,10 @@
                             </div>
                         </div>
                     @else
-                        <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-3">
+                        <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-md-5 pb-3">
                             <div class="col-md-7 ps-md-3">
-                                <h2 class="col-md-12 product_heading text-start pb-md-3 text-light">{{ $row['text'] }}</h2>
-                                <div class="fs-14 lh-20 text-light">
+                                <h2 class="col-md-12 product_heading text-start pt-md-3">{{ $row['text'] }}</h2>
+                                <div class="fs-14 lh-20 black_text">
                                     {!! $row['description'] !!}
                                 </div>
                             </div>
