@@ -77,7 +77,7 @@
     @if (!empty($faqs))
     <section class="white_section faq py-lg-5 pb-md-3">
         <div class="container ">
-            <h2 class="product_heading text-center pb-md-5 pb-2">Frequently Asked<span class="our"> Question</span></h2>
+            <h2 class="product_heading text-center pb-md-5 pb-2">Frequently Asked<span class="our"> Questions</span></h2>
             <div class="row row-cols-1 row-cols-md-3 g-4 accordion mb-md-3" id="faq_accordion">
                 @foreach ($faqs as $index => $faq)
                     <div class="col">

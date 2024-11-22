@@ -128,12 +128,14 @@ $logo = $footer->logo ?? '';
                                     <i class="fa fa-angle-down"></i>
                                 </li>
                                 @foreach ($allpages as $page)
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="@if($page->type == 'home_page'){{ route('index')}} @else {{ url(route('page.detail', $page->slug)) }} @endif">
-                                        {{ $page->title }}
-                                    </a>
-                                </li>
+                                    @if($page->type != 'what_we_do')
+                                        <li class="nav-item">
+                                            <a class="nav-link"
+                                                href="@if($page->type == 'home_page'){{ route('index')}} @else {{ url(route('page.detail', $page->slug)) }} @endif">
+                                                {{ $page->title }}
+                                            </a>
+                                        </li>
+                                    @endif
                                 @endforeach
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('career')}}">Career</a>
@@ -258,9 +260,16 @@ $logo = $footer->logo ?? '';
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{route('partner_with_us')}}">Partner with us</a>
-                                    </li>
+                                    @foreach ($allpages as $page)
+                                    @if($page->type != 'what_we_do')
+                                        <li class="nav-item">
+                                            <a class="nav-link"
+                                                href="@if($page->type == 'home_page'){{ route('index')}} @else {{ url(route('page.detail', $page->slug)) }} @endif">
+                                                {{ $page->title }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('career')}}">Career</a>
                                     </li>

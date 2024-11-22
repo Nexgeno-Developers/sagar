@@ -220,8 +220,8 @@
         @endif
 
         <hr>
-        <h3>About Section 2</h3>        
-        <div class="row">
+        <h3 class="d-none">About Section 2</h3>        
+        <div class="row d-none">
             <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label>About Content<span class="red">*</span></label>

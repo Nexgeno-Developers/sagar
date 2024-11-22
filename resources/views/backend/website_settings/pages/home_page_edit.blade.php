@@ -262,13 +262,13 @@
         @endif
         
 <hr>
-<h3>Activities Section </h3>
+<h3 class="d-none">Activities Section </h3>
         @if (!empty($activities))
         @php
             $lastindex = is_array($activities) ? count($activities) : $activities->count();
         @endphp
             @foreach ($activities as $index => $row )
-                <div class="row gallery-image-row3">
+                <div class="row gallery-image-row3 d-none">
                     <div class="col-md-9">
                     <div class="form-group row mb-3 ">
                         <div class="col-6 form-group mb-3">
@@ -416,8 +416,8 @@
         </div>
 
         <hr>
-        <h3>Code Of Conduct Section</h3>
-        <div class="row">
+        <h3 class="d-none">Code Of Conduct Section</h3>
+        <div class="row d-none">
             <div class="col-6 form-group mb-3">
                 <label>Description<span class="red">*</span></label>
                 <textarea class="form-control" name="cocs_description" rows="3" required>{{$cocs_description }}</textarea>

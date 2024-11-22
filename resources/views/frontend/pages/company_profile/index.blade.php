@@ -99,7 +99,7 @@
 
 
             <div class="col-md-12 background_blue_img my-md-5 my-4 p-md-5 p-3 cor_values" id="cor_values">
-                <h2 class="product_heading text-start text-light pb-md-1">Cor Values</h2>
+                <h2 class="product_heading text-start text-light pb-md-1">Core Values</h2>
                 <div class="row align-items-center">
                     <div class="col-md-7 text-light pe-md-4 pt-md-3">
                         {!! $core_content !!}
@@ -247,7 +247,7 @@
                             <img src="{{ asset('storage/' . $mnv_image1) }}" alt="" class="vission_img">
                         </div>
                         <h2 class="vission_heading product_heading py-lg-3 py-2 text-light"><span
-                                class="purple_color">OUR</span> VISSION</h2>
+                                class="purple_color">OUR</span> VISION</h2>
                             <p class="vission_para text-light"> {!! $mnv_description1 !!} </p>
                     </div>
                 </div>

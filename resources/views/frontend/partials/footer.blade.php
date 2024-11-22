@@ -80,12 +80,14 @@
                     <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_1_heading">Useful Links</h5>
                     <ul class="list-group-item list-unstyled">
                         @foreach ($allpages as $page)
-                        <li class="list-item">
-                            <a href="{{ url(route('page.detail',$page->slug)) }}">
-                                {{ $page->title }}
-                            </a>
-                        </li>
-                        @endforeach
+                        @if($page->slug != 'what-we-do')
+                            <li class="list-item">
+                                <a href="{{ route('page.detail', $page->slug) }}">
+                                    {{ $page->title }}
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
                         <li class="list-item"><a class="footer_useful_link_1_links" href="{{route('career')}}">Career</a></li>
                         <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_1_links">Industry Areas</a> </li>
                         <li class="list-item"> <a href="{{route('contact_us')}}" class="footer_useful_link_1_links">Contact Us</a> </li>
@@ -141,7 +143,7 @@
           @if(!empty($pdf)) 
             <a href="{{ asset('storage/' . $pdf) }}" download="{{ asset('storage/' . $pdf) }}" class="newsletter-download-link text-white">
                 <div class="newsletter"> 
-                        <label class="file-upload-label" for="fileUpload">NewsLetter
+                        <label class="file-upload-label" for="fileUpload">Newsletter
                             <i class="fa fa-file-arrow-down"></i>
                         </label>     
                 </div>

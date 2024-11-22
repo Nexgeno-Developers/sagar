@@ -68,12 +68,12 @@
             <textarea name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description') }}</textarea>
         </div>
 
-        <div class="form-group col-12">
+        <div class="form-group col-12 d-none">
             <label>Meta Title<span class="red">*</span></label>
             <input required type="text" name="meta_title" class="form-control" value="{{ old('meta_title') }}">
         </div>
 
-        <div class="form-group col-12">
+        <div class="form-group col-12 d-none">
             <label>Meta Description<span class="red">*</span></label>
             <textarea required name="meta_description" class="form-control">{{ old('meta_description') }}</textarea>
         </div>

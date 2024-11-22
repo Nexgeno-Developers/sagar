@@ -40,11 +40,19 @@ p {
     font-family: FontAwesome !important;
 }
 
-.black_text p, .black_text b, .black_text span, .black_text li, .black_text a {
+.black_text p,
+.black_text b,
+.black_text span,
+.black_text li,
+.black_text a {
     color: #333;
 }
 
-.white_text p, .white_text b, .white_text span, .white_text li, .white_text a {
+.white_text p,
+.white_text b,
+.white_text span,
+.white_text li,
+.white_text a {
     color: #fff;
 }
 
@@ -219,7 +227,7 @@ li.nav-item.dropdown {
 }
 
 .sub_menu {
-    color: #333;
+    color: #555;
     text-decoration: none;
 }
 
@@ -372,7 +380,7 @@ input:focus-visible {
     width: max-content;
 }
 
-.file-upload-label { 
+.file-upload-label {
     background: #0d6efd;
     width: max-content;
     padding: 8px 15px 3px 15px;
@@ -630,8 +638,8 @@ section.white_section {
 }
 
 .industries_page .product_img_heading {
-    font-size: 16px; 
-    height: inherit; 
+    font-size: 16px;
+    height: inherit;
     padding: 0px;
     text-align: start;
     line-height: 20px;
@@ -678,7 +686,8 @@ section.white_section {
     z-index: 1;
 }
 
-.industries_page .white_text p, .industries_page .white_text span {
+.industries_page .white_text p,
+.industries_page .white_text span {
     position: relative;
     z-index: 1;
     margin-bottom: 0px;
@@ -884,8 +893,8 @@ section.white_section {
 
 .saagar_speciality_chemical_machine img.saagar_speciality_chemical_machine_img {
     position: absolute;
-    bottom: 0;  
-    right: 1em; 
+    bottom: 0;
+    right: 1em;
     object-fit: cover;
     border-radius: 50px 50px 10px;
 }
@@ -1537,7 +1546,7 @@ section#what_we_do_banner {
     background-position: center;
 }
 
-img.right_img.what_we_do_img {  
+img.right_img.what_we_do_img {
     border-radius: 50px 50px 10px;
 }
 
@@ -1711,9 +1720,9 @@ section#product_categories_banner_img {
     align-items: center;
 }
 
-.about_us_story_div .saagar_speciality_chemical_machine img { 
+.about_us_story_div .saagar_speciality_chemical_machine img {
     float: right;
-    border-radius: 50px 50px 10px; 
+    border-radius: 50px 50px 10px;
 }
 
 .about_info_box.info-box {
@@ -2005,7 +2014,7 @@ ul.submenu li {
 }
 
 ul.submenu li a {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .fs-16 {

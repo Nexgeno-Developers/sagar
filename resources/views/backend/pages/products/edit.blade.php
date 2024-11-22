@@ -77,7 +77,7 @@
             <textarea name="delivery_description" class="form-control trumbowyg">{{ old('delivery_description', $product->delivery_description) }}</textarea>
         </div>
 
-        <div class="col-sm-12">
+        <div class="col-sm-12 d-none">
             <div class="form-group mb-3">
                 <label>Meta Title<span class="red">*</span></label>
                 <input type="text" class="form-control"  maxlength="255" name="meta_title" value="{{ $product->meta_title }}" required>

@@ -32,7 +32,7 @@
             </div>                                
         @endif
 
-<div class="col-sm-6">
+<div class="col-sm-6 d-none">
             <div class="form-group mb-3">
                 <label>Meta Title<span class="red">*</span></label>
                 <input type="text" class="form-control"  maxlength="255" name="meta_title" value="{{ $productCategory->meta_title }}" required>
@@ -44,7 +44,7 @@
         </div>
 
 
-         <div class="form-group col-12 mb-3">
+         <div class="form-group col-12 mb-3 d-none">
             <label>Description<span class="red">*</span></label>
             <textarea name="description" class="form-control trumbowyg" rows="13">{{ old('description', $productCategory->description) }}</textarea>
         </div>

@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group col-3 mb-3">
-            <label>Image<span class="red">*</span></label>
+            <label>Image</label>
             <input type="file" name="image" class="form-control">
         </div>
 
@@ -44,17 +44,17 @@
             </select>
         </div>
 
-        <div class="form-group col-4 mb-3">
+        <div class="form-group col-4 mb-3 d-none">
             <label>Meta Title<span class="red">*</span></label>
             <input required type="text" name="meta_title" class="form-control">
         </div>
 
-        <div class="form-group col-5 mb-3">
+        <div class="form-group col-5 mb-3 d-none">
             <label>Meta Description<span class="red">*</span></label>
             <textarea required name="meta_description" class="form-control"></textarea>
         </div>
 
-        <div class="form-group col-12 mb-3">
+        <div class="form-group col-12 mb-3 d-none">
             <label>Description<span class="red">*</span></label>
             <textarea required name="description" class="form-control trumbowyg"></textarea>
         </div>

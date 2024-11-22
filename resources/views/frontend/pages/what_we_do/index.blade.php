@@ -45,7 +45,7 @@
         
                 @foreach ($data as $row)
                     @if($a == 0 || $a % 2 == 0)
-                        <div class="row align-items-md-center pb-md-5 pb-3">
+                        <div class="row align-items-md-center pb-md-5 pb-5">
                             <div class="col-md-7 pe-md-3">
                                 <h2 class="col-md-12 product_heading text-start pt-md-3">{{ $row['text'] }}</h2>
                                 <div class="fs-14 lh-20 black_text">
@@ -53,11 +53,11 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img class="right_img what_we_do_img ps-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
+                                <img class="right_img what_we_do_img ps-md-3 w-100" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
                             </div>
                         </div>
                     @else
-                        <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-md-5 pb-3">
+                        <div class="d-flex flex-md-row-reverse align-items-md-center flex-column pb-md-5 pb-5">
                             <div class="col-md-7 ps-md-3">
                                 <h2 class="col-md-12 product_heading text-start pt-md-3">{{ $row['text'] }}</h2>
                                 <div class="fs-14 lh-20 black_text">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img class="right_img what_we_do_img pe-md-3" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
+                                <img class="right_img what_we_do_img pe-md-3 w-100" src="{{ asset('storage/' . $row['image']) }}" alt="{{ $row['text'] }}">
                             </div>
                         </div>
                     @endif
