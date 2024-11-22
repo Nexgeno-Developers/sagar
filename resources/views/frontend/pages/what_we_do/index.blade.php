@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <section class="white_section partnership py-md-5 py-3 pb-4">
+    <section class="white_section partnership py-md-5 py-3 pb-4 pt-md-5 pt-5">
 
         @if(!empty($data))
             <div class="container">
