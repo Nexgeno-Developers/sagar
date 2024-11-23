@@ -56,15 +56,15 @@
             @foreach ($industries as $index => $industry)
                 <div class="col-lg-3 col-md-4 col-6 our_product_cards_div">
                     <a href="{{ url(route('products_s') . '?industry=' . $industry->id) }}" class="d-flex align-items-center justify-content-between text-decoration-none w-100">
-                        <div class="card">
-                            <div class="product_description_div">
+                        <div class="card border_radius_25">
+                            <div class="product_description_div border_radius_top_25">
                                 <img src="{{ asset('storage/' . $industry->image) }}" alt="{{ $industry->title }}"
                                 class="industry_img" loading="lazy">
                                 <div class="product_description white_text">
                                     <p class="product_description_text">{!! $industry->description !!}</p>
                                 </div>
                             </div>
-                            <div class="card-body d-flex">
+                            <div class="card-body d-flex border_radius_bottom_25">
                                 <span class="product_img_heading">{{ $industry->title }}</span>
                                 <!-- <p class="card-text">Hello</p> -->
                                 <i class="btn btn-primary fa fa-arrow-right"></i>

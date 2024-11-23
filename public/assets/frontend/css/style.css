@@ -2232,3 +2232,15 @@ li.select2-results__option {
         padding-bottom: 40px !important;
     }
 }
+
+.border_radius_25 {
+    border-radius: 25px;
+}
+
+.border_radius_top_25 {
+    border-radius: 25px 25px 0px 0px;
+}
+
+.border_radius_bottom_25 {
+    border-radius: 0px 0px 25px 25px;
+}
