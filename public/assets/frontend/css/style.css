@@ -274,6 +274,10 @@ input:focus-visible {
     border-radius: 10px 0px 0px 10px;
 }
 
+.gt_container-pg5ri5 .gt_switcher .gt_selected a {
+    border-radius: 5px;
+}
+
 .search-bar input:focus,
 .search-bar-filter input:focus {
     border: 0;
