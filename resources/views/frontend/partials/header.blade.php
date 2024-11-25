@@ -24,8 +24,8 @@ $logo = $footer->logo ?? '';
                             <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
 
 
-                            <div class="gtranslate_wrapper">
-                                <select id="language" translate="no" onchange="doGTranslate(this);">
+                            <div class="gtranslate_wrappers">
+                                <!-- <select id="language" translate="no" onchange="doGTranslate(this);">
                                     <option translate="no" value="en|en" data-flag="https://flagcdn.com/w20/gb.png" style="background-image: url('../assets/frontend/images/home/united_kingdom_flag.png');">
                                         
                                         English</option>
@@ -33,7 +33,7 @@ $logo = $footer->logo ?? '';
                                         Portuguese</option>
                                     <option translate="no" value="en|es" data-flag="https://flagcdn.com/w20/gb.png">
                                         Spanish</option>
-                                </select>
+                                </select> -->
                             </div>
 
                             <!-- <div class="gtranslate_wrapper">
@@ -199,15 +199,15 @@ $logo = $footer->logo ?? '';
                                 aria-expanded="false">
                                 <!-- <i class="text-light fa-solid fa-language"></i> -->
                                 <!--<div id="google_translate_element" style="/*display: inline-block;*/"></div>-->
-                                <div class="gtranslate_wrapper">
-                                    <select onchange="doGTranslate(this);" id="languageSelector">
+                                <div class="gtranslate_wrappers">
+                                    <!-- <select onchange="doGTranslate(this);" id="languageSelector">
                                         <option value="en|en" data-flag="https://flagcdn.com/w20/gb.png"> English
                                         </option>
                                         <option value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">Portuguese
                                         </option>
                                         <option value="en|es" data-flag="https://flagcdn.com/w20/gb.png">Spanish
                                         </option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </a>
                         </div>
