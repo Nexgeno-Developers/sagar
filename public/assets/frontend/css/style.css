@@ -1951,7 +1951,7 @@ footer span {
 }
 
 .gt_switcher.notranslate {
-    display: none;
+    display: block;
 }
 
 :focus-visible {
@@ -2252,5 +2252,5 @@ li.select2-results__option {
 }
 
 select#language option[value="en|en"]   { 
-    background-image: url('../images/home/united_kingdom_flag.png');   
+    background-image: url(../images/home/united_kingdom_flag.png);   
 }
