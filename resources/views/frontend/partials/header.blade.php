@@ -25,10 +25,11 @@ $logo = $footer->logo ?? '';
 
 
                             <div class="gtranslate_wrapper">
-                                <select translate="no" onchange="doGTranslate(this);">
-                                    <option translate="no" value="en|en" data-flag="https://flagcdn.com/w20/gb.png">
+                                <select id="language" translate="no" onchange="doGTranslate(this);">
+                                    <option translate="no" value="en|en" data-flag="https://flagcdn.com/w20/gb.png" style="background-image: url('../assets/frontend/images/home/united_kingdom_flag.png');">
+                                        
                                         English</option>
-                                    <option translate="no" value="en|pt" data-flag="https://flagcdn.com/w20/gb.png">
+                                    <option translate="no" value="en|pt" class="portuguse" data-flag="https://flagcdn.com/w20/gb.png">
                                         Portuguese</option>
                                     <option translate="no" value="en|es" data-flag="https://flagcdn.com/w20/gb.png">
                                         Spanish</option>
