@@ -67,7 +67,12 @@
                                     class="cursor-pointer list-group-item @if(empty($categoryIds)) active @endif">
                                     All Categories
                                 </li>
-                                @foreach($productCategories as $category)
+
+                                @php
+                                    $sortedCategories = $productCategories->sortBy('title');
+                                @endphp
+
+                                @foreach($sortedCategories as $category)
                                 <li
                                     class="cursor-pointer list-group-item @if(is_array($categoryIds) && in_array($category->id, $categoryIds)) active @endif">
                                     <label style="cursor:pointer">
@@ -90,7 +95,13 @@
                     <p class="text-center no_product">No products available.</p>
                     @else
                     <div class="row">
-                        @foreach($products as $product)
+
+                    
+                        @php
+                            $sortedproducts = $products->sortBy('title');
+                        @endphp
+
+                        @foreach($sortedproducts as $product)
                         <div class="col-md-4 col-6 product_filter_gallery_div">
                             <a onclick="enquiry({{ $product->id }})" class="d-block text-decoration-none">
                                 <div class="card">
