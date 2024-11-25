@@ -104,7 +104,7 @@ $cocs_pdf = '';
     .navbar-brand {
         padding: 0px;
         margin-top: 0px;
-        width: 45%;
+        width: 35%;
     }
 
     .offcanvas-header .header_logo,

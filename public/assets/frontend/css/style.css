@@ -270,8 +270,8 @@ input:focus-visible {
 
 .search-bar input {
     border: 0;
-    padding: 5px 0 5px 5px;
-    border-radius: 10px;
+    padding: 7px 0 7px 5px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .search-bar input:focus,
@@ -1952,17 +1952,22 @@ footer span {
 
 .gt_switcher.notranslate {
     display: block;
+    border-radius: 5px;
 }
 
 :focus-visible {
     outline: -webkit-focus-ring-color auto 0px;
 }
 
-.gtranslate_wrapper select option {
+.gt_switcher_wrappers {
+    right: 0px;
+}
+
+.gtranslate_wrappers select option {
     cursor: pointer;
 }
 
-.gtranslate_wrapper select {
+.gtranslate_wrappers select {
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid #999;
@@ -1976,7 +1981,7 @@ footer span {
 }
 
 @media(max-width:767px) {
-    .gtranslate_wrapper select {
+    .gtranslate_wrappers select {
         padding: 0px 0px;
         font-size: 14px;
     }
