@@ -114,7 +114,7 @@ header.transparent .google_translate_desktop .gt_container--hich1m .gt_switcher 
 a.inline-box.nav-link {
     position: absolute;
     right: 0;
-    top: 0px;
+    top: -3px;
 }
 
 .search-icon-wrapper {
@@ -1894,6 +1894,23 @@ section.white_section.product_info .accordion-button::after {
 
 .industries_accordion .accordion-item {
     padding: 8px 8px 1px !important;
+}
+
+.whatsappdesktop {
+    position: fixed !important;
+    bottom: 55px;
+    z-index: 9;
+    left: 35px;
+}
+.whatsappdesktop i {
+    background: #07d353;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    line-height: 49px;
+    text-align: center;
+    font-size: 29px;
 }
 
 footer {

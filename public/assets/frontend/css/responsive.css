@@ -867,7 +867,7 @@
 
     a.inline-box.nav-link {
         right: -20px;
-        top: -11px;
+        top: -10px;
     }
 
     .navbar-toggler {
@@ -1605,6 +1605,19 @@
     .footer_useful_link_1_div ul {
         margin-bottom: 5px;
     }
+
+
+    .whatsappdesktop { 
+        bottom: 30px; 
+        left: 20px;
+    }
+    .whatsappdesktop i { 
+        width: 40px;
+        height: 40px;  
+        font-size: 24px;
+        line-height: 40px;
+
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1100px) {
@@ -1743,5 +1756,15 @@
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     .flex_coloum_md {
         flex-direction: column !important;
+    }
+}
+
+@media screen  and (max-width: 345px) {
+    .gt_container-pg5ri5 .gt_switcher { 
+        width: 110px !important;
+    }
+
+    .navbar .container-fluid {
+        padding: 0px !important;
     }
 }
