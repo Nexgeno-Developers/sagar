@@ -203,7 +203,7 @@
     }
 
     .offcanvas.offcanvas-end {
-        background-color: #c1c6ca;
+        background-color: #fff;
         height: 100vh;
         width: 40%;
         z-index: 1050;
@@ -977,7 +977,7 @@
 
     .offcanvas.offcanvas-end {
         transform: translatey(-100%);
-        background-color: #c1c6ca;
+        background-color: #fff;
         height: 100vh;
         width: 100%;
         z-index: 1050;

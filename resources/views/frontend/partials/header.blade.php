@@ -230,7 +230,7 @@ $logo = $footer->logo ?? '';
                             <div class="offcanvas-body">
                                 <ul class="navbar-nav gap-lg-3 mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('products_category')}}">Products</a>
+                                        <a class="nav-link" href="{{route('products_s')}}">Products</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <span class="nav-link me-1">About Us</span>
