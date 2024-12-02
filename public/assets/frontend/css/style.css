@@ -360,7 +360,7 @@ input:focus-visible {
     transform: rotate(-90deg);
     gap: 10px;
     bottom: 2em;
-    right: 10px;
+    right: 0px;
     /* float: right; */
 }
 

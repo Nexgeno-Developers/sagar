@@ -1784,3 +1784,27 @@
         padding: 0px !important;
     }
 }
+
+@media screen and (min-width: 1400px) and (max-width: 1700px) {
+    
+    .sidebar_instant_links {
+        right: -4px;
+    }
+
+}
+
+@media screen and (min-width: 1800px) and (max-width: 2500px) {
+    
+    .sidebar_instant_links {
+        right: -10px;
+    }
+
+}
+
+@media screen and (min-width: 2501px) {
+    
+    .sidebar_instant_links {
+        right: -20px;
+    }
+
+}
