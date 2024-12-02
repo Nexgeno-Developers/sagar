@@ -17,6 +17,24 @@ $logo = $footer->logo ?? '';
         <div class="d-flex flex-column">
             <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">
                 <ul class="list-group list-group-horizontal list-unstyled">
+                    <form action="{{ route('products_s') }}" method="GET"
+                        class="searchForm position-relative">
+                        <div class="search-icon-wrapper">
+                            <button type="button" class="btn search-icon" onclick="toggleSearchBar()"
+                                aria-label="search btn 3" id="toggleSearchIcon">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="search-bar d-none" id="searchBar">
+                            <input type="text" class="product-search" name="search" class="form-control"
+                                placeholder="Search for Product..." value="{{ request('search') }}">
+                            <input type="hidden" name="category_ids" id="category_id" value="">
+                            <button type="submit" class="btn search_btn search_btn_2"
+                                aria-label="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
                     <li class="nav-item dropdown google_translate_desktop">
                         <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">
@@ -144,26 +162,8 @@ $logo = $footer->logo ?? '';
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                 </li>
-                                <li class="list-group-item">
-                                    <form action="{{ route('products_s') }}" method="GET"
-                                        class="searchForm position-relative">
-                                        <div class="search-icon-wrapper">
-                                            <button type="button" class="btn search-icon" onclick="toggleSearchBar()"
-                                                aria-label="search btn 3" id="toggleSearchIcon">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
-                                        <div class="search-bar d-none" id="searchBar">
-                                            <input type="text" class="product-search" name="search" class="form-control"
-                                                placeholder="Search for Product..." value="{{ request('search') }}">
-                                            <input type="hidden" name="category_ids" id="category_id" value="">
-                                            <button type="submit" class="btn search_btn search_btn_2"
-                                                aria-label="search">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
+                                <!-- <li class="list-group-item">
+                                </li> -->
                                 <!-- <a class="nav-link" href="#"><i class="fa fa-search text-light"></i></a> -->
                                 <!-- </li> -->
                             </ul>

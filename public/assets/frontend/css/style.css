@@ -77,8 +77,13 @@ p {
 
 .google_translate_desktop {
     position: relative;
-    right: 30px;
+    right: 10px;
     top: 5px;
+    width: 150px;
+}
+
+.searchForm {
+    right: 0px;
 }
 
 .gt_container--hich1m .gt_switcher .gt_selected a {
@@ -125,8 +130,8 @@ a.inline-box.nav-link {
 .search-bar,
 .search-bar-for-tab {
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: -5px;
+    right: 30px;
     background-color: #fff;
     display: flex;
     align-items: center;
