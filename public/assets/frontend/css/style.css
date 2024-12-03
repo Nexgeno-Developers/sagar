@@ -2285,3 +2285,9 @@ li.select2-results__option {
 select#language option[value="en|en"]   { 
     background-image: url(../images/home/united_kingdom_flag.png);   
 }
+
+/* to hide google translate icon */
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { 
+    display: none; 
+}
