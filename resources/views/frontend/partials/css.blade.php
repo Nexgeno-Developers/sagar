@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v=1.5.2" />
 
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v=1.2.8" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v=1.2.8"/>
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css" media="print" onload="this.media='all'"/>
 <!-- <link rel="stylesheet" type="text/css" href="/assets/frontend/css/font-awesome.all.min.css" /> -->
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.carousel.min.css" media="print" onload="this.media='all'"/>
