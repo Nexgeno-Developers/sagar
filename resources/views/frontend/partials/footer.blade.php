@@ -120,7 +120,7 @@
             <br class="d-lg-block d-none">
             <hr>
             <div class="pt-md-2 footer_copyright text-center">
-                <span class="copyright_content"> © Copyright - Sagar Speciality Chemicals Pvt. Ltd. | Designed by <a target="_blank" href="https://nexgeno.in/"> Nexgeno</a></span>
+                <span class="copyright_content"> {{ date("Y") }} © Copyright - Sagar Speciality Chemicals Pvt. Ltd. | Designed by <a target="_blank" href="https://nexgeno.in/"> Nexgeno</a></span>
             </div>
         </div>
     </footer>

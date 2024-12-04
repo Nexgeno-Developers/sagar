@@ -304,7 +304,7 @@ public function products_s(Request $request)
     }
 
     // Fetch products with pagination
-    $products = $query->orderBy('title', 'asc')->paginate(15);
+    $products = $query->orderBy('title', 'asc')->paginate(18);
 
     return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryIds', 'searchQuery', 'Industry','products_list','no_industry'));
 }

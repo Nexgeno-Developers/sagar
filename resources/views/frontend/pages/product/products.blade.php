@@ -195,6 +195,8 @@
         const selectElement = document.getElementById('industrySelect');
         if (selectElement.value !== '') {
             submitCategoryForm();
+        } else {
+            viewAllCategories();
         }
     }
 
