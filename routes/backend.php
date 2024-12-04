@@ -33,7 +33,7 @@ use App\Http\Controllers\backend\PageController;
 //authentication
 Route::get('/', function () { return redirect(route('backend.login')); });
 Route::get('/login', [AuthenticateController::class, 'index'])->name('backend.login');
-Route::post('/login', [AuthenticateController::class, 'login'])->name('backend.login');
+Route::post('/login', [AuthenticateController::class, 'login'])->name('backend.login')->middleware(['sql.prevent', 'xss.protect']);
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name('backend.logout');
 
 //dashborad
