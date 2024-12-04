@@ -69,6 +69,11 @@ $cocs_pdf = '';
     width: 100%;
 }
 
+.header.transparent .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-weight: 300;
+}
+
 .header {
     background-color: transparent;
 }
