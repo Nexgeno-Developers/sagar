@@ -24,7 +24,7 @@ class RateLimitMiddleware
         }
 
         $key = $request->ip();
-        $maxAttempts = 40; // Max requests allowed
+        $maxAttempts = 80; // Max requests allowed
         $decayMinutes = 1; // Time window in minutes
 
         // Get the User-Agent from the request
