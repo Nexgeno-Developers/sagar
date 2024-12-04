@@ -213,7 +213,7 @@ $(document).ready(function () {
         margin: 30,
         autoplay: !0,
         autoplaySpeed: 3e3,
-        nav: false,
+        nav: !1,
         dots: !1,
         responsive: {
             0: {
