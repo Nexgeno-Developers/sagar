@@ -98,11 +98,11 @@ class IndexController extends Controller
 
         // Prepare data for sending the email
         $data = [
-            'sender' => ['name' => 'Saagar SCPL', 'email' => 'webdeveloper@nexgeno.in'],
-            'to' => [['email' => 'webdeveloper@nexgeno.in', 'name' => 'Saagar SCPL']],
+            'sender' => ['name' => 'Saagar SCPL', 'email' => 'sales@sagarspecialitychemicals.com'],
+            'to' => [['email' => 'sales@sagarspecialitychemicals.com', 'name' => 'Saagar SCPL']],
             'subject' => $subject,
             'htmlContent' => "
-                <h2>Contact Form Submission</h2>
+                
                 <p><b>Page:</b> {$page}</p>"
                 . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
                 . "<p><b>Full Name:</b> {$request->full_name}</p>"
