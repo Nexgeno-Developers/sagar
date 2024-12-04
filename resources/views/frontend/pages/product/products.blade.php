@@ -308,5 +308,29 @@
             }, 1000);
         }
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the current page URL
+        const currentPageURL = window.location.href.split('&page=')[0];
+
+        // Select all links with the class 'page-link'
+        const pageLinks = document.querySelectorAll('a.page-link');
+
+        pageLinks.forEach(link => {
+            // Get the existing href value
+            const originalHref = link.getAttribute('href');
+
+            // Check if '&page=' exists in the href
+            if (originalHref && originalHref.includes('&page=')) {
+                // Replace the part before '&page=' with the current page URL
+                const updatedHref = currentPageURL + originalHref.substring(originalHref.indexOf('&page='));
+                link.setAttribute('href', updatedHref);
+            }
+        });
+    });
+
+
+
     </script>
     @endsection

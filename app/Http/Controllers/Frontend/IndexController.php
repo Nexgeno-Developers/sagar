@@ -25,6 +25,7 @@ class IndexController extends Controller
         // Validate data based on form type
         if ($formType === 'partner_us') {
             $page = 'Partner Us';
+            $subject = 'Partner Form Submission';
             $validated = Validator::make($request->all(), [
                 'company_name' => 'required|string|max:255',
                 'full_name' => 'required|string|max:255',
@@ -36,6 +37,7 @@ class IndexController extends Controller
         } 
         elseif ($formType === 'contact_us') {
             $page = 'Contact Us';
+            $subject = 'Contact Form Submission';
             $validated = Validator::make($request->all(), [
                 'full_name' => 'required|string|max:255',
                 'mobile' => 'required|string|max:20',
@@ -45,6 +47,7 @@ class IndexController extends Controller
         }
         elseif ($formType === 'career') {
             $page = 'Career';
+            $subject = 'Career Form Submission';
             $validated = Validator::make($request->all(), [
                 'full_name' => 'required|string|max:255',
                 'mobile' => 'required|string|max:20',
@@ -55,6 +58,7 @@ class IndexController extends Controller
             ]);
         } elseif ($formType === 'product_listing') {
             $page = 'Product Listing';
+            $subject = 'Product Enquiry Form Submission';
             $validated = Validator::make($request->all(), [
                 'company_name' => 'required|string|max:255',
                 'full_name' => 'required|string|max:255',
@@ -89,19 +93,23 @@ class IndexController extends Controller
         ]);
 
 
+
+        $products_name = DB::table('products')->where('id', $request->product)->pluck('title')->first();
+
         // Prepare data for sending the email
         $data = [
             'sender' => ['name' => 'Saagar SCPL', 'email' => 'webdeveloper@nexgeno.in'],
             'to' => [['email' => 'webdeveloper@nexgeno.in', 'name' => 'Saagar SCPL']],
-            'subject' => 'New Contact Form Submission',
+            'subject' => $subject,
             'htmlContent' => "
                 <h2>Contact Form Submission</h2>
                 <p><b>Page:</b> {$page}</p>"
                 . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
                 . "<p><b>Full Name:</b> {$request->full_name}</p>"
-                . "<p><b>Mobile:</b> {$request->mobile}</p>"
-                . "<p><b>Email:</b> {$request->email}</p>"
-                . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
+                . (!empty($request->mobile) ? "<p><b>Mobile:</b> {$request->mobile}</p>" : "")
+                . (!empty($request->email) ? "<p><b>Email:</b> {$request->email}</p>" : "")
+                . ($request->filled('product') ? "<p><b>Product:</b> {$products_name}</p>" : "")
+                . ($request->filled('quantity') ? "<p><b>Quantity:</b> {$request->quantity}</p>" : "")
                 . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
                 . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
                 . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
