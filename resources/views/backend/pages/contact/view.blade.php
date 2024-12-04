@@ -15,7 +15,8 @@
     <p><strong>Mobile:</strong> {{$contact->mobile}}</p>
     @endif
     @if($contact->product)
-    <p><strong>Product Name:</strong> {{$contact->product}}</p>
+    @php $products_name = DB::table('products')->where('id', $contact->product)->pluck('title')->first(); @endphp
+    <p><strong>Product Name:</strong> {{$products_name}}</p>
     @endif   
     @if($contact->apply_for)
     <p><strong>Apply For:</strong> {{$contact->apply_for}}</p>
