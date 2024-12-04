@@ -69,7 +69,7 @@ Route::get('/{page_slug}', [IndexController::class, 'page_detail'])
     ->name('page.detail');
 }
 
-Route::post('/form-save', [IndexController::class, 'Form_Save'])->name('form.save'); 
+Route::post('/form-save', [IndexController::class, 'Form_Save'])->name('form.save')->middleware(['sql.prevent', 'xss.protect']); 
 
 // Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
 // Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
@@ -81,9 +81,9 @@ Route::get('/404', [IndexController::class, 'not_found'])->name('error_page');
 Route::get('/thank-you', [IndexController::class, 'thank_you'])->name('thank_you');
 Route::get('/cookie-policy', [IndexController::class, 'cookie_policy'])->name('cookie-policy');
 Route::post('/contact-save', [IndexController::class, 'contact_save'])->name('contact.create');
-Route::post('/comment-save', [IndexController::class, 'comment_save'])->name('comment.create');
+Route::post('/comment-save', [IndexController::class, 'comment_save'])->name('comment.create')->middleware(['sql.prevent', 'xss.protect']);
 
-Route::get('/search', [IndexController::class, 'search'])->name('search');
+Route::get('/search', [IndexController::class, 'search'])->name('search')->middleware(['sql.prevent', 'xss.protect']);
 // Home END
 
 
@@ -96,12 +96,3 @@ Route::get('/key-generate', function () {
 
 
 
-
-Route::get('/send-test-email', function () {
-    Mail::raw('Test email content', function ($message) {
-        $message->to('khanfaisal.makent@gmail.com')
-                ->subject('Test Email');
-    });
-
-    return 'Test email sent!';
-});
