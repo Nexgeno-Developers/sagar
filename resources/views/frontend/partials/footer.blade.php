@@ -12,7 +12,7 @@
 @endphp
 
 
-<footer class="footer bg-dark text-light pt-lg-5 pt-md-4 py-3 pb-md-3">
+<footer class="footer bg-dark text-light pt-lg-5 pt-md-4 py-3 pb-md-3" loading="lazy">
         <div class="container">
             <div class="row">
                 <!-- Locations Section -->
