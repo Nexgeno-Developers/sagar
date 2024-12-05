@@ -70,10 +70,11 @@ $cocs_pdf = '';
 }
 
 .header.transparent .navbar-nav .nav-item .nav-link {
-    color: #fff !important;
     font-weight: 300;
 }
-
+.header .nav-link, .header .nav-link .fa-search:before, .header .top_bar .list-group-item a {
+    color: #fff !important;
+}
 .header {
     background-color: transparent;
 }
