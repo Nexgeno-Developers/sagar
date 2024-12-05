@@ -70,7 +70,7 @@ $cocs_pdf = '';
 }
 
 .header.transparent .navbar-nav .nav-item .nav-link {
-    color: #fff;
+    color: #fff !important;
     font-weight: 300;
 }
 

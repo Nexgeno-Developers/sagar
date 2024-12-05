@@ -17,7 +17,7 @@ $logo = $footer->logo ?? '';
         <div class="d-flex flex-column">
             <div class="top_bar col-12 pt-md-3 pt-2 d-lg-block d-none">
                 <ul class="list-group list-group-horizontal list-unstyled">
-                    <form action="{{ route('products_s') }}" method="GET"
+<li>                    <form action="{{ route('products_s') }}" method="GET"
                         class="searchForm position-relative">
                         <div class="search-icon-wrapper">
                             <button type="button" class="btn search-icon" onclick="toggleSearchBar()"
@@ -35,6 +35,7 @@ $logo = $footer->logo ?? '';
                             </button>
                         </div>
                     </form>
+</li>
                     <li class="nav-item dropdown google_translate_desktop">
                         <a class="inline-box nav-link " data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">

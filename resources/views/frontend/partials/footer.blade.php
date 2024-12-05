@@ -17,7 +17,7 @@
             <div class="row">
                 <!-- Locations Section -->
                 <div class="col-lg-4 col-md-6 footer_location_div">
-                    <h5 class="pb-lg-4 pb-3 footer_location_heading">Locations</h5>
+                    <h4 class="pb-lg-4 pb-3 footer_location_heading fs-20">Locations</h4>
                     <h5 class="fs-16">{{$contacts[0]->name}}</h5>
                     <p class="d-flex align-items-start gap-2 footer_location_1 pb-3">
                         <img class="location_flags" src="/assets/frontend/images/flag_india.png" alt="indian flag">
@@ -45,8 +45,8 @@
                 </div>
     
                 <!-- Contact Info Section -->
-                <div class="col-lg-3 col-md-5 footer_contact_div ps-md-0 py-2">
-                    <h5 class="pb-lg-4 pb-md-2 pb-1 footer_contact_heading">Contact Info</h5>
+                <div class="col-lg-3 col-md-5 footer_contact_div ps-md-0 px-2">
+                    <h4 class="pb-lg-4 pb-md-2 pb-1 footer_contact_heading fs-20">Contact Info</h4>
                     <div class="d-flex align-items-start gap-2 pb-lg-3 pb-2">
                         <i class="fa fa-phone"></i>
                         <span>Mobile Number: <br>
@@ -77,7 +77,7 @@
     
                 <!-- Useful Links Section -->
                 <div class="col-lg-2 col-6 footer_useful_link_1_div ps-md-3">
-                    <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_1_heading">Useful Links</h5>
+                    <h4 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_1_heading fs-20">Useful Links</h4>
                     <ul class="list-group-item list-unstyled">
                         @foreach ($allpages as $page)
                         @if($page->slug != 'what-we-do')
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="col-lg-3 col-5 footer_useful_link_2_div">
-                <h5 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_2_heading">Social Media</h5>
+                <h4 class="pb-lg-4 pb-md-2 pb-1 footer_useful_link_2_heading fs-20">Social Media</h4>
                     <ul class="list-group-item list-unstyled">
                         <!-- <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Chemicals Imports & Exports</a> </li>
                         <li class="list-item"> <a href="{{route('products_category')}}" class="footer_useful_link_2_links">Supply Chain Solutions</a> </li>
