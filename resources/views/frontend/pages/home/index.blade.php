@@ -163,7 +163,7 @@ $cocs_pdf = '';
             <div class="carousel-inner">
                 @foreach ($banners as $index => $banner)
                 <div class="carousel-item @if($index==0) active @endif">
-                    <img src="{{ asset('storage/' . $banner->image) }}" loading="lazy" class="d-block carousel-image" alt="..." style="width:100% !important; height: auto; animation: zoomAnimation 7s ease-in-out infinite;">
+                    <img src="{{ asset('storage/' . $banner->image) }}" class="d-block carousel-image banner_zoom" alt="..." style="">
                     <div class="carousel-caption banner_contents">
                         <h5>{{$banner->text}}</h5>
                         <a href="{{$banner->url}}" class="banner_view_button"
