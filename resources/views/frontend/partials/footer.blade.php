@@ -152,7 +152,7 @@
       </div>
 
     <div class="whatsappdesktop">
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=+91-9619603699&amp;text=Hello%21+Thank+you+for+reaching+out.%0A%0AI'm+currently+busy+but+your+message+is+important+to+me%21+I%E2%80%99ll+get+back+to+you+as+soon+as+possible.%0A%0AIn+the+meantime%2C+feel+free+to+check+out+my+website+for+more+information+about+my+work+and+available+pieces.%0A%0AHave+a+creative+day%21">
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=+91-9619603699&amp;text=Hello%21+Thank+you+for+reaching+out.%0A%0AI'm+currently+busy+but+your+message+is+important+to+me%21+I%E2%80%99ll+get+back+to+you+as+soon+as+possible.%0A%0AIn+the+meantime%2C+feel+free+to+check+out+my+website+for+more+information+about+my+work+and+available+pieces.%0A%0AHave+a+creative+day%21" aria-label="Send a message on WhatsApp">
             <i aria-hidden="true" class="fab fa-whatsapp"></i>
         </a>
     </div>

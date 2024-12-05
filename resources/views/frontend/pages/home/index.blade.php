@@ -279,7 +279,7 @@ $cocs_pdf = '';
                     <a href="{{ url(route('products_s') . '?industry=' . $category->id) }}"
                         class="d-block industry_content_div position-relative">
                         @if (!empty($category->image))
-                        <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->title }}"
+                        <img src="{{ asset('storage/' . $category->image) }}" alt="Image representing {{ $category->title }} "
                             class="industry_img" loading="lazy">
                         @endif
                         <div class="d-flex industry_content">
@@ -330,7 +330,9 @@ $cocs_pdf = '';
                                 <h5 class="card-title">{{$row->text}}</h5>
                                 <p class="card-text">{{$row->content}}</p>
                                 <a href="{{route('what_we_do')}}" class="what_we_do_link"
-                                    aria-label="see what we do">Read More
+                                    aria-label="see what we do"><span class="sr-only">
+                        Read More about the {{$row->text}}
+                      </span>Read More
                                     <img class="arrow_right_img" src="/assets/frontend/images/home/right-arrow.svg"
                                         alt="arrow right image" loading="lazy"> </a>
                             </div>
@@ -466,7 +468,7 @@ $cocs_pdf = '';
                                         <img src="{{ asset('storage/' . $scp_image1) }}" alt=""
                                             class="spply_chn_box_img" loading="lazy">
                                     </div>
-                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text1}}</h5>
+                                    <h3 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text1}}</h3>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf1) }}"
                                         class="spply_chn_btn">Download</a>
                                 </div>
@@ -478,7 +480,7 @@ $cocs_pdf = '';
                                         <img src="{{ asset('storage/' . $scp_image2) }}" alt=""
                                             class="spply_chn_box_img" loading="lazy">
                                     </div>
-                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h5>
+                                    <h3 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text2}}</h3>
                                     <a href="{{route('partner_with_us')}}" class="spply_chn_btn">Connect Now</a>
                                 </div>
                             </div>
@@ -489,7 +491,7 @@ $cocs_pdf = '';
                                         <img src="{{ asset('storage/' . $scp_image3) }}" alt=""
                                             class="spply_chn_box_img" loading="lazy">
                                     </div>
-                                    <h5 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text3}}</h5>
+                                    <h3 class="spply_chn_title my-lg-5 my-md-3">{{$scp_text3}}</h3>
                                     <a target="_blank" href="{{ asset('storage/' . $scp_pdf2) }}"
                                         class="spply_chn_btn">View</a>
                                 </div>
