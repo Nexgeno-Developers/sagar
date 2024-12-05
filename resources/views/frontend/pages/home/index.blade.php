@@ -330,7 +330,7 @@ $cocs_pdf = '';
                             <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top" alt="card-img-top"
                                 loading="lazy">
                             <div class="card-body">
-                                <h5 class="card-title">{{$row->text}}</h5>
+                                <h3 class="card-title">{{$row->text}}</h3>
                                 <p class="card-text">{{$row->content}}</p>
                                 <a href="{{route('what_we_do')}}" class="what_we_do_link"
                                     aria-label="see what we do"><span class="sr-only">
