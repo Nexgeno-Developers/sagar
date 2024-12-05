@@ -231,7 +231,9 @@ $cocs_pdf = '';
                         <div class="col-xl-8 col-md-7 white_text">
                             {!! $about_content !!}
                             <a href="{{route('about_us')}}" class="btn a_btn white_btn btn-lg mt-md-3 mt-0"
-                                aria-label="know about us">
+                                aria-label="know about us"> <span class="sr-only">
+                        Read More about the 
+                      </span>
                                 Read More <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
@@ -244,10 +246,10 @@ $cocs_pdf = '';
                             @endif
 
                             <div class="info_box text-lg-start text-center text-light p-lg-4 py-2 up_and_down">
-                                <h4>700+ </h4>
+                                <h2>700+ </h2>
                                 <p>Customers</p>
                                 <hr>
-                                <h4>100+</h4>
+                                <h2>100+</h2>
                                 <p>Products</p>
                             </div>
                         </div>
