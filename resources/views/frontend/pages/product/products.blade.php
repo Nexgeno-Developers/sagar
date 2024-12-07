@@ -185,6 +185,11 @@
         initSelect2('.select2');
     });
 
+$(document).ready(function () {
+    $('#productSelect').select2({
+        dropdownParent: $('#exampleModalCenter') // Attach dropdown to the modal
+    });
+});
 
 
     function submitCategoryForm() { // Ensure the category_ids are updated before submitting
