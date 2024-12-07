@@ -185,11 +185,15 @@
         initSelect2('.select2');
     });
 
-$(document).ready(function () {
-    $('#productSelect').select2({
-        dropdownParent: $('#exampleModalCenter') // Attach dropdown to the modal
-    });
-});
+// $(document).ready(function () {
+//     $('#productSelect').select2({
+//         dropdownParent: $('#exampleModalCenter') // Attach dropdown to the modal
+//     });
+// });
+
+// $('#select2-productSelect-results').select2({
+//     dropdownParent: $('#exampleModalCenter'), // Ensures the dropdown is appended to the modal
+// });
 
 
     function submitCategoryForm() { // Ensure the category_ids are updated before submitting
